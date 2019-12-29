@@ -1,0 +1,135 @@
+#----------------------------------------------------------------------------------------
+# KDE4 Applications
+#----------------------------------------------------------------------------------------
+kde4-core		= the K Desktop Environment version 4 core modules
+dolphin-kde4	= file manager for KDE 4 focusing on usability
+konsole-kde4	= X terminal emulator for KDE 4
+kate-kde4		= KDE4 Advanced Text Editor
+okular-kde4		= document viewer for KDE 4
+
+#----------------------------------------------------------------------------------------
+# LAMP
+#----------------------------------------------------------------------------------------
+apache2			= Next generation, scalable, extendable web server
+php5			= server-side, HTML-embedded scripting language
+mysql-server	= MySQL database server
+mysql-admin		= GUI tool for intuitive MySQL administration
+phpmyadmin		= Administrate MySQL over the WWW
+mysql-client	= MySQL database client
+libapache2-mod-php5			= server-side, HTML-embedded scripting language (apache 2 module)
+libapache2-mod-auth-mysql	= Apache 2 module for MySQL authentication
+php5-mysql					= MySQL module for php5
+
+#----------------------------------------------------------------------------------------
+# System
+#----------------------------------------------------------------------------------------
+#nvidia-glx-new	= NVIDIA binary 'new' Driver
+gparted			= GNOME partition editor
+bum				= graphical runlevel editor
+gnome-schedule	= GNOME scheduler for automatic tasks
+fslint			= A toolkit to fix various problems with filesystems' data
+samba			= a LanManager-like file and printer server for Unix
+smbclient		= a LanManager-like simple client for Unix
+ntp				= Network Time Protocol daemon and utility programs
+webmin			= A web-based administration interface for Unix systems
+checkinstall	= installation tracker
+
+#----------------------------------------------------------------------------------------
+# OS Emulation
+#----------------------------------------------------------------------------------------
+wine			= Microsoft Windows Compatibility Layer
+virtualbox-ose	= PC virtualization solution
+
+#----------------------------------------------------------------------------------------
+# Multimedia
+#----------------------------------------------------------------------------------------
+ubuntu-restricted-extras	= Commonly used restricted packages
+mplayer-nogui	= The Ultimate Movie Player For Linux
+smplayer		= Complete front-end for MPlayer
+amarok			= Audio player for KDE
+k3b				= A sophisticated KDE CD burning application
+vlc				= VideoLAN project's media player
+ffmpeg			= multimedia player, server and encoder - Medibuntu package
+youtube-dl		= download videos from youtube.com
+
+# codecs
+libdvdcss2			= Library for accessing DVDs like block device
+w32codecs			= Proprietary codec binaries, x86_64 version
+libxine1-ffmpeg		= mpeg related plugins for libxine1
+
+#----------------------------------------------------------------------------------------
+# Network Tools
+#----------------------------------------------------------------------------------------
+#deluge-torrent	= A Bittorrent client written in Python/PyGTK
+#linuxdcpp		= Linux port of the famous dc++ client
+azureus			= BitTorrent client
+#wireshark	= network traffic analyzer
+firestarter	= gtk program for managing and observing your firewall
+d4x			= graphical download manager
+gwget		= GNOME front-end for wget
+
+# mozilla plugins
+mozilla-mplayer			= MPlayer-Plugin for Mozilla
+mozilla-imagezoom		= Mozilla context menu option to zoom current image
+mozilla-firefox-adblock	= AdBlock extension
+#nspluginwrapper			= A wrapper to run Netscape plugins on other architectures
+
+#----------------------------------------------------------------------------------------
+# Programming
+#----------------------------------------------------------------------------------------
+build-essential	= Informational list of build-essential packages
+bzr				= Bazaar, the next-generation distributed version control system
+libxml-xerces-perl	= Perl API to Xerces XML parser
+libxml-libxml-perl	= Perl module for using the GNOME libxml2 library
+perltidy			= Perl script indenter and reformatter
+
+# eclipse platform
+eclipse
+eclipse-cdt
+#eclipse-pydev
+
+#----------------------------------------------------------------------------------------
+# Desktop Enhancements
+#----------------------------------------------------------------------------------------
+blubuntu-look	= The Blubuntu theme
+gnome-main-menu	= GNOME start menu applet
+gimmie		= desktop organizer for Linux, alternative GNOME panel
+compizconfig-settings-manager	= Compiz configuration settings manager
+emerald							= Decorator for compiz-fusion
+
+#----------------------------------------------------------------------------------------
+# Editors and Viewers
+#----------------------------------------------------------------------------------------
+vim			= Vi IMproved - enhanced vi editor
+vim-full	= Vi IMproved - enhanced vi editor - full fledged version
+vim-gnome	= Vi IMproved - enhanced vi editor - with GNOME2 GUI
+vim-perl	= Vi IMproved - enhanced vi editor - with Perl support
+vim-python	= Vi IMproved - enhanced vi editor - with Python support 
+gnochm		= CHM file viewer for GNOME
+meld		= graphical tool to diff and merge files
+
+#----------------------------------------------------------------------------------------
+# General Utilities
+#----------------------------------------------------------------------------------------
+sysinfo		= UNIX/Linux system information
+hardinfo	= UNIX/Linux hardware information
+gmountiso	= a PyGTK GUI to mount your cd images
+xarchive	= GTK frontend for most used compression tools
+istanbul	= Desktop session recorder
+rar			= Archiver for .rar files
+devilspie	= find windows and perform actions on them
+nautilus-open-terminal	= nautilus plugin for opening terminals in arbitrary local paths
+
+#----------------------------------------------------------------------------------------
+# Fonts
+#----------------------------------------------------------------------------------------
+msttcorefonts
+ttf-xfree86-nonfree
+
+#----------------------------------------------------------------------------------------
+# Documentation
+#----------------------------------------------------------------------------------------
+perl-doc		= Perl documentation
+perl-doc-html	= Perl documentation suitable for viewing with a web browser
+libxerces27-doc	= validating XML parser library for C++ (documentation)
+
