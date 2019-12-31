@@ -1,1 +1,3 @@
+Sitemap: https://shantanugoel.com/sitemap.xml
+
 User-agent: *
