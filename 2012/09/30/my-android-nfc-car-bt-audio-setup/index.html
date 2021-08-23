@@ -1,19 +1,337 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>My Android NFC Car BT Audio Setup - Shantanu Vs The World</title><meta name=description content="So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected)."><meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2012\/09\/30\/my-android-nfc-car-bt-audio-setup\/","name":"My android n f c car b t audio setup "}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"My Android NFC Car BT Audio Setup ","description":"So, my Nexus One\u0026rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it\u0026rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).","inLanguage":"en","wordCount":726,"datePublished":"2012-09-30T18:16:22","dateModified":"2012-09-30T18:16:22","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["bt car audio","car audio","Galaxy Nexus","Mobile","nexus one","NFC","NFC tricks"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2012\/09\/30\/my-android-nfc-car-bt-audio-setup\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script><meta property="og:title" content="My Android NFC Car BT Audio Setup"><meta property="og:description" content="So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected)."><meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg"><meta property="og:url" content="https://shantanugoel.com/2012/09/30/my-android-nfc-car-bt-audio-setup/"><meta property="og:type" content="website"><meta property="og:site_name" content="Shantanu Vs The World"><meta name=twitter:title content="My Android NFC Car BT Audio Setup"><meta name=twitter:description content="So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their …"><meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg"><meta name=twitter:card content="summary"><meta name=twitter:site content="@shantanugoel"><meta name=twitter:creator content="@shantanugoel"><link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon><meta name=generator content="Hugo 0.80.0"><link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-3966412-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>My Android NFC Car BT Audio Setup - Shantanu Vs The World</title>
+<meta name=description content="So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).">
+<meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2012\/09\/30\/my-android-nfc-car-bt-audio-setup\/","name":"My android nfc car bt audio setup"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"My Android NFC Car BT Audio Setup ","description":"So, my Nexus One\u0026rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it\u0026rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).","inLanguage":"en","wordCount":726,"datePublished":"2012-09-30T18:16:22","dateModified":"2012-09-30T18:16:22","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["bt car audio","car audio","Galaxy Nexus","Mobile","nexus one","NFC","NFC tricks"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2012\/09\/30\/my-android-nfc-car-bt-audio-setup\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script>
+<meta property="og:title" content="My Android NFC Car BT Audio Setup ">
+<meta property="og:description" content="So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).">
+<meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg">
+<meta property="og:url" content="https://shantanugoel.com/2012/09/30/my-android-nfc-car-bt-audio-setup/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shantanu Vs The World">
+<meta name=twitter:title content="My Android NFC Car BT Audio Setup ">
+<meta name=twitter:description content="So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their …">
+<meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@shantanugoel">
+<meta name=twitter:creator content="@shantanugoel">
+<link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon>
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-3966412-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
-<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
-<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a></li><li><a title=/blog href=/>/blog</a></li><li><a title=/about href=/about/>/about</a></li><li><a title=/archives href=/archives/>/archives</a></li><li><a title=/categories href=/categories/>/categories</a></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Shantanu Vs The World" href=https://shantanugoel.com><img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a>
+</li>
+<li>
+<a title=/blog href=/>/blog</a>
+</li>
+<li>
+<a title=/about href=/about/>/about</a>
+</li>
+<li>
+<a title=/archives href=/archives/>/archives</a>
+</li>
+<li>
+<a title=/categories href=/categories/>/categories</a>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Shantanu Vs The World" href=https://shantanugoel.com>
+<img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>My Android NFC Car BT Audio Setup</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).</p><p>Before I go into how I went about it, here is what it does now. When I keep the phone into my car&rsquo;s phone holder, it automatically starts streaming music over BT from my car stereo and then when I keep it in my pocket, it stops.</p><p>Ingredients I used:</p><ul><li><p>1 Galaxy Nexus</p></li><li><p>2 NFC tags (bought from tagstand guys. Makers of the awesome NFC Tasker Launcher app)</p></li><li><p>1 male to male stereo cable</p></li><li><p>1 Samsung HS3000 BT headset (since my car stereo doesn&rsquo;t have BT. This little headset is awesome because it is cheap (25$ or so at amazon), has a stereo port where you can connect any headset or stereo cable, implements apt-x protocol for high fidelity audio streaming)</p></li><li><p>Android App: NFC Task Launcher</p></li><li><p>Android App: Tasker (NFC task launcher is enough for basic things but my task is a bit more involved)</p></li><li><p>Android App: Secure Settings plugin for Tasker/Locale</p></li></ul><p>So, what I did is this:</p><p><strong>Hardware</strong>:</p><p>Pasted one NFC tag to my car phone holder and kept another one in my wallet.</p><p>Connected the HS3000 headset to the car stereo through aux-in and to power through a car charger (it uses a standard micro usb port to charge).</p><p>Stuck the HS3000 near my dashboard. I could have hidden it in dashboard or somewhere but I also wanted to use it to take calls when they come in so I can use its mic for speaking and incoming audio sounds through the car speakers. You can also disconnect the internal battery by popping up the casing so that it turns on and off with the car but it isn&rsquo;t necessary as it anyways turns off if there is no device connected for a while.</p><p><strong>Software</strong>:</p><p>Created two tasks in Tasker. First as &ldquo;Car Mode Enter&rdquo; and second as &ldquo;Car Mode Exit&rdquo;. The car mode enter task basically does this:</p><ul><li><p>If car mode is not already running (based on a variable)</p><ul><li><p>Turn on Bluetooth (This also auto connects)</p></li><li><p>Crank up the Media Volume</p></li><li><p>If Battery level is above 40%</p><ul><li>Keep the screen always on (using Secure Settings)</li></ul></li><li><p>Else keep the screen on if power is connected (through car charger)</p></li><li><p>Crank up the brightness if it is day time (so that I can see the screen) and store the old value for restoring later.</p></li><li><p>If navigation is not on (through another variable set through another profile which monitors if a navigation or maps app is in foreground)</p><ul><li><p>Load the Music app</p></li><li><p>Start playing music</p></li></ul></li><li><p>Turn on the Read SMS profile cuz I&rsquo;m a safe driver :) (Another profile in tasker which reads the incoming SMS' sender&rsquo;s name and asks if it should read the text (don&rsquo;t want any embarrassing ones read out while others are there in my car ;)) and then proceeds to read the text if I speak &ldquo;Yes&rdquo;. For anything else or no input, it doesn&rsquo;t read the text)</p></li></ul></li></ul><p>The car mode exit task undoes everything done in the car mode enter task and restores everything to how it was before entering the car mode.</p><p>Also created two tasks in NFC task launcher which just launch the car mode enter and exit tasks when tapped against 1 of the tags and wrote this task to the tags.</p><p><strong>All together now:</strong></p><p>So, we are done now. Now when I enter my car, I place the phone on the holder and nice music starts playing. When I get out, I tap it against my pocket (with the wallet) and everything is back at normal.</p><p>Let me know if you need any more information about the above setup or the tasker profile xml files. I use tasker for automating a whole other bunch of things as well. Will try to post that stuff soon along with any other NFC tricks I try out.</p><div class=blog-tags><a href=https://shantanugoel.com/tags/bt-car-audio/>bt car audio</a>&nbsp;
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=posts-heading>
+<h1>My Android NFC Car BT Audio Setup </h1>
+<hr class=small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p>So, my Nexus One&rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).</p>
+<p>Before I go into how I went about it, here is what it does now. When I keep the phone into my car&rsquo;s phone holder, it automatically starts streaming music over BT from my car stereo and then when I keep it in my pocket, it stops.</p>
+<p>Ingredients I used:</p>
+<ul>
+<li>
+<p>1 Galaxy Nexus</p>
+</li>
+<li>
+<p>2 NFC tags (bought from tagstand guys. Makers of the awesome NFC Tasker Launcher app)</p>
+</li>
+<li>
+<p>1 male to male stereo cable</p>
+</li>
+<li>
+<p>1 Samsung HS3000 BT headset (since my car stereo doesn&rsquo;t have BT. This little headset is awesome because it is cheap (25$ or so at amazon), has a stereo port where you can connect any headset or stereo cable, implements apt-x protocol for high fidelity audio streaming)</p>
+</li>
+<li>
+<p>Android App: NFC Task Launcher</p>
+</li>
+<li>
+<p>Android App: Tasker (NFC task launcher is enough for basic things but my task is a bit more involved)</p>
+</li>
+<li>
+<p>Android App: Secure Settings plugin for Tasker/Locale</p>
+</li>
+</ul>
+<p>So, what I did is this:</p>
+<p><strong>Hardware</strong>:</p>
+<p>Pasted one NFC tag to my car phone holder and kept another one in my wallet.</p>
+<p>Connected the HS3000 headset to the car stereo through aux-in and to power through a car charger (it uses a standard micro usb port to charge).</p>
+<p>Stuck the HS3000 near my dashboard. I could have hidden it in dashboard or somewhere but I also wanted to use it to take calls when they come in so I can use its mic for speaking and incoming audio sounds through the car speakers. You can also disconnect the internal battery by popping up the casing so that it turns on and off with the car but it isn&rsquo;t necessary as it anyways turns off if there is no device connected for a while.</p>
+<p><strong>Software</strong>:</p>
+<p>Created two tasks in Tasker. First as &ldquo;Car Mode Enter&rdquo; and second as &ldquo;Car Mode Exit&rdquo;. The car mode enter task basically does this:</p>
+<ul>
+<li>
+<p>If car mode is not already running (based on a variable)</p>
+<ul>
+<li>
+<p>Turn on Bluetooth (This also auto connects)</p>
+</li>
+<li>
+<p>Crank up the Media Volume</p>
+</li>
+<li>
+<p>If Battery level is above 40%</p>
+<ul>
+<li>Keep the screen always on (using Secure Settings)</li>
+</ul>
+</li>
+<li>
+<p>Else keep the screen on if power is connected (through car charger)</p>
+</li>
+<li>
+<p>Crank up the brightness if it is day time (so that I can see the screen) and store the old value for restoring later.</p>
+</li>
+<li>
+<p>If navigation is not on (through another variable set through another profile which monitors if a navigation or maps app is in foreground)</p>
+<ul>
+<li>
+<p>Load the Music app</p>
+</li>
+<li>
+<p>Start playing music</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Turn on the Read SMS profile cuz I&rsquo;m a safe driver :) (Another profile in tasker which reads the incoming SMS' sender&rsquo;s name and asks if it should read the text (don&rsquo;t want any embarrassing ones read out while others are there in my car ;)) and then proceeds to read the text if I speak &ldquo;Yes&rdquo;. For anything else or no input, it doesn&rsquo;t read the text)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The car mode exit task undoes everything done in the car mode enter task and restores everything to how it was before entering the car mode.</p>
+<p>Also created two tasks in NFC task launcher which just launch the car mode enter and exit tasks when tapped against 1 of the tags and wrote this task to the tags.</p>
+<p><strong>All together now:</strong></p>
+<p>So, we are done now. Now when I enter my car, I place the phone on the holder and nice music starts playing. When I get out, I tap it against my pocket (with the wallet) and everything is back at normal.</p>
+<p>Let me know if you need any more information about the above setup or the tasker profile xml files. I use tasker for automating a whole other bunch of things as well. Will try to post that stuff soon along with any other NFC tricks I try out.</p>
+<div class=blog-tags>
+<a href=https://shantanugoel.com/tags/bt-car-audio/>bt car audio</a>&nbsp;
 <a href=https://shantanugoel.com/tags/car-audio/>car audio</a>&nbsp;
 <a href=https://shantanugoel.com/tags/galaxy-nexus/>Galaxy Nexus</a>&nbsp;
 <a href=https://shantanugoel.com/tags/mobile/>Mobile</a>&nbsp;
 <a href=https://shantanugoel.com/tags/nexus-one/>nexus one</a>&nbsp;
 <a href=https://shantanugoel.com/tags/nfc/>NFC</a>&nbsp;
-<a href=https://shantanugoel.com/tags/nfc-tricks/>NFC tricks</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&text=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20&via=shantanugoel" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&title=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&title=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&title=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&description=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/2013/02/15/apple-anti-malware-patents/>Apple, Anti-Malware, Patents</a></li><li><a href=/2013/01/12/odroid-u2-tips-overscan-emmc-adapter-hdmi-dvi-adapter/>Odroid U2 Tips: Overscan, emmc Adapter, HDMI-DVI Adapter</a></li><li><a href=/2013/01/12/odroid-u2-is-here/>Odroid U2 is here</a></li><li><a href=/2012/11/14/third-party-widgets-on-android-4-2-lock-screen/>Third Party Widgets on Android 4.2 Lock Screen</a></li><li><a href=/2012/10/17/my-tasker-night-mode-profile-for-android/>My Tasker Night Mode Profile For Android</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://shantanugoel.com/2012/07/23/bugs-what-you-see-is-not-always-what-it-is/ data-toggle=tooltip data-placement=top title="Bugs: What you see is not always what it is">&larr; Previous Post</a></li><li class=next><a href=https://shantanugoel.com/2012/10/01/bogusapple-com-apple-screw-up-saved-by-githubber/ data-toggle=tooltip data-placement=top title="BogusApple.com: Apple Screw Up Saved By Githubber">Next Post &rarr;</a></li></ul><div class=disqus-comments><button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2012/09/30/my-android-nfc-car-bt-audio-setup>comments</span></button><div id=disqus_thread></div><script type=text/javascript>var disqus_config=function(){this.page.url='https:\/\/shantanugoel.com\/2012\/09\/30\/my-android-nfc-car-bt-audio-setup';};</script></div></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:shantanu@shantanugoel.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/shantanugoel title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://twitter.com/shantanugoel title=Twitter><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">Shantanu Goel
+<a href=https://shantanugoel.com/tags/nfc-tricks/>NFC tricks</a>&nbsp;
+</div>
+<hr>
+<section id=social-share>
+<div class="list-inline footer-links">
+<div class=share-box aria-hidden=true>
+<ul class=share>
+<li>
+<a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&text=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20&via=shantanugoel" target=_blank title="Share on Twitter">
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f" target=_blank title="Share on Facebook">
+<i class="fab fa-facebook"></i>
+</a>
+</li>
+<li>
+<a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&title=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on Reddit">
+<i class="fab fa-reddit"></i>
+</a>
+</li>
+<li>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&title=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on LinkedIn">
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+<li>
+<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&title=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on StumbleUpon">
+<i class="fab fa-stumbleupon"></i>
+</a>
+</li>
+<li>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2012%2f09%2f30%2fmy-android-nfc-car-bt-audio-setup%2f&description=My%20Android%20NFC%20Car%20BT%20Audio%20Setup%20" target=_blank title="Share on Pinterest">
+<i class="fab fa-pinterest"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<h4 class=see-also>See also</h4>
+<ul>
+<li><a href=/2013/02/15/apple-anti-malware-patents/>Apple, Anti-Malware, Patents</a></li>
+<li><a href=/2013/01/12/odroid-u2-tips-overscan-emmc-adapter-hdmi-dvi-adapter/>Odroid U2 Tips: Overscan, emmc Adapter, HDMI-DVI Adapter</a></li>
+<li><a href=/2013/01/12/odroid-u2-is-here/>Odroid U2 is here</a></li>
+<li><a href=/2012/11/14/third-party-widgets-on-android-4-2-lock-screen/>Third Party Widgets on Android 4.2 Lock Screen</a></li>
+<li><a href=/2012/10/17/my-tasker-night-mode-profile-for-android/>My Tasker Night Mode Profile For Android</a></li>
+</ul>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://shantanugoel.com/2012/07/23/bugs-what-you-see-is-not-always-what-it-is/ data-toggle=tooltip data-placement=top title="Bugs: What you see is not always what it is">&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://shantanugoel.com/2012/10/01/bogusapple-com-apple-screw-up-saved-by-githubber/ data-toggle=tooltip data-placement=top title="BogusApple.com: Apple Screw Up Saved By Githubber">Next Post &rarr;</a>
+</li>
+</ul>
+<div class=disqus-comments>
+<button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2012/09/30/my-android-nfc-car-bt-audio-setup>comments</span></button>
+<div id=disqus_thread></div>
+<script type=text/javascript>var disqus_config=function(){this.page.url='https://shantanugoel.com/2012/09/30/my-android-nfc-car-bt-audio-setup'}</script>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:shantanu@shantanugoel.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/shantanugoel title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/shantanugoel title=Twitter>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+Shantanu Goel
 &nbsp;&bull;&nbsp;&copy;
 2021
 &nbsp;&bull;&nbsp;
-<a href=https://shantanugoel.com>Shantanu Vs The World</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.80.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script><script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script src=https://shantanugoel.com/js/main.js></script><script>renderMathInElement(document.body);</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://shantanugoel.com/js/load-photoswipe.js></script><script type=text/javascript>$(function(){$('#show-comments').on('click',function(){var disqus_shortname='shantanugoel';(function(){var disqus=document.createElement('script');disqus.type='text/javascript';disqus.async=true;disqus.src='//'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(disqus);})();$(this).hide();});});</script><script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script></body></html>
+<a href=https://shantanugoel.com>Shantanu Vs The World</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://shantanugoel.com/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://shantanugoel.com/js/load-photoswipe.js></script>
+<script type=text/javascript>$(function(){$('#show-comments').on('click',function(){var a='shantanugoel';(function(){var b=document.createElement('script');b.type='text/javascript',b.async=!0,b.src='//'+a+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(b)})(),$(this).hide()})})</script>
+<script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script>
+</body>
+</html>
