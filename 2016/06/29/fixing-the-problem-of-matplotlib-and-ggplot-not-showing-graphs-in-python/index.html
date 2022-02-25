@@ -20,7 +20,7 @@
 <meta name=twitter:site content="@shantanugoel">
 <meta name=twitter:creator content="@shantanugoel">
 <link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon>
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
 <link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
@@ -124,11 +124,11 @@
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 <article role=main class=blog-post>
 <p>While trying to make some graphs for one of my side projects recently, I came across an issue that both matplotlib and ggplot did not show up the graphs. I was able to save the graphs to an image file just fine, but if I tried to show them directly on screen while running the script, it just printed a number and exited. After tearing apart my hair for some time, I checked the backend being used by matplot lib:</p>
-<p><code>import matplotlib matplotlib.get_backend()</code></p>
+<p><code>import matplotlib matplotlib.get_backend() </code></p>
 <p>And there was the problem. It showed the backend being used was &ldquo;agg&rdquo;. Looking at the matplotlib documentation, I figured that this backend is used for rendering the graph into an image and saving it. That explained why I was able to save the images fine. But it didn&rsquo;t have any interactive support. For that I had to install one of the other backends which had this support, e.g., Tkagg. So, for that what I had to do was, first install the Tk related packages using the below command:</p>
-<p><code>sudo apt-get install tcl-dev tk-dev python-tk python3-tk</code></p>
+<p><code>sudo apt-get install tcl-dev tk-dev python-tk python3-tk </code></p>
 <p>Another important step now is to reinstall matplotlib so that it detects the new backend, but also remember that if you just do a plain pip uninstall/install, it may not work because that will pick up the previous cached installation. So you have to use the &ndash;no-cache-dir option like below:</p>
-<p><code>pip uninstall matplotlib pip install matplotlib --no-cache-dir</code></p>
+<p><code>pip uninstall matplotlib pip install matplotlib --no-cache-dir </code></p>
 <p>Now, the graphs work fine for both saving as image as well as showing up during runtime.</p>
 <div class=blog-tags>
 <a href=https://shantanugoel.com/tags/ggplot/>ggplot</a>&nbsp;
@@ -244,7 +244,7 @@ Shantanu Goel
 <a href=https://shantanugoel.com>Shantanu Vs The World</a>
 </p>
 <p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+<a href=https://gohugo.io>Hugo v0.92.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
 &nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]
 </p>
 </div>
