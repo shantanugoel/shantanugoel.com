@@ -1,300 +1,52 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Bazel rules to auto generate files at compile time - Shantanu Vs The World</title>
-<meta name=description content="Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:
- An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree The tool is built during the main build step and then it also generates the needed files just in time.">
-<meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2020\/05\/03\/bazel-rule-auto-generate-files-compile-time\/","name":"Bazel rules to auto generate files at compile time"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"Bazel rules to auto generate files at compile time","description":"Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:\n An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree The tool is built during the main build step and then it also generates the needed files just in time.","inLanguage":"en","wordCount":587,"datePublished":"2020-05-03T11:02:30","dateModified":"2020-05-03T11:02:30","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["bazel"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2020\/05\/03\/bazel-rule-auto-generate-files-compile-time\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script>
-<meta property="og:title" content="Bazel rules to auto generate files at compile time">
-<meta property="og:description" content="Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:
- An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree The tool is built during the main build step and then it also generates the needed files just in time.">
-<meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg">
-<meta property="og:url" content="https://shantanugoel.com/2020/05/03/bazel-rule-auto-generate-files-compile-time/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Shantanu Vs The World">
-<meta name=twitter:title content="Bazel rules to auto generate files at compile time">
-<meta name=twitter:description content="Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:
- An external pre-built tool generates files pre-compilation …">
-<meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg">
-<meta name=twitter:card content="summary">
-<meta name=twitter:site content="@shantanugoel">
-<meta name=twitter:creator content="@shantanugoel">
-<link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon>
-<meta name=generator content="Hugo 0.92.2">
-<link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-3966412-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Bazel rules to auto generate files at compile time - Shantanu Vs The World</title><meta name=description content="Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:
+An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree The tool is built during the main build step and then it also generates the needed files just in time."><meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2020\/05\/03\/bazel-rule-auto-generate-files-compile-time\/","name":"Bazel rules to auto generate files at compile time"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"Bazel rules to auto generate files at compile time","description":"Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:\nAn external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree The tool is built during the main build step and then it also generates the needed files just in time.","inLanguage":"en","wordCount":587,"datePublished":"2020-05-03T11:02:30","dateModified":"2020-05-03T11:02:30","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["bazel"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2020\/05\/03\/bazel-rule-auto-generate-files-compile-time\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script><meta property="og:title" content="Bazel rules to auto generate files at compile time"><meta property="og:description" content="Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:
+An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree The tool is built during the main build step and then it also generates the needed files just in time."><meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg"><meta property="og:url" content="https://shantanugoel.com/2020/05/03/bazel-rule-auto-generate-files-compile-time/"><meta property="og:type" content="website"><meta property="og:site_name" content="Shantanu Vs The World"><meta name=twitter:title content="Bazel rules to auto generate files at compile time"><meta name=twitter:description content="Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:
+An external pre-built tool generates files pre-compilation …"><meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg"><meta name=twitter:card content="summary"><meta name=twitter:site content="@shantanugoel"><meta name=twitter:creator content="@shantanugoel"><link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon><meta name=generator content="Hugo 0.108.0"><link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-3966412-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a>
-</li>
-<li>
-<a title=/blog href=/>/blog</a>
-</li>
-<li>
-<a title=/about href=/about/>/about</a>
-</li>
-<li>
-<a title=/archives href=/archives/>/archives</a>
-</li>
-<li>
-<a title=/categories href=/categories/>/categories</a>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Shantanu Vs The World" href=https://shantanugoel.com>
-<img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a></li><li><a title=/blog href=/>/blog</a></li><li><a title=/about href=/about/>/about</a></li><li><a title=/archives href=/archives/>/archives</a></li><li><a title=/categories href=/categories/>/categories</a></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Shantanu Vs The World" href=https://shantanugoel.com><img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<header class=header-section>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=posts-heading>
-<h1>Bazel rules to auto generate files at compile time</h1>
-<hr class=small>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<article role=main class=blog-post>
-<p>Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:</p>
-<ul>
-<li>An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree</li>
-<li>The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree</li>
-<li>The tool is built during the main build step and then it also generates the needed files just in time.</li>
-</ul>
-<p>Arguably, the last method is usually the better one since it keeps friction to a minimum during development by always generating latest files according to any changes done locally and also prevents against the human error of someone foregetting to commit the separately generated files, or having a time period where the tree is out of sync because the generated files and hand written files were committed separately. There is a con as well that such files are not available for someone going through the code statically for understanding or debugging. But one could always couple both methods if so desired.</p>
-<p>I had a need to generate some files for a side project of mine recently and I thought of listing down the way I achieve this with bazel, particularly the last mechanism mentioned above. So, our (simplified) problem statement is:</p>
-<ul>
-<li>Our primary code is in <code>main.cc</code> which needs to include an auto-generated header file <code>header.h</code>.</li>
-<li><code>header.h</code> is generated by running a tool <code>header_generator</code>.</li>
-<li><code>header_generator</code> is built by compiling <code>header_generator.cc</code>.</li>
-<li>We only want to run a single build step of building our primary target. Rest should happen on its own flowing through the dependency logic.</li>
-</ul>
-<p>To achieve this, we should move in the reverse dependency order. First, let&rsquo;s define the straight forward target of <code>header_generator</code>. This target does not have any dependency and can build standalonea as well.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>cc_binary(
-  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;header_generator&#34;</span>,
-  srcs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;header_generator.cc&#34;</span>],
-)
-</code></pre></div><p>Next, we define a target that will generate our library that builds <code>header.h</code>. If this was a hand-written or pre-generated file, the target would&rsquo;ve been simply:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>cc_library(
-  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;header&#34;</span>,
-  hdrs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;header.h&#34;</span>],
-)
-</code></pre></div><p>But this file does not exist in our tree and so bazel wouldn&rsquo;t know how to make sense of it. So, we replace the <code>hdrs</code> field of the library with another target (<a href=https://docs.bazel.build/versions/master/be/general.html#genrule>genrule</a>) instead, which generates a rule on the fly.</p>
-<blockquote>
-<p>Bazel documentation: A genrule generates one or more files using a user-defined Bash command. Genrules are generic build rules that you can use if there&rsquo;s no specific rule for the task.</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>genrule(
-  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;generate_header&#34;</span>,
-  outs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;header.h&#34;</span>],
-  cmd <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./$(location :header_generator) &gt; $@&#34;</span>,
-  tools <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;:header_generator&#34;</span>],
-)
-
-cc_library(
-  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;header&#34;</span>,
-  hdrs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;:generate_header&#34;</span>],
-)
-</code></pre></div><p>This target runs the command specified in the <code>cmd</code> property as a bash command. The command uses the tool label mentioned in the tools property to figure out any tools' targets that need to be built before running this. <code>location</code> attribute is used to refer to the final compiled binary of the associated tool and then it redirects the output to the filename mentioned in <code>outs</code> property.</p>
-<p>Finally, we just plumb this with our primary target normally, making it dependent on the target that contains the generated header file.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>cc_binary(
-  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;main&#34;</span>,
-  srcs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;main.cc&#34;</span>],
-  deps <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;:header&#34;</span>],
-)
-</code></pre></div><p>With these set of rules, whenever I run <code>bazel run //src:main</code>, bazel will first compile the <code>header_generator</code> binary, then run this binary to generate <code>header.h</code> file and finally compile <code>main.cc</code> along with these depdenencies and then run the final binary.</p>
-<div class=blog-tags>
-<a href=https://shantanugoel.com/tags/bazel/>bazel</a>&nbsp;
-</div>
-<hr>
-<section id=social-share>
-<div class="list-inline footer-links">
-<div class=share-box aria-hidden=true>
-<ul class=share>
-<li>
-<a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&text=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time&via=shantanugoel" target=_blank title="Share on Twitter">
-<i class="fab fa-twitter"></i>
-</a>
-</li>
-<li>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f" target=_blank title="Share on Facebook">
-<i class="fab fa-facebook"></i>
-</a>
-</li>
-<li>
-<a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&title=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on Reddit">
-<i class="fab fa-reddit"></i>
-</a>
-</li>
-<li>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&title=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on LinkedIn">
-<i class="fab fa-linkedin"></i>
-</a>
-</li>
-<li>
-<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&title=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on StumbleUpon">
-<i class="fab fa-stumbleupon"></i>
-</a>
-</li>
-<li>
-<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&description=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on Pinterest">
-<i class="fab fa-pinterest"></i>
-</a>
-</li>
-</ul>
-</div>
-</div>
-</section>
-<h4 class=see-also>See also</h4>
-<ul>
-<li><a href=/2019/12/31/sdl2-macos-bazel/>Integrating SDL2 with bazel on macOS</a></li>
-</ul>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://shantanugoel.com/2020/04/27/java-object-cpp-std-variant/ data-toggle=tooltip data-placement=top title='Java "Object" in C++ using std::variant'>&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://shantanugoel.com/2020/08/21/hammerspoon-multiscreen-window-layout-macos/ data-toggle=tooltip data-placement=top title="A nifty window layout switcher for macOS using Hammerspoon">Next Post &rarr;</a>
-</li>
-</ul>
-<div class=disqus-comments>
-<button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2020/05/03/bazel-rule-auto-generate-files-compile-time>comments</span></button>
-<div id=disqus_thread></div>
-<script type=text/javascript>var disqus_config=function(){this.page.url='https://shantanugoel.com/2020/05/03/bazel-rule-auto-generate-files-compile-time'}</script>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:shantanu@shantanugoel.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/shantanugoel title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://twitter.com/shantanugoel title=Twitter>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-Shantanu Goel
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>Bazel rules to auto generate files at compile time</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Auto generated files in a project are pretty common. There are generally 3 scenarios for this in a project that needs auto-generated files:</p><ul><li>An external pre-built tool generates files pre-compilation and then the generated files get checked in to the tree</li><li>The tool is compiled in-tree but is again used to generate files pre-compilation and then check them into tree</li><li>The tool is built during the main build step and then it also generates the needed files just in time.</li></ul><p>Arguably, the last method is usually the better one since it keeps friction to a minimum during development by always generating latest files according to any changes done locally and also prevents against the human error of someone foregetting to commit the separately generated files, or having a time period where the tree is out of sync because the generated files and hand written files were committed separately. There is a con as well that such files are not available for someone going through the code statically for understanding or debugging. But one could always couple both methods if so desired.</p><p>I had a need to generate some files for a side project of mine recently and I thought of listing down the way I achieve this with bazel, particularly the last mechanism mentioned above. So, our (simplified) problem statement is:</p><ul><li>Our primary code is in <code>main.cc</code> which needs to include an auto-generated header file <code>header.h</code>.</li><li><code>header.h</code> is generated by running a tool <code>header_generator</code>.</li><li><code>header_generator</code> is built by compiling <code>header_generator.cc</code>.</li><li>We only want to run a single build step of building our primary target. Rest should happen on its own flowing through the dependency logic.</li></ul><p>To achieve this, we should move in the reverse dependency order. First, let&rsquo;s define the straight forward target of <code>header_generator</code>. This target does not have any dependency and can build standalonea as well.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>cc_binary(
+</span></span><span style=display:flex><span>  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;header_generator&#34;</span>,
+</span></span><span style=display:flex><span>  srcs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;header_generator.cc&#34;</span>],
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><p>Next, we define a target that will generate our library that builds <code>header.h</code>. If this was a hand-written or pre-generated file, the target would&rsquo;ve been simply:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>cc_library(
+</span></span><span style=display:flex><span>  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;header&#34;</span>,
+</span></span><span style=display:flex><span>  hdrs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;header.h&#34;</span>],
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><p>But this file does not exist in our tree and so bazel wouldn&rsquo;t know how to make sense of it. So, we replace the <code>hdrs</code> field of the library with another target (<a href=https://docs.bazel.build/versions/master/be/general.html#genrule>genrule</a>) instead, which generates a rule on the fly.</p><blockquote><p>Bazel documentation: A genrule generates one or more files using a user-defined Bash command. Genrules are generic build rules that you can use if there&rsquo;s no specific rule for the task.</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>genrule(
+</span></span><span style=display:flex><span>  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;generate_header&#34;</span>,
+</span></span><span style=display:flex><span>  outs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;header.h&#34;</span>],
+</span></span><span style=display:flex><span>  cmd <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./$(location :header_generator) &gt; $@&#34;</span>,
+</span></span><span style=display:flex><span>  tools <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;:header_generator&#34;</span>],
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cc_library(
+</span></span><span style=display:flex><span>  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;header&#34;</span>,
+</span></span><span style=display:flex><span>  hdrs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;:generate_header&#34;</span>],
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><p>This target runs the command specified in the <code>cmd</code> property as a bash command. The command uses the tool label mentioned in the tools property to figure out any tools&rsquo; targets that need to be built before running this. <code>location</code> attribute is used to refer to the final compiled binary of the associated tool and then it redirects the output to the filename mentioned in <code>outs</code> property.</p><p>Finally, we just plumb this with our primary target normally, making it dependent on the target that contains the generated header file.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>cc_binary(
+</span></span><span style=display:flex><span>  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;main&#34;</span>,
+</span></span><span style=display:flex><span>  srcs <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;main.cc&#34;</span>],
+</span></span><span style=display:flex><span>  deps <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;:header&#34;</span>],
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><p>With these set of rules, whenever I run <code>bazel run //src:main</code>, bazel will first compile the <code>header_generator</code> binary, then run this binary to generate <code>header.h</code> file and finally compile <code>main.cc</code> along with these depdenencies and then run the final binary.</p><div class=blog-tags><a href=https://shantanugoel.com/tags/bazel/>bazel</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&text=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time&via=shantanugoel" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&title=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&title=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&title=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2020%2f05%2f03%2fbazel-rule-auto-generate-files-compile-time%2f&description=Bazel%20rules%20to%20auto%20generate%20files%20at%20compile%20time" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/2019/12/31/sdl2-macos-bazel/>Integrating SDL2 with bazel on macOS</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://shantanugoel.com/2020/04/27/java-object-cpp-std-variant/ data-toggle=tooltip data-placement=top title='Java "Object" in C++ using std::variant'>&larr; Previous Post</a></li><li class=next><a href=https://shantanugoel.com/2020/08/21/hammerspoon-multiscreen-window-layout-macos/ data-toggle=tooltip data-placement=top title="A nifty window layout switcher for macOS using Hammerspoon">Next Post &rarr;</a></li></ul><div class=disqus-comments><button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2020/05/03/bazel-rule-auto-generate-files-compile-time>comments</span></button><div id=disqus_thread></div><script type=text/javascript>var disqus_config=function(){this.page.url="https://shantanugoel.com/2020/05/03/bazel-rule-auto-generate-files-compile-time"}</script></div></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:shantanu@shantanugoel.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/shantanugoel title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://twitter.com/shantanugoel title=Twitter><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">Shantanu Goel
 &nbsp;&bull;&nbsp;&copy;
 2021
 &nbsp;&bull;&nbsp;
-<a href=https://shantanugoel.com>Shantanu Vs The World</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.92.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/633c5da26a1789a4255a4a95aef19e4cac8070d0>633c5da2</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://shantanugoel.com>Shantanu Vs The World</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.108.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/633c5da26a1789a4255a4a95aef19e4cac8070d0>633c5da2</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://shantanugoel.com/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://shantanugoel.com/js/load-photoswipe.js></script>
-<script type=text/javascript>$(function(){$('#show-comments').on('click',function(){var a='shantanugoel';(function(){var b=document.createElement('script');b.type='text/javascript',b.async=!0,b.src='//'+a+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(b)})(),$(this).hide()})})</script>
-<script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script>
-</body>
-</html>
+<script type=text/javascript>$(function(){$("#show-comments").on("click",function(){var e="shantanugoel";(function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//"+e+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)})(),$(this).hide()})})</script><script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script></body></html>

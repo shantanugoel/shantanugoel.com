@@ -1,321 +1,33 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Remote Bandwidth Stats - Shantanu Vs The World</title>
-<meta name=description content="This post is about my open source remote bandwidth usage stats logger project.
-I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&rsquo;d still need to add up all logs and many of such devices don&rsquo;t even have a way to install a monitoring software installed (e.">
-<meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2011\/08\/21\/remote-bandwidth-stats\/","name":"Remote bandwidth stats"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"Remote Bandwidth Stats","description":"This post is about my open source remote bandwidth usage stats logger project.\nI\u0026rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don\u0026rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I\u0026rsquo;d still need to add up all logs and many of such devices don\u0026rsquo;t even have a way to install a monitoring software installed (e.","inLanguage":"en","wordCount":429,"datePublished":"2011-08-21T17:44:24","dateModified":"2011-08-21T17:44:24","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["Asus","Asus WL-500W","bandwidth monitor","Linux","Projects","remote-bandwidth-stats"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2011\/08\/21\/remote-bandwidth-stats\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script>
-<meta property="og:title" content="Remote Bandwidth Stats">
-<meta property="og:description" content="This post is about my open source remote bandwidth usage stats logger project.
-I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&rsquo;d still need to add up all logs and many of such devices don&rsquo;t even have a way to install a monitoring software installed (e.">
-<meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg">
-<meta property="og:url" content="https://shantanugoel.com/2011/08/21/remote-bandwidth-stats/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Shantanu Vs The World">
-<meta name=twitter:title content="Remote Bandwidth Stats">
-<meta name=twitter:description content="This post is about my open source remote bandwidth usage stats logger project.
-I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really …">
-<meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg">
-<meta name=twitter:card content="summary">
-<meta name=twitter:site content="@shantanugoel">
-<meta name=twitter:creator content="@shantanugoel">
-<link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon>
-<meta name=generator content="Hugo 0.92.2">
-<link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-3966412-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Remote Bandwidth Stats - Shantanu Vs The World</title><meta name=description content="This post is about my open source remote bandwidth usage stats logger project.
+I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&rsquo;d still need to add up all logs and many of such devices don&rsquo;t even have a way to install a monitoring software installed (e."><meta name=author content="Shantanu Goel"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Shantanu Vs The World","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/shantanugoel.com"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/shantanugoel.com","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/shantanugoel.com\/2011\/08\/21\/remote-bandwidth-stats\/","name":"Remote bandwidth stats"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Shantanu Goel"},"headline":"Remote Bandwidth Stats","description":"This post is about my open source remote bandwidth usage stats logger project.\nI\u0026rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don\u0026rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I\u0026rsquo;d still need to add up all logs and many of such devices don\u0026rsquo;t even have a way to install a monitoring software installed (e.","inLanguage":"en","wordCount":429,"datePublished":"2011-08-21T17:44:24","dateModified":"2011-08-21T17:44:24","image":"https:\/\/shantanugoel.com\/img\/avatar.jpg","keywords":["Asus","Asus WL-500W","bandwidth monitor","Linux","Projects","remote-bandwidth-stats"],"mainEntityOfPage":"https:\/\/shantanugoel.com\/2011\/08\/21\/remote-bandwidth-stats\/","publisher":{"@type":"Organization","name":"https:\/\/shantanugoel.com","logo":{"@type":"ImageObject","url":"https:\/\/shantanugoel.com\/img\/avatar.jpg","height":60,"width":60}}}</script><meta property="og:title" content="Remote Bandwidth Stats"><meta property="og:description" content="This post is about my open source remote bandwidth usage stats logger project.
+I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&rsquo;d still need to add up all logs and many of such devices don&rsquo;t even have a way to install a monitoring software installed (e."><meta property="og:image" content="https://shantanugoel.com/img/avatar.jpg"><meta property="og:url" content="https://shantanugoel.com/2011/08/21/remote-bandwidth-stats/"><meta property="og:type" content="website"><meta property="og:site_name" content="Shantanu Vs The World"><meta name=twitter:title content="Remote Bandwidth Stats"><meta name=twitter:description content="This post is about my open source remote bandwidth usage stats logger project.
+I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really …"><meta name=twitter:image content="https://shantanugoel.com/img/avatar.jpg"><meta name=twitter:card content="summary"><meta name=twitter:site content="@shantanugoel"><meta name=twitter:creator content="@shantanugoel"><link href=https://shantanugoel.com/img/avatar.jpg rel=icon type=image/x-icon><meta name=generator content="Hugo 0.108.0"><link rel=alternate href=https://shantanugoel.com/index.xml type=application/rss+xml title="Shantanu Vs The World"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://shantanugoel.com/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://shantanugoel.com/css/syntax.css><link rel=stylesheet href=https://shantanugoel.com/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-3966412-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a>
-</li>
-<li>
-<a title=/blog href=/>/blog</a>
-</li>
-<li>
-<a title=/about href=/about/>/about</a>
-</li>
-<li>
-<a title=/archives href=/archives/>/archives</a>
-</li>
-<li>
-<a title=/categories href=/categories/>/categories</a>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Shantanu Vs The World" href=https://shantanugoel.com>
-<img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://shantanugoel.com>Shantanu Vs The World</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title href=https://twitter.com/shantanugoel/><i class="fab fa-twitter fa-stack-2x"></i></a></li><li><a title=/blog href=/>/blog</a></li><li><a title=/about href=/about/>/about</a></li><li><a title=/archives href=/archives/>/archives</a></li><li><a title=/categories href=/categories/>/categories</a></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Shantanu Vs The World" href=https://shantanugoel.com><img class=avatar-img src=https://shantanugoel.com/img/avatar.jpg alt="Shantanu Vs The World"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<header class=header-section>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=posts-heading>
-<h1>Remote Bandwidth Stats</h1>
-<hr class=small>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<article role=main class=blog-post>
-<p>This post is about my open source remote bandwidth usage stats logger project.</p>
-<p>I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&rsquo;d still need to add up all logs and many of such devices don&rsquo;t even have a way to install a monitoring software installed (e.g. my PS3, my TV, my media players, etc). So, I thought of monitoring the usage at my router. It is a smart one (Asus wl-500w) and I can install various linux software on it but then it requires a hard disk to run most of them which I don&rsquo;t turn on all the time. Moreover, even if I could run the software directly from router flash, it doesn&rsquo;t have enough space to store the logs (neither is it a good idea to keep writing to the flash often).</p>
-<p>Hence I came up with the idea of a light weight remote bandwidth usage logger where in the router has to do the bare minimum possible (here, it just has to make a GET call to a webpage with current status of received and transmitted bytes, accomplished by a single line of wget command). The system is completely open source and is intelligent enough to keep track of things even if router reboots or the bytes count wraps around the 4 GB limit (because of 32 bit data structures used). The logging and parsing is all done on server side and provides various useful things.</p>
-<p>Few of the features of the system:</p>
-<ul>
-<li>
-<p>Very lightweight in CPU/RAM resource usage on host as well as server</p>
-</li>
-<li>
-<p>Outputs easy to browse html and graphs</p>
-</li>
-<li>
-<p>User defined directory structure to decide the granularity that is wanted</p>
-</li>
-<li>
-<p>yearly, monthly, daily stats and graphs</p>
-</li>
-<li>
-<p>Provides quick access to extra stats like last time the host connected, last known host IP etc</p>
-</li>
-<li>
-<p>Provides total download/upload numbers as well as detailed</p>
-</li>
-<li>
-<p>Estimates uptime of remote host</p>
-</li>
-<li>
-<p>Can use a DNS name or IP to avoid (or call out) spurious amounts of usage logged by a spurious IP</p>
-</li>
-</ul>
-<p>The code and all files can be found at github: <strong><a href=http://github.com/shantanugoel/remote-bandwidth-stats>Remote-Bandwidth-Stats</a></strong></p>
-<p>The screenshots of the web pages generated by the system can be seen below. Please let me know if you find any issues with the programs or would like to request any new features.</p>
-<p>
-<link rel=stylesheet href=https://shantanugoel.com/css/hugo-easy-gallery.css>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=/img/uploads/remote-bandwidth-stats-year-thumb.png alt=/img/uploads/remote-bandwidth-stats-year-thumb.png>
-</div>
-<a href=/img/uploads/remote-bandwidth-stats-year.png itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=/img/uploads/remote-bandwidth-stats-month-thumb.png alt=/img/uploads/remote-bandwidth-stats-month-thumb.png>
-</div>
-<a href=/img/uploads/remote-bandwidth-stats-month.png itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=/img/uploads/remote-bandwidth-stats-day-thumb.png alt=/img/uploads/remote-bandwidth-stats-day-thumb.png>
-</div>
-<a href=/img/uploads/remote-bandwidth-stats-day.png itemprop=contentUrl></a>
-</figure>
-</div>
-</p>
-<div class=blog-tags>
-<a href=https://shantanugoel.com/tags/asus/>Asus</a>&nbsp;
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>Remote Bandwidth Stats</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>This post is about my open source remote bandwidth usage stats logger project.</p><p>I&rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&rsquo;d still need to add up all logs and many of such devices don&rsquo;t even have a way to install a monitoring software installed (e.g. my PS3, my TV, my media players, etc). So, I thought of monitoring the usage at my router. It is a smart one (Asus wl-500w) and I can install various linux software on it but then it requires a hard disk to run most of them which I don&rsquo;t turn on all the time. Moreover, even if I could run the software directly from router flash, it doesn&rsquo;t have enough space to store the logs (neither is it a good idea to keep writing to the flash often).</p><p>Hence I came up with the idea of a light weight remote bandwidth usage logger where in the router has to do the bare minimum possible (here, it just has to make a GET call to a webpage with current status of received and transmitted bytes, accomplished by a single line of wget command). The system is completely open source and is intelligent enough to keep track of things even if router reboots or the bytes count wraps around the 4 GB limit (because of 32 bit data structures used). The logging and parsing is all done on server side and provides various useful things.</p><p>Few of the features of the system:</p><ul><li><p>Very lightweight in CPU/RAM resource usage on host as well as server</p></li><li><p>Outputs easy to browse html and graphs</p></li><li><p>User defined directory structure to decide the granularity that is wanted</p></li><li><p>yearly, monthly, daily stats and graphs</p></li><li><p>Provides quick access to extra stats like last time the host connected, last known host IP etc</p></li><li><p>Provides total download/upload numbers as well as detailed</p></li><li><p>Estimates uptime of remote host</p></li><li><p>Can use a DNS name or IP to avoid (or call out) spurious amounts of usage logged by a spurious IP</p></li></ul><p>The code and all files can be found at github: <strong><a href=http://github.com/shantanugoel/remote-bandwidth-stats>Remote-Bandwidth-Stats</a></strong></p><p>The screenshots of the web pages generated by the system can be seen below. Please let me know if you find any issues with the programs or would like to request any new features.</p><p><link rel=stylesheet href=https://shantanugoel.com/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/uploads/remote-bandwidth-stats-year-thumb.png alt=/img/uploads/remote-bandwidth-stats-year-thumb.png></div><a href=/img/uploads/remote-bandwidth-stats-year.png itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/uploads/remote-bandwidth-stats-month-thumb.png alt=/img/uploads/remote-bandwidth-stats-month-thumb.png></div><a href=/img/uploads/remote-bandwidth-stats-month.png itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/uploads/remote-bandwidth-stats-day-thumb.png alt=/img/uploads/remote-bandwidth-stats-day-thumb.png></div><a href=/img/uploads/remote-bandwidth-stats-day.png itemprop=contentUrl></a></figure></div></p><div class=blog-tags><a href=https://shantanugoel.com/tags/asus/>Asus</a>&nbsp;
 <a href=https://shantanugoel.com/tags/asus-wl-500w/>Asus WL-500W</a>&nbsp;
 <a href=https://shantanugoel.com/tags/bandwidth-monitor/>bandwidth monitor</a>&nbsp;
 <a href=https://shantanugoel.com/tags/linux/>Linux</a>&nbsp;
 <a href=https://shantanugoel.com/tags/projects/>Projects</a>&nbsp;
-<a href=https://shantanugoel.com/tags/remote-bandwidth-stats/>remote-bandwidth-stats</a>&nbsp;
-</div>
-<hr>
-<section id=social-share>
-<div class="list-inline footer-links">
-<div class=share-box aria-hidden=true>
-<ul class=share>
-<li>
-<a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&text=Remote%20Bandwidth%20Stats&via=shantanugoel" target=_blank title="Share on Twitter">
-<i class="fab fa-twitter"></i>
-</a>
-</li>
-<li>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f" target=_blank title="Share on Facebook">
-<i class="fab fa-facebook"></i>
-</a>
-</li>
-<li>
-<a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&title=Remote%20Bandwidth%20Stats" target=_blank title="Share on Reddit">
-<i class="fab fa-reddit"></i>
-</a>
-</li>
-<li>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&title=Remote%20Bandwidth%20Stats" target=_blank title="Share on LinkedIn">
-<i class="fab fa-linkedin"></i>
-</a>
-</li>
-<li>
-<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&title=Remote%20Bandwidth%20Stats" target=_blank title="Share on StumbleUpon">
-<i class="fab fa-stumbleupon"></i>
-</a>
-</li>
-<li>
-<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&description=Remote%20Bandwidth%20Stats" target=_blank title="Share on Pinterest">
-<i class="fab fa-pinterest"></i>
-</a>
-</li>
-</ul>
-</div>
-</div>
-</section>
-<h4 class=see-also>See also</h4>
-<ul>
-<li><a href=/2013/02/15/apple-anti-malware-patents/>Apple, Anti-Malware, Patents</a></li>
-<li><a href=/2012/07/23/bugs-what-you-see-is-not-always-what-it-is/>Bugs: What you see is not always what it is</a></li>
-<li><a href=/2010/11/15/short-tablet-smartphone-survey-project/>A short Tablet/Smartphone survey for a project</a></li>
-<li><a href=/2010/10/25/android-open-source-or-not/>Is Android Open Source Or Not?</a></li>
-<li><a href=/2010/09/21/clearing-the-fud-around-ubuntu-application-review-process/>Clearing the FUD around Ubuntu Application Review Process</a></li>
-</ul>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://shantanugoel.com/2011/08/01/featured-in-chip-india-august-2011-edition/ data-toggle=tooltip data-placement=top title="Featured in Chip India August 2011 Edition">&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://shantanugoel.com/2011/08/23/swype-3-25-beta-pre-release-parse-error-solution/ data-toggle=tooltip data-placement=top title="Swype 3.25 Beta Pre-release Parse Error Solution">Next Post &rarr;</a>
-</li>
-</ul>
-<div class=disqus-comments>
-<button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2011/08/21/remote-bandwidth-stats>comments</span></button>
-<div id=disqus_thread></div>
-<script type=text/javascript>var disqus_config=function(){this.page.url='https://shantanugoel.com/2011/08/21/remote-bandwidth-stats'}</script>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:shantanu@shantanugoel.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/shantanugoel title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://twitter.com/shantanugoel title=Twitter>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-Shantanu Goel
+<a href=https://shantanugoel.com/tags/remote-bandwidth-stats/>remote-bandwidth-stats</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&text=Remote%20Bandwidth%20Stats&via=shantanugoel" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&title=Remote%20Bandwidth%20Stats" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&title=Remote%20Bandwidth%20Stats" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&title=Remote%20Bandwidth%20Stats" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fshantanugoel.com%2f2011%2f08%2f21%2fremote-bandwidth-stats%2f&description=Remote%20Bandwidth%20Stats" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/2013/02/15/apple-anti-malware-patents/>Apple, Anti-Malware, Patents</a></li><li><a href=/2012/07/23/bugs-what-you-see-is-not-always-what-it-is/>Bugs: What you see is not always what it is</a></li><li><a href=/2010/11/15/short-tablet-smartphone-survey-project/>A short Tablet/Smartphone survey for a project</a></li><li><a href=/2010/10/25/android-open-source-or-not/>Is Android Open Source Or Not?</a></li><li><a href=/2010/09/21/clearing-the-fud-around-ubuntu-application-review-process/>Clearing the FUD around Ubuntu Application Review Process</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://shantanugoel.com/2011/08/01/featured-in-chip-india-august-2011-edition/ data-toggle=tooltip data-placement=top title="Featured in Chip India August 2011 Edition">&larr; Previous Post</a></li><li class=next><a href=https://shantanugoel.com/2011/08/23/swype-3-25-beta-pre-release-parse-error-solution/ data-toggle=tooltip data-placement=top title="Swype 3.25 Beta Pre-release Parse Error Solution">Next Post &rarr;</a></li></ul><div class=disqus-comments><button id=show-comments class="btn btn-default" type=button>Show <span class=disqus-comment-count data-disqus-url=https://shantanugoel.com/2011/08/21/remote-bandwidth-stats>comments</span></button><div id=disqus_thread></div><script type=text/javascript>var disqus_config=function(){this.page.url="https://shantanugoel.com/2011/08/21/remote-bandwidth-stats"}</script></div></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:shantanu@shantanugoel.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/shantanugoel title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://twitter.com/shantanugoel title=Twitter><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">Shantanu Goel
 &nbsp;&bull;&nbsp;&copy;
 2021
 &nbsp;&bull;&nbsp;
-<a href=https://shantanugoel.com>Shantanu Vs The World</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.92.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://shantanugoel.com>Shantanu Vs The World</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.108.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/shantanugoel/shantanugoel.com-source/commit/f6965b6df3a3a8d9ebf7c4f3090fe5a4dc1fb5c7>f6965b6d</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://shantanugoel.com/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://shantanugoel.com/js/load-photoswipe.js></script>
-<script type=text/javascript>$(function(){$('#show-comments').on('click',function(){var a='shantanugoel';(function(){var b=document.createElement('script');b.type='text/javascript',b.async=!0,b.src='//'+a+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(b)})(),$(this).hide()})})</script>
-<script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script>
-</body>
-</html>
+<script type=text/javascript>$(function(){$("#show-comments").on("click",function(){var e="shantanugoel";(function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//"+e+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)})(),$(this).hide()})})</script><script id=dsq-count-scr src=//shantanugoel.disqus.com/count.js async></script></body></html>
