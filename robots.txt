@@ -1,4 +1,4 @@
-Sitemap: https://shantanugoel.com/sitemap.xml
+Sitemap: https://shantanugoel.com//sitemap.xml
 
 User-agent: *
 Disallow: /categories/
