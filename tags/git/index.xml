@@ -1,1 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on</title><link>/tags/git/</link><description>Recent content in Git on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 20 Mar 2020 18:25:01 +0530</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatic notes backup on macOS with hammerspoon</title><link>/posts/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</link><pubDate>Fri, 20 Mar 2020 18:25:01 +0530</pubDate><guid>/posts/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</guid><description>I&amp;rsquo;m a backup nerd and like to back-up everything I do. Not just that, I like to version them too so I can go back in time to any point. git serves as a good tool for me for versioning wherever small data/text files etc are concerned and then I back this up with remote git servers like my own git server on a raspberry pi at home, a gitlab server and a github server.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on</title><link>/tags/git/</link><description>Recent content in Git on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 Mar 2020 18:25:01 +0530</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatic notes backup on macOS with hammerspoon</title><link>/2020/03/20/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</link><pubDate>Fri, 20 Mar 2020 18:25:01 +0530</pubDate><guid>/2020/03/20/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</guid><description>I&amp;rsquo;m a backup nerd and like to back-up everything I do. Not just that, I like to version them too so I can go back in time to any point. git serves as a good tool for me for versioning wherever small data/text files etc are concerned and then I back this up with remote git servers like my own git server on a raspberry pi at home, a gitlab server and a github server.</description><content>&lt;p>I&amp;rsquo;m a backup nerd and like to back-up everything I do. Not just that, I like to version them too so I can go back in time to any point. &lt;code>git&lt;/code> serves as a good tool for me for versioning wherever small data/text files etc are concerned and then I back this up with remote git servers like my own git server on a raspberry pi at home, a gitlab server and a github server. Prime targets for this are my dotfiles that I edit in spacemacs and my notes that I take in &lt;a href="https://joplinapp.org/">Joplin&lt;/a>. The only issue though is that every time I change something, which is pretty often (since I&amp;rsquo;m a tinkering nerd too) I&amp;rsquo;ve to manually commit the changes and push them upstream. Apart from being all kinds of nerds, I&amp;rsquo;m an automation nerd too, which is a fancy way of saying that I am lazy, but I digress.&lt;/p>
+&lt;p>So, essentially I wanted to commit and push changes to my notes, dotfiles and few other things automatically whenever I make changes. I came across a tool called &lt;a href="https://github.com/gitwatch/gitwatch">gitwatch&lt;/a>, which can help do this. But I wanted to try out some more capabilities of &lt;a href="https://www.hammerspoon.org/">Hammerspoon&lt;/a>, so I chose that as my weapon of choice for this, especially because I already use it for few other automations so that&amp;rsquo;s one (or more) less things to install/maintain/update. Hammerspoon is an extremely powerful tool for macOS. In its own words:&lt;/p>
+&lt;blockquote>
+&lt;p>At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.&lt;/p>
+&lt;/blockquote>
+&lt;p>So, the things I had to do:&lt;/p>
+&lt;ul>
+&lt;li>Setup the directories of my dotfiles (&lt;code>~/dotfiles/&lt;/code>) and notes (&lt;code>~/.config/Joplin-desktop/&lt;/code>) as git repositories (by running git init inside them)&lt;/li>
+&lt;li>Create repositories on GitHub (and other servers as needed) to backup them to. You can create them as private if you want to. In my case, my dotfiles are public but my notes are private.&lt;/li>
+&lt;li>Add the upstream repositories to your local git repositories as remotes (&lt;code>git remote add &amp;lt;somename&amp;gt; &amp;lt;remote_url&amp;gt;&lt;/code>)&lt;/li>
+&lt;li>Add my ssh keys to the ssh-agent using the &lt;code>ssh-add&lt;/code> command. You can read more about this &lt;a href="https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">here&lt;/a>&lt;/li>
+&lt;li>Save the below lua script to &lt;code>~/.hammerspoon/git-backup.lua&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-lua" data-lang="lua">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- Paths to the directories we want to backup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> notes_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/Users/shantanugoel/.config/joplin-desktop&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> dotfiles_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/Users/shantanugoel/dotfiles&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- The primary sync function&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sync&lt;/span>(path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> hs.fs.chdir(path) &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output, status &lt;span style="color:#f92672">=&lt;/span> hs.execute(&lt;span style="color:#e6db74">&amp;#34;git add . &amp;amp;&amp;amp; git commit -am update&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> status &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output, status &lt;span style="color:#f92672">=&lt;/span> hs.execute(&lt;span style="color:#e6db74">&amp;#34;git push -u origin master&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> status &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">-- Something went wrong! No internet? Didn&amp;#39;t add ssh keys?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hs.notify.show(&lt;span style="color:#e6db74">&amp;#34;Notes Sync&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Git Push Error&amp;#34;&lt;/span>, output)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">-- Check if the path exists, just in case something goes wrong or you move to a new machine etc&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hs.notify.show(&lt;span style="color:#e6db74">&amp;#34;Notes Sync&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Cannot change Path&amp;#34;&lt;/span>, notes_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">notes_sync&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sync(notes_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">dotfiles_sync&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sync(dotfiles_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- Use pathwatcher to instantly sync whenever a change is made&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>notes_watcher &lt;span style="color:#f92672">=&lt;/span> hs.pathwatcher.new(notes_path, notes_sync):start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotfiles_watcher &lt;span style="color:#f92672">=&lt;/span> hs.pathwatcher.new(dotfiles_path, dotfiles_sync):start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- If you face perf issues with pathwatcher, comment out above 2 lines&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- and uncomment below lines to use a timed sync instead&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- Time interval is set to 5 minutes (300 seconds) here but can be changed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- as per need&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- notes_timer = hs.timer.doEvery(300, notes_sync)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- dotfiles_timer = hs.timer.doEvery(300, dotfiles_sync)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Update &lt;code>~/.hammerspoon/init.lua&lt;/code> to add this line: &lt;code>local gb = require('git-backup')&lt;/code>&lt;/li>
+&lt;li>Reload hammerspoon config from its menu&lt;/li>
+&lt;/ul>
+&lt;p>I&amp;rsquo;ve commented the code as much as I could, so hopefully it makes sense. Now, this keeps me calm and focused on all the other procrastination that I&amp;rsquo;ve got to do :D&lt;/p></content></item></channel></rss>

@@ -1,3 +1,266 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aiosmtpd on</title><link>/tags/aiosmtpd/</link><description>Recent content in Aiosmtpd on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 03 Apr 2017 19:20:59 +0530</lastBuildDate><atom:link href="/tags/aiosmtpd/index.xml" rel="self" type="application/rss+xml"/><item><title>email-actions: An SMTP server that triggers actions from email</title><link>/posts/email-actions-trigger-tasks-from-email-smtp-server/</link><pubDate>Mon, 03 Apr 2017 19:20:59 +0530</pubDate><guid>/posts/email-actions-trigger-tasks-from-email-smtp-server/</guid><description>Releasing my project email-actions today. You install it from github or from pypi.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aiosmtpd on</title><link>/tags/aiosmtpd/</link><description>Recent content in Aiosmtpd on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 03 Apr 2017 19:20:59 +0530</lastBuildDate><atom:link href="/tags/aiosmtpd/index.xml" rel="self" type="application/rss+xml"/><item><title>email-actions: An SMTP server that triggers actions from email</title><link>/2017/04/03/email-actions-trigger-tasks-from-email-smtp-server/</link><pubDate>Mon, 03 Apr 2017 19:20:59 +0530</pubDate><guid>/2017/04/03/email-actions-trigger-tasks-from-email-smtp-server/</guid><description>Releasing my project email-actions today. You install it from github or from pypi.
 email-actions email-actions is a tiny SMTP server with a rules based engine to trigger any actions (notifications/commands etc) based on the emails sent to this server. Think of it like IFTTT but where input trigger is email and can be set up and run locally as well.
-Why did you make email-actions Like most of my projects, email-actions is a &amp;lsquo;scratch-your-own-itch&amp;rsquo; project.</description></item></channel></rss>
+Why did you make email-actions Like most of my projects, email-actions is a &amp;lsquo;scratch-your-own-itch&amp;rsquo; project.</description><content>&lt;p>Releasing my project &lt;a href="https://github.com/shantanugoel/email-actions">email-actions&lt;/a> today. You install it from github or from pypi.&lt;/p>
+&lt;h1 id="email-actions">email-actions&lt;/h1>
+&lt;p>email-actions is a tiny SMTP server with a rules based engine to trigger any actions (notifications/commands etc) based on the emails sent to this server.
+Think of it like &lt;a href="https://ifttt.com">IFTTT&lt;/a> but where input trigger is email and can be set up and run locally as well.&lt;/p>
+&lt;h1 id="why-did-you-make-email-actions">Why did you make email-actions&lt;/h1>
+&lt;p>Like most of my projects, email-actions is a &amp;lsquo;scratch-your-own-itch&amp;rsquo; project. I bought a NAS (Synology ds216j) which also doubled as a downloader of anime/tv shows etc through RSS using its inbuilt &amp;ldquo;Download Station&amp;rdquo; app. I also used Plex to watch them over the network but these needed to be moved to a proper folder and named in a specific format (and some crap deleted and other maintenance done or sometimes some post processing done) to have Plex display/play them properly. I used Filebot and a few custom scripts for this but had to either do this manually or use a fixed time task scheduling (which tended to delay watching). This was semi-irritating.
+I also wanted to know when something had been downloaded so I could binge on that latest episode as soon as it was done :)
+Download station had a hack (by changing internal files) to run custom script after a download was completed but it had to be redone after every firmware update and sometimes, after every restart. And finally it stopped working altogether with recent updates.&lt;/p>
+&lt;p>It did support email notifications though. Thus email-actions was born. So I could push notifications for downloaded items run my custom scripts on the downloaded items.&lt;/p>
+&lt;p>Since then, I&amp;rsquo;ve started using it for many other things as email is pervasive and most of the devices support email based notifications. So I can trap them and carry out other actions.&lt;/p>
+&lt;h1 id="what-are-the-benefitsdifferences-compared-to-hosted-services-like-ifttt">What are the benefits/differences compared to hosted services like IFTTT&lt;/h1>
+&lt;p>IFTTT provides email hooks as well. I &lt;em>think&lt;/em> email-actions may be an alternative (you can decide whether it&amp;rsquo;s better or not) with respect to below:&lt;/p>
+&lt;ul>
+&lt;li>IFTTT works as a client once email is received so you still need an available SMTP server to be able to send email. This can be expensive or risky as you&amp;rsquo;d have to share your server username/pwd to the email sending entity. email-actions is an SMTP server that takes actions before any actual email delivery.&lt;/li>
+&lt;li>Can be run locally with minimal dependencies. You don&amp;rsquo;t need to send your data to internet or even have an internet connection&lt;/li>
+&lt;li>Tiny footprint&lt;/li>
+&lt;li>Can run local commands as well while IFTTT still needs to be integrated with something else if that&amp;rsquo;s what you need&lt;/li>
+&lt;li>You are in control of your info&lt;/li>
+&lt;li>Free(er), that is, no limitations on hooks/conditions etc&lt;/li>
+&lt;/ul>
+&lt;h1 id="current-high-level-feature-list">Current high level feature list&lt;/h1>
+&lt;ul>
+&lt;li>aiosmtpd based for aync email processing for performance&lt;/li>
+&lt;li>The action execution is also asyncio based, so will free up the email sender while processing the action in background&lt;/li>
+&lt;li>Easy yaml based configuration&lt;/li>
+&lt;li>Global or local variables for full customization/reuse&lt;/li>
+&lt;li>Action decision based on &amp;ldquo;To&amp;rdquo; email address filtering (Addition of many other filters on the roadmap)&lt;/li>
+&lt;li>Plugins supported:
+&lt;ul>
+&lt;li>&lt;a href="https://joaoapps.com/join/">Join&lt;/a> push notifications (Will add pushbullet if there&amp;rsquo;s a demand or can use custom external script for now)&lt;/li>
+&lt;li>Custom Local commands (Any arguments, any script type, custom environment variables)&lt;/li>
+&lt;li>Email (Can forward the email to custom upstream servers further if needed for more actions or actual email delivery)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="installation">Installation&lt;/h1>
+&lt;p>Pre-requisites: You need Python 3.4+ to be able to run this&lt;/p>
+&lt;ul>
+&lt;li>Install using pip (May need to use &lt;code>pip3&lt;/code> instead of &lt;code>pip&lt;/code> according to your OS/python installation. May need to use &lt;code>sudo&lt;/code> prefix before below command if installing system wide)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>pip install email-actions&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Install directly&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>git clone git@github.com:shantanugoel/email-actions.git
+cd email-actions
+python setup.py install
+&lt;/code>&lt;/pre>&lt;h1 id="usage">Usage&lt;/h1>
+&lt;pre tabindex="0">&lt;code>usage: email_actions [-h] [-v] [-H HOSTNAME] [-p PORT] [-l LOG] -c CONFIG
+optional arguments:
+-h, --help show this help message and exit
+-v, --version show program&amp;#39;s version number and exit
+-H HOSTNAME, --hostname HOSTNAME
+Host IP or name to bind the server to
+-p PORT, --port PORT Port number to bind the server to
+-l LOG, --log LOG Set log level. 0=&amp;gt; Warning, 1=&amp;gt;Info, 2=&amp;gt;Debug
+required arguments:
+-c CONFIG, --config CONFIG
+Specify config file (yaml format) to be used. If it
+doesn&amp;#39;t exist, we&amp;#39;ll try to create it
+&lt;/code>&lt;/pre>&lt;p>Examples:&lt;/p>
+&lt;pre tabindex="0">&lt;code>email_actions -H 127.0.0.1 -p 8500 -l 2 -c /home/shantanu/email_actions_cfg.yml
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>email_actions -c /home/shantanu/email_actions_cfg.yml
+&lt;/code>&lt;/pre>&lt;p>Most of the options above are self explanatory. If you don&amp;rsquo;t specify a hostname, it will choose &lt;code>localhost&lt;/code> by default. If you don&amp;rsquo;t specify a port, it&amp;rsquo;ll choose &lt;code>8025&lt;/code> by default.&lt;/p>
+&lt;p>&lt;strong>Note&lt;/strong> I recommend running the server on localhost or an internal network interface so that it can&amp;rsquo;t be abused from internet. Right now it doesn&amp;rsquo;t support authentication (limitation of aiosmtpd. Will be fixed soon), so if you must open it up to the internet, add your own scheme of verification either through a randomly generated email address in &amp;ldquo;To&amp;rdquo; rule or some other check in subject/content in your own external script that you are triggering.&lt;/p>
+&lt;p>Specifying a config file is mandatory. If the specified file doesn&amp;rsquo;t exist, we&amp;rsquo;ll generate a dummy one which you can fill. But essentially this is a step that you can&amp;rsquo;t avoid. The config file is explained in more detail below.&lt;/p>
+&lt;h2 id="config-file-format">Config file format&lt;/h2>
+&lt;p>email-actions uses the simple &lt;code>yaml&lt;/code> format for its configuration. Learning this is a small task (few minutes at most for the basic usage that we need). You can look at &lt;a href="https://learn.getgrav.org/advanced/yaml">this page&lt;/a> for a quick reference.&lt;/p>
+&lt;p>email-actions works on the basis of user specified &lt;code>filters&lt;/code>. Each filter can have &lt;code>rules&lt;/code> specified which decide whether to run an action or not on the incoming email. Each filter also specifies &lt;code>actions&lt;/code> (which is 1 or more plugins) to run an action on the incoming email if it passes the &lt;code>rules&lt;/code>.&lt;/p>
+&lt;p>At least 1 filter is necessary in the configuration. Each filter must have at least 1 action. Rest all is optional. Each action plugin may have it&amp;rsquo;s own mandatory OR optional settings. See &lt;a href="#plugin-settings">Plugin Settings&lt;/a> for all available plugins and their options/variables&lt;/p>
+&lt;p>The config file has the following general format. All text after &lt;code>#&lt;/code> is an explanation, not a part of the config itself.&lt;/p>
+&lt;p>Names within &lt;code>&amp;lt;&amp;gt;&lt;/code> can be substituted by user as per their choice. Names outside &lt;code>&amp;lt;&amp;gt;&lt;/code> are reserved by email-actions and must be used as is.&lt;/p>
+&lt;p>All settings are case-sensitive. So take care of that.&lt;/p>
+&lt;pre tabindex="0">&lt;code>global: # Optional keyword that specifies global variables for plugins. These are available in all instances of your plugins in each filter
+&amp;lt;plugin_name&amp;gt;: # Plugin name for which you are specifying a global variable
+&amp;lt;setting_1&amp;gt;: &amp;lt;abcd&amp;gt; # Variable/setting for this plugin.
+&amp;lt;setting_2&amp;gt;: &amp;lt;efgh&amp;gt; # Variable/setting for this plugin.
+filters: #Mandatory keyword to signify start of your filters specifications.
+&amp;lt;filter_name&amp;gt;: # User specified name for a filter
+rules: # Rules specifications start
+to: &amp;lt;email_id&amp;gt; # A rule that matches
+&lt;/code>&lt;/pre>&lt;p>Example: Take a look at the below sample config (Also found in &lt;a href="https://github.com/shantanugoel/email-actions/blob/master/sample/config.yml">this location&lt;/a>)&lt;/p>
+&lt;pre tabindex="0">&lt;code># Specify a global variable for join plugin&amp;#39;s api key
+global:
+join:
+apikey: my_join_app_api_key
+# Specify 2 filters.
+# my_filter matches only the emails which are sent to abc@a.com and runs below 2 actions:
+## Send join push notification using the global join api key
+## Send an email using the credentials specified
+# my_second_filter runs on all emails since there is no rule specified
+# It runs below 2 actions:
+## Send join notification using another_api_key. Local variable overrides the global one
+## Run external command with given args and also sets up a environment variable called &amp;#34;MY_ENV_VAR&amp;#34; which can be accessed in external command
+filters:
+my_filter:
+rules:
+to: abc@a.com
+actions:
+join:
+email:
+host: smtp.example.com
+username: my_email_username
+password: my_email_password
+port: 587
+secure: True
+my_second_filter:
+join:
+apikey: another_api_key
+exec:
+cmd: /home/shantanu/test.sh
+args:
+- /home/shantanu/abc_file
+- another_arg
+env:
+MY_ENV_VAR: &amp;#39;Some Value&amp;#39;
+&lt;/code>&lt;/pre>&lt;h2 id="rules">Rules&lt;/h2>
+&lt;p>Currently, below rules are supported. These can be specified under a &lt;code>rules&lt;/code> block.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Rule Keyword&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>to&lt;/td>
+&lt;td>Any email id which should exactly match the &amp;ldquo;To&amp;rdquo; field in the incoming email&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="plugin-settings">Plugin Settings&lt;/h2>
+&lt;h3 id="join">join&lt;/h3>
+&lt;p>This plugin sends a push notification to your devices using the &lt;a href="https://joaoapps.com/join/">Join&lt;/a> app&lt;/p>
+&lt;p>Options:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Option Keyword&lt;/th>
+&lt;th>Mandatory / Optional&lt;/th>
+&lt;th>Default Value&lt;/th>
+&lt;th>Comment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>apikey&lt;/td>
+&lt;td>Mandatory&lt;/td>
+&lt;td>None&lt;/td>
+&lt;td>Your API key from &lt;a href="https://joinjoaomgcd.appspot.com/">here&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>deviceId&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>group.all&lt;/td>
+&lt;td>See valid options &lt;a href="https://joaoapps.com/join/api/">here&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>title&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>Email Subject&lt;/td>
+&lt;td>See valid options &lt;a href="https://joaoapps.com/join/api/">here&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>text&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>Email content&lt;/td>
+&lt;td>See valid options &lt;a href="https://joaoapps.com/join/api/">here&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="exec">exec&lt;/h3>
+&lt;p>This plugin allows to run any arbitrary command or script on your local system on which email-actions server is running.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Option Keyword&lt;/th>
+&lt;th>Mandatory / Optional&lt;/th>
+&lt;th>Default Value&lt;/th>
+&lt;th>Comment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>cmd&lt;/td>
+&lt;td>Mandatory&lt;/td>
+&lt;td>None&lt;/td>
+&lt;td>Full path to the command to be run. Don&amp;rsquo;t include arguments. Enclose in quotes if space in path&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>args&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>Empty list&lt;/td>
+&lt;td>List of arguments to be passed to command, 1 on each line.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>env&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>Empty dictionary&lt;/td>
+&lt;td>Key value pair of custom environment variables for the external command/script. One on each line&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="email">email&lt;/h3>
+&lt;p>This plugin allows to forward the incoming email further to an upstream smtp server&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Option Keyword&lt;/th>
+&lt;th>Mandatory / Optional&lt;/th>
+&lt;th>Default Value&lt;/th>
+&lt;th>Comment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>host&lt;/td>
+&lt;td>Mandatory&lt;/td>
+&lt;td>None&lt;/td>
+&lt;td>Provide hostname or ip of your upstream smtp server&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>port&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>25&lt;/td>
+&lt;td>Port for upstream smtp server&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>username&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>None&lt;/td>
+&lt;td>username if required&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>password&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>None&lt;/td>
+&lt;td>Password if required&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>secure&lt;/td>
+&lt;td>Optional&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>Set it to true if upstream server requires secure/TLS connection&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="contributing">Contributing&lt;/h1>
+&lt;p>Feel free to fork the repo and send PRs for any changes. If you can&amp;rsquo;t make changes but want to report issues or provide feedback, open an Issue on github or ping me on twitter &lt;a href="https://twitter.com/shantanugoel">@shantanugoel&lt;/a>&lt;/p>
+&lt;p>You can contribute either to the core or write a plugin for your usecase. The only guiding principle is to keep it as simple/minimal as possible.&lt;/p>
+&lt;h2 id="how-to-write-a-plugin">How to write a plugin&lt;/h2>
+&lt;p>Take a look at any plugin in &lt;a href="https://github.com/shantanugoel/email-actions/tree/master/email_actions/plugins">plugins&lt;/a> directory
+A minimal plugin needs to do following things:&lt;/p>
+&lt;ul>
+&lt;li>Define &amp;lsquo;PLUGIN_NAME&amp;rsquo;. This need not be same as the file name but is preferred to keep that way&lt;/li>
+&lt;li>A function that takes these parameters: &lt;code>filter_name, msg_from, msg_to, msg_subject, msg_content&lt;/code> and doesn&amp;rsquo;t return anything&lt;/li>
+&lt;li>Read plugin&amp;rsquo;s configuration (if any) using email_actions.config.read_config_plugin function
+&lt;ul>
+&lt;li>Ideally the plugin should not need to use any other function from the core&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>After writing the plugin, add the plugin&amp;rsquo;s name and entry function in &lt;code>entry_funcs&lt;/code> dict in &lt;a href="https://github.com/shantanugoel/email-actions/tree/master/email_actions/plugins/__init__.py">plugins init file&lt;/a>&lt;/li>
+&lt;/ul></content></item></channel></rss>

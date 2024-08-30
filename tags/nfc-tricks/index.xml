@@ -1,1 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NFC Tricks on</title><link>/tags/nfc-tricks/</link><description>Recent content in NFC Tricks on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 30 Sep 2012 18:16:22 +0000</lastBuildDate><atom:link href="/tags/nfc-tricks/index.xml" rel="self" type="application/rss+xml"/><item><title>My Android NFC Car BT Audio Setup</title><link>/posts/my-android-nfc-car-bt-audio-setup/</link><pubDate>Sun, 30 Sep 2012 18:16:22 +0000</pubDate><guid>/posts/my-android-nfc-car-bt-audio-setup/</guid><description>So, my Nexus One&amp;rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&amp;rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NFC Tricks on</title><link>/tags/nfc-tricks/</link><description>Recent content in NFC Tricks on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 30 Sep 2012 18:16:22 +0000</lastBuildDate><atom:link href="/tags/nfc-tricks/index.xml" rel="self" type="application/rss+xml"/><item><title>My Android NFC Car BT Audio Setup</title><link>/2012/09/30/my-android-nfc-car-bt-audio-setup/</link><pubDate>Sun, 30 Sep 2012 18:16:22 +0000</pubDate><guid>/2012/09/30/my-android-nfc-car-bt-audio-setup/</guid><description>So, my Nexus One&amp;rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&amp;rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).</description><content>&lt;p>So, my Nexus One&amp;rsquo;s battery finally lost its last legs and I picked up a new Galaxy Nexus to replace it (easy choice, since it&amp;rsquo;s a nexus device and Google sells it for a bargain at their play store). Anyways, I drift. In the mood to try out the NFC capbilities of my newly acquired gadget I thought of doing something about my car audio setup (previously consisting of a stereo line connecting the aux port of the stereo to the headphone out of Nexus one using tasker to start music when connected).&lt;/p>
+&lt;p>Before I go into how I went about it, here is what it does now. When I keep the phone into my car&amp;rsquo;s phone holder, it automatically starts streaming music over BT from my car stereo and then when I keep it in my pocket, it stops.&lt;/p>
+&lt;p>Ingredients I used:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>1 Galaxy Nexus&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2 NFC tags (bought from tagstand guys. Makers of the awesome NFC Tasker Launcher app)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>1 male to male stereo cable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>1 Samsung HS3000 BT headset (since my car stereo doesn&amp;rsquo;t have BT. This little headset is awesome because it is cheap (25$ or so at amazon), has a stereo port where you can connect any headset or stereo cable, implements apt-x protocol for high fidelity audio streaming)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Android App: NFC Task Launcher&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Android App: Tasker (NFC task launcher is enough for basic things but my task is a bit more involved)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Android App: Secure Settings plugin for Tasker/Locale&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>So, what I did is this:&lt;/p>
+&lt;p>&lt;strong>Hardware&lt;/strong>:&lt;/p>
+&lt;p>Pasted one NFC tag to my car phone holder and kept another one in my wallet.&lt;/p>
+&lt;p>Connected the HS3000 headset to the car stereo through aux-in and to power through a car charger (it uses a standard micro usb port to charge).&lt;/p>
+&lt;p>Stuck the HS3000 near my dashboard. I could have hidden it in dashboard or somewhere but I also wanted to use it to take calls when they come in so I can use its mic for speaking and incoming audio sounds through the car speakers. You can also disconnect the internal battery by popping up the casing so that it turns on and off with the car but it isn&amp;rsquo;t necessary as it anyways turns off if there is no device connected for a while.&lt;/p>
+&lt;p>&lt;strong>Software&lt;/strong>:&lt;/p>
+&lt;p>Created two tasks in Tasker. First as &amp;ldquo;Car Mode Enter&amp;rdquo; and second as &amp;ldquo;Car Mode Exit&amp;rdquo;. The car mode enter task basically does this:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If car mode is not already running (based on a variable)&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Turn on Bluetooth (This also auto connects)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Crank up the Media Volume&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If Battery level is above 40%&lt;/p>
+&lt;ul>
+&lt;li>Keep the screen always on (using Secure Settings)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Else keep the screen on if power is connected (through car charger)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Crank up the brightness if it is day time (so that I can see the screen) and store the old value for restoring later.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If navigation is not on (through another variable set through another profile which monitors if a navigation or maps app is in foreground)&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Load the Music app&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start playing music&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Turn on the Read SMS profile cuz I&amp;rsquo;m a safe driver :) (Another profile in tasker which reads the incoming SMS&amp;rsquo; sender&amp;rsquo;s name and asks if it should read the text (don&amp;rsquo;t want any embarrassing ones read out while others are there in my car ;)) and then proceeds to read the text if I speak &amp;ldquo;Yes&amp;rdquo;. For anything else or no input, it doesn&amp;rsquo;t read the text)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>The car mode exit task undoes everything done in the car mode enter task and restores everything to how it was before entering the car mode.&lt;/p>
+&lt;p>Also created two tasks in NFC task launcher which just launch the car mode enter and exit tasks when tapped against 1 of the tags and wrote this task to the tags.&lt;/p>
+&lt;p>&lt;strong>All together now:&lt;/strong>&lt;/p>
+&lt;p>So, we are done now. Now when I enter my car, I place the phone on the holder and nice music starts playing. When I get out, I tap it against my pocket (with the wallet) and everything is back at normal.&lt;/p>
+&lt;p>Let me know if you need any more information about the above setup or the tasker profile xml files. I use tasker for automating a whole other bunch of things as well. Will try to post that stuff soon along with any other NFC tricks I try out.&lt;/p></content></item></channel></rss>

@@ -1,8 +1,233 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quote of the Day on</title><link>/tags/quote-of-the-day/</link><description>Recent content in Quote of the Day on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 17 Feb 2008 15:44:18 +0000</lastBuildDate><atom:link href="/tags/quote-of-the-day/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>/posts/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><guid>/posts/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>For the uninitiated:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quote of the Day on</title><link>/tags/quote-of-the-day/</link><description>Recent content in Quote of the Day on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 Feb 2008 15:44:18 +0000</lastBuildDate><atom:link href="/tags/quote-of-the-day/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><guid>/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>For the uninitiated:
 I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:
 Added Custom tag support for adding quotes anywhere in your posts/pages
 Added Custom quote separator support and multi-line quotes support
 Config Screenshots:
-I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.</description></item><item><title>My First WordPress Plugin: Please Welcome shantz-wp-qotd</title><link>/posts/my-first-wordpress-plugin-please-welcome-shantz-wp-qotd/</link><pubDate>Sun, 10 Feb 2008 11:00:27 +0000</pubDate><guid>/posts/my-first-wordpress-plugin-please-welcome-shantz-wp-qotd/</guid><description>Motivated by Ronald’s ultimate wordpress plugin tutorial at devlounge, I decided that the best way to learn something is to use it in a live project. Armed with my laptop and multiple flasks of coffee, the marathon began on Friday night. My only experience with web-related development so far had been around 8–10 years ago as a kid when, just like everybody else at that time, I was fascinated by HTML and did a “read-through” of HTML 4.</description></item><item><title>Shantz WordPress QOTD</title><link>/posts/shantz-wordpress-qotd/</link><pubDate>Sun, 10 Feb 2008 10:22:57 +0000</pubDate><guid>/posts/shantz-wordpress-qotd/</guid><description>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.
+I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.</description><content>&lt;p>For the uninitiated:&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Custom quote separator support and multi-line quotes support&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Config Screenshots:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/Screenshot1.png">&lt;img src="/img/uploads/Screenshot1_thumb.jpg" alt="Screenshot1">&lt;/a> &lt;a href="/img/uploads/Screenshot2.png">&lt;img src="/img/uploads/Screenshot2_thumb.jpg" alt="Screenshot2">&lt;/a> &lt;a href="/img/uploads/Screenshot3.png">&lt;img src="/img/uploads/Screenshot3_thumb.jpg" alt="Screenshot3">&lt;/a>&lt;/p>
+&lt;p>I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.&lt;/p></content></item><item><title>My First WordPress Plugin: Please Welcome shantz-wp-qotd</title><link>/2008/02/10/my-first-wordpress-plugin-please-welcome-shantz-wp-qotd/</link><pubDate>Sun, 10 Feb 2008 11:00:27 +0000</pubDate><guid>/2008/02/10/my-first-wordpress-plugin-please-welcome-shantz-wp-qotd/</guid><description>Motivated by Ronald’s ultimate wordpress plugin tutorial at devlounge, I decided that the best way to learn something is to use it in a live project. Armed with my laptop and multiple flasks of coffee, the marathon began on Friday night. My only experience with web-related development so far had been around 8–10 years ago as a kid when, just like everybody else at that time, I was fascinated by HTML and did a “read-through” of HTML 4.</description><content>&lt;p>Motivated by Ronald’s ultimate wordpress plugin tutorial at &lt;a href="http://www.devlounge.net/extras/how-to-write-a-wordpress-plugin">devlounge&lt;/a>, I decided that the best way to learn something is to use it in a live project. Armed with my laptop and multiple flasks of coffee, the marathon began on Friday night. My only experience with web-related development so far had been around 8–10 years ago as a kid when, just like everybody else at that time, I was fascinated by HTML and did a “read-through” of HTML 4.0. But I have always been a believer of the theory that a C programmer can program in any language quickly without having to go through the whole manuals. Thus that night bore fruit for me, and by 5:30 in the morning I had a working “Quote of The Day” plugin at my hand with all the features I wanted it to have in its first avatar. Did a bit of polishing last night, fixed a few bugs, and created a readme, and here it is, Mr. shantz-wp-qotd “1.0”, in all its glory, ready for general consumption.&lt;/p>
+&lt;p>&lt;strong>Features at a glance:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Add quotes to all your posts automatically.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Widget support - Can also have a widget in the sidebar for quotes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Customize and style your quotes with your own text and tags.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multiple sources for quotes (paste in admin page, get from file implemented, fetch from web/rss soon to come)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multiple patterns for quotes - Random Quote, Quote of the day (all posts display quote of the day), Quote of that day (all posts display quote for their own days)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pattern for widget can be different&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Customization for widget can be different&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add quotes to top or bottom of posts&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enable/Disable the quotes without deactivating the plugin&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Coming Soon:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Fetch from web/RSS support&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Custom template tag to add quote anywhere you want&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Custom quote boundary decalarator tags/Multiline quote support (Right now, each quote has to be on a new line)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Quotes Categories&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pics support for quotes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Anything else you want&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>File selection&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>And more…&lt;/p></content></item><item><title>Shantz WordPress QOTD</title><link>/2008/02/10/shantz-wordpress-qotd/</link><pubDate>Sun, 10 Feb 2008 10:22:57 +0000</pubDate><guid>/2008/02/10/shantz-wordpress-qotd/</guid><description>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.
 == Description ==
-There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.</description></item></channel></rss>
+There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.</description><content>&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;p>&lt;strong>== Description ==&lt;/strong>&lt;/p>
+&lt;p>There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.&lt;/p>
+&lt;p>&lt;strong>Features:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Add quotes to all your posts automatically.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Widget support - Can also have a widget in the sidebar for quotes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Customize and style your quotes with your own text and tags.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multiple sources for quotes (paste in admin page, get from file implemented, fetch from web/rss soon to come)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multiple patterns for quotes - Random Quote, Quote of the day (all posts display quote of the day), Quote of that day (all posts display quote for their own days)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pattern for widget can be different&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Customization for widget can be different&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add quotes to top or bottom of posts&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Custom template tag to add quote anywhere you want&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Custom quote boundary decalarator tags/Multiline quote support&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enable/Disable the quotes without deactivating the plugin&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Option to exclude pages from displaying quotes&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Coming Soon:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Fetch from web/RSS support&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Quotes Categories&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pics support for quotes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Anything else you want&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>File selection&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>And more&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>Download: &lt;a href="http://wordpress.org/extend/plugins/shantz-wordpress-qotd/">http://wordpress.org/extend/plugins/shantz-wordpress-qotd/&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>== Installation ==&lt;/strong>&lt;/p>
+&lt;p>The Shantz-WP-QOTD plugin can be installed in following easy steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Unzip &amp;ldquo;shantz-wp-qotd&amp;rdquo; archive and put all files into your &amp;ldquo;plugins&amp;rdquo; folder (/wp-content/plugins/). It is advisable to create a sub directory into the plugins folder, like /wp-content/plugins/shantz-wp-qotd/&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Activate the plugin&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to Options &amp;gt; Shantz WP Quotes, adjust your settings and save them.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For adding and configuring widget to sidebar, go to Presentation &amp;gt; Widgets.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>== Frequently Asked Questions ==&lt;/strong>&lt;/p>
+&lt;p>= How to add quotes anywhere in the posts/pages? =
+Use the tag &lt;code>&amp;lt;!-- shantz-wp-qotd {option} --&amp;gt;&lt;/code> anywhere in your post (without the quotes).
+Note:&lt;/p>
+&lt;ol>
+&lt;li>{option} (including the braces) has to be replaced by the quote pattern that you want: qotd, qottd or r. qotd is quote of the day, qottd is quote of that day and r is random.&lt;/li>
+&lt;li>The tag has to be added using the code editor and not the visual editor, otherwise it will replace the &amp;lt;, &amp;gt; with their HTML equivalents.&lt;/li>
+&lt;/ol>
+&lt;p>= How to use the custom separator/multi-line quotes? =
+By default, if you leave the custom separator box blank, the plugin uses a newline character as the separator. However, if you have quotes that have multiple lines, you can change this to a tag of your choice, say [quote]. Now, in your quotes file (or quotes pasted in admin panel options) add this tag at the end of each quote and you are done.&lt;/p>
+&lt;p>= What is the format for saving quotes? =
+In text box in admin page, as well as in the file, the quotes have to be saved as one on each line. Each quote is separate by newline.&lt;/p>
+&lt;p>= Where is the file with quotes located =&lt;/p>
+&lt;p>For the get from file option, a file &amp;ldquo;quotes.txt&amp;rdquo; has to be present in the same directory where shantz-wp-qotd.php is residing. A sample quotes.txt has been given with this plugin (with some quotes from southpark, simpsons, matrix and deus ex)&lt;/p>
+&lt;p>= I checked the option &amp;ldquo;exclude pages&amp;rdquo; but my pages are still displaying quotes =
+Check your WordPress version. This option is effective only for Version 2.1 and above&lt;/p>
+&lt;p>= How to upgrade to a new version =
+Simply overwrite the old files with the new ones.&lt;/p>
+&lt;p>&lt;strong>== Screenshots ==&lt;/strong>&lt;/p>
+&lt;p>Config Screens and plugin in action:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/screenshot-1.png">&lt;img src="/img/uploads/screenshot_2D1_thumb.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="/img/uploads/screenshot-2.png">&lt;img src="/img/uploads/screenshot_2D2_thumb1.jpg" alt="Screenshot-2">&lt;/a> &lt;a href="/img/uploads/screenshot-3.png">&lt;img src="/img/uploads/screenshot_2D3_thumb.jpg" alt="Screenshot-3">&lt;/a>&lt;/p>
+&lt;p>You can also see the plugin in action right here on my site (check bottom of posts and the right sidebar topmost widget)&lt;/p>
+&lt;p>&lt;strong>== Version History ==&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Version 1.2.2&lt;/p>
+&lt;ul>
+&lt;li>Fixed a bug because of which quotes were blank some times. Thanks to Thom for reporting it.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.2.1&lt;/p>
+&lt;ul>
+&lt;li>Option to exclude pages from displaying quotes is also compatible with wordpress version &amp;lt; 2.1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.2.0&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added option to exclude pages from displaying quotes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Fixed a bug that quotes source selection checkboxes always remain checked after updating settings.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Cosmetic: Fixed a few spelling mistakes :)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.1.0.1&lt;/p>
+&lt;ul>
+&lt;li>Cosmetic: Changed readme.txt according to wp-extend standards&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.1.0&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Custom quote separator support and multi-line quotes support&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.0.1&lt;/p>
+&lt;ul>
+&lt;li>Fixed some styling related issues in text added before/after quote displayed in widget (especially links related issues)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.0.0&lt;/p>
+&lt;ul>
+&lt;li>Initial version&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></content></item></channel></rss>

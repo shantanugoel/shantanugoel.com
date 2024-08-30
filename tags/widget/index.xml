@@ -1,11 +1,197 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Widget on</title><link>/tags/widget/</link><description>Recent content in Widget on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 03 Jul 2010 22:46:36 +0000</lastBuildDate><atom:link href="/tags/widget/index.xml" rel="self" type="application/rss+xml"/><item><title>Android App: Wi-Fi Keep Alive Updated to 1.2.0</title><link>/posts/android-app-wi-fi-keep-alive-updated-to-1-2-0/</link><pubDate>Sat, 03 Jul 2010 22:46:36 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updated-to-1-2-0/</guid><description>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Widget on</title><link>/tags/widget/</link><description>Recent content in Widget on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 03 Jul 2010 22:46:36 +0000</lastBuildDate><atom:link href="/tags/widget/index.xml" rel="self" type="application/rss+xml"/><item><title>Android App: Wi-Fi Keep Alive Updated to 1.2.0</title><link>/2010/07/03/android-app-wi-fi-keep-alive-updated-to-1-2-0/</link><pubDate>Sat, 03 Jul 2010 22:46:36 +0000</pubDate><guid>/2010/07/03/android-app-wi-fi-keep-alive-updated-to-1-2-0/</guid><description>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.
 Changes done in this version:
 Added workarounds to take care of sleep policies not working on some phones
-Optimized the code a bit for faster operations</description></item><item><title>Android App: Wi-Fi Keep Alive</title><link>/posts/android-app-wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:25:48 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive/</guid><description>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.</description></item><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>/posts/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><guid>/posts/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>For the uninitiated:
+Optimized the code a bit for faster operations</description><content>&lt;p>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.&lt;/p>
+&lt;p>Changes done in this version:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workarounds to take care of sleep policies not working on some phones&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optimized the code a bit for faster operations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Configuration screens to widgets (pops up whenever widget is added)&lt;/p>
+&lt;/li>
+&lt;/ul></content></item><item><title>Android App: Wi-Fi Keep Alive</title><link>/2010/06/28/android-app-wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:25:48 +0000</pubDate><guid>/2010/06/28/android-app-wi-fi-keep-alive/</guid><description>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.</description><content>&lt;p>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.e. screen turns off). What&amp;rsquo;s more is that I&amp;rsquo;ve added a widget to it so you don&amp;rsquo;t even have to go into the app. Just tap on the widget to cycle through the settings.&lt;/p></content></item><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><guid>/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>For the uninitiated:
 I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:
 Added Custom tag support for adding quotes anywhere in your posts/pages
 Added Custom quote separator support and multi-line quotes support
 Config Screenshots:
-I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.</description></item><item><title>Shantz WordPress QOTD</title><link>/posts/shantz-wordpress-qotd/</link><pubDate>Sun, 10 Feb 2008 10:22:57 +0000</pubDate><guid>/posts/shantz-wordpress-qotd/</guid><description>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.
+I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.</description><content>&lt;p>For the uninitiated:&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Custom quote separator support and multi-line quotes support&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Config Screenshots:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/Screenshot1.png">&lt;img src="/img/uploads/Screenshot1_thumb.jpg" alt="Screenshot1">&lt;/a> &lt;a href="/img/uploads/Screenshot2.png">&lt;img src="/img/uploads/Screenshot2_thumb.jpg" alt="Screenshot2">&lt;/a> &lt;a href="/img/uploads/Screenshot3.png">&lt;img src="/img/uploads/Screenshot3_thumb.jpg" alt="Screenshot3">&lt;/a>&lt;/p>
+&lt;p>I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.&lt;/p></content></item><item><title>Shantz WordPress QOTD</title><link>/2008/02/10/shantz-wordpress-qotd/</link><pubDate>Sun, 10 Feb 2008 10:22:57 +0000</pubDate><guid>/2008/02/10/shantz-wordpress-qotd/</guid><description>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.
 == Description ==
-There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.</description></item><item><title>i3theme awesomeness: Cool feature for end-users/viewers</title><link>/posts/i3theme-awesomeness-cool-feature-for-end-usersviewers/</link><pubDate>Wed, 06 Feb 2008 04:42:02 +0000</pubDate><guid>/posts/i3theme-awesomeness-cool-feature-for-end-usersviewers/</guid><description>I am just in love with this theme. I knew about the cool feature that you can click on those little green dots on the right top corner of any widget and the widget will minimize to just a bar but just now discovered another awesome feature for the viewers of the wordpress based blogs using this theme. The feature is that you, the viewer, can reorganize the widgets on the left and right sidebars according to your preference, like move the “Pages” widget towards the top for convenient navigation through all the static pages in the site.</description></item></channel></rss>
+There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.</description><content>&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;p>&lt;strong>== Description ==&lt;/strong>&lt;/p>
+&lt;p>There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.&lt;/p>
+&lt;p>&lt;strong>Features:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Add quotes to all your posts automatically.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Widget support - Can also have a widget in the sidebar for quotes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Customize and style your quotes with your own text and tags.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multiple sources for quotes (paste in admin page, get from file implemented, fetch from web/rss soon to come)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multiple patterns for quotes - Random Quote, Quote of the day (all posts display quote of the day), Quote of that day (all posts display quote for their own days)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pattern for widget can be different&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Customization for widget can be different&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add quotes to top or bottom of posts&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Custom template tag to add quote anywhere you want&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Custom quote boundary decalarator tags/Multiline quote support&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enable/Disable the quotes without deactivating the plugin&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Option to exclude pages from displaying quotes&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Coming Soon:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Fetch from web/RSS support&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Quotes Categories&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pics support for quotes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Anything else you want&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>File selection&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>And more&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>Download: &lt;a href="http://wordpress.org/extend/plugins/shantz-wordpress-qotd/">http://wordpress.org/extend/plugins/shantz-wordpress-qotd/&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>== Installation ==&lt;/strong>&lt;/p>
+&lt;p>The Shantz-WP-QOTD plugin can be installed in following easy steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Unzip &amp;ldquo;shantz-wp-qotd&amp;rdquo; archive and put all files into your &amp;ldquo;plugins&amp;rdquo; folder (/wp-content/plugins/). It is advisable to create a sub directory into the plugins folder, like /wp-content/plugins/shantz-wp-qotd/&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Activate the plugin&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to Options &amp;gt; Shantz WP Quotes, adjust your settings and save them.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For adding and configuring widget to sidebar, go to Presentation &amp;gt; Widgets.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>== Frequently Asked Questions ==&lt;/strong>&lt;/p>
+&lt;p>= How to add quotes anywhere in the posts/pages? =
+Use the tag &lt;code>&amp;lt;!-- shantz-wp-qotd {option} --&amp;gt;&lt;/code> anywhere in your post (without the quotes).
+Note:&lt;/p>
+&lt;ol>
+&lt;li>{option} (including the braces) has to be replaced by the quote pattern that you want: qotd, qottd or r. qotd is quote of the day, qottd is quote of that day and r is random.&lt;/li>
+&lt;li>The tag has to be added using the code editor and not the visual editor, otherwise it will replace the &amp;lt;, &amp;gt; with their HTML equivalents.&lt;/li>
+&lt;/ol>
+&lt;p>= How to use the custom separator/multi-line quotes? =
+By default, if you leave the custom separator box blank, the plugin uses a newline character as the separator. However, if you have quotes that have multiple lines, you can change this to a tag of your choice, say [quote]. Now, in your quotes file (or quotes pasted in admin panel options) add this tag at the end of each quote and you are done.&lt;/p>
+&lt;p>= What is the format for saving quotes? =
+In text box in admin page, as well as in the file, the quotes have to be saved as one on each line. Each quote is separate by newline.&lt;/p>
+&lt;p>= Where is the file with quotes located =&lt;/p>
+&lt;p>For the get from file option, a file &amp;ldquo;quotes.txt&amp;rdquo; has to be present in the same directory where shantz-wp-qotd.php is residing. A sample quotes.txt has been given with this plugin (with some quotes from southpark, simpsons, matrix and deus ex)&lt;/p>
+&lt;p>= I checked the option &amp;ldquo;exclude pages&amp;rdquo; but my pages are still displaying quotes =
+Check your WordPress version. This option is effective only for Version 2.1 and above&lt;/p>
+&lt;p>= How to upgrade to a new version =
+Simply overwrite the old files with the new ones.&lt;/p>
+&lt;p>&lt;strong>== Screenshots ==&lt;/strong>&lt;/p>
+&lt;p>Config Screens and plugin in action:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/screenshot-1.png">&lt;img src="/img/uploads/screenshot_2D1_thumb.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="/img/uploads/screenshot-2.png">&lt;img src="/img/uploads/screenshot_2D2_thumb1.jpg" alt="Screenshot-2">&lt;/a> &lt;a href="/img/uploads/screenshot-3.png">&lt;img src="/img/uploads/screenshot_2D3_thumb.jpg" alt="Screenshot-3">&lt;/a>&lt;/p>
+&lt;p>You can also see the plugin in action right here on my site (check bottom of posts and the right sidebar topmost widget)&lt;/p>
+&lt;p>&lt;strong>== Version History ==&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Version 1.2.2&lt;/p>
+&lt;ul>
+&lt;li>Fixed a bug because of which quotes were blank some times. Thanks to Thom for reporting it.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.2.1&lt;/p>
+&lt;ul>
+&lt;li>Option to exclude pages from displaying quotes is also compatible with wordpress version &amp;lt; 2.1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.2.0&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added option to exclude pages from displaying quotes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Fixed a bug that quotes source selection checkboxes always remain checked after updating settings.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Cosmetic: Fixed a few spelling mistakes :)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.1.0.1&lt;/p>
+&lt;ul>
+&lt;li>Cosmetic: Changed readme.txt according to wp-extend standards&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.1.0&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Custom quote separator support and multi-line quotes support&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.0.1&lt;/p>
+&lt;ul>
+&lt;li>Fixed some styling related issues in text added before/after quote displayed in widget (especially links related issues)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Version 1.0.0&lt;/p>
+&lt;ul>
+&lt;li>Initial version&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></content></item><item><title>i3theme awesomeness: Cool feature for end-users/viewers</title><link>/2008/02/06/i3theme-awesomeness-cool-feature-for-end-usersviewers/</link><pubDate>Wed, 06 Feb 2008 04:42:02 +0000</pubDate><guid>/2008/02/06/i3theme-awesomeness-cool-feature-for-end-usersviewers/</guid><description>I am just in love with this theme. I knew about the cool feature that you can click on those little green dots on the right top corner of any widget and the widget will minimize to just a bar but just now discovered another awesome feature for the viewers of the wordpress based blogs using this theme. The feature is that you, the viewer, can reorganize the widgets on the left and right sidebars according to your preference, like move the “Pages” widget towards the top for convenient navigation through all the static pages in the site.</description><content>&lt;p>I am just in love with this theme. I knew about the cool feature that you can click on those little green dots on the right top corner of any widget and the widget will minimize to just a bar but just now discovered another awesome feature for the viewers of the wordpress based blogs using this theme. The feature is that you, the viewer, can reorganize the widgets on the left and right sidebars according to your preference, like move the “Pages” widget towards the top for convenient navigation through all the static pages in the site. All this through simple steps like -“&lt;strong>Click, drag, drop&lt;/strong>” and you are set. The other widgets will automatically move up and down to make space. And the clincher is that it will remember your preferences &lt;img src="/img/uploads/smile1.gif" alt=""> (actually the browser will remember, I think). So, whenever you come back to the site, you will see it the way you like it. Here is an example:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/widgets_default.jpg">&lt;img src="/img/uploads/widgets_default_thumb.jpg" alt="Widgets_default">&lt;/a>&lt;/p>
+&lt;p>Default widget layout&lt;/p>
+&lt;p>&lt;a href="/img/uploads/widgets_reorganized.jpg">&lt;img src="/img/uploads/widgets_reorganized_thumb.jpg" alt="Widgets_reorganized">&lt;/a>&lt;/p>
+&lt;p>Widget layout after reorganization&lt;/p></content></item></channel></rss>

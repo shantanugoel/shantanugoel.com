@@ -1,2 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>I3theme Sidebar Problem on</title><link>/tags/i3theme-sidebar-problem/</link><description>Recent content in I3theme Sidebar Problem on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 06 Apr 2008 14:20:25 +0000</lastBuildDate><atom:link href="/tags/i3theme-sidebar-problem/index.xml" rel="self" type="application/rss+xml"/><item><title>Hack: Fixing The WordPress i3theme Sidebar Issue (Part II)</title><link>/posts/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</link><pubDate>Sun, 06 Apr 2008 14:20:25 +0000</pubDate><guid>/posts/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</guid><description>Some time back I had posted a little hack to fix an issue that users of i3theme have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.
-Go to your wp-content/themes/ folder and open the style.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>I3theme Sidebar Problem on</title><link>/tags/i3theme-sidebar-problem/</link><description>Recent content in I3theme Sidebar Problem on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 06 Apr 2008 14:20:25 +0000</lastBuildDate><atom:link href="/tags/i3theme-sidebar-problem/index.xml" rel="self" type="application/rss+xml"/><item><title>Hack: Fixing The WordPress i3theme Sidebar Issue (Part II)</title><link>/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</link><pubDate>Sun, 06 Apr 2008 14:20:25 +0000</pubDate><guid>/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</guid><description>Some time back I had posted a little hack to fix an issue that users of i3theme have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.
+Go to your wp-content/themes/ folder and open the style.</description><content>&lt;p>Some time back I had &lt;a href="/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html">posted a little hack&lt;/a> to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/">i3theme&lt;/a> have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to your wp-content/themes/&lt;!-- raw HTML omitted --> folder and open the style.css file in your favourite text editor.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Search for &amp;ldquo;#sidebar&amp;rdquo; (without the quotes) until you reach the following code:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>#sidebar-right,
+#sidebar-left {
+width: 210px;
+color: #666666;
+line-height: 160%;
+}
+&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;li>Now, modify this code to look like:&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>#sidebar-right,
+#sidebar-left {
+width: 210px;
+color: #666666;
+line-height: 160%;
+word-wrap: break-word;
+}
+&lt;/code>&lt;/pre>&lt;ol start="4">
+&lt;li>That&amp;rsquo;s it. Save your file and you are done.&lt;/li>
+&lt;/ol>
+&lt;p>So what does it do? Basically I just added an attribute &amp;ldquo;word-wrap: break-word&amp;rdquo; to the sidebar handling. So, if there is a word that cannot fit in the sidebar width, the word will be broken to continue in the next line and thus the sidebar alignment will remain intact. let me know if you face any issues with this.&lt;/p>
+&lt;p>&lt;strong>Note&lt;/strong> that this particular word-wrap property is Internet Explorer specific. Firefox (and other browsers) will ignore it, but since the problem with sidebar alignment occurs only with IE, so it will enable IE to display your site properly.&lt;/p></content></item></channel></rss>

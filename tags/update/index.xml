@@ -1,6 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Update on</title><link>/tags/update/</link><description>Recent content in Update on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 22 May 2010 19:36:34 +0000</lastBuildDate><atom:link href="/tags/update/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Froyo Update File</title><link>/posts/android-froyo-update/</link><pubDate>Sat, 22 May 2010 19:36:34 +0000</pubDate><guid>/posts/android-froyo-update/</guid><description>Just a quick post to tell you how to update your Nexus One to Android 2.2 Froyo immediately without waiting for google to send it to you OTA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Update on</title><link>/tags/update/</link><description>Recent content in Update on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 22 May 2010 19:36:34 +0000</lastBuildDate><atom:link href="/tags/update/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Froyo Update File</title><link>/2010/05/22/android-froyo-update/</link><pubDate>Sat, 22 May 2010 19:36:34 +0000</pubDate><guid>/2010/05/22/android-froyo-update/</guid><description>Just a quick post to tell you how to update your Nexus One to Android 2.2 Froyo immediately without waiting for google to send it to you OTA.
 Download this file from google&amp;rsquo;s servers: http://android.clients.google.com/packages/passion/signed-passion-FRF50-from-ERE27.1e519a24.zip
 After that just follow the below mentioned steps:
 Put it on your SD card and rename to update.zip
 Power off then hold trackball and press power again to boot into recovery
-Go to Bootloader -&amp;gt; Recovery</description></item></channel></rss>
+Go to Bootloader -&amp;gt; Recovery</description><content>&lt;p>Just a quick post to tell you how to update your Nexus One to Android 2.2 Froyo immediately without waiting for google to send it to you OTA.&lt;/p>
+&lt;p>Download this file from google&amp;rsquo;s servers: &lt;a href="http://android.clients.google.com/packages/passion/signed-passion-FRF50-from-ERE27.1e519a24.zip">http://android.clients.google.com/packages/passion/signed-passion-FRF50-from-ERE27.1e519a24.zip&lt;/a>&lt;/p>
+&lt;p>After that just follow the below mentioned steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Put it on your SD card and rename to update.zip&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Power off then hold trackball and press power again to boot into recovery&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to Bootloader -&amp;gt; Recovery&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press power button + Vol. Increase&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply the update&lt;/p>
+&lt;/li>
+&lt;/ol></content></item></channel></rss>

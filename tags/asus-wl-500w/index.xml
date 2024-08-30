@@ -1,4 +1,216 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Asus WL-500W on</title><link>/tags/asus-wl-500w/</link><description>Recent content in Asus WL-500W on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 21 Aug 2011 17:44:24 +0000</lastBuildDate><atom:link href="/tags/asus-wl-500w/index.xml" rel="self" type="application/rss+xml"/><item><title>Remote Bandwidth Stats</title><link>/posts/remote-bandwidth-stats/</link><pubDate>Sun, 21 Aug 2011 17:44:24 +0000</pubDate><guid>/posts/remote-bandwidth-stats/</guid><description>This post is about my open source remote bandwidth usage stats logger project.
-I&amp;rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&amp;rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&amp;rsquo;d still need to add up all logs and many of such devices don&amp;rsquo;t even have a way to install a monitoring software installed (e.</description></item><item><title>Firefly / sqlite error "unable to open database file" Solution</title><link>/posts/firefly-sqlite-error-unable-to-open-database-file-solution/</link><pubDate>Mon, 26 Jul 2010 18:11:40 +0000</pubDate><guid>/posts/firefly-sqlite-error-unable-to-open-database-file-solution/</guid><description>Recently I came across a weird error while trying to run firefly itunes server (mt-daapd) on my router (Asus wl-500w). It had something to do with sqlite and gave a vague message &amp;ldquo;Unable to open database file&amp;rdquo;. After going bonkers for a short time, I solved it and this is how.
-One of my hard disks crashed recently and unfortunately it was the one I had connected to my router to serve media to me all over the house (through PS3/laptop) or when I travel (through laptop/phone).</description></item><item><title>Cannot Change Channel Problem With Asus WL-500W</title><link>/posts/cannot-change-channel-problem-with-asus-wl-500w/</link><pubDate>Tue, 13 Jul 2010 12:16:44 +0000</pubDate><guid>/posts/cannot-change-channel-problem-with-asus-wl-500w/</guid><description>Recently I found an issue with my asus wl-500w wi-fi router that I wasn&amp;rsquo;t able to change the channel on which it was transmitting. I moved to a new location which was totally jam-packed with other wi-fi networks using same channel as mine which was hampeing my connection. I tried for umpteen number of times. Changing the channel through the web configuration did not give any error but I found that it was still transmitting at channel 1.</description></item><item><title>Automatic Login For Beam Cable</title><link>/posts/beam-cable-automatic-login/</link><pubDate>Wed, 14 Apr 2010 04:33:37 +0000</pubDate><guid>/posts/beam-cable-automatic-login/</guid><description>This article will tell you a simple way to login automatically to beam cable (Beam-Telecom) internet connection instead of using the web login manually. Not only that, I’ll also tell you how to do this auto-login through your router if you have one with a custom linux firmware. I took a beam cable connection a few days ago. The price is excellent and speeds are good but the only thing that bothered me was the web based login.</description></item><item><title>Easiest Way to Shutdown Asus WL-500W</title><link>/posts/shutdown-asus-wl-500-w/</link><pubDate>Fri, 10 Jul 2009 23:19:12 +0000</pubDate><guid>/posts/shutdown-asus-wl-500-w/</guid><description>If you are a proud owner of an Asus WL-500W wireless router (or maybe another one of the same series like wl-500g, wl-500gp, etc), then you know that this router has a very useful USB port with which you might have attached your external hard disk and have already offloaded all your downloding tasks to it, or maybe using it for various other purposes. Whatever maybe the reason, the main point is that because of this hard disk, now we cannot just turn off the power of the router any more.</description></item><item><title>Compiling Latest FireFly (mt-daapd) for ASUS WL-500W</title><link>/posts/compiling-latest-firefly-mt-daapd-asus-wl-500w/</link><pubDate>Fri, 03 Jul 2009 10:28:32 +0000</pubDate><guid>/posts/compiling-latest-firefly-mt-daapd-asus-wl-500w/</guid><description>FireFly is a nice DAAP based media server that allows you to listen to your music collection anywhere using any DAAP based client like iTunes, with other players (like Winamp, Rhythmbox, VLC, etc) using plugins, or it even has its own dedicated php/flash/java based clients that can be fired up on any platform any computer giving you instant nirvana.
-Many people, like me, use it on their Routers or NAS boxes to access their music anywhere without having to keep their home PC running or lugging around external drives.</description></item><item><title>Shutdown Script For Asus WL-500W With Oleg Firmware</title><link>/posts/shutdown-script-asus-wl-500w-oleg-firmware/</link><pubDate>Mon, 09 Mar 2009 13:30:04 +0000</pubDate><guid>/posts/shutdown-script-asus-wl-500w-oleg-firmware/</guid><description>If you have an Asus WL-500W, the DIYers&amp;rsquo; favourite wireless router, and have installed the Oleg custom firmware on it, then you would have set up a shutdown script for it, that allows your router to shut down gracefully. This is especially important if you have a USB hard disk attached to it. There are many such scripts available in Oleg&amp;rsquo;s firmware that you can tweak. All of these reside in &amp;ldquo;/usr/local/sbin/&amp;rdquo;.</description></item><item><title>Secure Access To Your DSL Modem's Telnet (telnet / ssh)</title><link>/posts/secure-access-dsl-modems-telnet-ssh/</link><pubDate>Wed, 25 Feb 2009 18:30:00 +0000</pubDate><guid>/posts/secure-access-dsl-modems-telnet-ssh/</guid><description>I have one of those crappy DSL modems that all these ISPs give to you with the connection. My ISP is Airtel and the modem that I have is Beetel 110-BXi (They also have other models like 220-BX and 220 BXi). One thing common among all these modems is that they do not provide secure access like Secure Shell (ssh) as all they provide is ftp/telnet/http etc which are all clear text protocols.</description></item><item><title>[TIP] Install Twonky on Asus WL-500W with stock firmware</title><link>/posts/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</link><pubDate>Mon, 23 Feb 2009 06:30:00 +0000</pubDate><guid>/posts/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</guid><description>Asus WL-500W is a greate wi-fi router with lots of features, one of them being able to use it as a media server to serve movies/songs over your network from a hard disk connected directly to it through USB. But the media server that is included in the official firmware leaves a lot to be desired. If you are a fan of twonky, all you would have heard so far would have been that to use it on your router, you&amp;rsquo;d have to change your firmware over to a non-official one.</description></item><item><title>[TIP] Asus WL-500W Hacks:How To Reset Web Admin Password</title><link>/posts/tip-asus-wl-500w-hackshow-to-reset-web-admin-password/</link><pubDate>Fri, 23 Jan 2009 22:41:31 +0000</pubDate><guid>/posts/tip-asus-wl-500w-hackshow-to-reset-web-admin-password/</guid><description>Most of you must be knowing by now that I bought the amazing Asus WL-500W router a few days back. This router builds on the great lineage it has in its predecessors, the WL-500g, WL-500g Deluxe, WL-500gP, WL-500gP v2 etc, and shines ahead with being much more than a router, rather a complete headless linux PC. Anyways, to the point. In most routers/modems, if you forget the password to your web-administration gui (which generally resides as 192.</description></item><item><title>The Solution To Your Problem Is Out There .... Somewhere</title><link>/posts/the-solution-to-your-problem-is-out-there-somewhere/</link><pubDate>Wed, 03 Dec 2008 15:30:00 +0000</pubDate><guid>/posts/the-solution-to-your-problem-is-out-there-somewhere/</guid><description>I got hold of a new Asus WL-500W router for me (Pics &amp;amp; specs coming up soon). The router has open source firmware so people can develop applications for it. One such app (ADOS) is that allows you to configure the router to download stuff directly to a hard disk (connected to router through USB) without the need of keeping the PC switched on. One of the app users reported the following error (Click on the pic to enlarge) that he got while using the app.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Asus WL-500W on</title><link>/tags/asus-wl-500w/</link><description>Recent content in Asus WL-500W on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Aug 2011 17:44:24 +0000</lastBuildDate><atom:link href="/tags/asus-wl-500w/index.xml" rel="self" type="application/rss+xml"/><item><title>Remote Bandwidth Stats</title><link>/2011/08/21/remote-bandwidth-stats/</link><pubDate>Sun, 21 Aug 2011 17:44:24 +0000</pubDate><guid>/2011/08/21/remote-bandwidth-stats/</guid><description>This post is about my open source remote bandwidth usage stats logger project.
+I&amp;rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&amp;rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&amp;rsquo;d still need to add up all logs and many of such devices don&amp;rsquo;t even have a way to install a monitoring software installed (e.</description><content>&lt;p>This post is about my open source remote bandwidth usage stats logger project.&lt;/p>
+&lt;p>I&amp;rsquo;ve been wanting to log the internet bandwidth usage at my home for quite some time since I don&amp;rsquo;t really find the stats put out by my ISP to be completely accurate. But I have multiple devices at home that access the internet so it is not feasible to install a bandwidth monitor individually on all these devices as I&amp;rsquo;d still need to add up all logs and many of such devices don&amp;rsquo;t even have a way to install a monitoring software installed (e.g. my PS3, my TV, my media players, etc). So, I thought of monitoring the usage at my router. It is a smart one (Asus wl-500w) and I can install various linux software on it but then it requires a hard disk to run most of them which I don&amp;rsquo;t turn on all the time. Moreover, even if I could run the software directly from router flash, it doesn&amp;rsquo;t have enough space to store the logs (neither is it a good idea to keep writing to the flash often).&lt;/p>
+&lt;p>Hence I came up with the idea of a light weight remote bandwidth usage logger where in the router has to do the bare minimum possible (here, it just has to make a GET call to a webpage with current status of received and transmitted bytes, accomplished by a single line of wget command). The system is completely open source and is intelligent enough to keep track of things even if router reboots or the bytes count wraps around the 4 GB limit (because of 32 bit data structures used). The logging and parsing is all done on server side and provides various useful things.&lt;/p>
+&lt;p>Few of the features of the system:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Very lightweight in CPU/RAM resource usage on host as well as server&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Outputs easy to browse html and graphs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>User defined directory structure to decide the granularity that is wanted&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>yearly, monthly, daily stats and graphs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Provides quick access to extra stats like last time the host connected, last known host IP etc&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Provides total download/upload numbers as well as detailed&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Estimates uptime of remote host&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Can use a DNS name or IP to avoid (or call out) spurious amounts of usage logged by a spurious IP&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The code and all files can be found at github: &lt;strong>&lt;a href="http://github.com/shantanugoel/remote-bandwidth-stats">Remote-Bandwidth-Stats&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>The screenshots of the web pages generated by the system can be seen below. Please let me know if you find any issues with the programs or would like to request any new features.&lt;/p>
+&lt;p>
+&lt;figure class="left" >
+&lt;img src="/img/uploads/remote-bandwidth-stats-year-thumb.png" />
+&lt;/figure>
+&lt;figure class="left" >
+&lt;img src="/img/uploads/remote-bandwidth-stats-month-thumb.png" />
+&lt;/figure>
+&lt;figure class="left" >
+&lt;img src="/img/uploads/remote-bandwidth-stats-day-thumb.png" />
+&lt;/figure>
+&lt;/p></content></item><item><title>Firefly / sqlite error "unable to open database file" Solution</title><link>/2010/07/26/firefly-sqlite-error-unable-to-open-database-file-solution/</link><pubDate>Mon, 26 Jul 2010 18:11:40 +0000</pubDate><guid>/2010/07/26/firefly-sqlite-error-unable-to-open-database-file-solution/</guid><description>Recently I came across a weird error while trying to run firefly itunes server (mt-daapd) on my router (Asus wl-500w). It had something to do with sqlite and gave a vague message &amp;ldquo;Unable to open database file&amp;rdquo;. After going bonkers for a short time, I solved it and this is how.
+One of my hard disks crashed recently and unfortunately it was the one I had connected to my router to serve media to me all over the house (through PS3/laptop) or when I travel (through laptop/phone).</description><content>&lt;p>Recently I came across a weird error while trying to run firefly itunes server (mt-daapd) on my router (Asus wl-500w). It had something to do with sqlite and gave a vague message &amp;ldquo;Unable to open database file&amp;rdquo;. After going bonkers for a short time, I solved it and this is how.&lt;/p>
+&lt;p>One of my hard disks crashed recently and unfortunately it was the one I had connected to my router to serve media to me all over the house (through PS3/laptop) or when I travel (through laptop/phone). I had all the data backed up but somehow didn&amp;rsquo;t preserve the firefly server. I rebuilt the server from source using my &lt;a href="/2009/07/03/compiling-latest-firefly-mt-daapd-asus-wl-500w.html">own guide&lt;/a> (Thank God I did it. I wouldn&amp;rsquo;t have been able to preserve my sanity finding all that out the hard way again.). But after doing all the installation and reconfiguration, it gave me a weird error &amp;ldquo;unable to open database file&amp;rdquo; every time and exited. I checked the permissions on the songs3.db file (in /opt/var/cache/mt-daapd for me) and made it writable by all but the issue persisted. I changed its ownership to the user under which firefly was running but the issue was still there. Finally I found that the server (or maybe its an sqlite thing) was trying to create a temp file in the cache directory for the transactions and since the user with which it was started, didn&amp;rsquo;t own the directory it wasn&amp;rsquo;t able to create the file in it.&lt;/p>
+&lt;p>So, the fix: I did a &lt;code>chown &amp;lt;username&amp;gt; /opt/var/cache/mt-daapd&lt;/code> on it and voila! the problem was fixed. I am a happy man now since I own a new android phone since last time and now able to stream all my music to my phone through itunes (daap protocol) server over an ssh tunnel :)&lt;/p></content></item><item><title>Cannot Change Channel Problem With Asus WL-500W</title><link>/2010/07/13/cannot-change-channel-problem-with-asus-wl-500w/</link><pubDate>Tue, 13 Jul 2010 12:16:44 +0000</pubDate><guid>/2010/07/13/cannot-change-channel-problem-with-asus-wl-500w/</guid><description>Recently I found an issue with my asus wl-500w wi-fi router that I wasn&amp;rsquo;t able to change the channel on which it was transmitting. I moved to a new location which was totally jam-packed with other wi-fi networks using same channel as mine which was hampeing my connection. I tried for umpteen number of times. Changing the channel through the web configuration did not give any error but I found that it was still transmitting at channel 1.</description><content>&lt;p>Recently I found an issue with my asus wl-500w wi-fi router that I wasn&amp;rsquo;t able to change the channel on which it was transmitting. I moved to a new location which was totally jam-packed with other wi-fi networks using same channel as mine which was hampeing my connection. I tried for umpteen number of times. Changing the channel through the web configuration did not give any error but I found that it was still transmitting at channel 1. I confirmed by checking on the &amp;ldquo;Status &amp;amp; Log&amp;rdquo; page, checking the logs, and running &amp;ldquo;wl status&amp;rdquo; command through ssh and they all confirmed that it was transmitting at channel 1 only, no matter what I set it to in the configuration. I even opened an issue in the firmware project for the custom firmware (by oleg and lly) that I am using but they weren&amp;rsquo;t able to help me as the wi-fi drivers are binary only.&lt;/p>
+&lt;p>But by sheer chance, I stumbled upon the solution finally by trial and error. The solution is that you should set the &amp;ldquo;Bandwidth&amp;rdquo; to 20 MHz in wi-fi configuration if you are using 802.11 G. If you set it to 40 MHz then it gets stuck somehow but as soon as I changed it to 20 MHz, I was able to see the channel change immediately after reboot. Here is the screenshot of the page where you can find this setting.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/asus-wl-500-w-change-channel.jpg">&lt;img src="/img/uploads/asus-wl-500-w-change-channel-thumb.jpg" alt="">&lt;/a>&lt;/p></content></item><item><title>Automatic Login For Beam Cable</title><link>/2010/04/14/beam-cable-automatic-login/</link><pubDate>Wed, 14 Apr 2010 04:33:37 +0000</pubDate><guid>/2010/04/14/beam-cable-automatic-login/</guid><description>This article will tell you a simple way to login automatically to beam cable (Beam-Telecom) internet connection instead of using the web login manually. Not only that, I’ll also tell you how to do this auto-login through your router if you have one with a custom linux firmware. I took a beam cable connection a few days ago. The price is excellent and speeds are good but the only thing that bothered me was the web based login.</description><content>&lt;p>&lt;strong>This article will tell you a simple way to login automatically to beam cable (Beam-Telecom) internet connection instead of using the web login manually.&lt;/strong> Not only that, I’ll also tell you how to do this auto-login through your router if you have one with a custom linux firmware. I took a beam cable connection a few days ago. The price is excellent and speeds are good but the only thing that bothered me was the web based login. You need to open up a browser and login through their online portal before you can access the internet. Now, if you don’t log off, then the login may persist even across PC/router reboots but many times it doesn’t. But in these times, it becomes a pain in the wrong place when I am just looking to play online on my PS3 or one of my various net-capable devices, scattered around the house, are trying to pull data and this forces me to open up my laptop just to login. Even for people who use the internet only on their PC, they might not be using the browser all the time and find it a hassle, minor one but still a hassle, to open a browser and login. Hence, I set out to find a way to do this automatically. (BTW, I’ll also be listing out how I came onto the solution in case you are in interested. If you are not, feel free to skip some paragraphs below to move to the solution)&lt;/p>
+&lt;p>First off, I came to know that Beam cable supports PPPoE logins, but for the life of me, I (and any of my friends) couldn’t get it working. So, I thought of an alternative approach. Since, this was just a login through a web page, there was a good chance that I could automate it through perl/wget/curl etc. I immediately opened up their portal and took a look at the source code in the hopes of finding out the login form, which I could use to find the POST data that they want and submit it through wget. But what I found was that they are using javascript to do the login process, so no direct way of finding this out. And on top of that, the functions are not embedded in the page but loaded through an external script.&lt;/p>
+&lt;p>Hmm, a setback but a minor one. Javascript is still a client-side executed environment so all hope wasn’t lost. I could have waded through the browser cache to find the js files loaded by the portal and went through the functions to reconstruct the data that I need but I chose an easier way. There is this excellent addon for firefox called “Live Headers”. It shows you all the transactions happening between your browser and the server. So, I just fired it up, filled in my login details in the portal and hit “Login”. On seeing the live headers log, I found out the exact url as well as the POST data that they were sending to do the actual login and from there it was a piece of cake. With “wget”, it is as simple as executing&lt;/p>
+&lt;p>&lt;code>wget &amp;lt;url&amp;gt; --post-data=&amp;lt;data&amp;gt;&lt;/code>&lt;/p>
+&lt;p>So, by substituting the information that I got, this is the command that you need to execute on your PC (For linux/mac it is already installed generally and for windows, you will need to download from &lt;a href="http://gnuwin32.sourceforge.net/packages/wget.htm">here&lt;/a>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>wget http://123.176.37.2/newportal/Ajax.php --post-data=&amp;#34;function=ExecuteLogin&amp;amp;user=YOURBEAMUSERNAME&amp;amp;pwd=YOURBEAMPASSWORD&amp;amp;remember=false&amp;amp;timestamp=1271186686298&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>Please remember to replace YOURBEAMUSERNAME and YOURBEAMPASSWORD with your actual username and password respectively. Also, please note that the above command is all one single line (it might appear in multiple lines in your browser).&lt;/p>
+&lt;p>So, everytime you need to login just run this command. Now, how to do this automatically? For linux, just put it inside a shell script for linux and set it to run automatically on bootup. For windows, paste the command in a text file, and save it as beam_login.bat and put it in your start up folder so that it runs everytime on boot. (You might want to put some delays in there as it might take some time to get connected to the network or you can query the network interface to run it when the network is up. Let me know if you want to know how to do this for your platform and I can help you).&lt;/p>
+&lt;p>So, this is for the PC, now how about if I need to use non-browser capable devices. This is easy if you have a router with a custom linux firmware (because they generally have wget installed or allow you to install it). I have an Asus wl-500w with oleg’s custom firmware installed and it was a piece of cake with it. I just created the following shell script&lt;/p>
+&lt;pre tabindex="0">&lt;code>#!/bin/sh
+if [ -e Ajax.php ]
+then
+rm Ajax.php
+fi
+#Limit the number of retries to prevent the router from going into continuous loop
+num_retries=10
+while [ $num_retries -gt 0 ]
+do
+wget http://123.176.37.2/newportal/Ajax.php --post-data=&amp;#34;function=ExecuteLogin&amp;amp;user=YOURBEAMUSERNAME&amp;amp;pwd=YOURBEAMPASSWORD&amp;amp;remember=false&amp;amp;timestamp=1271186686298&amp;#34;
+if [ -e Ajax.php ]
+then
+rm Ajax.php
+break
+else
+sleep 2s
+num_retries=`expr $num_retries - 1`
+fi
+done
+&lt;/code>&lt;/pre>&lt;p>Then I set it to run on boot and voila!! A tip for other users of any of the asus routers with oleg’s firmware (like wl-500g, wl-520gu, wl-500gp etc). The firmware has some scripts in the /local/sbin folder that are run at various times. I suggest you put the above code inside the &lt;strong>post-firewall&lt;/strong> script. (Do not forget to run “flashfs save &amp;amp;&amp;amp; flasfs commit &amp;amp;&amp;amp; flashfs enable” to save your changes). Now, every time my router reboots, it automatically logs in to the connection :)&lt;/p>
+&lt;p>Hope I have been clear in the isntructions. If you are unclear about anything or need any help in implementing it for your specific platform, do let me know.&lt;/p></content></item><item><title>Easiest Way to Shutdown Asus WL-500W</title><link>/2009/07/10/shutdown-asus-wl-500-w/</link><pubDate>Fri, 10 Jul 2009 23:19:12 +0000</pubDate><guid>/2009/07/10/shutdown-asus-wl-500-w/</guid><description>If you are a proud owner of an Asus WL-500W wireless router (or maybe another one of the same series like wl-500g, wl-500gp, etc), then you know that this router has a very useful USB port with which you might have attached your external hard disk and have already offloaded all your downloding tasks to it, or maybe using it for various other purposes. Whatever maybe the reason, the main point is that because of this hard disk, now we cannot just turn off the power of the router any more.</description><content>&lt;p>If you are a proud owner of an Asus WL-500W wireless router (or maybe another one of the same series like wl-500g, wl-500gp, etc), then you know that this router has a very useful USB port with which you might have attached your external hard disk and have already offloaded all your downloding tasks to it, or maybe using it for various other purposes. Whatever maybe the reason, the main point is that because of this hard disk, now we cannot just turn off the power of the router any more. It has to be shut down gracefully like a PC. One way is to ssh/telnet to it and then give the &amp;ldquo;halt&amp;rdquo; command but then you have to switch on a PC specially just to turn off your router. Well not any more. I was looking for a better way to do this and just found out the simplest one. And if you are using Oleg&amp;rsquo;s custom firmware then you are in luck too.
+With the 1.9.2.7-g version of his firmware, oleg added a new feature with which if you press the **EZ Setup **button at the back of the router for 3 seconds, it executes a script &amp;ldquo;/usr/local/sbin/ez-setup&amp;rdquo;, if present. So, all you gotta do is create a new text file named &amp;ldquo;ez-setup&amp;rdquo;, and paste the following contents in it:&lt;/p>
+&lt;!-- raw HTML omitted --></content></item><item><title>Compiling Latest FireFly (mt-daapd) for ASUS WL-500W</title><link>/2009/07/03/compiling-latest-firefly-mt-daapd-asus-wl-500w/</link><pubDate>Fri, 03 Jul 2009 10:28:32 +0000</pubDate><guid>/2009/07/03/compiling-latest-firefly-mt-daapd-asus-wl-500w/</guid><description>FireFly is a nice DAAP based media server that allows you to listen to your music collection anywhere using any DAAP based client like iTunes, with other players (like Winamp, Rhythmbox, VLC, etc) using plugins, or it even has its own dedicated php/flash/java based clients that can be fired up on any platform any computer giving you instant nirvana.
+Many people, like me, use it on their Routers or NAS boxes to access their music anywhere without having to keep their home PC running or lugging around external drives.</description><content>&lt;p>FireFly is a nice DAAP based media server that allows you to listen to your music collection anywhere using any DAAP based client like iTunes, with other players (like Winamp, Rhythmbox, VLC, etc) using plugins, or it even has its own dedicated php/flash/java based clients that can be fired up on any platform any computer giving you instant nirvana.&lt;/p>
+&lt;p>Many people, like me, use it on their Routers or NAS boxes to access their music anywhere without having to keep their home PC running or lugging around external drives. However, development on this gem stopped some time ago. The last stable build released (2.4.2) was good but it doesn&amp;rsquo;t have a lot of features provided by the nightly builds in svn (subversion). And the last nightly build released (svn-1696) had a lot of broken things. It was rebuilding the database everytime, crashed around quite a bit, had a lot of security holes. So, I decided to get the latest version (trunk) of the FireFly code, as it had a lot of fixes for above issues, put in whatever was missing, and try to build it for my use.&lt;/p>
+&lt;p>After a day&amp;rsquo;s worth of efforts, here it is. This latest build is the most rich in features as compared to the stable one, and is just as stable as the 2.4.2 release if not better, and also fixes all the issues shown by the svn-1696 build. The downloadable source and complete install package are attached with this post. But I&amp;rsquo;m also listing down the steps that I took to achieve this so that if anyone wants to recompile it with their own options (e.g. I haven’t included ogg/flac support in my build), they are able to do so. You can find the steps below. Please let me know if you have any queries. Also, if you want to submit any patches, I’ll be happy to incorporate them and recompile. I’m also trying to get this source and package into the unslung/optware repositories for wider distribution.&lt;/p>
+&lt;p>&lt;strong>Note: Although I’ve compiled this for Asus WL-500W, it should work for most devices with a mipsel architecture (which includes all the Asus routers in this family). Also, the compilation process should work for most other architectures barring one or two steps. I’d be happy to help if you want to do so and face any issues.&lt;/strong>&lt;/p>
+&lt;p>Changes and Build Steps:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>ipkg install optware-devel&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ipkg install buildroot&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit /opt/share/aclocal/audiofile.m4 and change AC_DEFUN(AM_PATH_AUDIOFILE, to AC_DEFUN([AM_PATH_AUDIOFILE],&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ipkg install gettext (for some missing m4 macros, libr_rpath etc)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Comment out AC_USE_SYSTEM_EXTENSIONS in configure.in (using dnl)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>aclocal -I &amp;lt;path of mt-daapd&amp;rsquo;s local m4 dir&amp;gt;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “autoheader” to generate config.h.in&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>touch config.rpath (somehow this file is not provided with gettext for us)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>change configure.in line 95, remove the ; at the end&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>remove -g flag and add -O2 in configure.in for optimization purpose&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “automake &amp;ndash;add-missing”&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “autoconf” - to generate configure&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ipkg install grep (for egrep)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>change /bin/sh to /opt/bin/bash in configure and install-sh&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “./configure &amp;ndash;enable-sqlite3 &amp;ndash;prefix=/opt CPFLAGS=”-D_LIBC” ” (You can also use &amp;ndash;enable-oggvorbis and/or &amp;ndash;enableflac)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After this step, I had to make numerous changes to the source code to put in the missing functionality for database handling, removing some compilation errors, etc. You can diff the svn 1715 code with mine to see the changes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “make”&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “make install”&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>And you are done. The modified source and compiled bianries can be downloaded from below.&lt;/p>
+&lt;p>&lt;em>Lost the files in a server move. Sorry :(&lt;/em>&lt;/p>
+&lt;p>Let me know if you have any queries or face any issues.&lt;/p></content></item><item><title>Shutdown Script For Asus WL-500W With Oleg Firmware</title><link>/2009/03/09/shutdown-script-asus-wl-500w-oleg-firmware/</link><pubDate>Mon, 09 Mar 2009 13:30:04 +0000</pubDate><guid>/2009/03/09/shutdown-script-asus-wl-500w-oleg-firmware/</guid><description>If you have an Asus WL-500W, the DIYers&amp;rsquo; favourite wireless router, and have installed the Oleg custom firmware on it, then you would have set up a shutdown script for it, that allows your router to shut down gracefully. This is especially important if you have a USB hard disk attached to it. There are many such scripts available in Oleg&amp;rsquo;s firmware that you can tweak. All of these reside in &amp;ldquo;/usr/local/sbin/&amp;rdquo;.</description><content>&lt;p>If you have an &lt;a href="http://tech.shantanugoel.com/tag/asus-wl-500w">Asus WL-500W&lt;/a>, the DIYers&amp;rsquo; favourite wireless router, and have installed the Oleg custom firmware on it, then you would have set up a shutdown script for it, that allows your router to shut down gracefully. This is especially important if you have a USB hard disk attached to it. There are many such scripts available in Oleg&amp;rsquo;s firmware that you can tweak. All of these reside in &amp;ldquo;/usr/local/sbin/&amp;rdquo;. The one that we are going to talk about today is named &amp;ldquo;pre-shutdown&amp;rdquo; and it is exceuted just before the router is about to shutdown. Here is my script that will stop all the programs that have been started, finalizes all data accesses for the hard drive, unmounts all the partitions and if they can&amp;rsquo;t be unmounted, then mounts them as read only to reduce the risks, and then allows the router to continue shutdown. Although this script is written for Asus WL-500W but it will work with most other routers that use oleg or unslung firmware (like Linksys NSLU2, Asus WL-500G, WL-500gP etc):&lt;/p>
+&lt;pre tabindex="0">&lt;code>#! /bin/sh
+/opt/etc/init.d/rc.unslung stop
+sleep 5s
+sync
+sleep 5s
+for i in `cat /proc/mounts | awk &amp;#39;/ext3/{print($1)}&amp;#39;` ; do
+umount $i
+if [ $? != 0 ] ; then
+echo &amp;#34;Could not unmount $i. Mounting as read only&amp;#34;
+mount -oremount,ro $i
+else
+echo &amp;#34;Unmount $i.&amp;#34;
+fi
+done
+swapoff -a
+sleep 1s
+&lt;/code>&lt;/pre></content></item><item><title>Secure Access To Your DSL Modem's Telnet (telnet / ssh)</title><link>/2009/02/25/secure-access-dsl-modems-telnet-ssh/</link><pubDate>Wed, 25 Feb 2009 18:30:00 +0000</pubDate><guid>/2009/02/25/secure-access-dsl-modems-telnet-ssh/</guid><description>I have one of those crappy DSL modems that all these ISPs give to you with the connection. My ISP is Airtel and the modem that I have is Beetel 110-BXi (They also have other models like 220-BX and 220 BXi). One thing common among all these modems is that they do not provide secure access like Secure Shell (ssh) as all they provide is ftp/telnet/http etc which are all clear text protocols.</description><content>&lt;p>I have one of those crappy DSL modems that all these ISPs give to you with the connection. My ISP is Airtel and the modem that I have is Beetel 110-BXi (They also have other models like 220-BX and 220 BXi). One thing common among all these modems is that they do not provide secure access like Secure Shell (ssh) as all they provide is ftp/telnet/http etc which are all clear text protocols. Hence, it is a huge security risk to expose these interfaces to the internet and then access them from outside. So, I (and most others) don&amp;rsquo;t allow these services to be accessed from WAN. But I do have the need some time to access it. So, what do I do? I follow a simple process to allow myself a pseudo-ssh or telnet picggy-backed over ssh connection. How is that?&lt;/p>
+&lt;p>Well, I have an excellent wi-fi router (Asus WL-500W) that does have ssh (which I have configured to listen on, say, port XXXX). Now all I do is:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Disable telnet access to modem from WAN but enable from LAN.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Forward this particular port XXXX in modem&amp;rsquo;s configuration to the router&amp;rsquo;s IP.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optional: Register for a dynamic dns account (e.g. dyndns.org) and update the same in modem&amp;rsquo;s config so I can access my modem through a domain name since I have a dynamic IP which changes all the time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now, ssh to my external (WAN) IP from outside (say from work). Since, the port is forwarded to my router, it the router that answers my ssh request.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After logging in to my router, simply telnet to the modem using its LAN IP and configure away.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Simple, isn&amp;rsquo;t it? I would advise you all to make a similar setup for yourself as well, if possible, rather than taking risks of unsecure access.&lt;/p></content></item><item><title>[TIP] Install Twonky on Asus WL-500W with stock firmware</title><link>/2009/02/23/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</link><pubDate>Mon, 23 Feb 2009 06:30:00 +0000</pubDate><guid>/2009/02/23/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</guid><description>Asus WL-500W is a greate wi-fi router with lots of features, one of them being able to use it as a media server to serve movies/songs over your network from a hard disk connected directly to it through USB. But the media server that is included in the official firmware leaves a lot to be desired. If you are a fan of twonky, all you would have heard so far would have been that to use it on your router, you&amp;rsquo;d have to change your firmware over to a non-official one.</description><content>&lt;p>Asus WL-500W is a greate wi-fi router with lots of features, one of them being able to use it as a media server to serve movies/songs over your network from a hard disk connected directly to it through USB. But the media server that is included in the official firmware leaves a lot to be desired. If you are a fan of twonky, all you would have heard so far would have been that to use it on your router, you&amp;rsquo;d have to change your firmware over to a non-official one. If you do not want to take any risks with the custom firmwares, I&amp;rsquo;ll tell you a simple way to use twonky with the stock firmware itself. Follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Download Twonky (The MIPS version) and extract/save it to some place on the harddisk attached to your router (e.g. /tmp/harddisk/part0/twonky/ )&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new shell script for starting twonky automatically (Replace the paths according to where you stored the twonky files in step 1). All you need to do is create a text file with following contents and mark it as executable. We&amp;rsquo;ll name it init.sh.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>#!/bin/sh
+route add -net 224.0.0.0 netmask 240.0.0.0 dev br0
+cd /tmp/harddisk/part0/twonky&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt;/tmp/harddisk/part0/twonky/twonkymedia &amp;amp;
+&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;li>
+&lt;p>Copy this script to your harddisk to where you extracted twonky files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open up the router&amp;rsquo;s web administration page (most probably at 192.168.1.1), go to the USB section, and put the following line under &amp;ldquo;Initial Script&amp;rdquo;:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>`/tmp/harddisk/part0/twonky/init.sh``&lt;/p>
+&lt;ol start="5">
+&lt;li>Save, reboot and enjoy :)&lt;/li>
+&lt;/ol>
+&lt;p>If you have any questions, let me know. Infact, the same tip can be used to install many other such softwares onto your Asus routers series including WL-500g, WL-500gP, WL-500W, etc.&lt;/p></content></item><item><title>[TIP] Asus WL-500W Hacks:How To Reset Web Admin Password</title><link>/2009/01/23/tip-asus-wl-500w-hackshow-to-reset-web-admin-password/</link><pubDate>Fri, 23 Jan 2009 22:41:31 +0000</pubDate><guid>/2009/01/23/tip-asus-wl-500w-hackshow-to-reset-web-admin-password/</guid><description>Most of you must be knowing by now that I bought the amazing Asus WL-500W router a few days back. This router builds on the great lineage it has in its predecessors, the WL-500g, WL-500g Deluxe, WL-500gP, WL-500gP v2 etc, and shines ahead with being much more than a router, rather a complete headless linux PC. Anyways, to the point. In most routers/modems, if you forget the password to your web-administration gui (which generally resides as 192.</description><content>&lt;p>Most of you must be knowing by now that I bought the amazing Asus WL-500W router a few days back. This router builds on the great lineage it has in its predecessors, the WL-500g, WL-500g Deluxe, WL-500gP, WL-500gP v2 etc, and shines ahead with being much more than a router, rather a complete headless linux PC. Anyways, to the point. In most routers/modems, if you forget the password to your web-administration gui (which generally resides as 192.168.1.1), the only option left is to reset the router, thereby losing all your settings etc. But not so with this little beast. If you remember your ssh password (which BTW is available if you have installed a custom firmware on our router), then you can just login through it to your router and execute the following commands to save your skin:&lt;/p>
+&lt;p>&lt;code>nvram get http_passwd&lt;/code>&lt;/p>
+&lt;p>This will display the current web administration password.&lt;/p>
+&lt;p>&lt;code>nvram set http_passwd=&amp;quot;NewPasswd&amp;quot;&lt;/code>&lt;/p>
+&lt;p>This will set the new password. But remember that you have to enter another command (given below) to make sure that your new password is saved.&lt;/p>
+&lt;p>&lt;code>nvram commit&lt;/code>&lt;/p>
+&lt;p>Now, just reboot and enjoy :)&lt;/p></content></item><item><title>The Solution To Your Problem Is Out There .... Somewhere</title><link>/2008/12/03/the-solution-to-your-problem-is-out-there-somewhere/</link><pubDate>Wed, 03 Dec 2008 15:30:00 +0000</pubDate><guid>/2008/12/03/the-solution-to-your-problem-is-out-there-somewhere/</guid><description>I got hold of a new Asus WL-500W router for me (Pics &amp;amp; specs coming up soon). The router has open source firmware so people can develop applications for it. One such app (ADOS) is that allows you to configure the router to download stuff directly to a hard disk (connected to router through USB) without the need of keeping the PC switched on. One of the app users reported the following error (Click on the pic to enlarge) that he got while using the app.</description><content>&lt;p>I got hold of a new Asus WL-500W router for me (Pics &amp;amp; specs coming up soon). The router has open source firmware so people can develop applications for it. One such app (ADOS) is that allows you to configure the router to download stuff directly to a hard disk (connected to router through USB) without the need of keeping the PC switched on. One of the app users reported the following error (Click on the pic to enlarge) that he got while using the app.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/ADOS_20error_20message.jpg">&lt;img src="/img/uploads/ADOS_20error_20message_thumb.jpg" alt="Asus WL-500W ADOS error message">&lt;/a>&lt;/p>
+&lt;p>Let&amp;rsquo;s see what it says:&lt;/p>
+&lt;p>[Error] Description: An error occured while connecting to the remote server.&lt;/p>
+&lt;p>Probable Reasons: Probable reasons can be found in the error&amp;rsquo;s description. (Hmmm, lets wait &amp;amp; watch)&lt;/p>
+&lt;p>Probable Solutions: Probable soulutions (sic) can be found in the error&amp;rsquo;s description. (Yay!! Alright….hey, wait a sec, how am I supposed to find a solution from a description that says &amp;ldquo;An error occured&amp;rdquo;)&lt;/p>
+&lt;p>So, that&amp;rsquo;s it for now folks. Am off to the himalayas to get some training from the mahatmas in the exquisite art of psychic healing (and router apps bug fixing).&lt;/p></content></item></channel></rss>

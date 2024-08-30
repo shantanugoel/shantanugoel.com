@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Convert Csv to Opml on</title><link>/tags/convert-csv-to-opml/</link><description>Recent content in Convert Csv to Opml on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 22 Feb 2008 04:53:53 +0000</lastBuildDate><atom:link href="/tags/convert-csv-to-opml/index.xml" rel="self" type="application/rss+xml"/><item><title>shantz-csv-to-opml</title><link>/posts/shantz-csv-to-opml/</link><pubDate>Fri, 22 Feb 2008 04:53:53 +0000</pubDate><guid>/posts/shantz-csv-to-opml/</guid><description>INTRODUCTION
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Convert Csv to Opml on</title><link>/tags/convert-csv-to-opml/</link><description>Recent content in Convert Csv to Opml on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 22 Feb 2008 04:53:53 +0000</lastBuildDate><atom:link href="/tags/convert-csv-to-opml/index.xml" rel="self" type="application/rss+xml"/><item><title>shantz-csv-to-opml</title><link>/2008/02/22/shantz-csv-to-opml/</link><pubDate>Fri, 22 Feb 2008 04:53:53 +0000</pubDate><guid>/2008/02/22/shantz-csv-to-opml/</guid><description>INTRODUCTION
 This is a very simple script that I did for a friend. It can be used to quickly generate blogrolls.
 Input: csv file with blog author names and blog links
 Output: OPML file that can be imported into many blogging/blogrolling software and websites (e.g. wordpress, blogrolling.com, etc)
 Usage:
-shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt; Input File Format: Each line should be like this: &amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;... e.</description></item></channel></rss>
+shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt; Input File Format: Each line should be like this: &amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;... e.</description><content>&lt;p>&lt;strong>INTRODUCTION&lt;/strong>&lt;/p>
+&lt;p>This is a very simple script that I did for a friend. It can be used to quickly generate blogrolls.&lt;/p>
+&lt;p>Input: csv file with blog author names and blog links&lt;/p>
+&lt;p>Output: OPML file that can be imported into many blogging/blogrolling software and websites (e.g. wordpress, blogrolling.com, etc)&lt;/p>
+&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
+Input File Format:
+Each line should be like this:
+&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
+e.g.
+Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
+&lt;/code>&lt;/pre>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p>
+&lt;p>Version History:
+0.1 - Initial Version&lt;/p></content></item></channel></rss>

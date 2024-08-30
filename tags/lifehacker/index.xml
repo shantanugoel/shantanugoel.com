@@ -1,8 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lifehacker on</title><link>/tags/lifehacker/</link><description>Recent content in Lifehacker on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2008 19:16:21 +0000</lastBuildDate><atom:link href="/tags/lifehacker/index.xml" rel="self" type="application/rss+xml"/><item><title>Google's New Favicon</title><link>/posts/googles-new-favicon/</link><pubDate>Fri, 30 May 2008 19:16:21 +0000</pubDate><guid>/posts/googles-new-favicon/</guid><description>It’s amazing, isn’t it? Even a sneeze at google makes the headlines. Well, it’s not the sneeze today but the new favicon I just got. So, are you also seeing the all new, re-designed, artisticly polished “g” as the new favicon?
-In other news, my Twitter-Webcam integration post has bypassed my earlier lifehacked post about Remote File Access Through E-mail by more than a few thousands, even though the time difference between the two posts is more than 3 months.</description></item><item><title>One Month Completed....</title><link>/posts/one-month-completed/</link><pubDate>Thu, 28 Feb 2008 04:10:00 +0000</pubDate><guid>/posts/one-month-completed/</guid><description>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lifehacker on</title><link>/tags/lifehacker/</link><description>Recent content in Lifehacker on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 30 May 2008 19:16:21 +0000</lastBuildDate><atom:link href="/tags/lifehacker/index.xml" rel="self" type="application/rss+xml"/><item><title>Google's New Favicon</title><link>/2008/05/30/googles-new-favicon/</link><pubDate>Fri, 30 May 2008 19:16:21 +0000</pubDate><guid>/2008/05/30/googles-new-favicon/</guid><description>It’s amazing, isn’t it? Even a sneeze at google makes the headlines. Well, it’s not the sneeze today but the new favicon I just got. So, are you also seeing the all new, re-designed, artisticly polished “g” as the new favicon?
+In other news, my Twitter-Webcam integration post has bypassed my earlier lifehacked post about Remote File Access Through E-mail by more than a few thousands, even though the time difference between the two posts is more than 3 months.</description><content>&lt;p>It’s amazing, isn’t it? Even a sneeze at google makes the headlines. Well, it’s not the sneeze today but the new favicon I just got. So, are you also seeing the all new, re-designed, artisticly polished “g” as the new favicon?&lt;/p>
+&lt;p>&lt;img src="/img/uploads/favicon.ico" alt="New Google Favicon">&lt;/p>
+&lt;p>In other news, my &lt;a href="/2008/05/14/keep-tab-on-home-security-with-a-webcam-and-twitter.html">Twitter-Webcam integration post&lt;/a> has bypassed my earlier lifehacked post about &lt;a href="/projects/windows/remote-file-access-through-e-mail">Remote File Access Through E-mail&lt;/a> by more than a few thousands, even though the time difference between the two posts is more than 3 months. Thanks Stumble Upon :)&lt;/p></content></item><item><title>One Month Completed....</title><link>/2008/02/28/one-month-completed/</link><pubDate>Thu, 28 Feb 2008 04:10:00 +0000</pubDate><guid>/2008/02/28/one-month-completed/</guid><description>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:
 Front-paged at LifeHacker, HacksZine, and many others.
 Over 10000 (Ten Thousand) &amp;ldquo;unique&amp;rdquo; human visitors.
 Over 30000 (Thirty Thousand) page views by humans.
-Over 500000 (Half Million) total hits for all website files included.</description></item><item><title>Site Updates</title><link>/posts/site-updates/</link><pubDate>Fri, 22 Feb 2008 05:05:04 +0000</pubDate><guid>/posts/site-updates/</guid><description>The site received a lot of new visitors yesterday as one of the small-time things that I do, received front page treatment at lifehacker. Thank you, Adam Pash, and thanks Murphy, for the original idea.</description></item><item><title>Project: Retrieve Files From Remote Computer Through E-mail</title><link>/posts/project-retrieve-files-from-remote-computer-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:52:16 +0000</pubDate><guid>/posts/project-retrieve-files-from-remote-computer-through-e-mail/</guid><description>I came across this post on lifehacker today (original post and solution here), which talks about a method of retrieving files from a remote computer through e-mail. Pretty archaic, I know, but again, it is a very simple method and works behind all the firewalls and stuff . But, the catch is that it is only for mac’s. Thought of creating something similar for the PC and mashed together some code during lunch time at office to make our dear old outlook remote-file-sending-capable.</description></item><item><title>Remote File Access Through E-Mail</title><link>/posts/remote-file-access-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:43:30 +0000</pubDate><guid>/posts/remote-file-access-through-e-mail/</guid><description>Introduction:
+Over 500000 (Half Million) total hits for all website files included.</description><content>&lt;p>&lt;img src="/img/uploads/trophy_small.jpg" alt="tech.shantanugoel.com completes one month">&lt;/p>
+&lt;p>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Front-paged at &lt;a href="http://lifehacker.com/358749/retrieve-any-file-on-your-home-computer-via-email-windows-edition">LifeHacker&lt;/a>, &lt;a href="http://hackszine.com/blog/archive/2008/02/remote_file_access_through_ema.html">HacksZine&lt;/a>, and &lt;a href="http://www.google.co.in/search?q=shantanu+goel+remote+file+access+through+e-mail+outlook&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;aq=t&amp;amp;rls=com.ubuntu:en-US:official&amp;amp;client=firefox-a">many others&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Over 10000 (Ten Thousand) &amp;ldquo;&lt;strong>unique&lt;/strong>&amp;rdquo; &lt;strong>&lt;em>human&lt;/em>&lt;/strong> visitors.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Over 30000 (Thirty Thousand) page views by &lt;strong>&lt;em>humans&lt;/em>&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Over 500000 (Half Million) total hits for all website files included.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Around 800 downloads of my projects&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Makes it to the first page on google for many keywords (like wm6.1 htc wizard, ubuntu two soundcards, and many others)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A &lt;a href="http://www.google.co.in/search?q=shantanu+goel">google&lt;/a> or &lt;a href="http://search.yahoo.com/search?p=shantanu+goel">yahoo&lt;/a> search for my name “shantanu goel” now gives around 6–7 links about me (4–5 from this blog) out of the first 10 results. (This changes quite dynamically though)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>But this is all because of you, the readers. Thanks a lot and keep coming. I hope I can continue writing stuff you like, because ultimately a blog is written for the people and not for search engines.&lt;/p></content></item><item><title>Site Updates</title><link>/2008/02/22/site-updates/</link><pubDate>Fri, 22 Feb 2008 05:05:04 +0000</pubDate><guid>/2008/02/22/site-updates/</guid><description>The site received a lot of new visitors yesterday as one of the small-time things that I do, received front page treatment at lifehacker. Thank you, Adam Pash, and thanks Murphy, for the original idea.</description><content>&lt;p>The site received a lot of new visitors yesterday as one of the small-time things that I do, received front page treatment at &lt;a href="http://lifehacker.com/358749/retrieve-any-file-on-your-home-computer-via-email-windows-edition">lifehacker&lt;/a>. Thank you, Adam Pash, and thanks Murphy, for the original idea.&lt;/p></content></item><item><title>Project: Retrieve Files From Remote Computer Through E-mail</title><link>/2008/02/19/project-retrieve-files-from-remote-computer-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:52:16 +0000</pubDate><guid>/2008/02/19/project-retrieve-files-from-remote-computer-through-e-mail/</guid><description>I came across this post on lifehacker today (original post and solution here), which talks about a method of retrieving files from a remote computer through e-mail. Pretty archaic, I know, but again, it is a very simple method and works behind all the firewalls and stuff . But, the catch is that it is only for mac’s. Thought of creating something similar for the PC and mashed together some code during lunch time at office to make our dear old outlook remote-file-sending-capable.</description><content>&lt;p>I came across &lt;a href="http://lifehacker.com/357710/retrieve-any-file-on-your-home-computer-by-email">this post&lt;/a> on lifehacker today (original post and solution &lt;a href="http://murphymac.com/retrieve-a-remote-file-by-email/">here&lt;/a>), which talks about a method of retrieving files from a remote computer through e-mail. Pretty archaic, I know, but again, it is a very simple method and works behind all the firewalls and stuff &lt;img src="/img/uploads/smile1.gif" alt="">. But, the catch is that it is only for mac’s. Thought of creating something similar for the PC and mashed together some code during lunch time at office to make our dear old outlook remote-file-sending-capable.&lt;/p></content></item><item><title>Remote File Access Through E-Mail</title><link>/2008/02/19/remote-file-access-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:43:30 +0000</pubDate><guid>/2008/02/19/remote-file-access-through-e-mail/</guid><description>Introduction:
 This is a (proof-of-concept) outlook macro that you can use with an outlook rule to retrieve your files from your home/office PC by sending it a mail with a subject having a predefined special keyword and the body containing the names and paths of the files. The remote PC will then mail you the files on a predefined e-mail ID.
-This project came into being after reading this post at lifehacker (original post and solution here).</description></item></channel></rss>
+This project came into being after reading this post at lifehacker (original post and solution here).</description><content>&lt;p>&lt;strong>Introduction:&lt;/strong>&lt;/p>
+&lt;p>This is a (proof-of-concept) outlook macro that you can use with an outlook rule to retrieve your files from your home/office PC by sending it a mail with a subject having a predefined special keyword and the body containing the names and paths of the files. The remote PC will then mail you the files on a predefined e-mail ID.&lt;/p>
+&lt;p>This project came into being after reading &lt;strong>&lt;a href="http://lifehacker.com/357710/retrieve-any-file-on-your-home-computer-by-email">this post&lt;/a>&lt;/strong> at lifehacker (original post and solution &lt;a href="http://murphymac.com/retrieve-a-remote-file-by-email/">here&lt;/a>). It listed a method to retrieve mails on your home/office PC by sending a &amp;ldquo;magic email&amp;rdquo; to it, but it was only for mac&amp;rsquo;s. Seeing that people wanted it for windows as well, I thought of making something up during lunch time at office.&lt;/p>
+&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Download the attached zip file (shantz-outlook-remote-file-access.zip) and unzip it. It has a VB module &amp;ldquo;shantz-outlook-remote-file-access.bas&amp;rdquo; (can be opened with any text editor)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new macro in Outlook. Copy the code contained in Module1.bas to the main source file of the macro.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit the code to change the e-mail ID to which the files will be e-mailed. Save the macro.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new rule in Outlook. Choose to run the rule when a specific word is found in the subject. e.g. use &amp;ldquo;SendMeMyFiles&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The action part of the rule should be &amp;ldquo;run a script&amp;rdquo;. Here you can choose the macro that you just created from the list shown by Outlook.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save the rule and you are done.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Now try, sending a mail to the account that your outlook is configured to receive mail for, with the special keyword in the subject and a list of files (with their complete absolute paths on the remote computer) separated by semicolons (&amp;quot;;&amp;quot; without the quotes), and watch magic happen :).&lt;/p>
+&lt;p>e.g.: To: &lt;a href="mailto:myemail@email.com">myemail@email.com&lt;/a>&lt;/p>
+&lt;p>subject: SendMeMyFiles&lt;/p>
+&lt;p>Body: c:\path\of\files\file1;d:\second\path\file2&lt;/p>
+&lt;p>&lt;strong>IMPORTANT NOTES:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>For this thing to work, outlook has to be running on the remote PC as this depends on a &amp;ldquo;client-side&amp;rdquo; rule.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This is just a proof-of-concept as of now, so there is no error handling right now. Plus the e-mail body parsing is finicky and so the e-mail body should not have anything other than the file paths and names. This might change in future if I decide to update it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Don&amp;rsquo;t use it if your life depends on it. Use it for basic purposes and modify and improve it appropriately before you decide to use it seriously (You may submit your modifications here as well)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>It has been tested only on Outlook 2003, but might work on others as well.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Let me know of any thoughts you may have about this.&lt;/p></content></item></channel></rss>

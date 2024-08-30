@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Skype Linux on</title><link>/tags/skype-linux/</link><description>Recent content in Skype Linux on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 08 Jul 2010 18:31:55 +0000</lastBuildDate><atom:link href="/tags/skype-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Mute (or Answer) Skype Calls with BT Headset Button in Linux</title><link>/posts/mute-answer-skype-calls-bluetooth-headset-button-in-linux/</link><pubDate>Thu, 08 Jul 2010 18:31:55 +0000</pubDate><guid>/posts/mute-answer-skype-calls-bluetooth-headset-button-in-linux/</guid><description>Skype on linux works great but the problem that I faced was that it does not handle the buttons on the bluetooth headsets. My wife uses skype to call into her work related conference calls and was pretty frustrated that she had to keep sitting in front of my laptop (her laptop didn&amp;rsquo;t allow to install skype) just to switch mute on and off. So, I whipped up this little trick to do so.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Skype Linux on</title><link>/tags/skype-linux/</link><description>Recent content in Skype Linux on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Jul 2010 18:31:55 +0000</lastBuildDate><atom:link href="/tags/skype-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Mute (or Answer) Skype Calls with BT Headset Button in Linux</title><link>/2010/07/08/mute-answer-skype-calls-bluetooth-headset-button-in-linux/</link><pubDate>Thu, 08 Jul 2010 18:31:55 +0000</pubDate><guid>/2010/07/08/mute-answer-skype-calls-bluetooth-headset-button-in-linux/</guid><description>Skype on linux works great but the problem that I faced was that it does not handle the buttons on the bluetooth headsets. My wife uses skype to call into her work related conference calls and was pretty frustrated that she had to keep sitting in front of my laptop (her laptop didn&amp;rsquo;t allow to install skype) just to switch mute on and off. So, I whipped up this little trick to do so.</description><content>&lt;p>Skype on linux works great but the problem that I faced was that it does not handle the buttons on the bluetooth headsets. My wife uses skype to call into her work related conference calls and was pretty frustrated that she had to keep sitting in front of my laptop (her laptop didn&amp;rsquo;t allow to install skype) just to switch mute on and off. So, I whipped up this little trick to do so. Here is how:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>First I looked at the skype API (pretty simple, based on dbus). Also found a sample script somewhere that allowed to answer and hang up calls through skype API.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Modified the script to switch the mute on and off instead of answering/hanging up. Script can be downloaded at the end of this article. You can also modify it to take some other action that you want.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install &amp;ldquo;blueman&amp;rdquo;. If you are using Ubuntu, just type &amp;ldquo;sudo apt-get install blueman&amp;rdquo; in shell.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Once blueman is installed and you have done your headset pairing etc, right click on the blueman icon in the system tray and click on &amp;ldquo;Local Services&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In local services, click on headset tab and you can see a input box where you can give the path of a program/script which will be run whenever the &amp;ldquo;answer button&amp;rdquo; on the headset is pressed. This is important to note that blueman only supports the answer button and nothing else and I didn&amp;rsquo;t have the inclination to develop a full-fledged AVRCP compliant program to capture other buttons as all I was interested in mute functionality. You can see the screenshot of this below:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="/img/uploads/blueman-skype-bluetooth-mute-button.png">&lt;img src="/img/uploads/blueman-skype-bluetooth-mute-button-thumb.png" alt="Skype Headset Button Settings for Blueman">&lt;/a>&lt;/p>
+&lt;ol start="6">
+&lt;li>Make sure that you give the path where you saved the script that you downloaded in step 4 and you are all set now. Make a call and click on the answer button of your headset to see the magic happen :P&lt;/li>
+&lt;/ol>
+&lt;p>Let me know if you have your own hacks like this or know of a way to have a full fledged capturing of all headset buttons.&lt;/p>
+&lt;p>&lt;em>Sorry I lost the file somewhere over the years during a server move and it&amp;rsquo;s no longer available&lt;/em>&lt;/p></content></item></channel></rss>

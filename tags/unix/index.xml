@@ -1,2 +1,94 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UNIX on</title><link>/tags/unix/</link><description>Recent content in UNIX on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 03 Mar 2009 13:30:00 +0000</lastBuildDate><atom:link href="/tags/unix/index.xml" rel="self" type="application/rss+xml"/><item><title>[TIP] Add Directories Recursively To Perforce (P4) Depot</title><link>/posts/add-directories-recursively-to-perforce-p4-depot/</link><pubDate>Tue, 03 Mar 2009 13:30:00 +0000</pubDate><guid>/posts/add-directories-recursively-to-perforce-p4-depot/</guid><description>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4.</description></item><item><title>Ubuntu TIP: Automating Package Installation – apt-get to the rescue</title><link>/posts/ubuntu-tip-automating-package-installation-%e2%80%93-apt-get-to-the-rescue/</link><pubDate>Thu, 06 Mar 2008 03:30:20 +0000</pubDate><guid>/posts/ubuntu-tip-automating-package-installation-%e2%80%93-apt-get-to-the-rescue/</guid><description>Admin Note: Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..
-Have you ever had to reinstall your ubuntu installation, and then bear the pain of manually installing the applications you&amp;rsquo;ve come to love (i mean use :)) everyday?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UNIX on</title><link>/tags/unix/</link><description>Recent content in UNIX on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 03 Mar 2009 13:30:00 +0000</lastBuildDate><atom:link href="/tags/unix/index.xml" rel="self" type="application/rss+xml"/><item><title>[TIP] Add Directories Recursively To Perforce (P4) Depot</title><link>/2009/03/03/add-directories-recursively-to-perforce-p4-depot/</link><pubDate>Tue, 03 Mar 2009 13:30:00 +0000</pubDate><guid>/2009/03/03/add-directories-recursively-to-perforce-p4-depot/</guid><description>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4.</description><content>&lt;p>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4. So, here it is how to achieve this. Run the following command after cd&amp;rsquo;ing to the directory you want to add:&lt;/p>
+&lt;p>For Unix/Linux (or if you have the unix utils installed in windows through GNUWin32, UnixUtils or Cygwin):&lt;/p>
+&lt;p>&lt;code>find . -type f -print | p4 -x - add&amp;lt;/blockquote&amp;gt;&lt;/code>&lt;/p>
+&lt;p>For Windows:&lt;/p>
+&lt;p>&lt;code>dir /b /s /a-d | p4 -x - add&amp;lt;/blockquote&amp;gt;&lt;/code>&lt;/p>
+&lt;p>If you have your own tips and tricks about perforce to carry out tasks easily that do not seem so simple in the first go through command line, please do let me know.&lt;/p></content></item><item><title>Ubuntu TIP: Automating Package Installation – apt-get to the rescue</title><link>/2008/03/06/ubuntu-tip-automating-package-installation--apt-get-to-the-rescue/</link><pubDate>Thu, 06 Mar 2008 03:30:20 +0000</pubDate><guid>/2008/03/06/ubuntu-tip-automating-package-installation--apt-get-to-the-rescue/</guid><description>Admin Note: Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..
+Have you ever had to reinstall your ubuntu installation, and then bear the pain of manually installing the applications you&amp;rsquo;ve come to love (i mean use :)) everyday?</description><content>&lt;p>&lt;strong>Admin Note:&lt;/strong> Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..&lt;/p>
+&lt;p>Have you ever had to reinstall your ubuntu installation, and then bear the pain of manually installing the applications you&amp;rsquo;ve come to love (i mean use :)) everyday? If yes, then cheer up buddy, because all you really need is some magic (read scripting), some typing and spend some time digging the package names of your favourite applications.&lt;/p>
+&lt;p>To get started, you&amp;rsquo;ll need to type the package information in a configuration file. The format of the file is really simple&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Any line starting with a # is ignored&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Blank lines are ignored&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Any other line, the first word is taken as the package name you want to install&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;p>In case you do not specify the configFile (e.g. package-names.lst), it will bug you to manually enter packages names :D.&lt;/p>
+&lt;p>What this script does is&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ol>
+&lt;li>read package names from the file specified (or bug user for package names in case filename is not specified)&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ol start="2">
+&lt;li>install these packages&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>That&amp;rsquo;s it. And if everything runs fine, you should have a system will all your beloved apps installed.&lt;/p>
+&lt;p>The below snippet from the sample configuration file would install the packages – hardinfo, gmountiso, devilspie and nautilus-open-terminal. The lines for sysinfo and istanbul would be ignored. In case you later wish to install these packages, all you need to do is uncomment the line, and run the script again :).&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>Note:&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ol>
+&lt;li>The script will fail in case the package cannot be found using the repositories enabled on your system.&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ol start="2">
+&lt;li>In case you use additional repositories, you must add these manually to your apt configuration file, and do&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ol start="3">
+&lt;li>The hard part is not the installation, but setting up the applications to your likings :D&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote></content></item></channel></rss>

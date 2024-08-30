@@ -1,3 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vb Module on</title><link>/tags/vb-module/</link><description>Recent content in Vb Module on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 19 Feb 2008 17:43:30 +0000</lastBuildDate><atom:link href="/tags/vb-module/index.xml" rel="self" type="application/rss+xml"/><item><title>Remote File Access Through E-Mail</title><link>/posts/remote-file-access-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:43:30 +0000</pubDate><guid>/posts/remote-file-access-through-e-mail/</guid><description>Introduction:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vb Module on</title><link>/tags/vb-module/</link><description>Recent content in Vb Module on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 19 Feb 2008 17:43:30 +0000</lastBuildDate><atom:link href="/tags/vb-module/index.xml" rel="self" type="application/rss+xml"/><item><title>Remote File Access Through E-Mail</title><link>/2008/02/19/remote-file-access-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:43:30 +0000</pubDate><guid>/2008/02/19/remote-file-access-through-e-mail/</guid><description>Introduction:
 This is a (proof-of-concept) outlook macro that you can use with an outlook rule to retrieve your files from your home/office PC by sending it a mail with a subject having a predefined special keyword and the body containing the names and paths of the files. The remote PC will then mail you the files on a predefined e-mail ID.
-This project came into being after reading this post at lifehacker (original post and solution here).</description></item></channel></rss>
+This project came into being after reading this post at lifehacker (original post and solution here).</description><content>&lt;p>&lt;strong>Introduction:&lt;/strong>&lt;/p>
+&lt;p>This is a (proof-of-concept) outlook macro that you can use with an outlook rule to retrieve your files from your home/office PC by sending it a mail with a subject having a predefined special keyword and the body containing the names and paths of the files. The remote PC will then mail you the files on a predefined e-mail ID.&lt;/p>
+&lt;p>This project came into being after reading &lt;strong>&lt;a href="http://lifehacker.com/357710/retrieve-any-file-on-your-home-computer-by-email">this post&lt;/a>&lt;/strong> at lifehacker (original post and solution &lt;a href="http://murphymac.com/retrieve-a-remote-file-by-email/">here&lt;/a>). It listed a method to retrieve mails on your home/office PC by sending a &amp;ldquo;magic email&amp;rdquo; to it, but it was only for mac&amp;rsquo;s. Seeing that people wanted it for windows as well, I thought of making something up during lunch time at office.&lt;/p>
+&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Download the attached zip file (shantz-outlook-remote-file-access.zip) and unzip it. It has a VB module &amp;ldquo;shantz-outlook-remote-file-access.bas&amp;rdquo; (can be opened with any text editor)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new macro in Outlook. Copy the code contained in Module1.bas to the main source file of the macro.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit the code to change the e-mail ID to which the files will be e-mailed. Save the macro.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new rule in Outlook. Choose to run the rule when a specific word is found in the subject. e.g. use &amp;ldquo;SendMeMyFiles&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The action part of the rule should be &amp;ldquo;run a script&amp;rdquo;. Here you can choose the macro that you just created from the list shown by Outlook.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save the rule and you are done.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Now try, sending a mail to the account that your outlook is configured to receive mail for, with the special keyword in the subject and a list of files (with their complete absolute paths on the remote computer) separated by semicolons (&amp;quot;;&amp;quot; without the quotes), and watch magic happen :).&lt;/p>
+&lt;p>e.g.: To: &lt;a href="mailto:myemail@email.com">myemail@email.com&lt;/a>&lt;/p>
+&lt;p>subject: SendMeMyFiles&lt;/p>
+&lt;p>Body: c:\path\of\files\file1;d:\second\path\file2&lt;/p>
+&lt;p>&lt;strong>IMPORTANT NOTES:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>For this thing to work, outlook has to be running on the remote PC as this depends on a &amp;ldquo;client-side&amp;rdquo; rule.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This is just a proof-of-concept as of now, so there is no error handling right now. Plus the e-mail body parsing is finicky and so the e-mail body should not have anything other than the file paths and names. This might change in future if I decide to update it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Don&amp;rsquo;t use it if your life depends on it. Use it for basic purposes and modify and improve it appropriately before you decide to use it seriously (You may submit your modifications here as well)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>It has been tested only on Outlook 2003, but might work on others as well.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Let me know of any thoughts you may have about this.&lt;/p></content></item></channel></rss>

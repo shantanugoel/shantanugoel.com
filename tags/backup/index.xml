@@ -1,3 +1,250 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backup on</title><link>/tags/backup/</link><description>Recent content in Backup on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 20 Mar 2020 18:25:01 +0530</lastBuildDate><atom:link href="/tags/backup/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatic notes backup on macOS with hammerspoon</title><link>/posts/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</link><pubDate>Fri, 20 Mar 2020 18:25:01 +0530</pubDate><guid>/posts/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</guid><description>I&amp;rsquo;m a backup nerd and like to back-up everything I do. Not just that, I like to version them too so I can go back in time to any point. git serves as a good tool for me for versioning wherever small data/text files etc are concerned and then I back this up with remote git servers like my own git server on a raspberry pi at home, a gitlab server and a github server.</description></item><item><title>TIP: Automating Website Backups - Part III (Cron Made Easy)</title><link>/posts/tip-automating-website-backups-part-iii-cron-made-easy/</link><pubDate>Tue, 04 Mar 2008 04:00:00 +0000</pubDate><guid>/posts/tip-automating-website-backups-part-iii-cron-made-easy/</guid><description>The question that we will be answering today is: **Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way? Cron is a tool that can schedule any kind of tasks for you, and here we are using it to run our backup script automatically, so that we can concentrate on blogging. Now, most of us are phobic of anything that has anything to do with command line.</description></item><item><title> TIP: Automating Website Backups - Part IIb (Reducing Backup Size Contd.)</title><link>/posts/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</link><pubDate>Thu, 28 Feb 2008 04:00:00 +0000</pubDate><guid>/posts/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</guid><description>Last time, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”filename” and it will return the names of the files that are newer than filename.</description></item><item><title>TIP: Automating Website Backups - Part II (Reducing Backup Size)</title><link>/posts/tip-automating-website-backups-part-ii-reducing-backup-size/</link><pubDate>Sun, 24 Feb 2008 21:43:13 +0000</pubDate><guid>/posts/tip-automating-website-backups-part-ii-reducing-backup-size/</guid><description>Last week I had written a short guide on “Automating Website Backups”. I received some good comments/suggestions about it from Jasvinder through e-mail about other aspects that should be addressed. So, thought of doing a few follow ups to that post. This is done in more of a FAQ fashion, so as to answer some of the questions that may arise after reading the first post. Each post will answer one of the questions listed below in detail</description></item><item><title>TIP: Automating Website Backups</title><link>/posts/tip-automating-website-backups/</link><pubDate>Sun, 17 Feb 2008 09:19:50 +0000</pubDate><guid>/posts/tip-automating-website-backups/</guid><description>What can go wrong with your wonderfully running website / blog? Everything..
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backup on</title><link>/tags/backup/</link><description>Recent content in Backup on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 Mar 2020 18:25:01 +0530</lastBuildDate><atom:link href="/tags/backup/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatic notes backup on macOS with hammerspoon</title><link>/2020/03/20/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</link><pubDate>Fri, 20 Mar 2020 18:25:01 +0530</pubDate><guid>/2020/03/20/hammerspoon-backup-joplin-notes-dotfiles-git-macos/</guid><description>I&amp;rsquo;m a backup nerd and like to back-up everything I do. Not just that, I like to version them too so I can go back in time to any point. git serves as a good tool for me for versioning wherever small data/text files etc are concerned and then I back this up with remote git servers like my own git server on a raspberry pi at home, a gitlab server and a github server.</description><content>&lt;p>I&amp;rsquo;m a backup nerd and like to back-up everything I do. Not just that, I like to version them too so I can go back in time to any point. &lt;code>git&lt;/code> serves as a good tool for me for versioning wherever small data/text files etc are concerned and then I back this up with remote git servers like my own git server on a raspberry pi at home, a gitlab server and a github server. Prime targets for this are my dotfiles that I edit in spacemacs and my notes that I take in &lt;a href="https://joplinapp.org/">Joplin&lt;/a>. The only issue though is that every time I change something, which is pretty often (since I&amp;rsquo;m a tinkering nerd too) I&amp;rsquo;ve to manually commit the changes and push them upstream. Apart from being all kinds of nerds, I&amp;rsquo;m an automation nerd too, which is a fancy way of saying that I am lazy, but I digress.&lt;/p>
+&lt;p>So, essentially I wanted to commit and push changes to my notes, dotfiles and few other things automatically whenever I make changes. I came across a tool called &lt;a href="https://github.com/gitwatch/gitwatch">gitwatch&lt;/a>, which can help do this. But I wanted to try out some more capabilities of &lt;a href="https://www.hammerspoon.org/">Hammerspoon&lt;/a>, so I chose that as my weapon of choice for this, especially because I already use it for few other automations so that&amp;rsquo;s one (or more) less things to install/maintain/update. Hammerspoon is an extremely powerful tool for macOS. In its own words:&lt;/p>
+&lt;blockquote>
+&lt;p>At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.&lt;/p>
+&lt;/blockquote>
+&lt;p>So, the things I had to do:&lt;/p>
+&lt;ul>
+&lt;li>Setup the directories of my dotfiles (&lt;code>~/dotfiles/&lt;/code>) and notes (&lt;code>~/.config/Joplin-desktop/&lt;/code>) as git repositories (by running git init inside them)&lt;/li>
+&lt;li>Create repositories on GitHub (and other servers as needed) to backup them to. You can create them as private if you want to. In my case, my dotfiles are public but my notes are private.&lt;/li>
+&lt;li>Add the upstream repositories to your local git repositories as remotes (&lt;code>git remote add &amp;lt;somename&amp;gt; &amp;lt;remote_url&amp;gt;&lt;/code>)&lt;/li>
+&lt;li>Add my ssh keys to the ssh-agent using the &lt;code>ssh-add&lt;/code> command. You can read more about this &lt;a href="https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">here&lt;/a>&lt;/li>
+&lt;li>Save the below lua script to &lt;code>~/.hammerspoon/git-backup.lua&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-lua" data-lang="lua">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- Paths to the directories we want to backup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> notes_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/Users/shantanugoel/.config/joplin-desktop&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> dotfiles_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/Users/shantanugoel/dotfiles&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- The primary sync function&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sync&lt;/span>(path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> hs.fs.chdir(path) &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output, status &lt;span style="color:#f92672">=&lt;/span> hs.execute(&lt;span style="color:#e6db74">&amp;#34;git add . &amp;amp;&amp;amp; git commit -am update&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> status &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output, status &lt;span style="color:#f92672">=&lt;/span> hs.execute(&lt;span style="color:#e6db74">&amp;#34;git push -u origin master&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> status &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">-- Something went wrong! No internet? Didn&amp;#39;t add ssh keys?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hs.notify.show(&lt;span style="color:#e6db74">&amp;#34;Notes Sync&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Git Push Error&amp;#34;&lt;/span>, output)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">-- Check if the path exists, just in case something goes wrong or you move to a new machine etc&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hs.notify.show(&lt;span style="color:#e6db74">&amp;#34;Notes Sync&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Cannot change Path&amp;#34;&lt;/span>, notes_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">notes_sync&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sync(notes_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">local&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">dotfiles_sync&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sync(dotfiles_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- Use pathwatcher to instantly sync whenever a change is made&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>notes_watcher &lt;span style="color:#f92672">=&lt;/span> hs.pathwatcher.new(notes_path, notes_sync):start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotfiles_watcher &lt;span style="color:#f92672">=&lt;/span> hs.pathwatcher.new(dotfiles_path, dotfiles_sync):start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- If you face perf issues with pathwatcher, comment out above 2 lines&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- and uncomment below lines to use a timed sync instead&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- Time interval is set to 5 minutes (300 seconds) here but can be changed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- as per need&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- notes_timer = hs.timer.doEvery(300, notes_sync)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- dotfiles_timer = hs.timer.doEvery(300, dotfiles_sync)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Update &lt;code>~/.hammerspoon/init.lua&lt;/code> to add this line: &lt;code>local gb = require('git-backup')&lt;/code>&lt;/li>
+&lt;li>Reload hammerspoon config from its menu&lt;/li>
+&lt;/ul>
+&lt;p>I&amp;rsquo;ve commented the code as much as I could, so hopefully it makes sense. Now, this keeps me calm and focused on all the other procrastination that I&amp;rsquo;ve got to do :D&lt;/p></content></item><item><title>TIP: Automating Website Backups - Part III (Cron Made Easy)</title><link>/2008/03/04/tip-automating-website-backups-part-iii-cron-made-easy/</link><pubDate>Tue, 04 Mar 2008 04:00:00 +0000</pubDate><guid>/2008/03/04/tip-automating-website-backups-part-iii-cron-made-easy/</guid><description>The question that we will be answering today is: **Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way? Cron is a tool that can schedule any kind of tasks for you, and here we are using it to run our backup script automatically, so that we can concentrate on blogging. Now, most of us are phobic of anything that has anything to do with command line.</description><content>&lt;p>The question that we will be answering today is: **Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way? &lt;a href="http://en.wikipedia.org/wiki/Crontab">Cron&lt;/a> is a tool that can schedule any kind of tasks for you, and here we are using it to run our backup script automatically, so that we can concentrate on blogging. Now, most of us are phobic of anything that has anything to do with command line. And we already have enough of command line stuff in this &lt;a href="/2008/02/17/tip-automating-website-backups.html">series&lt;/a>. So, you can breathe a sigh of relief for a few moments because atleast the cron part can be made Web/GUI based for you (The command line method for cron was given in the &lt;a href="/2008/02/17/tip-automating-website-backups.html">first part&lt;/a>). The details that I’m going to present here are relevant for cpanel but it might differ for you (very minor to very major) as your webhost might have a different panel for you (e.g. vdeck) or even your cpanel might look very different. But the basic concept remains the same and with a bit of common sense, you can apply this concept to your site easily.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Step1) Look for some option in your control panel, which says something on the lines of “cron”, “cron job” or such. e.g.:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/automating_website_backups_cpanel1.png">&lt;img src="/img/uploads/automating_website_backups_cpanel1_small.jpg" alt="Automating_website_backups_cpanel1">&lt;/a>&lt;/p>
+&lt;p>Step2) If you get a screen as shown below, choose the experience level as “Standard” (maybe “novice” or similar in your panel). After all, we are using it because we want to avoid that unixy-command-line-stuff &lt;img src="/img/uploads/smile3.gif" alt="">.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/automating_website_backups_cpanel2_cron.png">&lt;img src="/img/uploads/automating_website_backups_cpanel2_cron_small.jpg" alt="Automating_website_backups_cpanel2_cron">&lt;/a>&lt;/p>
+&lt;p>Step3) You will get a screen as shown below.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/automating_website_backups_cpanel3_cron.png">&lt;img src="/img/uploads/automating_website_backups_cpanel3_cron_small.jpg" alt="Automating_website_backups_cpanel3_cron">&lt;/a>&lt;/p>
+&lt;p>First, fill in the e-mail ID to which you want the script output to be sent to. (e.g. tar will output the list of files that were backed up) (e.g. &lt;a href="mailto:myemail@mysite.com">myemail@mysite.com&lt;/a>)&lt;/p>
+&lt;p>Then, give the “&lt;strong>full&lt;/strong>” path (yes, starting from the root “/”) to your script that has to be run (e.g. /home/myusername/backup/backup.sh)&lt;/p>
+&lt;p>Then, choose the periodicity/time when this script has to be run, e.g., here we have chosen the script to be run everyday at 10:00 PM. **IMPORTANT: **Note that the time given here is GMT, so add your timezone offset. Generally, you should select a time when you expect the load on your website to be the lowest. e.g. I have selected a time of 3:00 AM everyday.&lt;/p>
+&lt;p>Press “save”, “done”, “add’’ or whatever similar button you can find and it’s over &lt;img src="/img/uploads/smile1.gif" alt="">. That was easy innit?&lt;/p>
+&lt;p>That’s it for today. Lemme know if you have any doubts, or if you would like to see any other questions answered in this series. The question that will be answered next time (in “hopefully” the last part of the series) is:&lt;/p>
+&lt;p>&lt;strong>Q3:&lt;/strong> Well, backup is all hunky-dory. Now, how do I restore?&lt;/p></content></item><item><title> TIP: Automating Website Backups - Part IIb (Reducing Backup Size Contd.)</title><link>/2008/02/28/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</link><pubDate>Thu, 28 Feb 2008 04:00:00 +0000</pubDate><guid>/2008/02/28/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</guid><description>Last time, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”filename” and it will return the names of the files that are newer than filename.</description><content>&lt;p>&lt;a href="http://tech.shantanugoel.com/2008/02/25/tip-automating-website-backups-part-ii-reducing-backup-size.html">Last time&lt;/a>, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”&lt;em>filename&lt;/em>” and it will return the names of the files that are newer than &lt;em>filename&lt;/em>.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>So, the command given above will find all the files that have changed since you took the backup “&lt;em>backup_x.tgz&lt;/em>” and store those filenames and paths into “_files.txt”. _The “-type f” option makes sure that only filenames are listed and not directory names, because tar creates a lot of issues when presented with directory names (Explore yourself about this).&lt;/p>
+&lt;p>Now, all we have to do is give this “&lt;em>files.txt&lt;/em>” to tar as an input to tell it which files to archive.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;p>The “-T files.txt” option makes this happen. Moreover, I have introduced 2 new options here, that were not present in our last part. They are:&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>p – Tells tar to preserve file permissions&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>G – Tells tar to ignore any file read errors etc and continue&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>Apart from this, you can also take a look at the “-mtime x” option for find command which lets you specify to list files which have changed in past x days. There are other similar options available for find. Look at “man find” and take your pick. Similar options exist for tar, but I have had a lot of weird issues using them, so I’d recommend sticking with this two step process of “find” followed by “tar”.&lt;/p>
+&lt;p>Now, the above mentioned commands and options can be used in innumerous ways and combinations to achieve your perfect balance of space and ease of use etc for backups. I’ll list down a sample script here, that will make a full backup on every first day of the week, and then make incremental backups over each day for rest 6 days. So, you’ll save a lot of space (more than 5 times), but you will have to use all 7 backup files to make a full restore. (I’m listing just the backup part, you can add the “mutt” command yourself, for e-mailing as mentioned in &lt;a href="http://tech.shantanugoel.com/2008/02/17/tip-automating-website-backups.html">Part I&lt;/a>)&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>That’s it for today. Lemme know if you have any doubts, or if you would like to see any other questions answered in this series. The question that will be answered next time is:&lt;/p>
+&lt;p>**Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way?&lt;/p></content></item><item><title>TIP: Automating Website Backups - Part II (Reducing Backup Size)</title><link>/2008/02/24/tip-automating-website-backups-part-ii-reducing-backup-size/</link><pubDate>Sun, 24 Feb 2008 21:43:13 +0000</pubDate><guid>/2008/02/24/tip-automating-website-backups-part-ii-reducing-backup-size/</guid><description>Last week I had written a short guide on “Automating Website Backups”. I received some good comments/suggestions about it from Jasvinder through e-mail about other aspects that should be addressed. So, thought of doing a few follow ups to that post. This is done in more of a FAQ fashion, so as to answer some of the questions that may arise after reading the first post. Each post will answer one of the questions listed below in detail</description><content>&lt;p>Last week I had written a short guide on “&lt;a href="/2008/02/17/tip-automating-website-backups.html">Automating Website Backups&lt;/a>”. I received some good comments/suggestions about it from &lt;a href="http://jazzuncut.blogspot.com/">Jasvinder&lt;/a> through e-mail about other aspects that should be addressed. So, thought of doing a few follow ups to that post. This is done in more of a FAQ fashion, so as to answer some of the questions that may arise after reading the first post. Each post will answer one of the questions listed below in detail&lt;/p>
+&lt;p>Questions to be answered:&lt;/p>
+&lt;p>&lt;strong>Q1:&lt;/strong> I have strict limits on webspace/email attachment etc. Can anything be done to reduce the backup size?&lt;/p>
+&lt;p>**Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way?&lt;/p>
+&lt;p>&lt;strong>Q3:&lt;/strong> Well, backup is all hunky-dory. Now, how do I restore?&lt;/p>
+&lt;p>Want the answers? Read on.&lt;/p>
+&lt;p>&lt;strong>Q1:&lt;/strong> I have strict limits on webspace/email attachment etc. Can anything be done to reduce the backup size?&lt;/p>
+&lt;p>**A1: **Sure, we can do quite a lot about it. If your concern is just the webspace, and you want a very simple restoring process, you should be looking for reducing the number of backups that you save on the server, instead of reducing the size of the backup (you anyways have all the backups mailed out to you). The number of backups can be reduced by manipulating the command given in step 1 of the previous post. To recall, the command was:&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Here, the &lt;code>date +%w&lt;/code> part ensured that at any time there will be 7 previous backups at max stored on the server (backup_0.tgz, backup_1.tgz,…). You can remove this part and every day your previous backup will be overwritten by the new one, thus using space for just 1 backup. And since you have all the backups emailed to you as well, you don’t need to worry about restoring back to any point in time. Its just that having the backup on your server saves some time if you do have to restore since you don’t have to upload the backup file onto the server.&lt;/p>
+&lt;p>&lt;strong>BUT&lt;/strong>, if you must place restriction on your backup size (backup is so big that that your email can’t handle it as an attachment or you are really really pressed for webspace or backing up all the files takes up too much time/cpu of the host server), then you can save yourself by backing up only the files that need to be backed up. What does that mean? All CMS (Content Management Systems like Joomla, WordPress, Drupal, or your custom ones, or even a manually made site) will have some/many static components/files which don’t change with time, and so these files don’t need to be backed up every time. You can just backup the files that change or the ones that get added (like images, uploads etc).&lt;/p>
+&lt;p>So, all you have to do is determine which files you &lt;strong>don’t&lt;/strong> want backed up, create a list for them and supply it to the _tar _command, with the _—exclude-from _option, and tar will dutifully avoid zipping those files up, leaving you with only the most needed files.&lt;/p>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;p>Now, there are two ways to go about determining which files you don’t need. First is that you simply run “&lt;em>ls -R &amp;gt; exclude_these_files.txt”&lt;/em> on the root of your home directory on the server (the folder beneath which your &lt;em>public_html&lt;/em> or &lt;em>www&lt;/em> folder resides). Then fire up your favourite editor and load this file into that and delete the file names from the file which you want to back up, leaving only those filenames in the file which you don’t want to backup. Generally, you would be interested in backing up any files that you have uploaded yourself onto the server (like images, archives, songs, any other files that you uploaded, any files that you modified, etc)&lt;/p>
+&lt;p>If you are not sure which files you should be backing up and you don’t want to backup all files, then there is still hope for you, but only if you are reading this guide before starting a new site &lt;img src="/img/uploads/smile3.gif" alt="">. Because then, before making any posts or customizations, you can just run the above mentioned &lt;em>ls&lt;/em> command, and you will have a list of the default files that are always there with your CMS and you don’t need to back them up. However, make sure that if you ever change any of the default files, do delete their names from the exclude_these_files.txt.&lt;/p>
+&lt;p>That’s it for today. Lemme know if you have any doubts, or if you would like to see any other questions answered in this series. The question that will be answered next time is:&lt;/p>
+&lt;p>**Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way?&lt;/p></content></item><item><title>TIP: Automating Website Backups</title><link>/2008/02/17/tip-automating-website-backups/</link><pubDate>Sun, 17 Feb 2008 09:19:50 +0000</pubDate><guid>/2008/02/17/tip-automating-website-backups/</guid><description>What can go wrong with your wonderfully running website / blog? Everything..
 Your online abode is so difficult to keep secured. It can get hacked, you may install something wrong, a wrong configuration can wreak havoc, the server hard disk might crash, natural calamities, and what not. Your best option to secure yourself against all this is summarized in just one word “BACKUP”.
-Now, a backup involves two most important things: “Database Backup” and “Files Backup”.</description></item></channel></rss>
+Now, a backup involves two most important things: “Database Backup” and “Files Backup”.</description><content>&lt;p>What can go wrong with your wonderfully running website / blog? Everything..&lt;/p>
+&lt;p>Your online abode is so difficult to keep secured. It can get hacked, you may install something wrong, a wrong configuration can wreak havoc, the server hard disk might crash, natural calamities, and what not. Your best option to secure yourself against all this is summarized in just one word “BACKUP”.&lt;/p>
+&lt;p>Now, a backup involves two most important things: “Database Backup” and “Files Backup”. Most webhosts give you the options to back these up for you but with a few catches:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>You can backup but only through your control panel manually. No automation/scheduling of backups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Automated Backing up is not free&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Automated Backing up is free but restoring is not as they give you the backed up data only on request.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>There are many plugins available for most CMS and blogging sw for backing up databases. But what about the files? Especially if you have more than one sites on one hosting account. Well, here I’ll tell you how to automate file backups in three simple steps.&lt;/p>
+&lt;p>Note: This guide is only for linux based hosts. But you can follow a similar approach for windows based hosting as well.&lt;/p>
+&lt;p>Step 1) Backup through command line.&lt;/p>
+&lt;p>You can use “tar” for this. With tar, you can create compressed archives quickly for a complete directory tree.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>tar is the name of the command&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>c =&amp;gt; compress v=&amp;gt; verbose z=&amp;gt;gzip for compression&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>&lt;del>/backups =&amp;gt; backup directory where ur backups will be stored (&lt;/del> is shortcut for your home directory). It is generally a good practice to store your backups in a directory not directly accessible through http, i.e., outside your public_html directory.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>backup_&lt;code>date +%w&lt;/code>.tgz =&amp;gt; forms the name of the backup file in the form backup_&lt;!-- raw HTML omitted -->.tgz. This will form a circular buffer kind of scenario where backups more than 1 week later will automatically be overwritten by latest ones to avoid using up all your webspace. You can modify this according to your need and available webspace by taking a look at man page of “date” command. (Run “man date” on command line)&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>~/public_html =&amp;gt; is the directory you want to backup. Most probably your website will be located in this directory. If not sure, then check with your webhost.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>Step 2) Mailing the backup to yourself through command line. (The server might develop some problem, hard disk might crash or your backups on server might be lost, so this is a good option to have)&lt;/p>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;p>Explanation:&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>mutt =&amp;gt; mailing user agent that sends the mail (You can use others, but I prefer mutt)&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>-s &amp;ldquo;Backup &lt;code>date&lt;/code>&amp;rdquo; =&amp;gt; -s option is to specify the subject of the mail on command line. This line will specify the backup date as subject.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>-a ~/backups/backup_&lt;code>date +%w&lt;/code>.tgz =&amp;gt; -a option specifies the file to be attached.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>&lt;a href="mailto:myuserid@mymail.com">myuserid@mymail.com&lt;/a> =&amp;gt; Specify the mail id t which the email has to be sent&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;ul>
+&lt;li>&amp;lt;/dev/null =&amp;gt; The body of the email is empty. If you want some text to be here, you can form a file, say “email.txt” and write the contents in it and replace the above part with “&amp;lt;email.txt”&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>Step 3) Final Step. Automating it all. What you need to do is add the above commands into a script and then find a way to make it run automatically.&lt;/p>
+&lt;p>The script looks like:&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>Save it as “backup.sh” and make it executable by running “chmod +x backup.sh”. We’ll assume that you save it in ~/backups directory. You can store it anywhere, just remember it.&lt;/p>
+&lt;p>Now, you need to tell the server to run it automatically at a specified time. We’ll use “cron” for this. (If you are not comfortable with command line, then login to your website control panel, and look for an option called cron, where you can make the schedule graphically) Run the following command:&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>This will open a file with your scheduled tasks info. Make sure that you don’t touch any of the existing lines. Add the following line at the end.&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>The first line will make sure that the output of the script, any errors etc, are sent to the your local mail account, that you can check for debugging purposes.&lt;/p>
+&lt;p>The second line is of the format “# m h dom mon dow command”
+m=&amp;gt; minute of the hour
+h=&amp;raquo; hour of the day
+dom=&amp;gt; Day of month
+mon=&amp;gt; month of year
+dow=&amp;gt; day of week
+command=&amp;gt; command that you want to run
+So, the command mentioned above will run the command every day at 10:00 PM GMT. You can modify the line according to your needs.&lt;/p>
+&lt;p>That’s it. You are done. Just wait for the specified time, and then check your mailbox for the backup file. Let me know if you face any problems, have any issues, or want to ask any questions about cuztomizing it for yourself.&lt;/p></content></item></channel></rss>

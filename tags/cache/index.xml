@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cache on</title><link>/tags/cache/</link><description>Recent content in Cache on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 11 Sep 2008 16:59:33 +0000</lastBuildDate><atom:link href="/tags/cache/index.xml" rel="self" type="application/rss+xml"/><item><title>Firefox Incognito / Private Browsing Mode - Part II</title><link>/posts/firefox-incognito-private-browsing-mode-part-ii/</link><pubDate>Thu, 11 Sep 2008 16:59:33 +0000</pubDate><guid>/posts/firefox-incognito-private-browsing-mode-part-ii/</guid><description>A few people (e.g. Varun) told me my previous post differed from the way how google chrome / Microsoft IE8 handle Incognito (Private Browsing) mode. The main consideration was that while chrome/IE8 don&amp;rsquo;t write anything to disk at all, the firefox method is an after-effect, i.e., writing to disk and then clearing it up while closing the window. Well, true but nothing is non-rectificable :). So this is a post about a method that one can use to go &amp;ldquo;really&amp;rdquo; undercover with firefox.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cache on</title><link>/tags/cache/</link><description>Recent content in Cache on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 11 Sep 2008 16:59:33 +0000</lastBuildDate><atom:link href="/tags/cache/index.xml" rel="self" type="application/rss+xml"/><item><title>Firefox Incognito / Private Browsing Mode - Part II</title><link>/2008/09/11/firefox-incognito-private-browsing-mode-part-ii/</link><pubDate>Thu, 11 Sep 2008 16:59:33 +0000</pubDate><guid>/2008/09/11/firefox-incognito-private-browsing-mode-part-ii/</guid><description>A few people (e.g. Varun) told me my previous post differed from the way how google chrome / Microsoft IE8 handle Incognito (Private Browsing) mode. The main consideration was that while chrome/IE8 don&amp;rsquo;t write anything to disk at all, the firefox method is an after-effect, i.e., writing to disk and then clearing it up while closing the window. Well, true but nothing is non-rectificable :). So this is a post about a method that one can use to go &amp;ldquo;really&amp;rdquo; undercover with firefox.</description><content>&lt;p>A few people (e.g. &lt;a href="http://paheli.net/blog/2008/09/11/security-and-usability-google-chromes-incognito-mode/">Varun&lt;/a>) told me &lt;a href="/2008/09/10/firefox-incognito-mode-is-here-move-over-chromeie8.html">my previous post&lt;/a> differed from the way how google chrome / Microsoft IE8 handle Incognito (Private Browsing) mode. The main consideration was that while chrome/IE8 don&amp;rsquo;t write anything to disk at all, the firefox method is an after-effect, i.e., writing to disk and then clearing it up while closing the window. Well, true but nothing is non-rectificable :). So this is a post about a method that one can use to go &amp;ldquo;really&amp;rdquo; undercover with firefox. But before we begin, please make sure you have read Part 1 of my post, because here I&amp;rsquo;ll start from the point where we left off in the earlier post.&lt;/p>
+&lt;p>I began thinking on the lines of setting up a ramdisk first (and remapping the browser cache folders to the new path in this ramdisk), so that nothing gets written to the hard disk, ever, even if the browser tries very hard. Best security right? Yes, but it involved a few issues like data is still there until you reboot also a part of your ram is always blocked, etc. So I went with the approach given below.&lt;/p>
+&lt;p>&lt;strong>Method: Easier and privacy on-par with Chrome/IE8&lt;/strong>&lt;/p>
+&lt;p>Just do the following in addition to the Step 4.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Uncheck &amp;ldquo;Keep my history&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Uncheck &amp;ldquo;Remember what I enter in forms and the search bar&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Uncheck &amp;ldquo;Remember what I&amp;rsquo;ve downloaded&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose &amp;ldquo;Keep until I close firefox&amp;rdquo; for cookies&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press advanced settings in &amp;ldquo;Private Data&amp;rdquo;, select unselect options according to your choice. For max protection, select everything.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open a new tab, and write &amp;ldquo;about:config&amp;rdquo; (without quotes) in address bar, press enter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Search for &amp;ldquo;browser.cache.disk.enable&amp;rdquo; and set it to false&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Search for &amp;ldquo;browser.cache.offline.enable&amp;rdquo; and set it to false&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Done. You are secure and remember, this is just a one time setup, you won&amp;rsquo;t have to do this again and again.&lt;/p>
+&lt;p>Side Note: Usability is another concern. However, I think that is debatable and varies from user to user highly. The steps lined up in these 2 posts aren&amp;rsquo;t too hard to carry out and take around a minute to do, and is a one time effort. Now, compare this with option where you use google chrome and love its in-built incognito mode but then have to leave all the extensions and greasemonkey scripts of firefox behind which made browsing so much more accessible for you. Another path could be to use both the browsers. Anyways, I&amp;rsquo;ll not go further down this path. This is for you to decide what you feel is more usable for you :) . This is just something to say &amp;ldquo;It&amp;rsquo;s not impossible&amp;rdquo;.&lt;/p>
+&lt;p>PS: If anyone is still curious about the ramdisk approach, let me know..&lt;/p></content></item></channel></rss>

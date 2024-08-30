@@ -1,2 +1,113 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github-Actions on</title><link>/tags/github-actions/</link><description>Recent content in Github-Actions on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 05 Jan 2020 16:25:46 +0530</lastBuildDate><atom:link href="/tags/github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating my hugo blog from Gitlab/AWS S3 to Github Pages with Actions</title><link>/posts/migrate-hugo-blog-gitlab-s3-github-pages-actions/</link><pubDate>Sun, 05 Jan 2020 16:25:46 +0530</pubDate><guid>/posts/migrate-hugo-blog-gitlab-s3-github-pages-actions/</guid><description>Until Now - The State of the union This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:
-Push commit to the source repository on GitLab GitLab CI kicks off on receiving the push CI downloads latest version of hugo and generates the static site Runs aws-cli to sync the new files to AWS S3 S3 serves the static site Cloudflare provides: DNS services (so I can use https://shantanugoel.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github-Actions on</title><link>/tags/github-actions/</link><description>Recent content in Github-Actions on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 Jan 2020 16:25:46 +0530</lastBuildDate><atom:link href="/tags/github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating my hugo blog from Gitlab/AWS S3 to Github Pages with Actions</title><link>/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</link><pubDate>Sun, 05 Jan 2020 16:25:46 +0530</pubDate><guid>/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</guid><description>Until Now - The State of the union This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:
+Push commit to the source repository on GitLab GitLab CI kicks off on receiving the push CI downloads latest version of hugo and generates the static site Runs aws-cli to sync the new files to AWS S3 S3 serves the static site Cloudflare provides: DNS services (so I can use https://shantanugoel.</description><content>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
+&lt;p>This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:&lt;/p>
+&lt;ul>
+&lt;li>Push commit to the source repository on GitLab&lt;/li>
+&lt;li>GitLab CI kicks off on receiving the push
+&lt;ul>
+&lt;li>CI downloads latest version of hugo and generates the static site&lt;/li>
+&lt;li>Runs aws-cli to sync the new files to AWS S3&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>S3 serves the static site&lt;/li>
+&lt;li>Cloudflare provides:
+&lt;ul>
+&lt;li>DNS services (so I can use &lt;a href="https://shantanugoel.com">https://shantanugoel.com&lt;/a> without having to prefix it with a &lt;code>www&lt;/code>)&lt;/li>
+&lt;li>CDN/Caching services for resilience and keeping S3 bills low for data transfer&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="why-what-broke-the-camels-back">Why? What broke the camel&amp;rsquo;s back&lt;/h2>
+&lt;p>I was mostly happy with this setup with a couple of niggles at the back of my mind, vis. a vis.:&lt;/p>
+&lt;ul>
+&lt;li>aws s3 sync was finicky sometimes and sometimes, albeit rarely, the sync didn&amp;rsquo;t complete&lt;/li>
+&lt;li>It took a long time to deploy a new update. Whenever I made a new post, it took around 5 minutes or more to appear due to issues stemming from GitLab CI taking time but mostly due to the time spent in s3 sync.&lt;/li>
+&lt;li>I also wanted to reduce the moving parts. I could have used GitLab pages but they&amp;rsquo;ve proved unreliable whenever I tried to use them&lt;/li>
+&lt;li>When the files ran into 10s of thousands, if I did lot of updates, I started running into incurring some cost due to S3 API usage. Especially because it was hard to upload only changed files. I tried few methods with hashes etc and it could be improved further but still I wanted to get rid of this issue.&lt;/li>
+&lt;li>Finally, the last push was announcement of &lt;a href="https://github.com/features/actions">GitHub Actions&lt;/a>. I had the itch, as usual, to try out the new and shiny, and so here we are.&lt;/li>
+&lt;/ul>
+&lt;h2 id="what-all-i-need-is-everything">What? All I need is everything&lt;/h2>
+&lt;p>So, what I wanted to do was replace the source storage (GitLab to GitHub), CI (GitLab to GitHub Actions) and site host (AWS S3 to GitHub Pages). I kept Cloudflare&amp;rsquo;s DNS and CDN services as is because they are awesome, and I still want to continue to use the naked domain without &lt;code>www&lt;/code>.
+Another thing I wanted while going this way was to keep the source repository and pages repository on GitHub separate because I want to be able to keep drafts in GitHub without having them available publicly.&lt;/p>
+&lt;p>We&amp;rsquo;ll see in the next section how all this was put together.&lt;/p>
+&lt;h2 id="how-lets-get-our-hands-dirty-shall-we">How? Let&amp;rsquo;s get our hands dirty, shall we!&lt;/h2>
+&lt;p>The migration turned out to be pretty simple. This is how my setup looks like now:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Made a private source repository at GitHub, let&amp;rsquo;s call this &lt;code>shantanugoel.com-source&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>This repository will be used to contain the website&amp;rsquo;s source&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Made another public repository which will contain our published site, e.g. &lt;a href="https://github.com/shantanugoel/shantanugoel.com">https://github.com/shantanugoel/shantanugoel.com&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to the settings section of this repository (e.g. &lt;a href="https://github.com/shantanugoel/shantanugoel.com/settings/">https://github.com/shantanugoel/shantanugoel.com/settings/&lt;/a> ) and set it to serve GitHub pages from the master branch&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to the Deploy Keys section of this repository (e.g. &lt;a href="https://github.com/shantanugoel/shantanugoel.com/settings/keys">https://github.com/shantanugoel/shantanugoel.com/settings/keys&lt;/a> ) and generate a deploy key with write access to the repository. Copy this key somewhere as you won&amp;rsquo;t be able to see this again.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to your source repository&amp;rsquo;s &lt;code>Secrets&lt;/code> section (e.g. &lt;a href="https://github.com/shantanugoel/shantanugoel.com-source/settings/secrets">https://github.com/shantanugoel/shantanugoel.com-source/settings/secrets&lt;/a> ), and click on &amp;ldquo;Add a new secret&amp;rdquo;.&lt;/p>
+&lt;ul>
+&lt;li>Add a new secret named &lt;code>ACTIONS_DEPLOY_KEY&lt;/code> and set its value to the key that you copied in previous step.&lt;/li>
+&lt;li>This secret will be used in the action workflow that you&amp;rsquo;ll create in the next step.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Added a GitHub Action workflow specification to the repository at this location relative to root of repository &lt;code>.github/workflows/deploy.yml&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>The filename can be anything ending in &lt;code>.yml&lt;/code> and written in YAML, but the directory path needs to be exactly as above.&lt;/li>
+&lt;li>The contents of the file are below. I&amp;rsquo;ve used comments in the contents to explain their usage.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Names can be anything as per your choice in the file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">CI&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># This action runs whenever somec hange is pushed to the master branch of this repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">push&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">branches&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">master&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">build-deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-18.04&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># This action is provided by Github. It checksout the repository along with submodules&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># for the hugo theme I use&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">submodules&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># This action downloads the latest hugu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Setup Hugo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-hugo@v2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">hugo-version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;latest&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Run hugo to generate the site and minify css/js etc&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">hugo --minify&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Publish the website to the designated github pages repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># ACTIONS_DEPLOY_KEY uses our deploy key to publish since the action in source repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># does not have access permissions to other repositories by default&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># EXTERNAL_REPOSITORY param is used to specify the github pages repository, otherwise by default&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># this action publishes to current repository itself&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># PUBLISH_BRANCH specifies the branch which is set to serve GitHub Pages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># PUBLISH_DIR is the dir where hugo generates the site contents&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-gh-pages@v2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">env&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ACTIONS_DEPLOY_KEY&lt;/span>: &lt;span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">EXTERNAL_REPOSITORY&lt;/span>: &lt;span style="color:#ae81ff">shantanugoel/shantanugoel.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">PUBLISH_BRANCH&lt;/span>: &lt;span style="color:#ae81ff">master&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">PUBLISH_DIR&lt;/span>: &lt;span style="color:#ae81ff">./public&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Now, anytime you commit and push a change to your source repository, it will be live on your destination within a minute or so.&lt;/li>
+&lt;/ul></content></item></channel></rss>

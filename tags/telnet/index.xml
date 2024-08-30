@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Telnet on</title><link>/tags/telnet/</link><description>Recent content in Telnet on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 25 Feb 2009 18:30:00 +0000</lastBuildDate><atom:link href="/tags/telnet/index.xml" rel="self" type="application/rss+xml"/><item><title>Secure Access To Your DSL Modem's Telnet (telnet / ssh)</title><link>/posts/secure-access-dsl-modems-telnet-ssh/</link><pubDate>Wed, 25 Feb 2009 18:30:00 +0000</pubDate><guid>/posts/secure-access-dsl-modems-telnet-ssh/</guid><description>I have one of those crappy DSL modems that all these ISPs give to you with the connection. My ISP is Airtel and the modem that I have is Beetel 110-BXi (They also have other models like 220-BX and 220 BXi). One thing common among all these modems is that they do not provide secure access like Secure Shell (ssh) as all they provide is ftp/telnet/http etc which are all clear text protocols.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Telnet on</title><link>/tags/telnet/</link><description>Recent content in Telnet on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 25 Feb 2009 18:30:00 +0000</lastBuildDate><atom:link href="/tags/telnet/index.xml" rel="self" type="application/rss+xml"/><item><title>Secure Access To Your DSL Modem's Telnet (telnet / ssh)</title><link>/2009/02/25/secure-access-dsl-modems-telnet-ssh/</link><pubDate>Wed, 25 Feb 2009 18:30:00 +0000</pubDate><guid>/2009/02/25/secure-access-dsl-modems-telnet-ssh/</guid><description>I have one of those crappy DSL modems that all these ISPs give to you with the connection. My ISP is Airtel and the modem that I have is Beetel 110-BXi (They also have other models like 220-BX and 220 BXi). One thing common among all these modems is that they do not provide secure access like Secure Shell (ssh) as all they provide is ftp/telnet/http etc which are all clear text protocols.</description><content>&lt;p>I have one of those crappy DSL modems that all these ISPs give to you with the connection. My ISP is Airtel and the modem that I have is Beetel 110-BXi (They also have other models like 220-BX and 220 BXi). One thing common among all these modems is that they do not provide secure access like Secure Shell (ssh) as all they provide is ftp/telnet/http etc which are all clear text protocols. Hence, it is a huge security risk to expose these interfaces to the internet and then access them from outside. So, I (and most others) don&amp;rsquo;t allow these services to be accessed from WAN. But I do have the need some time to access it. So, what do I do? I follow a simple process to allow myself a pseudo-ssh or telnet picggy-backed over ssh connection. How is that?&lt;/p>
+&lt;p>Well, I have an excellent wi-fi router (Asus WL-500W) that does have ssh (which I have configured to listen on, say, port XXXX). Now all I do is:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Disable telnet access to modem from WAN but enable from LAN.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Forward this particular port XXXX in modem&amp;rsquo;s configuration to the router&amp;rsquo;s IP.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optional: Register for a dynamic dns account (e.g. dyndns.org) and update the same in modem&amp;rsquo;s config so I can access my modem through a domain name since I have a dynamic IP which changes all the time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now, ssh to my external (WAN) IP from outside (say from work). Since, the port is forwarded to my router, it the router that answers my ssh request.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After logging in to my router, simply telnet to the modem using its LAN IP and configure away.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Simple, isn&amp;rsquo;t it? I would advise you all to make a similar setup for yourself as well, if possible, rather than taking risks of unsecure access.&lt;/p></content></item></channel></rss>

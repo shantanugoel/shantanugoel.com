@@ -1,2 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on</title><link>/tags/shell/</link><description>Recent content in Shell on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 27 Jan 2009 18:00:00 +0000</lastBuildDate><atom:link href="/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>Tip: Commands To Find Out The Shell You Are Using</title><link>/posts/tip-commands-to-find-out-the-shell-you-are-using/</link><pubDate>Tue, 27 Jan 2009 18:00:00 +0000</pubDate><guid>/posts/tip-commands-to-find-out-the-shell-you-are-using/</guid><description>Many times you might not be sure about which shell you are currently using. Especially if you are not on your system and logging into someone else&amp;rsquo;s, or maybe ssh&amp;rsquo;ing into a remote server. Worry not, because here are few simple commands that you can use to find out which shell you are using currently.
-Command (Note: This one is a bit unreliable as it might not work with non-bash shells or on redirection.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on</title><link>/tags/shell/</link><description>Recent content in Shell on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Jan 2009 18:00:00 +0000</lastBuildDate><atom:link href="/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>Tip: Commands To Find Out The Shell You Are Using</title><link>/2009/01/27/tip-commands-to-find-out-the-shell-you-are-using/</link><pubDate>Tue, 27 Jan 2009 18:00:00 +0000</pubDate><guid>/2009/01/27/tip-commands-to-find-out-the-shell-you-are-using/</guid><description>Many times you might not be sure about which shell you are currently using. Especially if you are not on your system and logging into someone else&amp;rsquo;s, or maybe ssh&amp;rsquo;ing into a remote server. Worry not, because here are few simple commands that you can use to find out which shell you are using currently.
+Command (Note: This one is a bit unreliable as it might not work with non-bash shells or on redirection.</description><content>&lt;p>Many times you might not be sure about which shell you are currently using. Especially if you are not on your system and logging into someone else&amp;rsquo;s, or maybe ssh&amp;rsquo;ing into a remote server. Worry not, because here are few simple commands that you can use to find out which shell you are using currently.&lt;/p>
+&lt;p>Command (Note: This one is a bit unreliable as it might not work with non-bash shells or on redirection. Pls check the comments for details. Thanks to Shantanu Kumar and renoX for pointing this out.):&lt;/p>
+&lt;p>&lt;code>echo $SHELL&lt;/code>&lt;/p>
+&lt;p>Output on my system:&lt;/p>
+&lt;p>&lt;code>/bin/bash&lt;/code>&lt;/p>
+&lt;p>Command:&lt;/p>
+&lt;p>&lt;code>echo $0&lt;/code>&lt;/p>
+&lt;p>Output on my system:&lt;/p>
+&lt;p>&lt;code>bash&lt;/code>&lt;/p>
+&lt;p>Command:&lt;/p>
+&lt;p>&lt;code>ps -p $$&lt;/code>&lt;/p>
+&lt;p>Output on my system:&lt;/p>
+&lt;p>&lt;code>7772 pts/0 00:00:00 bash&lt;/code>&lt;/p></content></item></channel></rss>

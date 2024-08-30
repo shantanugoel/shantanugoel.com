@@ -1,1 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Community on</title><link>/tags/community/</link><description>Recent content in Community on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 25 Jun 2010 22:02:49 +0000</lastBuildDate><atom:link href="/tags/community/index.xml" rel="self" type="application/rss+xml"/><item><title>Android vs iPhone: Security Models</title><link>/posts/android-vs-iphone-security-models/</link><pubDate>Fri, 25 Jun 2010 22:02:49 +0000</pubDate><guid>/posts/android-vs-iphone-security-models/</guid><description>Android and iPhone OS (iOS) have been at loggerheads for quite some time now. This is a take on which has a better security model to protect its users. I thought of writing it up because there have been a lot of discussions around me lately about which platform is more secure and I keep repeating the same points over and over at every one of them, so thought that in future I&amp;rsquo;ll just point them to this page :P</description></item><item><title>Google Releases Android Source Code</title><link>/posts/google-releases-android-source-code/</link><pubDate>Tue, 21 Oct 2008 17:57:52 +0000</pubDate><guid>/posts/google-releases-android-source-code/</guid><description>FOSS (Free and Open Source Software) community rejoices today as google finally lived upto their promise of releasing the android source code. Now, the things that is left to be evaluated is that how much of it is actually true, or whether there are some binary blobs still in there. Moreover, it remains to be seen that how much this converts into a “community” project instead of being ruled by Google with an iron hand.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Community on</title><link>/tags/community/</link><description>Recent content in Community on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 25 Jun 2010 22:02:49 +0000</lastBuildDate><atom:link href="/tags/community/index.xml" rel="self" type="application/rss+xml"/><item><title>Android vs iPhone: Security Models</title><link>/2010/06/25/android-vs-iphone-security-models/</link><pubDate>Fri, 25 Jun 2010 22:02:49 +0000</pubDate><guid>/2010/06/25/android-vs-iphone-security-models/</guid><description>Android and iPhone OS (iOS) have been at loggerheads for quite some time now. This is a take on which has a better security model to protect its users. I thought of writing it up because there have been a lot of discussions around me lately about which platform is more secure and I keep repeating the same points over and over at every one of them, so thought that in future I&amp;rsquo;ll just point them to this page :P</description><content>&lt;p>Android and iPhone OS (iOS) have been at loggerheads for quite some time now. This is a take on which has a better security model to protect its users. I thought of writing it up because there have been a lot of discussions around me lately about which platform is more secure and I keep repeating the same points over and over at every one of them, so thought that in future I&amp;rsquo;ll just point them to this page :P&lt;/p>
+&lt;p>&lt;strong>Disclaimer:&lt;/strong>&lt;/p>
+&lt;p>A. I don&amp;rsquo;t guarantee this post to be absolutely correct as I&amp;rsquo;m no security researcher or expert but I do have some interest in this field and I&amp;rsquo;ve been a developer for some time now on different architectures and OSs especially at OS/driver level and that too in the mobile devices field, so I &amp;ldquo;might&amp;rdquo; actually be right about a few things here and there..&lt;/p>
+&lt;p>B. I&amp;rsquo;m an android user myself but not of the fanboy variety. I&amp;rsquo;ll be happy to switch camps any day I get something that appeals to me better. I have love and hate points for almost all platforms available but I&amp;rsquo;m using android because &amp;ldquo;for me&amp;rdquo; it&amp;rsquo;s love points slightly outnumber the hate points.&lt;/p>
+&lt;p>OK, on with the points then. Here is the table that I created for this showing points I considered and which side wins each. Don&amp;rsquo;t start flaming me though just by seeing the table :P I will be discussing the points as well below it.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Android
+iPhone&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>&lt;strong>1. Distribution Medium Security:&lt;/strong> Apple vets every application that is put on the app store while Google&amp;rsquo;s Market Place is unrestricted. How does this affect you security wise?&lt;/p>
+&lt;p>**a. Approval Process: **The biggest myth is that the vetting process is what will save you from malware on app store. IT WON&amp;rsquo;T. The Apple app approval process isn&amp;rsquo;t defined anywhere but in general it just states that it checks for apps to do what they say they will do. But they don&amp;rsquo;t check the source code of the apps and static analysis of binaries can only take you so far (Heck, they have even been inept at catching a whole lot of apps that were using their disallowed private apis which can be found easily using simple tools) . So, anyone actually wanting to write a malware can do it trivially by making the malicious code to run after the app has been approved. The trigger could be time based or could even be done over the web remotely. The app could even have encrypted payloads or download new pieces of code over the web and run them. So, we can safely say that approval process is something that can&amp;rsquo;t make things secure for you that way.&lt;/p>
+&lt;p>&lt;strong>Result: No one wins&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>&lt;strong>b. Phishing:&lt;/strong> This is where App store can protect you if someone put an app claiming to be from someone that it isn&amp;rsquo;t. e.g. Someone could make an app that claims to be from &amp;ldquo;Bank of America&amp;rdquo;. In apple&amp;rsquo;s case, I&amp;rsquo;m 99.99% sure that the app won&amp;rsquo;t pass the screening but in Android&amp;rsquo;s case, there won&amp;rsquo;t be any hassles for it to reach the marketplace. It could be pulled soon after as google learns about it but still even one person&amp;rsquo;s damage here is much more than what would have happend on iPhone.&lt;/p>
+&lt;p>&lt;strong>Result: iPhone wins&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>&lt;strong>2. Local Security:&lt;/strong> What about the security in the OS itself once an app is on your phone? This is an important question because 1.) As I noted above, Apple&amp;rsquo;s app screening process isn&amp;rsquo;t robust enough to catch malware 2.) People can bypass the official distribution medium easily. Android allows to install apps from other sources on most phones by just enabling an option and a huge number of people jailbreak their iPhones and get/use this capability.&lt;/p>
+&lt;p>&lt;strong>a. Permissions:&lt;/strong> On Android, an app has to explicitly declare what capabilities/data of the phone it wants to access/use and the user has to explicitly give it those permissions before it is allowed to install, irrespective of from where/how this app is being installed. So, it works even if you are installing the app from your SD card and even if you have rooted your phone. On iPhone, there is no such mechanism of restricting apps. All apps are equal and can access a lot of resources unhindered without the user knowing. So, while installing a single player only game on android you can immediately be suspicious if the app is asking for internet connection or access to your contacts data but on iPhone you will not come to know about this.&lt;/p>
+&lt;p>&lt;strong>Result: Android wins&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>&lt;strong>b. Environment:&lt;/strong> On both platforms, the apps run in their own sandboxes with unique uuids&lt;/p>
+&lt;p>&lt;strong>Result: Tie&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>&lt;strong>3. Open vs Closed:&lt;/strong> Most of the Android code is open source while for iOS, only darwin kernel and some other things like webkit etc are open source. Now, this in itself doesn&amp;rsquo;t gurantee to make Android secure but its code does get a lot of scrutiny from open source community as well as lot of other big name companies with commercial interests in Android which allows it to find and fix more bugs and loopholes than iPhone can.&lt;/p>
+&lt;p>&lt;strong>Result: Slight win for Android&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>&lt;strong>4. App development model:&lt;/strong> Most apps for Android are written in java while those in iPhone are written in C/Objective-C. While I&amp;rsquo;m myself a big time C lover (Majority of my coding is in C/CPP) but it is indeed a very unforgiving language where you need to be very careful with what you write and has much greater chances of exploits, .e.g, Buffer overflows, as compared to java (Interestingly, all the jailbreaks for iPhone OS have been done using such exploits and have been made available day 0/day 1 mostly.)&lt;/p>
+&lt;p>&lt;strong>Result: Slight win for Android&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>&lt;strong>5. Damage Control:&lt;/strong> What if an app actually got through everything on any of these platforms and started spreading? Both of these platforms have kill switches in the hands of Google/Apple which they can use to remove such malicious apps from the users&amp;rsquo; phones remotely.&lt;/p>
+&lt;p>&lt;strong>Result: Tie&lt;/strong>&lt;/p>
+&lt;p>**
+**&lt;/p>
+&lt;p>Summary: Well, there is no clear winner. Apple is quite good when it comes to protecting you from phishing (though that advantage goes away if you jailbreak and use alternative means to install apps) and Android has a real sound local security system (though it also has the flaw that users might not always understand why an app is requesting a certain critical permission and install it anyways). So, take your pick and let me know what you picked :) and please do tell me if I&amp;rsquo;m wrong in any of my points or missed out on something that needs to be compared.&lt;/p></content></item><item><title>Google Releases Android Source Code</title><link>/2008/10/21/google-releases-android-source-code/</link><pubDate>Tue, 21 Oct 2008 17:57:52 +0000</pubDate><guid>/2008/10/21/google-releases-android-source-code/</guid><description>FOSS (Free and Open Source Software) community rejoices today as google finally lived upto their promise of releasing the android source code. Now, the things that is left to be evaluated is that how much of it is actually true, or whether there are some binary blobs still in there. Moreover, it remains to be seen that how much this converts into a “community” project instead of being ruled by Google with an iron hand.</description><content>&lt;p>FOSS (Free and Open Source Software) community rejoices today as google finally lived upto their promise of &lt;a href="http://google-opensource.blogspot.com/2008/10/android-open-source-cell-phone.html">releasing&lt;/a> the &lt;a href="http://source.android.com/">android source code&lt;/a>. Now, the things that is left to be evaluated is that how much of it is actually true, or whether there are some binary blobs still in there. Moreover, it remains to be seen that how much this converts into a “community” project instead of being ruled by Google with an iron hand. But given the interest that Android has generated so far, and given google’s reputation as a good open source promoter, I am ready to believe that this is going to be one of the biggest landmarks that mobile FOSS industry will see. And maybe, this will finally motivate me as well to get involved in the “bigger picture” finally by contributing to a project that is more than just a few thousand lines of source. What is your opinion and expectation from this development? Let me know.&lt;/p></content></item></channel></rss>

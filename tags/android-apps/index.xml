@@ -1,10 +1,311 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android Apps on</title><link>/tags/android-apps/</link><description>Recent content in Android Apps on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 05 Oct 2010 07:35:39 +0000</lastBuildDate><atom:link href="/tags/android-apps/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Paid Apps Now Live In India</title><link>/posts/android-paid-apps-now-live-in-india/</link><pubDate>Tue, 05 Oct 2010 07:35:39 +0000</pubDate><guid>/posts/android-paid-apps-now-live-in-india/</guid><description>Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):
-The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies.</description></item><item><title>Carrier Billing Behind Android Paid Apps Market Jump?</title><link>/posts/carrier-billing-behind-android-paid-apps-market-jump/</link><pubDate>Fri, 01 Oct 2010 17:19:51 +0000</pubDate><guid>/posts/carrier-billing-behind-android-paid-apps-market-jump/</guid><description>We heard the news today that paid apps in Android market place have been extended to 18 new countries. Could &amp;ldquo;Carrier Billing&amp;rdquo; (Allowing your service operator to add the apps&amp;rsquo; price to your cellphone bill) be the reason behind it? I think so. It was long suggested that Google Checkout and corresponding legal issues in using it across various countries was the reason behind the paid apps not being available in those countries.</description></item><item><title>Android Paid Apps Available In India</title><link>/posts/android-paid-apps-india/</link><pubDate>Fri, 01 Oct 2010 03:40:00 +0000</pubDate><guid>/posts/android-paid-apps-india/</guid><description>Just got a mail from Google that paid apps are being made available in India. HOORAY!!! In addition, developers from 20 more countries can sell apps on market (Unfortunately, no India in this list) and people from 18 more countries can buy paid apps.
-This is a big thing because now 32 countries out of 44 where Android has footprint can buy paid apps. This should take away one of the biggest drawbacks that Android marketplace was facing.</description></item><item><title>Setup Call Recording With Android App Tasker On Nexus One</title><link>/posts/setup-call-recording-android-app-tasker-nexus-one/</link><pubDate>Fri, 24 Sep 2010 10:01:16 +0000</pubDate><guid>/posts/setup-call-recording-android-app-tasker-nexus-one/</guid><description>I wanted to record calls on my Android phone (Nexus one). The easy way would have been to download an app but I like tinkering. And given that I recently bought Tasker, android’s very own swiss knife, I thought I should give it a run. After just an hour I was able to create my very own call recorder (some time went into trial and error with things as this was my first major task with tasker and also some things didn’t work with nexus one, which I will note below).</description></item><item><title>Android App: Wi-Fi Keep Alive updates</title><link>/posts/android-app-wi-fi-keep-alive-updates/</link><pubDate>Thu, 09 Sep 2010 05:27:27 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updates/</guid><description>I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss.</description></item><item><title>Caution: Stay away from making your Android app free for a short time</title><link>/posts/caution-stay-away-from-making-your-android-app-free-for-a-short-time/</link><pubDate>Wed, 08 Sep 2010 06:18:36 +0000</pubDate><guid>/posts/caution-stay-away-from-making-your-android-app-free-for-a-short-time/</guid><description>Just read this over at the Android Developers google forum:
-My app had a one-day sale on all platforms and app stores. The price went from 2.99 to free for just today, but now that the sale is over, I need to revert the price back to 2.99. The bad news is, the developer console will not let me change it! I have to pull the app until I can get this resolved.</description></item><item><title>Solving The Android Permissions And Malware Puzzle</title><link>/posts/android-permissions-malware/</link><pubDate>Fri, 13 Aug 2010 19:44:59 +0000</pubDate><guid>/posts/android-permissions-malware/</guid><description>There has been a spate of security reports recently about Android apps being malware or suspicious. Most of these were found baseless but at least one was indeed correct (e.g. The Russian Trojan app). We also know that Android has a very good security model but even then, the rest of the reports also makes one think and focus on why an apps requires the permissions that it states it needs?</description></item><item><title>Android Dev Tip: App Not Showing on X10 Mini Marketplace</title><link>/posts/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</link><pubDate>Sat, 07 Aug 2010 21:18:06 +0000</pubDate><guid>/posts/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</guid><description>Many Android Developers (and users) get confused that why a certain app isn&amp;rsquo;t showing up on the new Xperia X10 Mini (and few other) phones. This happens even if they support all android versions and have published their apps for all countries, so that shouldn&amp;rsquo;t be the issue. I came across this as well when few people mentioned that they couldn&amp;rsquo;t find my app Wi-Fi Keep Alive in the X10 mini marketplace.</description></item><item><title>SSH Tunneling On Android</title><link>/posts/ssh-tunneling-android/</link><pubDate>Mon, 02 Aug 2010 10:53:36 +0000</pubDate><guid>/posts/ssh-tunneling-android/</guid><description>If you want to have a secure browsing environment or just want to access your home network securely without exposing extra services to the internet and without the mess that comes with setting up and maintaining a VPN server, ssh tunneling is your rescuer. In this post, I&amp;rsquo;ll tell you how to setup an ssh tunnel to your home network easily. Also look for some bonus tips at the end ;)</description></item><item><title>Camera LED As Flashlight on Non-Rooted Android Phones</title><link>/posts/camera-led-flashlight-non-rooted-android-phones/</link><pubDate>Fri, 30 Jul 2010 09:31:08 +0000</pubDate><guid>/posts/camera-led-flashlight-non-rooted-android-phones/</guid><description>We all know that Android does not allow the camera LED to be controlled directly from apps and hence, you cannot use the camera LED as a Torch or Flashlight unless you are rooted. There are many flashlight apps on the Android Market Place but none of them will work for you if you don&amp;rsquo;t have a rooted phone. BUT this changed recently. I use a brilliant app called &amp;ldquo;quick settings&amp;rdquo; which keeps an icon in the notification bar and I can pull it down and change any settings without leaving other apps.</description></item><item><title>Android App Wi-Fi Keep Alive updated to 1.4.1</title><link>/posts/android-app-wi-fi-keep-alive-updated-1-4-0/</link><pubDate>Thu, 22 Jul 2010 16:58:07 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updated-1-4-0/</guid><description>Update: Made a minor update for a small bug that can make wi-fi keep reconnecting in quick succession.
-Pushed out a new update to my Android App Wi-Fi Keep Alive today. This update brings in another work around for the issue where the wi-fi is alive on the phone and it is also connected to the network but is somehow unable to send/receive any packets to the network. The new work around will automatically re-associate your phone with the wi-fi router if it detects such a situation.</description></item><item><title>Android App: Wi-Fi Keep Alive Updated to 1.2.0</title><link>/posts/android-app-wi-fi-keep-alive-updated-to-1-2-0/</link><pubDate>Sat, 03 Jul 2010 22:46:36 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updated-to-1-2-0/</guid><description>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android Apps on</title><link>/tags/android-apps/</link><description>Recent content in Android Apps on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 05 Oct 2010 07:35:39 +0000</lastBuildDate><atom:link href="/tags/android-apps/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Paid Apps Now Live In India</title><link>/2010/10/05/android-paid-apps-now-live-in-india/</link><pubDate>Tue, 05 Oct 2010 07:35:39 +0000</pubDate><guid>/2010/10/05/android-paid-apps-now-live-in-india/</guid><description>Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):
+The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies.</description><content>&lt;p>Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies. Good stuff!)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can see the paid apps on main list and in the &amp;ldquo;Just In&amp;rdquo; Tab but there is no &amp;ldquo;Top Paid&amp;rdquo; tab available. (**Update: **If you can&amp;rsquo;t see the &amp;ldquo;top paid&amp;rdquo; tab, then go to settings-&amp;gt;Applications-&amp;gt;All-&amp;gt;Market and clear data and cache &amp;amp; launch market app again. You will be able to see top paid tab as well :) )&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can, however, search for any paid app or follow a direct marketplace link fine.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Final payment is done in the original currency of the app developer (e.g. pounds or dollars)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The payment method is credit cards through Google Checkout.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Debit cards won&amp;rsquo;t work for payment. Even though google checkout accepts them, they show up as &amp;ldquo;invalid&amp;rdquo; while buying apps. I presume that this is because of the 24 hour refund feature of Android marketplace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Carrier Billing is not available though&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Another new thing reported. &amp;ldquo;Update All&amp;rdquo; feature which was so far available only on Froyo ROMs has also been included for devices with older Android versions. I&amp;rsquo;m not sure which all versions have it but it is at least showing up on 2.1 (Eclair) ROMs now.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Let me know if you can see the paid apps as well. If you cannot, try these two things:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Open Phone app and dial &amp;ldquo;*#*#2432546#*#*&amp;rdquo; and wait. You should get a &amp;ldquo;Checkin succeeded&amp;rdquo; notification.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Restart your phone.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item><item><title>Carrier Billing Behind Android Paid Apps Market Jump?</title><link>/2010/10/01/carrier-billing-behind-android-paid-apps-market-jump/</link><pubDate>Fri, 01 Oct 2010 17:19:51 +0000</pubDate><guid>/2010/10/01/carrier-billing-behind-android-paid-apps-market-jump/</guid><description>We heard the news today that paid apps in Android market place have been extended to 18 new countries. Could &amp;ldquo;Carrier Billing&amp;rdquo; (Allowing your service operator to add the apps&amp;rsquo; price to your cellphone bill) be the reason behind it? I think so. It was long suggested that Google Checkout and corresponding legal issues in using it across various countries was the reason behind the paid apps not being available in those countries.</description><content>&lt;p>We heard the &lt;a href="/2010/10/01/android-paid-apps-india.html">news&lt;/a> today that paid apps in Android market place have been extended to 18 new countries. Could &amp;ldquo;Carrier Billing&amp;rdquo; (Allowing your service operator to add the apps&amp;rsquo; price to your cellphone bill) be the reason behind it? I think so. It was long suggested that Google Checkout and corresponding legal issues in using it across various countries was the reason behind the paid apps not being available in those countries. The, all of us developers got an email from Google on 24th of July about an updated Developers&amp;rsquo; Distribution Agreement, which basically said in clause 13.1 that &amp;ldquo;authorized carriers&amp;rdquo; had been added as an indemnified party in the apps sales.&lt;/p>
+&lt;p>What&amp;rsquo;s more is that the agreement had a 30 day period to be accepted (August end), and then just one month after that we got the news of so many new countries being added. Sounds mighty coincidental to me. I think it would have been much easier for google to work through the carriers to allow paid apps than burning through all that red tape for its own google checkout.&lt;/p>
+&lt;p>This is good news, if true because carrier billing is much more convenient I think. Plus it can be used even if you do not own a credit card. Let&amp;rsquo;s hope for the best :)&lt;/p></content></item><item><title>Android Paid Apps Available In India</title><link>/2010/10/01/android-paid-apps-india/</link><pubDate>Fri, 01 Oct 2010 03:40:00 +0000</pubDate><guid>/2010/10/01/android-paid-apps-india/</guid><description>Just got a mail from Google that paid apps are being made available in India. HOORAY!!! In addition, developers from 20 more countries can sell apps on market (Unfortunately, no India in this list) and people from 18 more countries can buy paid apps.
+This is a big thing because now 32 countries out of 44 where Android has footprint can buy paid apps. This should take away one of the biggest drawbacks that Android marketplace was facing.</description><content>&lt;p>Just got a mail from Google that paid apps are being made available in India. HOORAY!!! In addition, developers from 20 more countries can sell apps on market (Unfortunately, no India in this list) and people from 18 more countries can buy paid apps.&lt;/p>
+&lt;p>This is a big thing because now 32 countries out of 44 where Android has footprint can buy paid apps. This should take away one of the biggest drawbacks that Android marketplace was facing.&lt;/p>
+&lt;p>This the list that I received:&lt;/p>
+&lt;blockquote>
+&lt;p>Effective today, developers from 20 additional countries (Argentina, Australia, Belgium, Brazil, Canada, Denmark, Finland, Hong Kong, Ireland, Israel, Mexico, New Zealand, Norway, Portugal, Russia, Singapore, South Korea, Sweden, Switzerland and Taiwan) can now sell paid apps on Android Market. Over the next 2 weeks, users from 18 new countries (Argentina, Brazil, Belgium, Czech Republic, Denmark, Finland, Hong Kong, India, Ireland, Israel, Mexico, Norway, Poland, Portugal, Russia, Singapore, Sweden, and Taiwan) will be able to purchase paid apps from Android Market.&lt;/p>
+&lt;/blockquote>
+&lt;p>Now, let&amp;rsquo;s hope that Google allows Indian developers to sell their apps soon as well. :)&lt;/p></content></item><item><title>Setup Call Recording With Android App Tasker On Nexus One</title><link>/2010/09/24/setup-call-recording-android-app-tasker-nexus-one/</link><pubDate>Fri, 24 Sep 2010 10:01:16 +0000</pubDate><guid>/2010/09/24/setup-call-recording-android-app-tasker-nexus-one/</guid><description>I wanted to record calls on my Android phone (Nexus one). The easy way would have been to download an app but I like tinkering. And given that I recently bought Tasker, android’s very own swiss knife, I thought I should give it a run. After just an hour I was able to create my very own call recorder (some time went into trial and error with things as this was my first major task with tasker and also some things didn’t work with nexus one, which I will note below).</description><content>&lt;p>I wanted to record calls on my Android phone (Nexus one). The easy way would have been to download an app but I like tinkering. And given that I recently bought &lt;a href="http://tasker.dinglisch.net/">Tasker&lt;/a>, android’s very own swiss knife, I thought I should give it a run. After just an hour I was able to create my very own call recorder (some time went into trial and error with things as this was my first major task with tasker and also some things didn’t work with nexus one, which I will note below). I’ll outline the process to set it up here in as much detail as possible and will also provide the profiles. Please note that I made this setup for nexus one but it should work on pretty much any android phone and, in fact, it might work even better on your phone by making a few tweaks that I will outline as Nexus one doesn’t allow jacking into the call streams directly but your phone might.&lt;/p>
+&lt;p>So, let’s begin. My visioned scenario is like this:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>When you start a call (incoming or outgoing), i.e., when both the parties have picked up the phone, a notification should appear in the status bar.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Clicking on this notification should start recording the call. It should also give way to another notification now.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This new notification should stop the call recording when clicked.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you don’t stop the call recording, the recording should automatically stop when the call ends.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>To achieve the steps mentioned above, you will have to create “4” profiles in tasker. The xml files for these profiles are provided in a zip at the end of this article that you can download and import into tasker directly. If you want to understand more about whats going on, here are the details of each profile so that you can understand and modify them according to your needs. These profiles are:&lt;/p>
+&lt;p>&lt;strong>Profile 1. Call Started&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Call started
+Event: Phone Offhook
+Enter: 11
+Execute, Abort New Task
+A0: Variable Clear [ Name:%RECORDING ]
+A1: Notify [ Title:Record Call Text: Icon: Number: Permanent: ]&lt;/p>
+&lt;p>&lt;strong>Notes:&lt;/strong>&lt;/p>
+&lt;p>None&lt;/p>
+&lt;p>&lt;strong>Profile 2. Record Call&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Record call
+Event: Notification Click
+Enter: Record Call
+Execute, Abort New Task
+A0: Notify Cancel [ Title:Record Call Warn Not Exist: ]
+A1: Variable Set [ Name:%RECORDING To:1 Do Maths: Append: ]
+A2: In-Call Volume [ Level:5 Display: Sound: ]
+A3: Speakerphone [ Set:On ]
+A4: Flash [ Text:Started Recording Long: ]
+A5: Notify [ Title:Stop Record Call Text: Icon: Number: Permanent: ]
+A6: Record Audio [ File:shantz/call-%CNUM-%CDATE-%CTIME Source:Microphone MaxSize: ]&lt;/p>
+&lt;p>**Notes: **&lt;/p>
+&lt;p>Note the steps A2, A3 and A6. Basically Nexus one has a limitation that you cannot record directly from the call streams. So, I’m doing the recording from the microphone and this works best if the phone is in speakerphone mode. So, I’m turning up the call volume and setting speakerphone mode in A2 and A3 respectively. You can try tweaking these 2 steps (having different call volumes and not engaging speakerphone mode and you might have passable results without doing these as well). Also, try using “Call”, “Incoming Call”, “Outgoing Call” etc as sources in step A6 instead of microphone to check if your phone supports direct call stream recording. If it does, then you will have excellent recording quality and you can also remove steps A2 and A3.&lt;/p>
+&lt;p>&lt;strong>Profile 3. Stop Record Call&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Stop record call
+Event: Notification Click
+Enter: Stop Record Call
+Execute, Abort New Task
+A0: Record Audio Stop [ ]
+A1: Notify Cancel [ Title:Record Call Warn Not Exist: ]
+A2: Notify Cancel [ Title:Stop Record Call Warn Not Exist: ]
+A3: Flash [ Text:Stopped Recording Long: ]
+A4: Variable Clear [ Name:%RECORDING ]
+A5: Speakerphone [ Set:Off ]&lt;/p>
+&lt;p>**Notes: **&lt;/p>
+&lt;p>None&lt;/p>
+&lt;p>&lt;strong>Profile 4. Call Complete&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Call complete
+Event: Phone Idle
+Enter: Stop Record Call
+Execute, Abort New Task
+A0: Record Audio Stop [ ]
+A1: Notify Cancel [ Title:Record Call Warn Not Exist: ]
+A2: Notify Cancel [ Title:Stop Record Call Warn Not Exist: ]
+A3: Flash [ Text:Stopped Recording Long: ]
+A4: Variable Clear [ Name:%RECORDING ]
+A5: Speakerphone [ Set:Off ]&lt;/p>
+&lt;p>**Notes: **&lt;/p>
+&lt;p>None&lt;/p>
+&lt;p>&lt;strong>&lt;a href="http://tech.shantanugoel.com/resources/downloads/android-tasker-call-record-profiles.zip">Download: Android Tasker Call Record Profiles&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>And we are done, you can download the profile xml files in the zip file linked here.&lt;/p>
+&lt;p>Let me know if you need any clarifications on the above steps. I would also love to get your suggestions to make this better or if you have any of your own tasker tips and tricks. I’ll be posting more of my tasker adventures soon :)&lt;/p></content></item><item><title>Android App: Wi-Fi Keep Alive updates</title><link>/2010/09/09/android-app-wi-fi-keep-alive-updates/</link><pubDate>Thu, 09 Sep 2010 05:27:27 +0000</pubDate><guid>/2010/09/09/android-app-wi-fi-keep-alive-updates/</guid><description>I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss.</description><content>&lt;p>I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss. I’ve bought a new machine a couple of days ago but still have to recover my data from old machine and set it up on the new one along with linux and my standard development environment. Please do continue to report bugs and ask for requests though and I’ll make sure to keep track of them.&lt;/p>
+&lt;p>PS: A tiny thing for celebration is that the app crossed 10,000 downloads mark recently within 2 months of its first appearance on the market :) and right now stands arounds 12k mark. Let&amp;rsquo;s see when I get to 50k :)&lt;/p></content></item><item><title>Caution: Stay away from making your Android app free for a short time</title><link>/2010/09/08/caution-stay-away-from-making-your-android-app-free-for-a-short-time/</link><pubDate>Wed, 08 Sep 2010 06:18:36 +0000</pubDate><guid>/2010/09/08/caution-stay-away-from-making-your-android-app-free-for-a-short-time/</guid><description>Just read this over at the Android Developers google forum:
+My app had a one-day sale on all platforms and app stores. The price went from 2.99 to free for just today, but now that the sale is over, I need to revert the price back to 2.99. The bad news is, the developer console will not let me change it! I have to pull the app until I can get this resolved.</description><content>&lt;p>Just read this over at the Android Developers google forum:&lt;/p>
+&lt;blockquote>
+&lt;p>My app had a one-day sale on all platforms and app stores. The price went from 2.99 to free for just today, but now that the sale is over, I need to revert the price back to 2.99. The bad news is, the developer console will not let me change it! I have to pull the app until I can get this resolved. What can I do?&lt;/p>
+&lt;/blockquote>
+&lt;p>Apparently, google has this clause in it’s developer’s agreement:&lt;/p>
+&lt;blockquote>
+&lt;p>You may also choose to distribute Products for free. If the Product is free, you will not be charged a Transaction Fee. You may not collect future charges from users for copies of the Products that those users were initially allowed to download for free. This is not intended to prevent distribution of free trial versions of the Product with an &amp;ldquo;upsell&amp;rdquo; option to obtain the full version of the Product: Such free trials for Products are encouraged. However, if you want to collect fees after the free trial expires, you must collect all fees for the full version of the Product through the Payment Processor on the Market. In this Agreement, &amp;ldquo;free&amp;rdquo; means there are no charges or fees of any kind for use of the Product. All fees received by Developers for Products distributed via the Market must be processed by the Market&amp;rsquo;s Payment Processor.&lt;/p>
+&lt;/blockquote>
+&lt;p>So, basically, once the app is free, it will always be free unless you create a new “full” version package and put it up on the market. The solution in the above scenario seems to be that the developer now needs to pull down his previously published app (which is now free), change the package component name and then republish the app. Of course, this means that he loses track of all the data and customers currently associated with the app.&lt;/p>
+&lt;p>I’m not sure whether this is good or bad. From customers’ point of view it looks good and from developers’ point of view it looks bad. I also don’t know whether this also applies to reducing the price and then increasing it as I can’t put up paid apps in the market yet (though this seems to be allowed as I’ve seen reports of apps increasing their prices). Let me know what you think about this clause (and any clarifications about non-free but fluctuating prices would also be welcome)&lt;/p></content></item><item><title>Solving The Android Permissions And Malware Puzzle</title><link>/2010/08/13/android-permissions-malware/</link><pubDate>Fri, 13 Aug 2010 19:44:59 +0000</pubDate><guid>/2010/08/13/android-permissions-malware/</guid><description>There has been a spate of security reports recently about Android apps being malware or suspicious. Most of these were found baseless but at least one was indeed correct (e.g. The Russian Trojan app). We also know that Android has a very good security model but even then, the rest of the reports also makes one think and focus on why an apps requires the permissions that it states it needs?</description><content>&lt;p>There has been a spate of security reports recently about Android apps being malware or suspicious. Most of these were found baseless but at least one was indeed correct (e.g. The Russian Trojan app). We also know that Android has a very good &lt;a href="/2010/06/26/android-vs-iphone-security-models.html">security model&lt;/a> but even then, the rest of the reports also makes one think and focus on why an apps requires the permissions that it states it needs?&lt;/p>
+&lt;p>We all MUST check the permissions that an app requires before installing it and then contemplate what particular feature of the app would require any mentioned permission. The problem here is two part. First is that the permissions can be cryptic. Now, I can understand most of these as I also develop Android apps but I&amp;rsquo;d fathom that a huge majority wouldn&amp;rsquo;t. A simple solution to this would be for Google to provide more details (and probably examples) for each permission. One can say that it is difficult and a UI nightmare to include too much of text into the limited space that the mobile screen gets. My suggestion here would be to keep the existing layout as it is, but when someone clicks on a requested permission, he be taken to a new page which describes the permission in detailed but simple words and also provides examples.&lt;/p>
+&lt;p>But this is just the first part of the current problem. The more important issue most apps are facing these days is &amp;ldquo;&lt;strong>permission creep in&lt;/strong>&amp;rdquo;, i.e., they request for permissions they don&amp;rsquo;t really require. This could be because either they are just adding it to their manifest file mistakenly without using them or are taking a long route for solving a problem that should ideally have been solved in a much easier way without requiring excessive permissions. This permission creep in makes even legit apps look bad. e.g. There was this recent case of a &lt;a href="http://techcrunch.com/2010/07/29/android-wallpaper-hack/">wallpaper app&lt;/a> which was crucified by mainstream media all over the world because of the permissions it was using and then it turned out to be just that the developer&amp;rsquo;s method to solve a particular problem (providing &amp;ldquo;favorites&amp;rdquo; and &amp;ldquo;recommended&amp;rdquo; features to users) was long-winded.&lt;!-- raw HTML omitted -->This is quite common today in Android marketplace. e.g. I tried to install the hugely famous &amp;ldquo;Chomp SMS&amp;rdquo; app today and noticed that it requires my &amp;ldquo;location&amp;rdquo; as well. Pretty weird that an SMS app needs my location and when combined with the &amp;ldquo;Internet&amp;rdquo; permission that it requires as well, it made me go &amp;ldquo;hmmm&amp;rdquo; even though it is tried and tested by a huge number of people without issues. Then I realized that it might need the internet permission for ads (since I was downloading the free version) but still a bit doubtful about location, probably that is needed for ads targeting (especially because it wanted my coarse location only, i.e., cell-triangulation location by which it can easily identify my general region or country, which is all what is needed) but I&amp;rsquo;m still not sure. Even the Android Guru &lt;a href="http://commonsware.com/blog/2010/08/12/evernote-why-you-need-think-about-permissions.html">Mark Murphy has similar reservations&lt;/a> about another popular app Evernote.&lt;/p>
+&lt;p>The solution? I think Google should make it mandatory for app publishers to explain in the market that why their app needs each of the permissions it requests. This should be concisely explained to the user before installation and then the user-review feature of Android marketplace can take over to determine whether the explanation given is indeed satisfactory enough or not. This would, e.g., make it immediately clear to any potential Chomp SMS users why it needs the location. I&amp;rsquo;m sure this would lead to even more sales for the good and trusted apps as people like me who were skeptical of something can put their doubts to rest. At the same time, it would quickly push the russian trojan like apps down into the oblivion.&lt;/p>
+&lt;p>A side effect/benefit of this approach will also be that the app authors would look at the permissions that they use more cautiously and would probably try to weed out the unnecessary ones.&lt;/p>
+&lt;p>Another idea that I have in mind is more community based. I&amp;rsquo;m not sure if Google will implement the above idea or even if they do, would they make it mandatory since market already has almost a 100,000 apps without this info. BUT, if someone can take up the mantle of making a community site that documents, with the help of android users, the potential uses of all apps&amp;rsquo; permissions and also raise flags on any app having a permission without any apparent need, this would become a boon to the Android users. AppBrain, are you listening? I think this would be a good addition to your already excellent service.&lt;/p>
+&lt;p>What are your ideas about solving the apps and permissions problems and removing the malware scare that looms upon us? Let me know in the comments..&lt;/p></content></item><item><title>Android Dev Tip: App Not Showing on X10 Mini Marketplace</title><link>/2010/08/07/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</link><pubDate>Sat, 07 Aug 2010 21:18:06 +0000</pubDate><guid>/2010/08/07/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</guid><description>Many Android Developers (and users) get confused that why a certain app isn&amp;rsquo;t showing up on the new Xperia X10 Mini (and few other) phones. This happens even if they support all android versions and have published their apps for all countries, so that shouldn&amp;rsquo;t be the issue. I came across this as well when few people mentioned that they couldn&amp;rsquo;t find my app Wi-Fi Keep Alive in the X10 mini marketplace.</description><content>&lt;p>Many Android Developers (and users) get confused that why a certain app isn&amp;rsquo;t showing up on the new Xperia X10 Mini (and few other) phones. This happens even if they support all android versions and have published their apps for all countries, so that shouldn&amp;rsquo;t be the issue. I came across this as well when few people mentioned that they couldn&amp;rsquo;t find my app Wi-Fi Keep Alive in the X10 mini marketplace. On some digging into the android docs and the X10 mini specs, I found the issue.&lt;/p>
+&lt;p>The problem is that the X10 mini has a very small screen with only a QVGA resolution. This screen size/resolution wasn&amp;rsquo;t supported by Android until recently and the Android system might not be able to scale resources and layouts designed for other screen sizes well enough to suit the X10 mini. Hence, the Android system designers have chosen that any app which does not declare explicit support for small screens (i.e., the app dev has tested his app on small screens and made any changes, if needed, and then declared that everything works fine in the Android Manifest) then it is considered not compatible by default and hence, the Android marketplace will filter your app out.&lt;/p>
+&lt;p>Now, this is a big loss. A lot of X10 minis were sold and there are lot of new low-tier and cheap Android smartphones coming out with this resolution, so it is a significant market share that you can&amp;rsquo;t afford to lose. The solution is simple. If the app does indeed work fine on small screens (or you have fixed it to work), then all you got to do is add the below mentioned line in your AndroidManifest.xml:&lt;/p>
+&lt;p>&lt;code>&amp;lt;supports-screens android:smallScreens=&amp;quot;true&amp;quot; /&amp;gt;&lt;/code>&lt;/p>
+&lt;p>That&amp;rsquo;s it. Your app should now show up fine in all screen sizes markets. Note that for all other screen sizes and resolutions, Android considers the default support as true and your app will show in those markets even if you don&amp;rsquo;t make any explicit declarations for them. You can read more about this here: &lt;a href="http://developer.android.com/guide/practices/screens_support.html">Supporting Multiple Screens in Android&lt;/a>&lt;/p>
+&lt;p>**Update: **&lt;a href="http://www.blundell-apps.com/">Blundell&lt;/a> pointed out in the comments that &lt;a href="http://developer.android.com/guide/practices/screens_support.html%23defaults">Android documentation&lt;/a> says&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>This should mean that small screens should be set as supported by default if you have your minSdk &lt;strong>or&lt;/strong> targetSdk  set to anything above or equal to 4. However, in my case, my apps had minSdk as 3 but targetSdk as 7 or 8 but still they didn&amp;rsquo;t show up in X10 mini marketplace till I added the smallScreens support to true in my manifest file. If anyone has any ideas about as to why it was like this, please let me know.&lt;/p></content></item><item><title>SSH Tunneling On Android</title><link>/2010/08/02/ssh-tunneling-android/</link><pubDate>Mon, 02 Aug 2010 10:53:36 +0000</pubDate><guid>/2010/08/02/ssh-tunneling-android/</guid><description>If you want to have a secure browsing environment or just want to access your home network securely without exposing extra services to the internet and without the mess that comes with setting up and maintaining a VPN server, ssh tunneling is your rescuer. In this post, I&amp;rsquo;ll tell you how to setup an ssh tunnel to your home network easily. Also look for some bonus tips at the end ;)</description><content>&lt;p>If you want to have a secure browsing environment or just want to access your home network securely without exposing extra services to the internet and without the mess that comes with setting up and maintaining a VPN server, ssh tunneling is your rescuer. In this post, I&amp;rsquo;ll tell you how to setup an ssh tunnel to your home network easily. Also look for some bonus tips at the end ;)&lt;/p>
+&lt;p>This article assumes that you have already installed and setup a ssh server (you can probably use openssh). Also, it assumes that the ssh server is accessible from the internet (i.e. you have appropriately forwarded the port on which ssh server is running). I&amp;rsquo;d also recommend that if you do not have a static IP for your home network, then sign up for a dynamic DNS service (I use dyndns.org) so that you can access your home network easily by using a domain name (e.g. myserver.dyndns.org) from outside.&lt;/p>
+&lt;p>Now, here is a step by step guide on what to do on your Android Phone (I&amp;rsquo;m doing this on a Nexus one but should be same for you as well):&lt;!-- raw HTML omitted -->1. Install an app called &amp;ldquo;connectbot&amp;rdquo; from the android marketplace. It is a FREE ssh client for android.&lt;/p>
+&lt;ol start="2">
+&lt;li>Open it and add the IP (or dynamic domain name as suggested above) and the port on which ssh server is running to the bottom and connect.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="/img/uploads/ssh-tunnel-1.png">&lt;img src="/img/uploads/ssh-tunnel-1-thumb.png" alt="Android SSH Tunnel 1">&lt;/a>&lt;/p>
+&lt;ol start="2">
+&lt;li>Once connected, press the menu button and select the icon which says &amp;ldquo;Port Forwards&amp;rdquo;&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="/img/uploads/ssh-tunnel-2.png">&lt;img src="/img/uploads/ssh-tunnel-2-thumb.png" alt="Android SSH Tunnel 2">&lt;/a>&lt;/p>
+&lt;ol start="3">
+&lt;li>On this screen you can configure the ports to be used for tunneling. As you can see I already have my firefly server port configured for music streaming over itunes&amp;rsquo; DAAP protocol. Now, you can press &amp;ldquo;menu&amp;rdquo; button and click on &amp;ldquo;Add ports&amp;rdquo; and go to step 4.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="/img/uploads/ssh-tunnel-3.png">&lt;img src="/img/uploads/ssh-tunnel-3-thumb.png" alt="Android SSH Tunnel 3">&lt;/a>&lt;/p>
+&lt;ol start="4">
+&lt;li>You will see the dialog box as shown below. Here you can configure mainly two types of ports.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="/img/uploads/ssh-tunnel-4.png">&lt;img src="/img/uploads/ssh-tunnel-4-thumb.png" alt="Android SSH Tunnel 4">&lt;/a>&lt;/p>
+&lt;p>4a) First is for services that you want to access already running on your home network. e.g. in my case, I have a firefly media server (mt-daapd) running on a port &amp;ldquo;12345&amp;rdquo; and I want to access this just like I was on LAN over my home wi-fi. In such a case, select &amp;ldquo;type&amp;rdquo; as &amp;ldquo;Local&amp;rdquo;, source port as , say &amp;ldquo;56000&amp;rdquo; and destination as &amp;ldquo;ip:port&amp;rdquo; where ip is the your home local area IP of the machine on which the server is running (My server runs on router itself, which has IP 192.168.1.1) and the port is the actual port on which server is running (e.g. 12345 as we mentioned above). After doing this, just open the respective client app on your phone which wants to connect to this server and enter &amp;ldquo;127.0.0.1&amp;rdquo; as the ip and &amp;ldquo;56000&amp;rdquo; as the port to connect to and it will connect to server as if you were on your home network even over 3G or your office wi-fi.&lt;/p>
+&lt;p>4b) Secondly, you can use this tunnel to route all traffic to internet through home connection. For this, choose the type as &amp;ldquo;dynamic&amp;rdquo; and source port as, say, &amp;quot; 56001&amp;quot;. You don&amp;rsquo;t need to select a destination port here because any traffic that comes over this tunnel will be routed back to the internet using the destination ip and port as desired, e.g., specified in a browser&amp;rsquo;s address bar.&lt;/p>
+&lt;p>**Bonus: **As I promised above, here is the bonus. For media streaming, you can use mt-daapd or firefly server on your home network, especially on a router like asus wl-500 or any other hackable router with custom firmware. For more info about how to set it up, you can check these posts:&lt;a href="/2009/07/03/compiling-latest-firefly-mt-daapd-asus-wl-500w.html"> Latest Firefly server for your router&lt;/a> and &lt;a href="/2010/07/26/firefly-sqlite-error-unable-to-open-database-file-solution.html">firefly sqlite error solution&lt;/a>.  For android side things, install the &amp;ldquo;DAAP Client&amp;rdquo; app from the market place and click on &amp;ldquo;Add server&amp;rdquo; option and follow step 4a as mentioned above. And there it is, your own music streaming service anywhere in the world, over edge/3G or any other network :)&lt;/p></content></item><item><title>Camera LED As Flashlight on Non-Rooted Android Phones</title><link>/2010/07/30/camera-led-flashlight-non-rooted-android-phones/</link><pubDate>Fri, 30 Jul 2010 09:31:08 +0000</pubDate><guid>/2010/07/30/camera-led-flashlight-non-rooted-android-phones/</guid><description>We all know that Android does not allow the camera LED to be controlled directly from apps and hence, you cannot use the camera LED as a Torch or Flashlight unless you are rooted. There are many flashlight apps on the Android Market Place but none of them will work for you if you don&amp;rsquo;t have a rooted phone. BUT this changed recently. I use a brilliant app called &amp;ldquo;quick settings&amp;rdquo; which keeps an icon in the notification bar and I can pull it down and change any settings without leaving other apps.</description><content>&lt;p>We all know that Android does not allow the camera LED to be controlled directly from apps and hence, you cannot use the camera LED as a Torch or Flashlight unless you are rooted. There are many flashlight apps on the Android Market Place but none of them will work for you if you don&amp;rsquo;t have a rooted phone. BUT this changed recently. I use a brilliant app called &amp;ldquo;quick settings&amp;rdquo; which keeps an icon in the notification bar and I can pull it down and change any settings without leaving other apps. It has a flashlight function but so far it used to work by turning on the screen with a white screen, which was a less than ideal solution. I upgraded to the latest version a few days ago (1.9.4 p1). While messing around with the settings, I wandered across the flashlight settings which allows you to choose what kind of flashlight you want. Now, I&amp;rsquo;m not sure whether this setting was present earlier or not but I decided to give it a try and chose LED instead of screen (Screenshot below):&lt;/p>
+&lt;p>&lt;a href="/img/uploads/quick-settings-flash-android-settings.png">&lt;img src="/img/uploads/quick-settings-flash-android-settings-thumb.png" alt="Android Quick Settings Flashlight LED Settings">&lt;/a>&lt;/p>
+&lt;p>Once done, I went back to the main screen and pressed the flashlight icon in the top right (Screen shot below) and voila! my camera LED switched on. I&amp;rsquo;m a happy camper now as this is a life saver many times. Try this out for yourself by searching for &amp;ldquo;Quick Settings&amp;rdquo; in the market and let me know if it works on your phone too (mine is a nexus one).&lt;/p>
+&lt;p>&lt;a href="/img/uploads/quick-settings-flash-android-main-screen.png">&lt;img src="/img/uploads/quick-settings-flash-android-main-screen-thumb.png" alt="Android Quick Settings">&lt;/a>&lt;/p></content></item><item><title>Android App Wi-Fi Keep Alive updated to 1.4.1</title><link>/2010/07/22/android-app-wi-fi-keep-alive-updated-1-4-0/</link><pubDate>Thu, 22 Jul 2010 16:58:07 +0000</pubDate><guid>/2010/07/22/android-app-wi-fi-keep-alive-updated-1-4-0/</guid><description>Update: Made a minor update for a small bug that can make wi-fi keep reconnecting in quick succession.
+Pushed out a new update to my Android App Wi-Fi Keep Alive today. This update brings in another work around for the issue where the wi-fi is alive on the phone and it is also connected to the network but is somehow unable to send/receive any packets to the network. The new work around will automatically re-associate your phone with the wi-fi router if it detects such a situation.</description><content>&lt;p>&lt;strong>Update:&lt;/strong> Made a minor update for a small bug that can make wi-fi keep reconnecting in quick succession.&lt;/p>
+&lt;p>Pushed out a new update to my Android App Wi-Fi Keep Alive today. This update brings in another work around for the issue where the wi-fi is alive on the phone and it is also connected to the network but is somehow unable to send/receive any packets to the network. The new work around will automatically re-associate your phone with the wi-fi router if it detects such a situation. This seems to make it work properly again for sometime. When it fails again, the workaround kicks in automatically again. This is not an ideal &amp;ldquo;fix&amp;rdquo; as such because streaming apps like Pandora radio etc might have a hiccup because of this but it is unavoidable as of now and atleast the notifications for mails and other things etc will work fine because this state stops even the mobile data network from taking over since the phone perceives that wi-fi is connected but is not working actually.&lt;/p>
+&lt;p>The other things include support for small screen devices like Xperia X10 mini, some optimizations for size and speed, some icon sizes and UI tweaks for compatibility with different screen sizes and android versions. Please try it out from the market as usual and let me know how it goes.&lt;/p></content></item><item><title>Android App: Wi-Fi Keep Alive Updated to 1.2.0</title><link>/2010/07/03/android-app-wi-fi-keep-alive-updated-to-1-2-0/</link><pubDate>Sat, 03 Jul 2010 22:46:36 +0000</pubDate><guid>/2010/07/03/android-app-wi-fi-keep-alive-updated-to-1-2-0/</guid><description>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.
 Changes done in this version:
 Added workarounds to take care of sleep policies not working on some phones
-Optimized the code a bit for faster operations</description></item><item><title>Android App: Wi-Fi Keep Alive</title><link>/posts/android-app-wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:25:48 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive/</guid><description>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.</description></item><item><title>Wi-Fi Keep Alive</title><link>/posts/wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:20:19 +0000</pubDate><guid>/posts/wi-fi-keep-alive/</guid><description>UPDATE Potential work arounds for folks having problem in sleep policies not working correctly have been put in version 1.2.0 onwards. Please redownload to test and let me know. Read below for more details.
+Optimized the code a bit for faster operations</description><content>&lt;p>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.&lt;/p>
+&lt;p>Changes done in this version:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workarounds to take care of sleep policies not working on some phones&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optimized the code a bit for faster operations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Configuration screens to widgets (pops up whenever widget is added)&lt;/p>
+&lt;/li>
+&lt;/ul></content></item><item><title>Android App: Wi-Fi Keep Alive</title><link>/2010/06/28/android-app-wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:25:48 +0000</pubDate><guid>/2010/06/28/android-app-wi-fi-keep-alive/</guid><description>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.</description><content>&lt;p>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.e. screen turns off). What&amp;rsquo;s more is that I&amp;rsquo;ve added a widget to it so you don&amp;rsquo;t even have to go into the app. Just tap on the widget to cycle through the settings.&lt;/p></content></item><item><title>Wi-Fi Keep Alive</title><link>/2010/06/28/wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:20:19 +0000</pubDate><guid>/2010/06/28/wi-fi-keep-alive/</guid><description>UPDATE Potential work arounds for folks having problem in sleep policies not working correctly have been put in version 1.2.0 onwards. Please redownload to test and let me know. Read below for more details.
 Latest Version: 1.4.4 (See below for change log history)
-Are you frustrated by your downloads getting broken or worse, switching over to slow and expensive mobile data connections like GPRS/Edge/3G when your wi-fi connection gets dropped by your Android phone when the screen goes off?</description></item><item><title>Android App: Quickly Open Accounts &amp; Sync Settings</title><link>/posts/android-app-quickly-open-accounts-sync-settings/</link><pubDate>Sat, 12 Jun 2010 21:19:35 +0000</pubDate><guid>/posts/android-app-quickly-open-accounts-sync-settings/</guid><description>Just a small post to let you know that I just published a small app in the android market, which scratches an itch of mine and I thought probably it will be help others too. It basically provides a quick, one-click access to the accounts and sync settings of Android. The use case for me was that I need to enable/disable syncing for my work email while I&amp;rsquo;m at work every day as I am already in front of my office PC so don&amp;rsquo;t need to waste battery and be annoyed by mail notifications on phone but still need to keep google calendar syncing.</description></item></channel></rss>
+Are you frustrated by your downloads getting broken or worse, switching over to slow and expensive mobile data connections like GPRS/Edge/3G when your wi-fi connection gets dropped by your Android phone when the screen goes off?</description><content>&lt;p>&lt;strong>UPDATE&lt;/strong> Potential work arounds for folks having problem in sleep policies not working correctly have been put in version 1.2.0 onwards. Please redownload to test and let me know. Read below for more details.&lt;/p>
+&lt;p>&lt;strong>Latest Version:&lt;/strong> 1.4.4 (See below for change log history)&lt;/p>
+&lt;p>Are you frustrated by your downloads getting broken or worse, switching over to slow and expensive mobile data connections like GPRS/Edge/3G when your wi-fi connection gets dropped by your Android phone when the screen goes off? If yes, then look no further. Here is my app that allows you to choose your desired Wi-Fi Sleep policy. You can choose from the following options:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Default -&amp;gt; This means that wi-fi will turn off whenever the screen goes off.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wi-Fi On on sleep if plugged -&amp;gt; This means that if your phone is plugged into a USB slot or wall charger, then wi-fi will not turn off even when the screen goes off.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wi-Fi Never goes off -&amp;gt; This means that your wi-fi will not shut down whenever screen turns off, even if you are not plugged into USB/charger.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Please note that this app just changes the sleep policy and does not change the wi-fi state by itself. You can still control wi-fi turning on/off manually.&lt;/p>
+&lt;p>Few folks were having issues with their devices that the inbuilt handling of this wi-fi sleep policy in their phones wasn&amp;rsquo;t being done properly by Android. To take care of this, there are a few workarounds added to the app now which can be accessed by clicking on &amp;ldquo;Advanced Options&amp;rdquo; on the configuration screen (This configuration screen can be accessed by launching the app or it will also show up whenever you add a widget). Enable any one or all of the workarounds mentioned in advanced settings depending on what works best on your device as there are lot of variants due to different manufacturers and different Android versions on different phones. Please also note that you should enable these workarounds only if the app is not working fully well for you without enabling them as some of them can cause your battery to drain a bit faster.&lt;/p>
+&lt;p>Another thing to note is that I&amp;rsquo;ve added a widget for it. So, you can install the app and instead of having to open the app and change the setting every time, you can just add its widget to your home screen (Long press on home screen. Then choose Widgets-&amp;gt;Wi-Fi Keep Alive). Now, you can just touch it whenever you want to change your setting and it will automatically cycle through the options listed above.&lt;/p>
+&lt;p>Dark/Sepia Widget Icon -&amp;gt; Default setting&lt;/p>
+&lt;p>Purple Widget Icon -&amp;gt; Wi-Fi On on sleep if plugged&lt;/p>
+&lt;p>Green Widget -&amp;gt; Wi-Fi never goes off&lt;/p>
+&lt;p>Please try it out and let me know if you face any issues or have any suggestions :)&lt;/p>
+&lt;p>&lt;strong>Known Issues:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>1) Known issue with &amp;ldquo;on when plugged in&amp;rdquo; policy is that if you are already plugged in while changing anything in the app, workarounds don&amp;rsquo;t take place until you plug out and plug in again&lt;/strong>&lt;/p>
+&lt;p>**2) **This is not a known issue with the app but with wi-fi on some devices itself that it stops working on leaving it idle even if the phone is not sleeping. This is not the purview of this particular app and it might not solve it, although few folks say that this app helps in this scenario as well.&lt;/p>
+&lt;p>**3) **Some routers/settings are also known to cause issues with wi-fi in sleep. The correct pattern has not been identified yet but many people report that they can stay connected to wi-fi in sleep with some routers but with other routers, it fails. (Work Around 3 might help in such cases but not always)&lt;/p>
+&lt;p>**4) **While adding widget, the main app screen will pop-up for widget configuration. You need to choose any one policy (even if desired one already selected) otherwise widget will not be added&lt;/p>
+&lt;p>&lt;strong>Notes:&lt;/strong>&lt;/p>
+&lt;p>**1) **Please press Menu key in the app and select &amp;ldquo;Help&amp;rdquo; to see details about policy and workaround options.&lt;/p>
+&lt;p>**2) **Please report any bugs here along with these details so that i can fix the issues:&lt;/p>
+&lt;p>i) Device/Phone Name and Rom version&lt;/p>
+&lt;p>ii) What is the app version that you have? (latest is 1.2.1)&lt;/p>
+&lt;p>iii) Did you try turning on all combinations of workarounds in advanced options?&lt;/p>
+&lt;p>iv) Can you please enable logging in the advanced options and send me logcat dump for this duration, preferably with all workarounds enabled.&lt;/p>
+&lt;p>&lt;strong>Changelog:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>16-August-2010 -&amp;gt; 1.4.4&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix widget icon colors (**Note: **If the new icons don&amp;rsquo;t appear on existing widget, please delete the widget and add it again)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>13-August-2010 -&amp;gt; 1.4.3&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix widget icon resolutions to make them look sharper on home screen (**Note: **If the new icons don&amp;rsquo;t appear on existing widget, please delete the widget and add it again)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>02-August-2010 -&amp;gt; 1.4.2&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Better looking &amp;amp; smaller icons (including widget). Thanks a lot to &amp;ldquo;rori&amp;rdquo; from xda-developers to design the icons :) (**Note: ** If the new icons don&amp;rsquo;t appear on existing widget, please delete the widget and add it again)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Space optimization so that the app takes lesser space on phone.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>22-July-2010 -&amp;gt; 1.4.1&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fixed a bug that can cause wi-fi to keep reconnecting in quick succession in certain situations.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>22-July-2010 -&amp;gt; 1.4.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workaround 4 (Re-associate automatically with access point if all else fails. Needs workaround 3 to be enabled)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Support for small screens (e.g. XPeria X10 mini)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Widget/Icons size optimizations for older Android versions&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Resource optimizations for lesser space and faster loading&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Misc. under-the-hood UI tweaks for better/consistent layouts across different screen sizes/densities/android versions.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>11-July-2010 -&amp;gt; 1.3.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workaround 3 (Ping the router gateway regularly)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lot of optimizations for battery savings.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply workarounds without needing to select the policy again&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>06-July-2010 -&amp;gt; 1.2.1&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Bug Fix for a Force Close&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>More Optimizations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Help and Info Menus&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Option to disable/enable debug logging&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>04-July-2010 -&amp;gt; 1.2.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workarounds to take care of sleep policies not working on some phones&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optimized the code a bit for faster operations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Configuration screens to widgets (pops up whenever widget is added)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>28-June-2010 -&amp;gt; 1.1.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Added Widget&lt;/li>
+&lt;/ul>
+&lt;p>**27-June-2010 -&amp;gt; 1.0.0 **&lt;/p>
+&lt;ul>
+&lt;li>Initial Version&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Screenshots&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="/img/uploads/wi-fi-keep-alive-1.png">&lt;img src="/img/uploads/wi-fi-keep-alive-thumb-1.png" alt="">&lt;/a>
+&lt;a href="/img/uploads/wi-fi-keep-alive-2.png">&lt;img src="/img/uploads/wi-fi-keep-alive-thumb-2.png" alt="">&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Download:&lt;/strong>&lt;/p>
+&lt;p>Search for &amp;ldquo;Wi-Fi Keep Alive&amp;rdquo; in Android marketplace or simply scan the below QR code:&lt;/p>
+&lt;p>&lt;img src="http://chart.apis.google.com/chart?cht=qr&amp;amp;chs=200x200&amp;amp;chl=market://details?id=com.shantz.wifikeepalive" alt="">&lt;/p></content></item><item><title>Android App: Quickly Open Accounts &amp; Sync Settings</title><link>/2010/06/12/android-app-quickly-open-accounts-sync-settings/</link><pubDate>Sat, 12 Jun 2010 21:19:35 +0000</pubDate><guid>/2010/06/12/android-app-quickly-open-accounts-sync-settings/</guid><description>Just a small post to let you know that I just published a small app in the android market, which scratches an itch of mine and I thought probably it will be help others too. It basically provides a quick, one-click access to the accounts and sync settings of Android. The use case for me was that I need to enable/disable syncing for my work email while I&amp;rsquo;m at work every day as I am already in front of my office PC so don&amp;rsquo;t need to waste battery and be annoyed by mail notifications on phone but still need to keep google calendar syncing.</description><content>&lt;p>Just a small post to let you know that I just published a small app in the android market, which scratches an itch of mine and I thought probably it will be help others too. It basically provides a quick, one-click access to the accounts and sync settings of Android. The use case for me was that I need to enable/disable syncing for my work email while I&amp;rsquo;m at work every day as I am already in front of my office PC so don&amp;rsquo;t need to waste battery and be annoyed by mail notifications on phone but still need to keep google calendar syncing. To do this I had to spend too many clicks and long-presses to get to the accounts settings, so made this app. Let me know if you like it.&lt;/p></content></item></channel></rss>

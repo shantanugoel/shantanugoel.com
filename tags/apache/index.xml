@@ -1,3 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache on</title><link>/tags/apache/</link><description>Recent content in Apache on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 21 Jul 2008 18:54:53 +0000</lastBuildDate><atom:link href="/tags/apache/index.xml" rel="self" type="application/rss+xml"/><item><title>A Breath Of Fresh Air: My New Ubuntu Desktop</title><link>/posts/a-breath-of-fresh-air-my-new-ubuntu-desktop/</link><pubDate>Mon, 21 Jul 2008 18:54:53 +0000</pubDate><guid>/posts/a-breath-of-fresh-air-my-new-ubuntu-desktop/</guid><description>**UPDATE: **Surprisingly this post has found favour with “digg”ers :). Check the bottom of the post for some more info about the setup
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache on</title><link>/tags/apache/</link><description>Recent content in Apache on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 21 Jul 2008 18:54:53 +0000</lastBuildDate><atom:link href="/tags/apache/index.xml" rel="self" type="application/rss+xml"/><item><title>A Breath Of Fresh Air: My New Ubuntu Desktop</title><link>/2008/07/21/a-breath-of-fresh-air-my-new-ubuntu-desktop/</link><pubDate>Mon, 21 Jul 2008 18:54:53 +0000</pubDate><guid>/2008/07/21/a-breath-of-fresh-air-my-new-ubuntu-desktop/</guid><description>**UPDATE: **Surprisingly this post has found favour with “digg”ers :). Check the bottom of the post for some more info about the setup
 UPDATE2: On popular demand, I&amp;rsquo;ve uploaded my .conkyrc. Download Conky Configuration file by clicking here and save as .conkyrc in your home folder.
-After loitering around for so long, I finally got my lazy bum off the bed and installed Hardy Heron (8.04.1) onto my aging laptop. I’ve never been a sucker for eye-candy stuff, prefering to have more resources available for real work, instead of ooh-aahing over nice looking things all around my desktop.</description></item></channel></rss>
+After loitering around for so long, I finally got my lazy bum off the bed and installed Hardy Heron (8.04.1) onto my aging laptop. I’ve never been a sucker for eye-candy stuff, prefering to have more resources available for real work, instead of ooh-aahing over nice looking things all around my desktop.</description><content>&lt;p>**UPDATE: **Surprisingly this post has found favour with “digg”ers :). Check the bottom of the post for some more info about the setup&lt;/p>
+&lt;p>&lt;strong>UPDATE2&lt;/strong>: On popular demand, I&amp;rsquo;ve uploaded my .conkyrc. &lt;a href="/files/conkyrc.txt">Download Conky Configuration file by clicking here&lt;/a> and save as .conkyrc in your home folder.&lt;/p>
+&lt;p>After loitering around for so long, I finally got my lazy bum off the bed and installed Hardy Heron (8.04.1) onto my aging laptop. I’ve never been a sucker for eye-candy stuff, prefering to have more resources available for real work, instead of ooh-aahing over nice looking things all around my desktop. Well, but then I fell prey. I thought of giving another try to the thingamagic that compiz-fusion is, moreso since I didn’t have to go through loads of installing nuances like feisty because of it being already integrated in Hardy. An emerald install and a few minutes of tinkering later, I had a cool looking screen staring back at me. Here is a preview screenshot for your eyes but obviously the static screenshot wont show the amazing dynamic effects of CF. Let me see how many days I keep this up before going back to my plain-jane self. Click on the pic for full view:&lt;/p>
+&lt;p>&lt;a href="/img/uploads/desktop.jpg">&lt;img src="/img/uploads/desktop_thumb.jpg" alt="My all new and shiny desktop">&lt;/a>&lt;/p>
+&lt;p>Let me know if you have any suggestions to improve it further, or want more pics/vids of my new lappy in action, or have any of your own to share.&lt;/p>
+&lt;p>Update: Setup info:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Base Theme: Ubuntu Studio (basically for icon set. Download ubuntustudio-look package for this)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Controls : From Xenon theme (Inbuilt in Ubuntu)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wallpaper is something named “lotus” or something. Downloaded from interfacelift.com&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Compiz Fusion with almost all effects turned on. Ofcourse you can’t see most of them in the still image&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Emerald theme engine for glassy and rounded window borders (Download “emerald” package)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Dock at the bottom is avant window navigator (awn. Download package avant-window-navigator)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On right side, stats etc are from conky (Download package conky)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Misc: Turned transparency on for most things including gnome-terminal, gnome-panel, etc.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Salient points:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The memory being consumed right now is around 850 MB. Thats with lots of applications, all CF effects turned on, most things having glass and transparent effects, and even my apache web server and mysql are running in background. And after that also, most memory (around 200 MB) is being eaten by firefox, leading to this high usage.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The setup boots up with just a shade over 300 MB being used, even though I’ve set CF and emerald on by default at boot and even apache and mysql start running on startup. :)&lt;/p>
+&lt;/li>
+&lt;/ul></content></item></channel></rss>

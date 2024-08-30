@@ -1,2 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Static on</title><link>/tags/static/</link><description>Recent content in Static on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 17 Sep 2017 23:46:24 +0530</lastBuildDate><atom:link href="/tags/static/index.xml" rel="self" type="application/rss+xml"/><item><title>Create a bit.ly like shorturl static website</title><link>/posts/create-bitly-clone-shorturl-static-website/</link><pubDate>Sun, 17 Sep 2017 23:46:24 +0530</pubDate><guid>/posts/create-bitly-clone-shorturl-static-website/</guid><description>I decided to create my own shorturl website last week for personal use and ended up developing a python project (deecubes)that can be used by anyone to do the same. This is a post to explain what/why/how about it.
-Why my own shorturl website? So far I had been using sites like bit.ly or TinyURL whenever I needed to generate a shorturl (e.g. for giving to someone for easily remember, noting down on paper, putting links on resume, etc) but I had concerns that:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Static on</title><link>/tags/static/</link><description>Recent content in Static on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 Sep 2017 23:46:24 +0530</lastBuildDate><atom:link href="/tags/static/index.xml" rel="self" type="application/rss+xml"/><item><title>Create a bit.ly like shorturl static website</title><link>/2017/09/17/create-bitly-clone-shorturl-static-website/</link><pubDate>Sun, 17 Sep 2017 23:46:24 +0530</pubDate><guid>/2017/09/17/create-bitly-clone-shorturl-static-website/</guid><description>I decided to create my own shorturl website last week for personal use and ended up developing a python project (deecubes)that can be used by anyone to do the same. This is a post to explain what/why/how about it.
+Why my own shorturl website? So far I had been using sites like bit.ly or TinyURL whenever I needed to generate a shorturl (e.g. for giving to someone for easily remember, noting down on paper, putting links on resume, etc) but I had concerns that:</description><content>&lt;p>I decided to create my own shorturl website last week for personal use and ended up developing a python project (&lt;a href="https://shgl.in/deecubes/">deecubes&lt;/a>)that can be used by anyone to do the same. This is a post to explain what/why/how about it.&lt;/p>
+&lt;h2 id="why-my-own-shorturl-website">Why my own shorturl website?&lt;/h2>
+&lt;p>So far I had been using sites like bit.ly or TinyURL whenever I needed to generate a shorturl (e.g. for giving to someone for easily remember, noting down on paper, putting links on resume, etc) but I had concerns that:&lt;/p>
+&lt;ul>
+&lt;li>The site could go out of operation anytime.&lt;/li>
+&lt;li>They seem a bit unprofessional and also, there are a lot of scammy links floating around on these sites that many folks are wary of clicking on them.&lt;/li>
+&lt;li>I lose the SEO juice to external sites&lt;/li>
+&lt;li>Custom shorturl keywords were mostly taken&lt;/li>
+&lt;li>Keep history of all links I convert&lt;/li>
+&lt;/ul>
+&lt;p>I could satisfy a few of these points by creating an account and using my custom domain with bit.ly or something but my developer itch sealed the deal by giving me something to code :P.&lt;/p>
+&lt;h2 id="requirements-for-the-shorturl-website">Requirements for the shorturl website&lt;/h2>
+&lt;p>These were the requirements that I listed out while beginning the project:&lt;/p>
+&lt;ul>
+&lt;li>Should be cheap af. (I ended up at FREE! ;) )&lt;/li>
+&lt;li>Should be maintenance free and run itself (I didn&amp;rsquo;t want another headache to tune/apply patches for and what not)&lt;/li>
+&lt;li>Should allow addition of links from anywhere (whether on my PC or not)&lt;/li>
+&lt;li>Should allow random links as well as custom ones&lt;/li>
+&lt;li>Should allow to remove previously generated shorturls&lt;/li>
+&lt;li>Should allow me to easily see all generated shorturls, preferably along with history&lt;/li>
+&lt;li>Allow previewing the link a shorturl points to without redirecting, if needed&lt;/li>
+&lt;/ul>
+&lt;p>These lead me to decide on a couple of important things:&lt;/p>
+&lt;ul>
+&lt;li>The site had to be static (Host on s3 for cheap or github pages for free. No patches/maintenance. Super performance)&lt;/li>
+&lt;li>Had to be version controlled (Easy history/viewing/editing from anywhere.)&lt;/li>
+&lt;/ul>
+&lt;h2 id="deecubes">deecubes&lt;/h2>
+&lt;p>Thus, &lt;a href="https://shgl.in/deecubes/">deecubes&lt;/a> was born. (The link in the previous line is shortened using deecubes itself, by the way)&lt;/p>
+&lt;p>The name comes from the short form &amp;lsquo;DSSS&amp;rsquo; of Damn Simple Static url Shortener (so, a D and a cube of S&amp;rsquo;s. Idiotic, I know). You can read more about how to use it at the above link in the README but in summary:&lt;/p>
+&lt;ul>
+&lt;li>It&amp;rsquo;s written in pure python&lt;/li>
+&lt;li>It takes a long form url and creates a static website shorturl that can be auto-generated or custom&lt;/li>
+&lt;li>It&amp;rsquo;s deterministic, so you can be sure of generating the same website from the same inputs&lt;/li>
+&lt;li>Preview can be seen at &lt;!-- raw HTML omitted -->/preview.html (e.g. &lt;a href="https://shgl.in/deecubes/preview.html">https://shgl.in/deecubes/preview.html&lt;/a> )&lt;/li>
+&lt;li>Published on pypi, so can install with pip&lt;/li>
+&lt;li>Several ways to use/deploy (as simple as ftp or bash/batch scripts or manual git commits/push or commit directly through github website etc )&lt;/li>
+&lt;/ul>
+&lt;p>Take a look at my generated website repository as an example at &lt;a href="https://shgl.in/deecubesdemo">deecubesdemo&lt;/a>&lt;/p>
+&lt;h2 id="my-deployment-strategy">My deployment strategy&lt;/h2>
+&lt;p>I ended up with the following stack to add links rather painlessly from anywhere and not do any maintenance:&lt;/p>
+&lt;ul>
+&lt;li>Github for hosting the website using github pages&lt;/li>
+&lt;li>Cloudflare to provide that shiny https and some statistics/caching etc&lt;/li>
+&lt;li>Travis to automatically build and deploy the site so I dont need to always generate the shorturl and can commit from anywhere&lt;/li>
+&lt;/ul>
+&lt;p>Check the repository I linked above to see how it is done. Most of the magic is done in a few lines of the &lt;a href="https://shgl.in/11PAfL1QG/">.travis.yml&lt;/a> file. Essentially it follows this path:&lt;/p>
+&lt;ul>
+&lt;li>I commit a shorturl .txt file directly in the &amp;ldquo;raw&amp;rdquo; directory through github web on &amp;ldquo;source&amp;rdquo; branch&lt;/li>
+&lt;li>Travis picks up the commit and runs deecubes&amp;rsquo; &amp;ldquo;sync&amp;rdquo; command to generate the website portions&lt;/li>
+&lt;li>Travis deploys the &amp;ldquo;output&amp;rdquo; folder contents to the &amp;ldquo;master&amp;rdquo; branch of the same repo.&lt;/li>
+&lt;li>Github is configured to serve the website from &amp;ldquo;docs&amp;rdquo; folder of master branch through my custom domain shgl.in (&amp;ldquo;docs&amp;rdquo; folder is already created and checked-in inside output folder along with CNAME file)&lt;/li>
+&lt;li>Cloudflare is configured to redirect all requests to shgl.in to my github repo&lt;/li>
+&lt;/ul>
+&lt;p>In a more traditional way, I could also do this:&lt;/p>
+&lt;ul>
+&lt;li>Generate a shorturl locally using an &amp;ldquo;add&amp;rdquo; or &amp;ldquo;generate&amp;rdquo; command. You could be done at this point and publish the output folder to your website any way you want.&lt;/li>
+&lt;li>I Commit the generated files including the output into the repo and push to github.&lt;/li>
+&lt;li>Travis will still run and publish the website as earlier.&lt;/li>
+&lt;/ul>
+&lt;h2 id="things-to-come">Things to come?&lt;/h2>
+&lt;p>I want to add the following things in next few weeks to the project:&lt;/p>
+&lt;ul>
+&lt;li>A collision handling mechanism which is also deterministic&lt;/li>
+&lt;li>Allow google analytics addition for collecting metrics&lt;/li>
+&lt;li>Allow custom templates for redirect and preview urls&lt;/li>
+&lt;li>Your suggestions?&lt;/li>
+&lt;/ul></content></item></channel></rss>

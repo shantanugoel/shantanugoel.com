@@ -1,2 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Routers on</title><link>/tags/routers/</link><description>Recent content in Routers on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 03 Jul 2009 10:28:32 +0000</lastBuildDate><atom:link href="/tags/routers/index.xml" rel="self" type="application/rss+xml"/><item><title>Compiling Latest FireFly (mt-daapd) for ASUS WL-500W</title><link>/posts/compiling-latest-firefly-mt-daapd-asus-wl-500w/</link><pubDate>Fri, 03 Jul 2009 10:28:32 +0000</pubDate><guid>/posts/compiling-latest-firefly-mt-daapd-asus-wl-500w/</guid><description>FireFly is a nice DAAP based media server that allows you to listen to your music collection anywhere using any DAAP based client like iTunes, with other players (like Winamp, Rhythmbox, VLC, etc) using plugins, or it even has its own dedicated php/flash/java based clients that can be fired up on any platform any computer giving you instant nirvana.
-Many people, like me, use it on their Routers or NAS boxes to access their music anywhere without having to keep their home PC running or lugging around external drives.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Routers on</title><link>/tags/routers/</link><description>Recent content in Routers on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 03 Jul 2009 10:28:32 +0000</lastBuildDate><atom:link href="/tags/routers/index.xml" rel="self" type="application/rss+xml"/><item><title>Compiling Latest FireFly (mt-daapd) for ASUS WL-500W</title><link>/2009/07/03/compiling-latest-firefly-mt-daapd-asus-wl-500w/</link><pubDate>Fri, 03 Jul 2009 10:28:32 +0000</pubDate><guid>/2009/07/03/compiling-latest-firefly-mt-daapd-asus-wl-500w/</guid><description>FireFly is a nice DAAP based media server that allows you to listen to your music collection anywhere using any DAAP based client like iTunes, with other players (like Winamp, Rhythmbox, VLC, etc) using plugins, or it even has its own dedicated php/flash/java based clients that can be fired up on any platform any computer giving you instant nirvana.
+Many people, like me, use it on their Routers or NAS boxes to access their music anywhere without having to keep their home PC running or lugging around external drives.</description><content>&lt;p>FireFly is a nice DAAP based media server that allows you to listen to your music collection anywhere using any DAAP based client like iTunes, with other players (like Winamp, Rhythmbox, VLC, etc) using plugins, or it even has its own dedicated php/flash/java based clients that can be fired up on any platform any computer giving you instant nirvana.&lt;/p>
+&lt;p>Many people, like me, use it on their Routers or NAS boxes to access their music anywhere without having to keep their home PC running or lugging around external drives. However, development on this gem stopped some time ago. The last stable build released (2.4.2) was good but it doesn&amp;rsquo;t have a lot of features provided by the nightly builds in svn (subversion). And the last nightly build released (svn-1696) had a lot of broken things. It was rebuilding the database everytime, crashed around quite a bit, had a lot of security holes. So, I decided to get the latest version (trunk) of the FireFly code, as it had a lot of fixes for above issues, put in whatever was missing, and try to build it for my use.&lt;/p>
+&lt;p>After a day&amp;rsquo;s worth of efforts, here it is. This latest build is the most rich in features as compared to the stable one, and is just as stable as the 2.4.2 release if not better, and also fixes all the issues shown by the svn-1696 build. The downloadable source and complete install package are attached with this post. But I&amp;rsquo;m also listing down the steps that I took to achieve this so that if anyone wants to recompile it with their own options (e.g. I haven’t included ogg/flac support in my build), they are able to do so. You can find the steps below. Please let me know if you have any queries. Also, if you want to submit any patches, I’ll be happy to incorporate them and recompile. I’m also trying to get this source and package into the unslung/optware repositories for wider distribution.&lt;/p>
+&lt;p>&lt;strong>Note: Although I’ve compiled this for Asus WL-500W, it should work for most devices with a mipsel architecture (which includes all the Asus routers in this family). Also, the compilation process should work for most other architectures barring one or two steps. I’d be happy to help if you want to do so and face any issues.&lt;/strong>&lt;/p>
+&lt;p>Changes and Build Steps:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>ipkg install optware-devel&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ipkg install buildroot&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit /opt/share/aclocal/audiofile.m4 and change AC_DEFUN(AM_PATH_AUDIOFILE, to AC_DEFUN([AM_PATH_AUDIOFILE],&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ipkg install gettext (for some missing m4 macros, libr_rpath etc)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Comment out AC_USE_SYSTEM_EXTENSIONS in configure.in (using dnl)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>aclocal -I &amp;lt;path of mt-daapd&amp;rsquo;s local m4 dir&amp;gt;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “autoheader” to generate config.h.in&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>touch config.rpath (somehow this file is not provided with gettext for us)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>change configure.in line 95, remove the ; at the end&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>remove -g flag and add -O2 in configure.in for optimization purpose&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “automake &amp;ndash;add-missing”&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “autoconf” - to generate configure&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ipkg install grep (for egrep)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>change /bin/sh to /opt/bin/bash in configure and install-sh&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “./configure &amp;ndash;enable-sqlite3 &amp;ndash;prefix=/opt CPFLAGS=”-D_LIBC” ” (You can also use &amp;ndash;enable-oggvorbis and/or &amp;ndash;enableflac)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After this step, I had to make numerous changes to the source code to put in the missing functionality for database handling, removing some compilation errors, etc. You can diff the svn 1715 code with mine to see the changes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “make”&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>run “make install”&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>And you are done. The modified source and compiled bianries can be downloaded from below.&lt;/p>
+&lt;p>&lt;em>Lost the files in a server move. Sorry :(&lt;/em>&lt;/p>
+&lt;p>Let me know if you have any queries or face any issues.&lt;/p></content></item></channel></rss>

@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Asus WL-500W Twonky on</title><link>/tags/asus-wl-500w-twonky/</link><description>Recent content in Asus WL-500W Twonky on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 23 Feb 2009 06:30:00 +0000</lastBuildDate><atom:link href="/tags/asus-wl-500w-twonky/index.xml" rel="self" type="application/rss+xml"/><item><title>[TIP] Install Twonky on Asus WL-500W with stock firmware</title><link>/posts/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</link><pubDate>Mon, 23 Feb 2009 06:30:00 +0000</pubDate><guid>/posts/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</guid><description>Asus WL-500W is a greate wi-fi router with lots of features, one of them being able to use it as a media server to serve movies/songs over your network from a hard disk connected directly to it through USB. But the media server that is included in the official firmware leaves a lot to be desired. If you are a fan of twonky, all you would have heard so far would have been that to use it on your router, you&amp;rsquo;d have to change your firmware over to a non-official one.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Asus WL-500W Twonky on</title><link>/tags/asus-wl-500w-twonky/</link><description>Recent content in Asus WL-500W Twonky on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Feb 2009 06:30:00 +0000</lastBuildDate><atom:link href="/tags/asus-wl-500w-twonky/index.xml" rel="self" type="application/rss+xml"/><item><title>[TIP] Install Twonky on Asus WL-500W with stock firmware</title><link>/2009/02/23/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</link><pubDate>Mon, 23 Feb 2009 06:30:00 +0000</pubDate><guid>/2009/02/23/tip-install-twonky-on-asus-wl-500w-with-stock-firmware/</guid><description>Asus WL-500W is a greate wi-fi router with lots of features, one of them being able to use it as a media server to serve movies/songs over your network from a hard disk connected directly to it through USB. But the media server that is included in the official firmware leaves a lot to be desired. If you are a fan of twonky, all you would have heard so far would have been that to use it on your router, you&amp;rsquo;d have to change your firmware over to a non-official one.</description><content>&lt;p>Asus WL-500W is a greate wi-fi router with lots of features, one of them being able to use it as a media server to serve movies/songs over your network from a hard disk connected directly to it through USB. But the media server that is included in the official firmware leaves a lot to be desired. If you are a fan of twonky, all you would have heard so far would have been that to use it on your router, you&amp;rsquo;d have to change your firmware over to a non-official one. If you do not want to take any risks with the custom firmwares, I&amp;rsquo;ll tell you a simple way to use twonky with the stock firmware itself. Follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Download Twonky (The MIPS version) and extract/save it to some place on the harddisk attached to your router (e.g. /tmp/harddisk/part0/twonky/ )&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new shell script for starting twonky automatically (Replace the paths according to where you stored the twonky files in step 1). All you need to do is create a text file with following contents and mark it as executable. We&amp;rsquo;ll name it init.sh.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>#!/bin/sh
+route add -net 224.0.0.0 netmask 240.0.0.0 dev br0
+cd /tmp/harddisk/part0/twonky&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt;/tmp/harddisk/part0/twonky/twonkymedia &amp;amp;
+&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;li>
+&lt;p>Copy this script to your harddisk to where you extracted twonky files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open up the router&amp;rsquo;s web administration page (most probably at 192.168.1.1), go to the USB section, and put the following line under &amp;ldquo;Initial Script&amp;rdquo;:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>`/tmp/harddisk/part0/twonky/init.sh``&lt;/p>
+&lt;ol start="5">
+&lt;li>Save, reboot and enjoy :)&lt;/li>
+&lt;/ol>
+&lt;p>If you have any questions, let me know. Infact, the same tip can be used to install many other such softwares onto your Asus routers series including WL-500g, WL-500gP, WL-500W, etc.&lt;/p></content></item></channel></rss>

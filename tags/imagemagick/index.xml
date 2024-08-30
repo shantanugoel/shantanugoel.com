@@ -1,3 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ImageMagick on</title><link>/tags/imagemagick/</link><description>Recent content in ImageMagick on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 26 Apr 2008 06:23:18 +0000</lastBuildDate><atom:link href="/tags/imagemagick/index.xml" rel="self" type="application/rss+xml"/><item><title>ImageMagick: Weaving Magic With Your Pictures</title><link>/posts/imagemagick-weaving-magic-with-your-pictures/</link><pubDate>Sat, 26 Apr 2008 06:23:18 +0000</pubDate><guid>/posts/imagemagick-weaving-magic-with-your-pictures/</guid><description>I’ve known about ImageMagick tools for quite some time now but never dabbled with it. A couple of weeks ago I played with it for some time (notice the new cascaded polaroid pics header above) and was amazed even more. Few of its shining features:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ImageMagick on</title><link>/tags/imagemagick/</link><description>Recent content in ImageMagick on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 26 Apr 2008 06:23:18 +0000</lastBuildDate><atom:link href="/tags/imagemagick/index.xml" rel="self" type="application/rss+xml"/><item><title>ImageMagick: Weaving Magic With Your Pictures</title><link>/2008/04/26/imagemagick-weaving-magic-with-your-pictures/</link><pubDate>Sat, 26 Apr 2008 06:23:18 +0000</pubDate><guid>/2008/04/26/imagemagick-weaving-magic-with-your-pictures/</guid><description>I’ve known about ImageMagick tools for quite some time now but never dabbled with it. A couple of weeks ago I played with it for some time (notice the new cascaded polaroid pics header above) and was amazed even more. Few of its shining features:
 It has almost unlimited features to manipulate your images through its tools like convert, montage, mogrify etc and their long list of options.
-It is available for Windows, Linux and Mac as well.</description></item></channel></rss>
+It is available for Windows, Linux and Mac as well.</description><content>&lt;p>I’ve known about ImageMagick tools for quite some time now but never dabbled with it. A couple of weeks ago I played with it for some time (notice the new cascaded polaroid pics header above) and was amazed even more. Few of its shining features:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>It has almost unlimited features to manipulate your images through its tools like convert, montage, mogrify etc and their long list of options.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>It is available for Windows, Linux and Mac as well.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Runs on web servers also (most of those nifty image sites use it for run time image manipulation)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>It is amazingly fast.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Runs on the command line, which means batching of operations can be done and is also good for butter fingered people like me who are clumsy with GUI based image manipulation programs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Has modules for interfacing with C, perl, php, C++, C#, java, etc. So, you can create your own applications around it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>It’s FREE (as in speech and as in beer)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>It has an amazing documentation over at imagemagick.org and also a very thriving community, so help is just a few clicks away.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>As a very rudimentary sample of what it can do for you, take a look at my blog’s header above. I just gave it a few pics and ran a command, and it resized them, turned them into polaroid pics, rotated them at random angles, made the background transparent, strung them together to make a webpage header/banner.&lt;/p>
+&lt;p>Since the command was specific for the number and names of images, I made a simple perl script to automate the command making process so you can also download this script (link at the end of post) and run it to create your own header. (You might want to tweak the $w and $h variables in the script to specify your header’s width and height). Running it would be like&lt;/p>
+&lt;pre tabindex="0">&lt;code>./pano.pl &amp;lt;imagenames&amp;gt;
+e.g.
+./pano.pl myimages/*
+&lt;/code>&lt;/pre>&lt;p>After I made this script, I came across &lt;a href="http://stason.org/photos/gallery/">Stas Bekman’s photo gallery&lt;/a> which has a much better and cool stack effect with photos. And he generously agreed to share his script (much more sophisticated than my my few lines) with me. His script is also attached below.&lt;/p>
+&lt;p>Let me know if you use any of these scripts (as it is or after modifying them) to create any cool effects.&lt;/p></content></item></channel></rss>

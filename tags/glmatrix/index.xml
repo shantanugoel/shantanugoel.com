@@ -1,3 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Glmatrix on</title><link>/tags/glmatrix/</link><description>Recent content in Glmatrix on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 18 Oct 2008 11:03:48 +0000</lastBuildDate><atom:link href="/tags/glmatrix/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: Shantz-XwinWrap Updated to 0.02</title><link>/posts/project-shantz-xwinwrap-updated-to-002/</link><pubDate>Sat, 18 Oct 2008 11:03:48 +0000</pubDate><guid>/posts/project-shantz-xwinwrap-updated-to-002/</guid><description>As some of you know that I&amp;rsquo;ve taken up the development of the ultra-cool xwinwrap tool that allows you to use movies, screensavers etc as wallpapers for you linux desktops. Here is version 0.02 for you consumption that fixes a bug because of which the generated window was overlapping other windows.
-The download file has plain executable binaries as well as deb packages for Ubuntu. Moreover, I&amp;rsquo;ve included both 32 bit as well as 64 bit versions.</description></item><item><title>Shantz XWinWrap: The "Moving" Wallpaper Fun Continues</title><link>/posts/shantz-xwinwrap-the-moving-wallpaper-fun-continues/</link><pubDate>Wed, 03 Sep 2008 14:46:02 +0000</pubDate><guid>/posts/shantz-xwinwrap-the-moving-wallpaper-fun-continues/</guid><description>XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background (Thanks to fsckin for introducing me to it). What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was released, and it had a few problems, like it wasn&amp;rsquo;t exactly &amp;ldquo;sticking&amp;rdquo; to the background and geometry option didn&amp;rsquo;t work as well.</description></item><item><title>Shantz XWinWrap</title><link>/posts/shantz-xwinwrap/</link><pubDate>Wed, 03 Sep 2008 14:41:44 +0000</pubDate><guid>/posts/shantz-xwinwrap/</guid><description>XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background. What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was ever released, and it had a few problems, like:
-Well, sticking didn&amp;rsquo;t work. So if you did a &amp;ldquo;minimize all&amp;rdquo; or &amp;ldquo;go to desktop&amp;rdquo; kind of thing, your &amp;ldquo;wallpaper&amp;rdquo; got minimized as well.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Glmatrix on</title><link>/tags/glmatrix/</link><description>Recent content in Glmatrix on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Oct 2008 11:03:48 +0000</lastBuildDate><atom:link href="/tags/glmatrix/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: Shantz-XwinWrap Updated to 0.02</title><link>/2008/10/18/project-shantz-xwinwrap-updated-to-002/</link><pubDate>Sat, 18 Oct 2008 11:03:48 +0000</pubDate><guid>/2008/10/18/project-shantz-xwinwrap-updated-to-002/</guid><description>As some of you know that I&amp;rsquo;ve taken up the development of the ultra-cool xwinwrap tool that allows you to use movies, screensavers etc as wallpapers for you linux desktops. Here is version 0.02 for you consumption that fixes a bug because of which the generated window was overlapping other windows.
+The download file has plain executable binaries as well as deb packages for Ubuntu. Moreover, I&amp;rsquo;ve included both 32 bit as well as 64 bit versions.</description><content>&lt;p>As some of you know that I&amp;rsquo;ve taken up the development of the ultra-cool xwinwrap tool that allows you to use movies, screensavers etc as wallpapers for you linux desktops. Here is version 0.02 for you consumption that fixes a bug because of which the generated window was overlapping other windows.&lt;br>
+The download file has plain executable binaries as well as deb packages for Ubuntu. Moreover, I&amp;rsquo;ve included both 32 bit as well as 64 bit versions.&lt;/p></content></item><item><title>Shantz XWinWrap: The "Moving" Wallpaper Fun Continues</title><link>/2008/09/03/shantz-xwinwrap-the-moving-wallpaper-fun-continues/</link><pubDate>Wed, 03 Sep 2008 14:46:02 +0000</pubDate><guid>/2008/09/03/shantz-xwinwrap-the-moving-wallpaper-fun-continues/</guid><description>XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background (Thanks to fsckin for introducing me to it). What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was released, and it had a few problems, like it wasn&amp;rsquo;t exactly &amp;ldquo;sticking&amp;rdquo; to the background and geometry option didn&amp;rsquo;t work as well.</description><content>&lt;p>XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background (Thanks to &lt;a href="http://www.fsckin.com/2008/04/14/fun-with-xwinwrap-in-compiz-fusion/">fsckin&lt;/a> for introducing me to it). What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was released, and it had a few problems, like it wasn&amp;rsquo;t exactly &amp;ldquo;sticking&amp;rdquo; to the background and geometry option didn&amp;rsquo;t work as well.&lt;/p>
+&lt;p>Seeing no-one picking it up, I decided to give it a bit of polish last weekend by fixing the above problems and also add a few features.&lt;/p>
+&lt;p>I hope to continue on the good work that was done by the original author and provide an even better xwinwrap to you all. Pour in those ideas about what features you&amp;rsquo;d like to see in this.&lt;/p></content></item><item><title>Shantz XWinWrap</title><link>/2008/09/03/shantz-xwinwrap/</link><pubDate>Wed, 03 Sep 2008 14:41:44 +0000</pubDate><guid>/2008/09/03/shantz-xwinwrap/</guid><description>XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background. What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was ever released, and it had a few problems, like:
+Well, sticking didn&amp;rsquo;t work. So if you did a &amp;ldquo;minimize all&amp;rdquo; or &amp;ldquo;go to desktop&amp;rdquo; kind of thing, your &amp;ldquo;wallpaper&amp;rdquo; got minimized as well.</description><content>&lt;p>XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background. What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was ever released, and it had a few problems, like:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Well, sticking didn&amp;rsquo;t work. So if you did a &amp;ldquo;minimize all&amp;rdquo; or &amp;ldquo;go to desktop&amp;rdquo; kind of thing, your &amp;ldquo;wallpaper&amp;rdquo; got minimized as well.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The geometry option didn&amp;rsquo;t work, so you could not create, e.g., a small matrix window surrounded by your original wallpaper.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Seeing no-one picking it up, I decided to give it a bit of polish last weekend by fixing the above problems and also add a few features. And here it is, in its new avatar &amp;ldquo;Shantz XWinWrap&amp;rdquo;.&lt;/p>
+&lt;p>&lt;strong>Video:&lt;/strong>&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/k8BCyhAHKSc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+>&lt;/iframe>
+&lt;/div>
+&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
+&lt;p>Notes:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>The download file above contains 32 bit as well as 64 bit binaries. (Deb packages for ubuntu/debian are also included in the same file)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Though a lot of options are shown below, the only ones you&amp;rsquo;d most likely need are &amp;ldquo;fs&amp;rdquo;, &amp;ldquo;g&amp;rdquo;, &amp;ldquo;ov&amp;rdquo; and &amp;ldquo;sh&amp;rdquo;)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The modified source code can be browsed/downloaded from the &lt;a href="https://launchpad.net/xwinwrap">Shantz XWinWrap Launchpad Bzr repository&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>xwinwrap [-g {w}x{h}+{x}+{y}] [-ni] [-argb] [-fs] [-s] [-st] [-sp] [-a] [-b] [-nf] [-o OPACITY] [-sh SHAPE] [-ov] -- COMMAND ARG1...
+Options:
+-g    - Specify Geometry (w=width, h=height, x=x-coord, y=y-coord. ex: -g 640x480+100+100)
+-ni   - Ignore Input
+-d - Desktop Window Hack. Provide name of the &amp;#34;Desktop&amp;#34; window as parameter
+-argb - RGB
+-fs   - Full Screen
+-s    - Sticky
+-st   - Skip Taskbar
+-sp   - Skip Pager
+-a    - Above
+-b    - Below
+-nf   - No Focus
+-o    - Opacity value between 0 to 1 (ex: -o 0.20)
+-sh   - Shape of window (choose between rectangle, circle or triangle. Default is rectangle)
+-ov   - Set override_redirect flag (For seamless desktop background integration)
+-debug - Enable Debug messages
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;p>(Examples use glmatrix however you can use something like mplayer, vlc, electric sheep etc instead of these)&lt;/p>
+&lt;ul>
+&lt;li>To run glmatrix in fullscreen wallpaper mode&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>To run glmatrix in a small window wallpaper mode&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>To run glmatrix in small circle wallpaper mode&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>To run glmatrix in small triangular wallpaper mode&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;p>&lt;strong>ChangeLog:&lt;/strong>&lt;/p>
+&lt;p>15-Feb-2009:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Fixed the bug where XFetchName returning a NULL for &amp;ldquo;name&amp;rdquo; resulted in a crash. Props to Kevin&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Provided an option to specify the desktop window name.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Debug messages.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>18-Oct-2008:&lt;/p>
+&lt;ol>
+&lt;li>Fixed a bug where the generated window overlapped other windows.&lt;/li>
+&lt;/ol>
+&lt;p>28-Aug-2008:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Fixed &amp;ldquo;sticky&amp;rdquo;, now it sticks like a true wallpaper to your desktop.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Fixed &amp;ldquo;geometry&amp;rdquo; option. Now you can create smaller windows and draw/position them anywhere on your screen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added non-rectangular shaped windows option. Now, you can create circular or triangular windows with xwinwrap to get that cool effect.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item></channel></rss>

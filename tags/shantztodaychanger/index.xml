@@ -1,5 +1,124 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ShantzTodayChanger on</title><link>/tags/shantztodaychanger/</link><description>Recent content in ShantzTodayChanger on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 30 Oct 2008 16:00:00 +0000</lastBuildDate><atom:link href="/tags/shantztodaychanger/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: ShantzTodayChanger Is Now Open Source’d</title><link>/posts/project-shantztodaychanger-is-now-open-sourced/</link><pubDate>Thu, 30 Oct 2008 16:00:00 +0000</pubDate><guid>/posts/project-shantztodaychanger-is-now-open-sourced/</guid><description>For those who don’t know ShantzTodayChanger is a small Windows Mobile tool that allows you to cycle through your wallpapers/themes or run applications after specified intervals of time automatically and provides you a lot of tweaking options to control this.
-Sometime back I formatted my laptop which I dual booted between Windows XP and Linux (Ubuntu, if you may ask). Now I installed Hardy Heron back onto thenew system within an hour but just can’t get myself motivated to “finish” the Windows install by getting and installing all the drivers after having to sit through hours pointing, clicking and rebooting to get just the base installed.</description></item><item><title>Project: Windows Mobile Tool ShantzTodayChanger Updated to version 1.53</title><link>/posts/project-windows-mobile-tool-shantztodaychanger-updated-to-version-153/</link><pubDate>Sat, 22 Mar 2008 20:49:17 +0000</pubDate><guid>/posts/project-windows-mobile-tool-shantztodaychanger-updated-to-version-153/</guid><description>ShantzTodayChanger is a little tool written by me for your Windows Mobile based phones (WM5/WM6) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options and you can even use it to achieve something other than changing wallpapers as well (e.g. running applications at set times) but that depends on your imagination.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ShantzTodayChanger on</title><link>/tags/shantztodaychanger/</link><description>Recent content in ShantzTodayChanger on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 30 Oct 2008 16:00:00 +0000</lastBuildDate><atom:link href="/tags/shantztodaychanger/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: ShantzTodayChanger Is Now Open Source’d</title><link>/2008/10/30/project-shantztodaychanger-is-now-open-sourced/</link><pubDate>Thu, 30 Oct 2008 16:00:00 +0000</pubDate><guid>/2008/10/30/project-shantztodaychanger-is-now-open-sourced/</guid><description>For those who don’t know ShantzTodayChanger is a small Windows Mobile tool that allows you to cycle through your wallpapers/themes or run applications after specified intervals of time automatically and provides you a lot of tweaking options to control this.
+Sometime back I formatted my laptop which I dual booted between Windows XP and Linux (Ubuntu, if you may ask). Now I installed Hardy Heron back onto thenew system within an hour but just can’t get myself motivated to “finish” the Windows install by getting and installing all the drivers after having to sit through hours pointing, clicking and rebooting to get just the base installed.</description><content>&lt;p>For those who don’t know ShantzTodayChanger is a small Windows Mobile tool that allows you to cycle through your wallpapers/themes or run applications after specified intervals of time automatically and provides you a lot of tweaking options to control this.&lt;/p>
+&lt;p>Sometime back I formatted my laptop which I dual booted between Windows XP and Linux (Ubuntu, if you may ask). Now I installed Hardy Heron back onto thenew system within an hour but just can’t get myself motivated to “finish” the Windows install by getting and installing all the drivers after having to sit through hours pointing, clicking and rebooting to get just the base installed. And moreover, there is no drive in me to boot into windows now just to work on ShantzTodayChanger any more. So, I thought that I’ll release the source code so that if someone is willing to continue the development. I’ll still be available for questions, discussions, explanations etc about it if needed.&lt;/p>
+&lt;p>You are free to copy, modify and redistribute it. Only things that I ask of you are that:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>You retain all credits for me and my website in the source code, final product, and other material (readme etc) intact.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Also, please provide a linkback to the original home page of shantztodaychanger if you redistribute it through some other site, otherwise I’ll be happy to host your modified versions here.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You also have to release the modified source code in its entirety.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item><item><title>Project: Windows Mobile Tool ShantzTodayChanger Updated to version 1.53</title><link>/2008/03/22/project-windows-mobile-tool-shantztodaychanger-updated-to-version-153/</link><pubDate>Sat, 22 Mar 2008 20:49:17 +0000</pubDate><guid>/2008/03/22/project-windows-mobile-tool-shantztodaychanger-updated-to-version-153/</guid><description>ShantzTodayChanger is a little tool written by me for your Windows Mobile based phones (WM5/WM6) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options and you can even use it to achieve something other than changing wallpapers as well (e.g. running applications at set times) but that depends on your imagination.
 Changes in this version:
-1.53 - 23-March-08 -&amp;gt; RECOMMENDED UPDATE</description></item><item><title>Project: ShantzTodayChanger (Windows Mobile Tool To Cycle Themes/Wallpapers Automatically)</title><link>/posts/project-shantztodaychanger-windows-mobile-tool-to-cycle-themeswallpapers-automatically/</link><pubDate>Sun, 03 Feb 2008 19:45:07 +0000</pubDate><guid>/posts/project-shantztodaychanger-windows-mobile-tool-to-cycle-themeswallpapers-automatically/</guid><description>The newly launched [&amp;ldquo;Projects&amp;rdquo;] section is hereby inaugarated with a Windows Mobile Tool developed by me, called “[ShantzTodayChanger]”. This is a little tool for your Windows Mobile based phones (Compatible with WM5/WM6 but not WM2003) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options that you can discover by reading the text below. And you can even use this options to achieve something other than changing wallpapers as well but that depends on your imagination.</description></item><item><title>ShantzTodayChanger</title><link>/posts/shantztodaychanger/</link><pubDate>Sun, 03 Feb 2008 13:41:30 +0000</pubDate><guid>/posts/shantztodaychanger/</guid><description>Intro:
-This is a little tool for your Windows Mobile based phones (Compatible with WM5/WM6 but not WM2003) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options that you can discover by reading the text below. And you can even use this options to achieve something other than changing wallpapers as well but that depends on your imagination.</description></item></channel></rss>
+1.53 - 23-March-08 -&amp;gt; RECOMMENDED UPDATE</description><content>&lt;p>ShantzTodayChanger is a little tool written by me for your Windows Mobile based phones (WM5/WM6) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options and you can even use it to achieve something other than changing wallpapers as well (e.g. running applications at set times) but that depends on your imagination.&lt;/p>
+&lt;p>Changes in this version:&lt;/p>
+&lt;p>1.53 - 23-March-08 -&amp;gt; RECOMMENDED UPDATE&lt;br>
+i)Theme Color Detection has been improved a lot. Should work much more accurately now.&lt;/p></content></item><item><title>Project: ShantzTodayChanger (Windows Mobile Tool To Cycle Themes/Wallpapers Automatically)</title><link>/2008/02/03/project-shantztodaychanger-windows-mobile-tool-to-cycle-themeswallpapers-automatically/</link><pubDate>Sun, 03 Feb 2008 19:45:07 +0000</pubDate><guid>/2008/02/03/project-shantztodaychanger-windows-mobile-tool-to-cycle-themeswallpapers-automatically/</guid><description>The newly launched [&amp;ldquo;Projects&amp;rdquo;] section is hereby inaugarated with a Windows Mobile Tool developed by me, called “[ShantzTodayChanger]”. This is a little tool for your Windows Mobile based phones (Compatible with WM5/WM6 but not WM2003) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options that you can discover by reading the text below. And you can even use this options to achieve something other than changing wallpapers as well but that depends on your imagination.</description><content>&lt;p>&lt;img src="/img/uploads/ShantzTodayChanger.jpg" alt="ShantzTodayChanger Config Screenshot">&lt;/p>
+&lt;p>The newly launched [&amp;ldquo;Projects&amp;rdquo;] section is hereby inaugarated with a Windows Mobile Tool developed by me, called “[ShantzTodayChanger]”. This is a little tool for your Windows Mobile based phones (Compatible with WM5/WM6 but not WM2003) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options that you can discover by reading the text below. And you can even use this options to achieve something other than changing wallpapers as well but that depends on your imagination. !&lt;/p></content></item><item><title>ShantzTodayChanger</title><link>/2008/02/03/shantztodaychanger/</link><pubDate>Sun, 03 Feb 2008 13:41:30 +0000</pubDate><guid>/2008/02/03/shantztodaychanger/</guid><description>Intro:
+This is a little tool for your Windows Mobile based phones (Compatible with WM5/WM6 but not WM2003) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options that you can discover by reading the text below. And you can even use this options to achieve something other than changing wallpapers as well but that depends on your imagination.</description><content>&lt;p>&lt;img src="/img/uploads/ShantzTodayChanger.jpg" alt="ShantzTodayChanger Config Screenshot">&lt;/p>
+&lt;p>&lt;strong>Intro:&lt;/strong>&lt;/p>
+&lt;p>This is a little tool for your Windows Mobile based phones (Compatible with WM5/WM6 but not WM2003) which will cycle ur today background or theme after a set interval of time. It has a lot of features and options that you can discover by reading the text below. And you can even use this options to achieve something other than changing wallpapers as well but that depends on your imagination. ;)&lt;/p>
+&lt;p>**UPDATE: **I&amp;rsquo;ve released the source code of ShantzTodayChanger since I&amp;rsquo;m not getting much time to work on it. You may download the code from the attached zip file above. I’ll still be available for questions, discussions, explanations etc about it if needed.&lt;/p>
+&lt;p>You are free to copy, modify and redistribute it. Only thing that I ask of you are that:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>You retain all credits for me and my website in the source code, final product, and other material (readme etc) intact.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Also, please provide a linkback to the original home page of shantztodaychanger if you redistribute it through some other site, otherwise I’ll be happy to host your modified versions here.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You also have to release the modified source code in its entirety.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Download:&lt;/strong>&lt;/p>
+&lt;p>**Usage: **&lt;/p>
+&lt;ol>
+&lt;li>Make a folder on ur device (preferably not on storage card.) and extract all the files (mainly ShantzTodayChanger.exe, TdyChangerCfg.exe, gsgetfile.dll (might not be visible to u depending on ur explorer settings) and Readme.htm) to this folder.&lt;/li>
+&lt;li>IMP: Do not rename any files.&lt;/li>
+&lt;li>Run the TdyChangerCfg.exe.&lt;/li>
+&lt;li>Set options through the dialog that opens and press apply button (Pressing the native WM OK button will discard all your changes)&lt;/li>
+&lt;li>Options:
+i)Choose image type (.gif.jpg.png) or theme(.tsk) to be cycled.
+ii)If the input files (images or themes) are not in the folder where exes are kept, then you can check the box (underneath the .gif option) and give the &amp;ldquo;FULL and ABSOLUTE&amp;rdquo; path of where the files are kept. You can either input the path thru keyboard or choose it graphically by pressing the button (&amp;hellip;) next to it.
+iii)If you want to run a file after every cycle interval, check the corresponding box and provide the &amp;ldquo;FULL and ABSOLUTE&amp;rdquo; path of the file to be run. You can either input the path thru keyboard or choose it graphically by pressing the button (&amp;hellip;) next to it.
+iv) If you want some files to be avoided during cycling, put a file mask. The program will look for this mask to appear anywhere in the name of the files and will avoid it if found. (Wildcards are not supported. Choose time option has to be checked for this to work)
+v) Choose the period for which mask option has to be used. If you choose a time period and leave mask as empty, then during that time no cycling will be done. If you want to avoid some files all the time, then time period should be chosen to cover all 24 hrs of the day.
+vi)enter the desired interval between cycling of images\themes.
+vii)If you choose a period for the mask, another check box (Consider mask period for exe also) will be enabled. Checking this box will mean that the specified exe will be run only if an image\theme is changed during that cycle. If you dont check this, then exe will be run after every cycle even if there is no change in the image\theme.&lt;/li>
+&lt;li>When you want to stop the cycling, press &amp;ldquo;STOP Cycling&amp;rdquo; button.&lt;/li>
+&lt;/ol>
+&lt;p>**Additional Notes: **&lt;/p>
+&lt;ol>
+&lt;li>The GUI for configuration has not been optimized for square screen devices, so you need to make some guesswork and use hardware keyboard for input but the changer program itself will run fine.&lt;/li>
+&lt;li>Doesnt have to be running constantly. So saves resources when not active.&lt;/li>
+&lt;li>Survives soft resets as well.&lt;/li>
+&lt;li>Even takes care of the situation if your phone is off when the time to cycle is reached. Will cycle as soon as ur phone comes back on in this situation.&lt;/li>
+&lt;/ol>
+&lt;p>**Planned Updates: **
+i) Suggestions invited. I have a lot of updates in mind but will incorporate those only which are requested by you.&lt;/p>
+&lt;p>**Known Issues: **
+i) If the mask option is selected, then in a very particular situation, the app will miss a cycle.
+This can be taken care of but not in my priority list because this can be fixed only by rewriting the complete cycling code which is quite a bit. So, will fix it if I get some time from my other projects.
+ii) If after maknig the configuration, you see the screen flash for a second at the right times, but the backfround doesn&amp;rsquo;t change, then do this:&lt;/p>
+&lt;ul>
+&lt;li>Go to : Settings&amp;hellip;today&amp;hellip;.appearance&lt;/li>
+&lt;li>un-check &amp;ldquo;Use this picture as background&amp;rdquo;&lt;/li>
+&lt;li>start the program using &amp;ldquo;startTodayChanger.lnk&amp;rdquo; or TdyChangerCfg (Apply button)
+(Thnx to CWKJ for reporting this bug and fix, and to eric for reminding me about it)&lt;/li>
+&lt;/ul>
+&lt;p>**End Note: **
+Like every software, this one is also bound to have bugs, please report it asap.
+Though ShantzTodayChanger does not run continuously but sometimes some apps that close all processes automatically (like SPB backup) might clash in schedule with ShantzTodayChanger and close it when it starts to run. In such a case (which is quite unlikely), the app might not be able to set a notification for next cycle, so if u face this situation, then run the config again.&lt;/p>
+&lt;p>**Version History: **&lt;/p>
+&lt;p>1.53 - 23-March-08 -&amp;gt; RECOMMENDED UPDATE
+i)Theme Color Detection has been improved a lot. Should work much more accurately now.&lt;/p>
+&lt;p>1.52 - 11-Aug-07 -&amp;gt;
+i) Fixed another bug for the &amp;ldquo;time period&amp;rdquo; option.
+ii) Made a little optimization in the code.&lt;/p>
+&lt;p>1.51 - 05-Aug-07 -&amp;gt;
+i) Fixed a bug which prevented the &amp;ldquo;time period&amp;rdquo; option from working properly.
+ii) Fixed a bug where wallpapers might not change if certain particular themes were installed before change cycle happens
+iii) Fixed a bug where the time period option was not remembered properly by the GUI.
+iv) Added option to allow user to choose whether to run the user specified file (exe\lnk) after every cycle interval only if there was a change in image\theme during that cycle.
+v) Made a few small changes to the GUI to prevent users from making incorrect settings.&lt;/p>
+&lt;p>1.50 - 29-July-07 -&amp;gt;MAJOR UPDATE
+i) Added option to specify a mask to avoid files having that mask
+ii) Added option to specify the time period during which the mask has to be considered
+iii) Added code to ensure that if mask is empty and a period is chosen, then no rotation is done during that period.
+iv) Added option to run a user specified file after every cycle interval.
+v) Fixed bug where the jpg and png options were not working earlier.
+vi) Clicking help button now opens help in Pocket Internet Explorer.
+vii) Fixed many more subtle bugs that manifest themselves and very peculiar situations.
+viii) Optimized the code a bit at a few places.
+ix) Also see &amp;ldquo;Known Issues&amp;rdquo; section above.
+x) Removed the &amp;ldquo;append to previous info&amp;rdquo; box as now the app remembers old info correctly.&lt;/p>
+&lt;p>1.33 - 18-July-07 -&amp;gt;
+i)Added code to select the input path graphically. It is a bit of workaround though. To select an input folder, just select any file inside it in the select folder dialog.
+ii)TdyChgrCfg now shows you the previous settings.&lt;/p>
+&lt;p>1.32 - 21-Jun-07 -&amp;gt;
+i) Fixed a bug where sometimes on cycling themes, colors change but images do not change.
+ii) Added a measure to avoid running multiple instances (just as a precaution)
+iii)Added code to avoid losing notifications if phone is reset too early after running the program&lt;/p>
+&lt;p>1.31 - 20-Jun-07 -&amp;gt;Fixed 2 bugs:
+i) A notification bug where old notification is not deleted
+ii) A bug where cycle interval value is not correctly read from the GUI&lt;/p>
+&lt;p>1.3 - 19-Jun-07 -&amp;gt;
+i)Added option to make partial changes to previously entered information.
+ii)Fine-Tuned the Theme Color support algo. Now, theme colors should be almost 95% same as calculated by windows mobile while applying theme.
+iii)Did some code optimization&lt;/p>
+&lt;p>1.2 - 19-Jun-07 -&amp;gt;Major Update:
+i)Added Theme Support. Changing of system colors as per theme is also supported (which is not done by any other program IIRC)
+ii)Added option to keep input images\themes in a separate folder
+iii)Provided a GUI Configuration module
+iv)Provided option to choose between gif\jpg\png\tsk to be cycled.&lt;/p>
+&lt;p>1.11 - 12-Jun-07-&amp;gt;Fixed another bug with notification queue&lt;/p>
+&lt;p>1.1 - 12-Jun-07 -&amp;gt; Fixed the bug that causes WM5/WM6 devices not to cycle wallpapers in certain conditions&lt;/p>
+&lt;p>1.0 - 10-Jun-07 -&amp;gt; Initial Release&lt;/p>
+&lt;p>Credits:
+daxliniere/wacky.banana -&amp;gt; For asking to make the tool and their inputs
+SeanFromSoCal/200mpx -&amp;gt; For their inputs&lt;/p></content></item></channel></rss>

@@ -1,1 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android Call Recorder on</title><link>/tags/android-call-recorder/</link><description>Recent content in Android Call Recorder on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 24 Sep 2010 10:01:16 +0000</lastBuildDate><atom:link href="/tags/android-call-recorder/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup Call Recording With Android App Tasker On Nexus One</title><link>/posts/setup-call-recording-android-app-tasker-nexus-one/</link><pubDate>Fri, 24 Sep 2010 10:01:16 +0000</pubDate><guid>/posts/setup-call-recording-android-app-tasker-nexus-one/</guid><description>I wanted to record calls on my Android phone (Nexus one). The easy way would have been to download an app but I like tinkering. And given that I recently bought Tasker, android’s very own swiss knife, I thought I should give it a run. After just an hour I was able to create my very own call recorder (some time went into trial and error with things as this was my first major task with tasker and also some things didn’t work with nexus one, which I will note below).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android Call Recorder on</title><link>/tags/android-call-recorder/</link><description>Recent content in Android Call Recorder on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 24 Sep 2010 10:01:16 +0000</lastBuildDate><atom:link href="/tags/android-call-recorder/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup Call Recording With Android App Tasker On Nexus One</title><link>/2010/09/24/setup-call-recording-android-app-tasker-nexus-one/</link><pubDate>Fri, 24 Sep 2010 10:01:16 +0000</pubDate><guid>/2010/09/24/setup-call-recording-android-app-tasker-nexus-one/</guid><description>I wanted to record calls on my Android phone (Nexus one). The easy way would have been to download an app but I like tinkering. And given that I recently bought Tasker, android’s very own swiss knife, I thought I should give it a run. After just an hour I was able to create my very own call recorder (some time went into trial and error with things as this was my first major task with tasker and also some things didn’t work with nexus one, which I will note below).</description><content>&lt;p>I wanted to record calls on my Android phone (Nexus one). The easy way would have been to download an app but I like tinkering. And given that I recently bought &lt;a href="http://tasker.dinglisch.net/">Tasker&lt;/a>, android’s very own swiss knife, I thought I should give it a run. After just an hour I was able to create my very own call recorder (some time went into trial and error with things as this was my first major task with tasker and also some things didn’t work with nexus one, which I will note below). I’ll outline the process to set it up here in as much detail as possible and will also provide the profiles. Please note that I made this setup for nexus one but it should work on pretty much any android phone and, in fact, it might work even better on your phone by making a few tweaks that I will outline as Nexus one doesn’t allow jacking into the call streams directly but your phone might.&lt;/p>
+&lt;p>So, let’s begin. My visioned scenario is like this:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>When you start a call (incoming or outgoing), i.e., when both the parties have picked up the phone, a notification should appear in the status bar.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Clicking on this notification should start recording the call. It should also give way to another notification now.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This new notification should stop the call recording when clicked.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you don’t stop the call recording, the recording should automatically stop when the call ends.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>To achieve the steps mentioned above, you will have to create “4” profiles in tasker. The xml files for these profiles are provided in a zip at the end of this article that you can download and import into tasker directly. If you want to understand more about whats going on, here are the details of each profile so that you can understand and modify them according to your needs. These profiles are:&lt;/p>
+&lt;p>&lt;strong>Profile 1. Call Started&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Call started
+Event: Phone Offhook
+Enter: 11
+Execute, Abort New Task
+A0: Variable Clear [ Name:%RECORDING ]
+A1: Notify [ Title:Record Call Text: Icon: Number: Permanent: ]&lt;/p>
+&lt;p>&lt;strong>Notes:&lt;/strong>&lt;/p>
+&lt;p>None&lt;/p>
+&lt;p>&lt;strong>Profile 2. Record Call&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Record call
+Event: Notification Click
+Enter: Record Call
+Execute, Abort New Task
+A0: Notify Cancel [ Title:Record Call Warn Not Exist: ]
+A1: Variable Set [ Name:%RECORDING To:1 Do Maths: Append: ]
+A2: In-Call Volume [ Level:5 Display: Sound: ]
+A3: Speakerphone [ Set:On ]
+A4: Flash [ Text:Started Recording Long: ]
+A5: Notify [ Title:Stop Record Call Text: Icon: Number: Permanent: ]
+A6: Record Audio [ File:shantz/call-%CNUM-%CDATE-%CTIME Source:Microphone MaxSize: ]&lt;/p>
+&lt;p>**Notes: **&lt;/p>
+&lt;p>Note the steps A2, A3 and A6. Basically Nexus one has a limitation that you cannot record directly from the call streams. So, I’m doing the recording from the microphone and this works best if the phone is in speakerphone mode. So, I’m turning up the call volume and setting speakerphone mode in A2 and A3 respectively. You can try tweaking these 2 steps (having different call volumes and not engaging speakerphone mode and you might have passable results without doing these as well). Also, try using “Call”, “Incoming Call”, “Outgoing Call” etc as sources in step A6 instead of microphone to check if your phone supports direct call stream recording. If it does, then you will have excellent recording quality and you can also remove steps A2 and A3.&lt;/p>
+&lt;p>&lt;strong>Profile 3. Stop Record Call&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Stop record call
+Event: Notification Click
+Enter: Stop Record Call
+Execute, Abort New Task
+A0: Record Audio Stop [ ]
+A1: Notify Cancel [ Title:Record Call Warn Not Exist: ]
+A2: Notify Cancel [ Title:Stop Record Call Warn Not Exist: ]
+A3: Flash [ Text:Stopped Recording Long: ]
+A4: Variable Clear [ Name:%RECORDING ]
+A5: Speakerphone [ Set:Off ]&lt;/p>
+&lt;p>**Notes: **&lt;/p>
+&lt;p>None&lt;/p>
+&lt;p>&lt;strong>Profile 4. Call Complete&lt;/strong>&lt;/p>
+&lt;p>Tasker description:&lt;/p>
+&lt;p>Profile: Call complete
+Event: Phone Idle
+Enter: Stop Record Call
+Execute, Abort New Task
+A0: Record Audio Stop [ ]
+A1: Notify Cancel [ Title:Record Call Warn Not Exist: ]
+A2: Notify Cancel [ Title:Stop Record Call Warn Not Exist: ]
+A3: Flash [ Text:Stopped Recording Long: ]
+A4: Variable Clear [ Name:%RECORDING ]
+A5: Speakerphone [ Set:Off ]&lt;/p>
+&lt;p>**Notes: **&lt;/p>
+&lt;p>None&lt;/p>
+&lt;p>&lt;strong>&lt;a href="http://tech.shantanugoel.com/resources/downloads/android-tasker-call-record-profiles.zip">Download: Android Tasker Call Record Profiles&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>And we are done, you can download the profile xml files in the zip file linked here.&lt;/p>
+&lt;p>Let me know if you need any clarifications on the above steps. I would also love to get your suggestions to make this better or if you have any of your own tasker tips and tricks. I’ll be posting more of my tasker adventures soon :)&lt;/p></content></item></channel></rss>

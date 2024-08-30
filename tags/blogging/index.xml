@@ -1,7 +1,139 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogging on</title><link>/tags/blogging/</link><description>Recent content in Blogging on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 Jan 2009 04:47:00 +0000</lastBuildDate><atom:link href="/tags/blogging/index.xml" rel="self" type="application/rss+xml"/><item><title>Slow Updates And A Small Nugget Post</title><link>/posts/slow-updates-and-a-small-nugget-post/</link><pubDate>Tue, 13 Jan 2009 04:47:00 +0000</pubDate><guid>/posts/slow-updates-and-a-small-nugget-post/</guid><description>Many readers of this blog have written to me for the slow updates. I apologize for the same. I’ve been swamped by loads of work for quite some time now and haven’t been able to write anything here or update any of my projects, though I have loads of new hacks and tricks that I would write once I’m free and lots in store for most of the projects as well in form of bug fixes and new features.</description></item><item><title>Twittering Away With Delhi Bloggers</title><link>/posts/twittering-away-with-delhi-bloggers/</link><pubDate>Sun, 06 Apr 2008 14:57:24 +0000</pubDate><guid>/posts/twittering-away-with-delhi-bloggers/</guid><description>If you are twittering kinds, doesn&amp;rsquo;t matter online or offline
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogging on</title><link>/tags/blogging/</link><description>Recent content in Blogging on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 13 Jan 2009 04:47:00 +0000</lastBuildDate><atom:link href="/tags/blogging/index.xml" rel="self" type="application/rss+xml"/><item><title>Slow Updates And A Small Nugget Post</title><link>/2009/01/13/slow-updates-and-a-small-nugget-post/</link><pubDate>Tue, 13 Jan 2009 04:47:00 +0000</pubDate><guid>/2009/01/13/slow-updates-and-a-small-nugget-post/</guid><description>Many readers of this blog have written to me for the slow updates. I apologize for the same. I’ve been swamped by loads of work for quite some time now and haven’t been able to write anything here or update any of my projects, though I have loads of new hacks and tricks that I would write once I’m free and lots in store for most of the projects as well in form of bug fixes and new features.</description><content>&lt;p>Many readers of this blog have written to me for the slow updates. I apologize for the same. I’ve been swamped by loads of work for quite some time now and haven’t been able to write anything here or update any of my projects, though I have loads of new hacks and tricks that I would write once I’m free and lots in store for most of the projects as well in form of bug fixes and new features. So, hang in there :)&lt;/p>
+&lt;p>Meanwhile, take a look at this post ( &lt;a href="http://www.safercode.com/blog/2008/10/14/int-main-vs-void-main.html">int Main() vs void main()&lt;/a> )that I had made some time ago at another blog of mine ( &lt;a href="http://www.safercode.com/blog/">Safer Code - Secure Coding In C \ C++ And More&lt;/a> ). Why I’m telling you about this post is that it is a really important post useful for every C / C++ developer and recently it got featured on LinuxToday and Lxer, after which there is a very interesting discussion going on to discuss the various aspects related to it.&lt;/p>
+&lt;p>Do check out the rest of the blog as well. It is about tit-bits of security, optimization and performance of your code and in a manner and amount that you can easily digest. What’s best is that it is delivered regularly at a slow pace that everyone can follow :). So, what are you waiting for? Add it to your feed reader or choose to get the updates through e-mail and do let me know in the comments there how you like it.&lt;/p></content></item><item><title>Twittering Away With Delhi Bloggers</title><link>/2008/04/06/twittering-away-with-delhi-bloggers/</link><pubDate>Sun, 06 Apr 2008 14:57:24 +0000</pubDate><guid>/2008/04/06/twittering-away-with-delhi-bloggers/</guid><description>If you are twittering kinds, doesn&amp;rsquo;t matter online or offline
 If you blog or are interested in all things blog and blogging
 If you live in Delhi, have lived there, have been there, or just connect with Delhi somehow else
 If you want to meet up with your fellow twitterers and bloggers
-Then you&amp;rsquo;ve got to be a part of the your very own City of The People With Hearts, Delhi.</description></item><item><title>WordPress Must Have Plugins: Download Managers</title><link>/posts/wordpress-must-have-plugins-download-managers/</link><pubDate>Fri, 29 Feb 2008 04:00:00 +0000</pubDate><guid>/posts/wordpress-must-have-plugins-download-managers/</guid><description>If you serve any kind of files for download on your WordPress blog(s), one thing you should definitly be looking out for is a download manager plugin. Post attachments are oh-so-2007. Uploading files to your server and hand-posting links everywhere is a pain in the butt. And what about your hunger for statistics?
-Well, if you agree with me, then i would like to tell you about two fantastic plugins:</description></item><item><title>HTC Video Drivers: But This Is Not A Post About HTC</title><link>/posts/htc-video-drivers-but-this-is-not-a-post-about-htc/</link><pubDate>Tue, 26 Feb 2008 11:14:36 +0000</pubDate><guid>/posts/htc-video-drivers-but-this-is-not-a-post-about-htc/</guid><description>This is a post about irresponsible/careless journalism/bloggism. For Gizmodo, getting that post about HTC’s latest press release out the door took precedence over actually **reading **the release properly and then commenting over it. The gizmodo poster’s comment is:
-……but HTC&amp;rsquo;s finally released a statement saying that a fix is coming. They say that the video acceleration will be supported in the future, and will be included in software upgrades for current devices…….</description></item><item><title>Tips: Configure FTP upload support for wordpress in Blogjet</title><link>/posts/tips-configure-ftp-upload-support-for-wordpress-in-blogjet/</link><pubDate>Thu, 07 Feb 2008 14:36:27 +0000</pubDate><guid>/posts/tips-configure-ftp-upload-support-for-wordpress-in-blogjet/</guid><description>A few days ago, I had written about a wonderful blogging tool Blogjet. Now, if you host a wordpress blog, you’d be aware of the fact that for wordpress to be able to upload yor files (images, attachements in post etc) to the server, you have to make the upload directory writable by all. Now, this is a BIG security risk. Some people go to the lengths of CHMOD’ding their upload directory for a short while and after upload, restoring the apt file permissions back.</description></item></channel></rss>
+Then you&amp;rsquo;ve got to be a part of the your very own City of The People With Hearts, Delhi.</description><content>&lt;p>&lt;img src="/img/uploads/tweetup_logo_73x73_bigger.jpg" alt="Tweetup_logo_73x73_bigger">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If you are twittering kinds, doesn&amp;rsquo;t matter online or offline&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you blog or are interested in all things blog and blogging&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you live in Delhi, have lived there, have been there, or just connect with Delhi somehow else&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you want to meet up with your fellow twitterers and bloggers&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Then you&amp;rsquo;ve got to be a part of the your very own City of The People With Hearts, Delhi. How, you ask? It&amp;rsquo;s as simple as pointing your mice and keyboards towards &lt;a href="https://twitter.com/delhitweetup">Delhi Tweetup&lt;/a> to get the latest on every scoop about blogging, twittering and blogging and twittering in Delhi (and outside as well).&lt;/p>
+&lt;p>And if you want to be a little bit more involved, you can also join the &lt;a href="http://groups.yahoo.com/group/delhibloggers">Delhi Bloggers&amp;rsquo; Yahoo Group&lt;/a>.&lt;/p></content></item><item><title>WordPress Must Have Plugins: Download Managers</title><link>/2008/02/29/wordpress-must-have-plugins-download-managers/</link><pubDate>Fri, 29 Feb 2008 04:00:00 +0000</pubDate><guid>/2008/02/29/wordpress-must-have-plugins-download-managers/</guid><description>If you serve any kind of files for download on your WordPress blog(s), one thing you should definitly be looking out for is a download manager plugin. Post attachments are oh-so-2007. Uploading files to your server and hand-posting links everywhere is a pain in the butt. And what about your hunger for statistics?
+Well, if you agree with me, then i would like to tell you about two fantastic plugins:</description><content>&lt;p>If you serve any kind of files for download on your WordPress blog(s), one thing you should definitly be looking out for is a download manager plugin. Post attachments are oh-so-2007. Uploading files to your server and hand-posting links everywhere is a pain in the butt. And what about your hunger for statistics?&lt;/p>
+&lt;p>Well, if you agree with me, then i would like to tell you about two fantastic plugins:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;a href="http://urbangiraffe.com/plugins/drain-hole/">Drain Hole&lt;/a>:&lt;/strong> This is a real time saver. Some of the features are:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Automatic scanning of directories to generate downloadable files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Simple interface to upload files&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Categorized downloads&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>SEO urls (no more of those weird links)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Automatic hotlink protection&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Simple integration with SVN repositories&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Can maintain versions of the files (cool !!)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download urls can be different from their actual path in your server&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Can even pick files from directories residing out of your www or public_html directory.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Superior download security by assigning permissions based on WordPress user roles.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Template tags allow you to insert any particular file(s) or list of all files or files in particular folder on any post, page, sidebar widget&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Statistics - no. of downloads, IP addresses, referrers, etc&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Can force files like php, html, txt etc to be downloaded rather than displaying in browser&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pretty, can attach icons to files for displaying, different templates can be used for displaying files&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>and…..AJAX &lt;img src="/img/uploads/smile1.gif" alt="">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>phew, lemme catch my breath here…you can download it from &lt;a href="http://wordpress.org/extend/plugins/drain-hole/">here&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;a href="http://software.y-zone.net/?page_id=3">WP-Vault&lt;/a>&lt;/strong>: This is the second best plugin I could find in this category. It is not as feature rich as Drain Hole, e.g., it misses SEO URls, hotlink protection, svn integration, versioning, etc, but it does have its own set of interesting features:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>get files from FTP/HTTP directly without downloading to computer first. (a real time saver)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Image galleries from stored images.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Supports WordPress&amp;rsquo; caching mechanism to reduce load on database.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>You can take your own pick out of the two. And yeah, this blog uses Drain Hole, if you must ask.&lt;/p></content></item><item><title>HTC Video Drivers: But This Is Not A Post About HTC</title><link>/2008/02/26/htc-video-drivers-but-this-is-not-a-post-about-htc/</link><pubDate>Tue, 26 Feb 2008 11:14:36 +0000</pubDate><guid>/2008/02/26/htc-video-drivers-but-this-is-not-a-post-about-htc/</guid><description>This is a post about irresponsible/careless journalism/bloggism. For Gizmodo, getting that post about HTC’s latest press release out the door took precedence over actually **reading **the release properly and then commenting over it. The gizmodo poster’s comment is:
+……but HTC&amp;rsquo;s finally released a statement saying that a fix is coming. They say that the video acceleration will be supported in the future, and will be included in software upgrades for current devices…….</description><content>&lt;p>This is a post about irresponsible/careless journalism/bloggism. For Gizmodo, getting that post about HTC’s latest press release out the door took precedence over actually **reading **the release properly and then commenting over it. The gizmodo poster’s comment is:&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;blockquote>
+&lt;p>……but HTC&amp;rsquo;s finally released a statement saying that a fix is coming. They say that the &lt;strong>video acceleration &lt;em>will&lt;/em> be supported in the future, and will be included in software upgrades for current devices&lt;/strong>…….&lt;/p>
+&lt;/blockquote>
+&lt;!-- raw HTML omitted -->
+&lt;p>I’m still puzzled, after reading and rereading HTC’s (pretty short) statement 10 times over and I can’t find where it is mentioned that they will provide video acceleration for the current devices. My point is that if you don’t read it yourself, then better not release it to your readers, (or atleast refrain from commenting on it improperly, if you must be ahead in the “race”).&lt;/p>
+&lt;p>Read the statement below (and for actual post on Gizmodo, click &lt;a href="http://gizmodo.com/360514/htc-says-software-fix-is-coming-for-lousy-video-drivers">here&lt;/a>)&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;blockquote>
+&lt;p>Some of our top engineers have investigated video performance on our devices and have discovered a fix that they claim will dramatically improve performance for common on-screen tasks like scrolling and the like. Their fix would help most of our recent touch-screen products including the Touch family of devices and TYTN II / Tilt, Mogul / XV6900. The update is in testing and we hope to release it soon. However this fix is not a new video driver to utilize hardware acceleration; it is a software optimization. Video drivers are a much more complicated issue that involves companies and engineers beyond HTC alone. We do not want to lead anyone to believe they should expect these. To explain why we are not releasing video acceleration instead of the optimization I offer you our official statement&amp;hellip; &amp;ldquo;HTC DOES plan to offer software upgrades that will increase feature functionality, over the air wireless speeds and other enhancements for some of the phones being criticized, but we do not anticipate including any additional support for the video acceleration issues cited in customer complaints. It is important for customers to understand that bringing this functionality to market is not a trivial driver update and requires extensive software development and time. HTC will utilize hardware video acceleration like the ATI Imageon in many upcoming products. Our users have made it clear that they expect our products to offer an improved visual experience, and we have included this feedback into planning and development of future products. To address lingering questions about HTC&amp;rsquo;s current MSM 7xxx devices, it is important to establish that a chipset like an MSM7xxx is a platform with a vast multitude of features that enable a wide range of devices with varied functionality. It is common that devices built on platforms like Qualcomm&amp;rsquo;s will not enable every feature or function. In addition to making sure the required hardware is present, unlocking extended capabilities of chipsets like the MSM 7xxx requires in-depth and time consuming software development, complicated licensing negotiations, potential intellectual property negotiations, added licensing fees, and in the case of devices that are sold through operators, the desire of the operator to include the additional functionality. To make an informed decision about which handset suits them best, consumers should look at the product specification itself instead of using the underlying chipset specifications to define what the product could potentially become.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;!-- raw HTML omitted --></content></item><item><title>Tips: Configure FTP upload support for wordpress in Blogjet</title><link>/2008/02/07/tips-configure-ftp-upload-support-for-wordpress-in-blogjet/</link><pubDate>Thu, 07 Feb 2008 14:36:27 +0000</pubDate><guid>/2008/02/07/tips-configure-ftp-upload-support-for-wordpress-in-blogjet/</guid><description>A few days ago, I had written about a wonderful blogging tool Blogjet. Now, if you host a wordpress blog, you’d be aware of the fact that for wordpress to be able to upload yor files (images, attachements in post etc) to the server, you have to make the upload directory writable by all. Now, this is a BIG security risk. Some people go to the lengths of CHMOD’ding their upload directory for a short while and after upload, restoring the apt file permissions back.</description><content>&lt;p>A few days ago, I had written about a wonderful blogging tool &lt;a href="/2008/01/29/blogjet-blog-faster-blog-better-now-in-linux-too-with-a-hidden-bonus.html">Blogjet&lt;/a>. Now, if you host a wordpress blog, you’d be aware of the fact that for wordpress to be able to upload yor files (images, attachements in post etc) to the server, you have to make the upload directory writable by all. Now, this is a BIG security risk. Some people go to the lengths of CHMOD’ding their upload directory for a short while and after upload, restoring the apt file permissions back. Some upload their files separately through ftp. But Blogjet has a very cool feature. It supports uploading all your non-text content to your webspace not only by using wordpress APIs but also through ftp if wordpress doesn’t have necessary permissions to write files on your server. This saves you a lot of time, that you can then devote on writing the actual post instead of meandering around with the “technicalities”. But many a people have a heart-ache configuring the ftp with Blogjet, although it is quite simple really. This is basically due to conflicting and confusing instructions existing on the ‘net. So, here I present to you step by step, simplest instrutions to configure this. Read on.&lt;/p>
+&lt;p>Step1) Launch Blogjet. You will be presented with a login screen (shown below). You can create a new account or choose to edit an existing one.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/1_blogjet_login_screen.jpg">&lt;img src="/img/uploads/1_blogjet_login_screen_thumb.jpg" alt="1_blogjet_login_screen">&lt;/a>&lt;/p>
+&lt;p>Step2) Choose “I have a blog” on the next screen. Press next.(You might not get this screen if you are editing an old account. In that case, skip to Step 3)&lt;/p>
+&lt;p>&lt;a href="/img/uploads/2_blogjet_create_blog.jpg">&lt;img src="/img/uploads/2_blogjet_create_blog_thumb.jpg" alt="2_blogjet_create_blog">&lt;/a>&lt;/p>
+&lt;p>Step3) In the “Edit connection Settings” dialog, click on “Configure Settings Manually”.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/3_blogjet_settings.jpg">&lt;img src="/img/uploads/3_blogjet_settings_thumb.jpg" alt="3_blogjet_settings">&lt;/a>&lt;/p>
+&lt;p>Step4) In the Connection settings dialog, there are two options for wordpress blogs. “Wordpress” and “Wordpress (Direct Upload)”. Choose “Wordpress”. The direct upload feature is for people whose wordpress installations have necessary permissions to create files on the server.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/4_blojget_account_settings.jpg">&lt;img src="/img/uploads/4_blojget_account_settings_thumb.jpg" alt="4_blojget_account_settings">&lt;/a>&lt;/p>
+&lt;p>Step5) Enter the username and password for your blog.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/5_blogjet_username.jpg">&lt;img src="/img/uploads/5_blogjet_username_thumb.jpg" alt="5_blogjet_username">&lt;/a>&lt;/p>
+&lt;p>Step6) Now, you get the FTP Configuration screen. Check out the image below and then read the instructions for filling up various columns.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/6_blogjet_config_ftp.jpg">&lt;img src="/img/uploads/6_blogjet_config_ftp_thumb.jpg" alt="6_blogjet_config_ftp">&lt;/a>&lt;/p>
+&lt;p>i) Tick the checkbox which says “Use FTP to upload pictures…..”&lt;/p>
+&lt;p>ii) FTP Server: ftp address for your server. e.g.: &lt;a href="ftp://ftp.mysite.com/">ftp.mysite.com&lt;/a> .If you don’t know this, then you should contact your webhost support staff to know about this.&lt;/p>
+&lt;p>iii) Port: Generally ftp port is 21. However, if you are not sure, then ask your webhost support staff to get the exact number.&lt;/p>
+&lt;p>iv) Remote Folder: This is the folder where you want to upload your stuff but is relative to the path where your ftp connection lands you. You’ll need to make a manual ftp connection to your ftp server first to check this. Check the examples after next step.&lt;/p>
+&lt;p>v) Base URL: This is the complete web path, that wordpress (or any user over the web) will use to access the image.&lt;/p>
+&lt;p>Examples: If your ftp server address is &lt;a href="ftp://ftp.mysite.com/">ftp.mysite.com&lt;/a>, and your wordpress blog address is &lt;a href="http://blog.mysite.com/">http://blog.mysite.com&lt;/a> . Your file directory structure is something like given below:&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>/public_html -&amp;gt;&lt;/p>
+&lt;p>/public_html/wordpress&lt;/p>
+&lt;p>/another_folder&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>When you connect to ftp manuall, you land up at “/”, you make a new folder at /public_html/wordpress/uploads, where you are going to upload your files. And your blog address &lt;a href="http://blog.mysite.com/">http://blog.mysite.com&lt;/a> points at /public_html/wordpress/ when you go to it through your web browser, then your field values will be:&lt;/p>
+&lt;p>Remote Folder: /public_html/wordpress/uploads&lt;/p>
+&lt;p>Base URL: &lt;a href="http://blog.mysite.com/uploads">http://blog.mysite.com/uploads&lt;/a>&lt;/p>
+&lt;p>Notes: So, basically what you can do is for remote folder, connect to ftp, “cd” to the folder where you want to upload and do “pwd”, this is your remote folder address. For Base url, find out, where your blog address points to (take help of your webhost support if u need), then find your upload folder’s path relative to it, and add that relative path in front of your blog address.&lt;/p>
+&lt;p>vi) Username/password: This is your ftp username and password given to you by your webhost.&lt;/p>
+&lt;p>vii) Now, click on “Test this configuration”. If everything is ok, then you’ll get a “FTP Configured properly” message as shown below. Then click ok and next.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/7_blogjet_ftp_configured.jpg">&lt;img src="/img/uploads/7_blogjet_ftp_configured_thumb.jpg" alt="7_blogjet_ftp_configured">&lt;/a>&lt;/p>
+&lt;p>Step7) Click on finish. You are done. &lt;img src="/img/uploads/smile1.gif" alt="">. Do let me know if this worked for you or you had any issues.&lt;/p>
+&lt;p>&lt;a href="/img/uploads/8_blogjet_finish.jpg">&lt;img src="/img/uploads/8_blogjet_finish_thumb.jpg" alt="8_blogjet_finish">&lt;/a>&lt;/p></content></item></channel></rss>

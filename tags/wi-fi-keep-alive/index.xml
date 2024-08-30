@@ -1,7 +1,154 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wi-Fi Keep Alive on</title><link>/tags/wi-fi-keep-alive/</link><description>Recent content in Wi-Fi Keep Alive on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 09 Sep 2010 05:27:27 +0000</lastBuildDate><atom:link href="/tags/wi-fi-keep-alive/index.xml" rel="self" type="application/rss+xml"/><item><title>Android App: Wi-Fi Keep Alive updates</title><link>/posts/android-app-wi-fi-keep-alive-updates/</link><pubDate>Thu, 09 Sep 2010 05:27:27 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updates/</guid><description>I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss.</description></item><item><title>Android Dev Tip: App Not Showing on X10 Mini Marketplace</title><link>/posts/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</link><pubDate>Sat, 07 Aug 2010 21:18:06 +0000</pubDate><guid>/posts/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</guid><description>Many Android Developers (and users) get confused that why a certain app isn&amp;rsquo;t showing up on the new Xperia X10 Mini (and few other) phones. This happens even if they support all android versions and have published their apps for all countries, so that shouldn&amp;rsquo;t be the issue. I came across this as well when few people mentioned that they couldn&amp;rsquo;t find my app Wi-Fi Keep Alive in the X10 mini marketplace.</description></item><item><title>Android App Wi-Fi Keep Alive updated to 1.4.1</title><link>/posts/android-app-wi-fi-keep-alive-updated-1-4-0/</link><pubDate>Thu, 22 Jul 2010 16:58:07 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updated-1-4-0/</guid><description>Update: Made a minor update for a small bug that can make wi-fi keep reconnecting in quick succession.
-Pushed out a new update to my Android App Wi-Fi Keep Alive today. This update brings in another work around for the issue where the wi-fi is alive on the phone and it is also connected to the network but is somehow unable to send/receive any packets to the network. The new work around will automatically re-associate your phone with the wi-fi router if it detects such a situation.</description></item><item><title>Android App: Wi-Fi Keep Alive Updated to 1.2.0</title><link>/posts/android-app-wi-fi-keep-alive-updated-to-1-2-0/</link><pubDate>Sat, 03 Jul 2010 22:46:36 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive-updated-to-1-2-0/</guid><description>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wi-Fi Keep Alive on</title><link>/tags/wi-fi-keep-alive/</link><description>Recent content in Wi-Fi Keep Alive on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 09 Sep 2010 05:27:27 +0000</lastBuildDate><atom:link href="/tags/wi-fi-keep-alive/index.xml" rel="self" type="application/rss+xml"/><item><title>Android App: Wi-Fi Keep Alive updates</title><link>/2010/09/09/android-app-wi-fi-keep-alive-updates/</link><pubDate>Thu, 09 Sep 2010 05:27:27 +0000</pubDate><guid>/2010/09/09/android-app-wi-fi-keep-alive-updates/</guid><description>I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss.</description><content>&lt;p>I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss. I’ve bought a new machine a couple of days ago but still have to recover my data from old machine and set it up on the new one along with linux and my standard development environment. Please do continue to report bugs and ask for requests though and I’ll make sure to keep track of them.&lt;/p>
+&lt;p>PS: A tiny thing for celebration is that the app crossed 10,000 downloads mark recently within 2 months of its first appearance on the market :) and right now stands arounds 12k mark. Let&amp;rsquo;s see when I get to 50k :)&lt;/p></content></item><item><title>Android Dev Tip: App Not Showing on X10 Mini Marketplace</title><link>/2010/08/07/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</link><pubDate>Sat, 07 Aug 2010 21:18:06 +0000</pubDate><guid>/2010/08/07/android-dev-tip-app-not-showing-on-x10-mini-marketplace/</guid><description>Many Android Developers (and users) get confused that why a certain app isn&amp;rsquo;t showing up on the new Xperia X10 Mini (and few other) phones. This happens even if they support all android versions and have published their apps for all countries, so that shouldn&amp;rsquo;t be the issue. I came across this as well when few people mentioned that they couldn&amp;rsquo;t find my app Wi-Fi Keep Alive in the X10 mini marketplace.</description><content>&lt;p>Many Android Developers (and users) get confused that why a certain app isn&amp;rsquo;t showing up on the new Xperia X10 Mini (and few other) phones. This happens even if they support all android versions and have published their apps for all countries, so that shouldn&amp;rsquo;t be the issue. I came across this as well when few people mentioned that they couldn&amp;rsquo;t find my app Wi-Fi Keep Alive in the X10 mini marketplace. On some digging into the android docs and the X10 mini specs, I found the issue.&lt;/p>
+&lt;p>The problem is that the X10 mini has a very small screen with only a QVGA resolution. This screen size/resolution wasn&amp;rsquo;t supported by Android until recently and the Android system might not be able to scale resources and layouts designed for other screen sizes well enough to suit the X10 mini. Hence, the Android system designers have chosen that any app which does not declare explicit support for small screens (i.e., the app dev has tested his app on small screens and made any changes, if needed, and then declared that everything works fine in the Android Manifest) then it is considered not compatible by default and hence, the Android marketplace will filter your app out.&lt;/p>
+&lt;p>Now, this is a big loss. A lot of X10 minis were sold and there are lot of new low-tier and cheap Android smartphones coming out with this resolution, so it is a significant market share that you can&amp;rsquo;t afford to lose. The solution is simple. If the app does indeed work fine on small screens (or you have fixed it to work), then all you got to do is add the below mentioned line in your AndroidManifest.xml:&lt;/p>
+&lt;p>&lt;code>&amp;lt;supports-screens android:smallScreens=&amp;quot;true&amp;quot; /&amp;gt;&lt;/code>&lt;/p>
+&lt;p>That&amp;rsquo;s it. Your app should now show up fine in all screen sizes markets. Note that for all other screen sizes and resolutions, Android considers the default support as true and your app will show in those markets even if you don&amp;rsquo;t make any explicit declarations for them. You can read more about this here: &lt;a href="http://developer.android.com/guide/practices/screens_support.html">Supporting Multiple Screens in Android&lt;/a>&lt;/p>
+&lt;p>**Update: **&lt;a href="http://www.blundell-apps.com/">Blundell&lt;/a> pointed out in the comments that &lt;a href="http://developer.android.com/guide/practices/screens_support.html%23defaults">Android documentation&lt;/a> says&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>This should mean that small screens should be set as supported by default if you have your minSdk &lt;strong>or&lt;/strong> targetSdk  set to anything above or equal to 4. However, in my case, my apps had minSdk as 3 but targetSdk as 7 or 8 but still they didn&amp;rsquo;t show up in X10 mini marketplace till I added the smallScreens support to true in my manifest file. If anyone has any ideas about as to why it was like this, please let me know.&lt;/p></content></item><item><title>Android App Wi-Fi Keep Alive updated to 1.4.1</title><link>/2010/07/22/android-app-wi-fi-keep-alive-updated-1-4-0/</link><pubDate>Thu, 22 Jul 2010 16:58:07 +0000</pubDate><guid>/2010/07/22/android-app-wi-fi-keep-alive-updated-1-4-0/</guid><description>Update: Made a minor update for a small bug that can make wi-fi keep reconnecting in quick succession.
+Pushed out a new update to my Android App Wi-Fi Keep Alive today. This update brings in another work around for the issue where the wi-fi is alive on the phone and it is also connected to the network but is somehow unable to send/receive any packets to the network. The new work around will automatically re-associate your phone with the wi-fi router if it detects such a situation.</description><content>&lt;p>&lt;strong>Update:&lt;/strong> Made a minor update for a small bug that can make wi-fi keep reconnecting in quick succession.&lt;/p>
+&lt;p>Pushed out a new update to my Android App Wi-Fi Keep Alive today. This update brings in another work around for the issue where the wi-fi is alive on the phone and it is also connected to the network but is somehow unable to send/receive any packets to the network. The new work around will automatically re-associate your phone with the wi-fi router if it detects such a situation. This seems to make it work properly again for sometime. When it fails again, the workaround kicks in automatically again. This is not an ideal &amp;ldquo;fix&amp;rdquo; as such because streaming apps like Pandora radio etc might have a hiccup because of this but it is unavoidable as of now and atleast the notifications for mails and other things etc will work fine because this state stops even the mobile data network from taking over since the phone perceives that wi-fi is connected but is not working actually.&lt;/p>
+&lt;p>The other things include support for small screen devices like Xperia X10 mini, some optimizations for size and speed, some icon sizes and UI tweaks for compatibility with different screen sizes and android versions. Please try it out from the market as usual and let me know how it goes.&lt;/p></content></item><item><title>Android App: Wi-Fi Keep Alive Updated to 1.2.0</title><link>/2010/07/03/android-app-wi-fi-keep-alive-updated-to-1-2-0/</link><pubDate>Sat, 03 Jul 2010 22:46:36 +0000</pubDate><guid>/2010/07/03/android-app-wi-fi-keep-alive-updated-to-1-2-0/</guid><description>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.
 Changes done in this version:
 Added workarounds to take care of sleep policies not working on some phones
-Optimized the code a bit for faster operations</description></item><item><title>Android App: Wi-Fi Keep Alive</title><link>/posts/android-app-wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:25:48 +0000</pubDate><guid>/posts/android-app-wi-fi-keep-alive/</guid><description>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.</description></item><item><title>Wi-Fi Keep Alive</title><link>/posts/wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:20:19 +0000</pubDate><guid>/posts/wi-fi-keep-alive/</guid><description>UPDATE Potential work arounds for folks having problem in sleep policies not working correctly have been put in version 1.2.0 onwards. Please redownload to test and let me know. Read below for more details.
+Optimized the code a bit for faster operations</description><content>&lt;p>Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.&lt;/p>
+&lt;p>Changes done in this version:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workarounds to take care of sleep policies not working on some phones&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optimized the code a bit for faster operations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Configuration screens to widgets (pops up whenever widget is added)&lt;/p>
+&lt;/li>
+&lt;/ul></content></item><item><title>Android App: Wi-Fi Keep Alive</title><link>/2010/06/28/android-app-wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:25:48 +0000</pubDate><guid>/2010/06/28/android-app-wi-fi-keep-alive/</guid><description>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.</description><content>&lt;p>I just wrote my second Android App. This again was to scratch an itch of mine but it seems to have become a bit popular already (My first app &amp;ldquo;Quick Sync Settings&amp;rdquo; did around 400 downloads in 20 days but this one has already surpassed that in less than one day). This app basically allows you to change the wi-fi sleep policy on android so that you can keep your wi-fi connected even if the phone goes to sleep (i.e. screen turns off). What&amp;rsquo;s more is that I&amp;rsquo;ve added a widget to it so you don&amp;rsquo;t even have to go into the app. Just tap on the widget to cycle through the settings.&lt;/p></content></item><item><title>Wi-Fi Keep Alive</title><link>/2010/06/28/wi-fi-keep-alive/</link><pubDate>Mon, 28 Jun 2010 15:20:19 +0000</pubDate><guid>/2010/06/28/wi-fi-keep-alive/</guid><description>UPDATE Potential work arounds for folks having problem in sleep policies not working correctly have been put in version 1.2.0 onwards. Please redownload to test and let me know. Read below for more details.
 Latest Version: 1.4.4 (See below for change log history)
-Are you frustrated by your downloads getting broken or worse, switching over to slow and expensive mobile data connections like GPRS/Edge/3G when your wi-fi connection gets dropped by your Android phone when the screen goes off?</description></item></channel></rss>
+Are you frustrated by your downloads getting broken or worse, switching over to slow and expensive mobile data connections like GPRS/Edge/3G when your wi-fi connection gets dropped by your Android phone when the screen goes off?</description><content>&lt;p>&lt;strong>UPDATE&lt;/strong> Potential work arounds for folks having problem in sleep policies not working correctly have been put in version 1.2.0 onwards. Please redownload to test and let me know. Read below for more details.&lt;/p>
+&lt;p>&lt;strong>Latest Version:&lt;/strong> 1.4.4 (See below for change log history)&lt;/p>
+&lt;p>Are you frustrated by your downloads getting broken or worse, switching over to slow and expensive mobile data connections like GPRS/Edge/3G when your wi-fi connection gets dropped by your Android phone when the screen goes off? If yes, then look no further. Here is my app that allows you to choose your desired Wi-Fi Sleep policy. You can choose from the following options:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Default -&amp;gt; This means that wi-fi will turn off whenever the screen goes off.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wi-Fi On on sleep if plugged -&amp;gt; This means that if your phone is plugged into a USB slot or wall charger, then wi-fi will not turn off even when the screen goes off.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wi-Fi Never goes off -&amp;gt; This means that your wi-fi will not shut down whenever screen turns off, even if you are not plugged into USB/charger.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Please note that this app just changes the sleep policy and does not change the wi-fi state by itself. You can still control wi-fi turning on/off manually.&lt;/p>
+&lt;p>Few folks were having issues with their devices that the inbuilt handling of this wi-fi sleep policy in their phones wasn&amp;rsquo;t being done properly by Android. To take care of this, there are a few workarounds added to the app now which can be accessed by clicking on &amp;ldquo;Advanced Options&amp;rdquo; on the configuration screen (This configuration screen can be accessed by launching the app or it will also show up whenever you add a widget). Enable any one or all of the workarounds mentioned in advanced settings depending on what works best on your device as there are lot of variants due to different manufacturers and different Android versions on different phones. Please also note that you should enable these workarounds only if the app is not working fully well for you without enabling them as some of them can cause your battery to drain a bit faster.&lt;/p>
+&lt;p>Another thing to note is that I&amp;rsquo;ve added a widget for it. So, you can install the app and instead of having to open the app and change the setting every time, you can just add its widget to your home screen (Long press on home screen. Then choose Widgets-&amp;gt;Wi-Fi Keep Alive). Now, you can just touch it whenever you want to change your setting and it will automatically cycle through the options listed above.&lt;/p>
+&lt;p>Dark/Sepia Widget Icon -&amp;gt; Default setting&lt;/p>
+&lt;p>Purple Widget Icon -&amp;gt; Wi-Fi On on sleep if plugged&lt;/p>
+&lt;p>Green Widget -&amp;gt; Wi-Fi never goes off&lt;/p>
+&lt;p>Please try it out and let me know if you face any issues or have any suggestions :)&lt;/p>
+&lt;p>&lt;strong>Known Issues:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>1) Known issue with &amp;ldquo;on when plugged in&amp;rdquo; policy is that if you are already plugged in while changing anything in the app, workarounds don&amp;rsquo;t take place until you plug out and plug in again&lt;/strong>&lt;/p>
+&lt;p>**2) **This is not a known issue with the app but with wi-fi on some devices itself that it stops working on leaving it idle even if the phone is not sleeping. This is not the purview of this particular app and it might not solve it, although few folks say that this app helps in this scenario as well.&lt;/p>
+&lt;p>**3) **Some routers/settings are also known to cause issues with wi-fi in sleep. The correct pattern has not been identified yet but many people report that they can stay connected to wi-fi in sleep with some routers but with other routers, it fails. (Work Around 3 might help in such cases but not always)&lt;/p>
+&lt;p>**4) **While adding widget, the main app screen will pop-up for widget configuration. You need to choose any one policy (even if desired one already selected) otherwise widget will not be added&lt;/p>
+&lt;p>&lt;strong>Notes:&lt;/strong>&lt;/p>
+&lt;p>**1) **Please press Menu key in the app and select &amp;ldquo;Help&amp;rdquo; to see details about policy and workaround options.&lt;/p>
+&lt;p>**2) **Please report any bugs here along with these details so that i can fix the issues:&lt;/p>
+&lt;p>i) Device/Phone Name and Rom version&lt;/p>
+&lt;p>ii) What is the app version that you have? (latest is 1.2.1)&lt;/p>
+&lt;p>iii) Did you try turning on all combinations of workarounds in advanced options?&lt;/p>
+&lt;p>iv) Can you please enable logging in the advanced options and send me logcat dump for this duration, preferably with all workarounds enabled.&lt;/p>
+&lt;p>&lt;strong>Changelog:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>16-August-2010 -&amp;gt; 1.4.4&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix widget icon colors (**Note: **If the new icons don&amp;rsquo;t appear on existing widget, please delete the widget and add it again)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>13-August-2010 -&amp;gt; 1.4.3&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fix widget icon resolutions to make them look sharper on home screen (**Note: **If the new icons don&amp;rsquo;t appear on existing widget, please delete the widget and add it again)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>02-August-2010 -&amp;gt; 1.4.2&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Better looking &amp;amp; smaller icons (including widget). Thanks a lot to &amp;ldquo;rori&amp;rdquo; from xda-developers to design the icons :) (**Note: ** If the new icons don&amp;rsquo;t appear on existing widget, please delete the widget and add it again)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Space optimization so that the app takes lesser space on phone.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>22-July-2010 -&amp;gt; 1.4.1&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Fixed a bug that can cause wi-fi to keep reconnecting in quick succession in certain situations.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>22-July-2010 -&amp;gt; 1.4.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workaround 4 (Re-associate automatically with access point if all else fails. Needs workaround 3 to be enabled)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Support for small screens (e.g. XPeria X10 mini)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Widget/Icons size optimizations for older Android versions&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Resource optimizations for lesser space and faster loading&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Misc. under-the-hood UI tweaks for better/consistent layouts across different screen sizes/densities/android versions.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>11-July-2010 -&amp;gt; 1.3.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workaround 3 (Ping the router gateway regularly)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lot of optimizations for battery savings.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply workarounds without needing to select the policy again&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>06-July-2010 -&amp;gt; 1.2.1&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Bug Fix for a Force Close&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>More Optimizations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Help and Info Menus&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Option to disable/enable debug logging&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>04-July-2010 -&amp;gt; 1.2.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added workarounds to take care of sleep policies not working on some phones&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optimized the code a bit for faster operations&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added Configuration screens to widgets (pops up whenever widget is added)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>28-June-2010 -&amp;gt; 1.1.0&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Added Widget&lt;/li>
+&lt;/ul>
+&lt;p>**27-June-2010 -&amp;gt; 1.0.0 **&lt;/p>
+&lt;ul>
+&lt;li>Initial Version&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Screenshots&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="/img/uploads/wi-fi-keep-alive-1.png">&lt;img src="/img/uploads/wi-fi-keep-alive-thumb-1.png" alt="">&lt;/a>
+&lt;a href="/img/uploads/wi-fi-keep-alive-2.png">&lt;img src="/img/uploads/wi-fi-keep-alive-thumb-2.png" alt="">&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Download:&lt;/strong>&lt;/p>
+&lt;p>Search for &amp;ldquo;Wi-Fi Keep Alive&amp;rdquo; in Android marketplace or simply scan the below QR code:&lt;/p>
+&lt;p>&lt;img src="http://chart.apis.google.com/chart?cht=qr&amp;amp;chs=200x200&amp;amp;chl=market://details?id=com.shantz.wifikeepalive" alt="">&lt;/p></content></item></channel></rss>

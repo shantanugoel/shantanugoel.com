@@ -1,2 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Offers on</title><link>/tags/offers/</link><description>Recent content in Offers on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 08 Apr 2024 22:45:53 +0530</lastBuildDate><atom:link href="/tags/offers/index.xml" rel="self" type="application/rss+xml"/><item><title>Job Offers as an Optimization Problem</title><link>/posts/job-offers-optimization/</link><pubDate>Mon, 08 Apr 2024 22:45:53 +0530</pubDate><guid>/posts/job-offers-optimization/</guid><description>1) What? A classic debate that keeps erupting now and then is whether it&amp;rsquo;s ok or not to continue to look for other jobs after signing an employment contract with a company, to get potentially a better offer.
-There are good arguments from both sides. Employers expect you to commit/be good to your word and not continue shopping around a signed offer letter. Candidates believe that this is unfair since companies typically have a much heavier side already in the employment power equation.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Offers on</title><link>/tags/offers/</link><description>Recent content in Offers on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 08 Apr 2024 22:45:53 +0530</lastBuildDate><atom:link href="/tags/offers/index.xml" rel="self" type="application/rss+xml"/><item><title>Job Offers as an Optimization Problem</title><link>/2024/04/08/job-offers-optimization/</link><pubDate>Mon, 08 Apr 2024 22:45:53 +0530</pubDate><guid>/2024/04/08/job-offers-optimization/</guid><description>1) What? A classic debate that keeps erupting now and then is whether it&amp;rsquo;s ok or not to continue to look for other jobs after signing an employment contract with a company, to get potentially a better offer.
+There are good arguments from both sides. Employers expect you to commit/be good to your word and not continue shopping around a signed offer letter. Candidates believe that this is unfair since companies typically have a much heavier side already in the employment power equation.</description><content>&lt;h2 id="1-what">1) What?&lt;/h2>
+&lt;p>A classic debate that keeps erupting now and then is whether it&amp;rsquo;s ok or not to continue to look for other jobs after signing an employment contract with a company, to get potentially a better offer.&lt;/p>
+&lt;p>There are good arguments from both sides. Employers expect you to commit/be good to your word and not continue shopping around a signed offer letter. Candidates believe that this is unfair since companies typically have a much heavier side already in the employment power equation.&lt;/p>
+&lt;p>Emotions (and tempers) run high every time this gets discussed, and there&amp;rsquo;s seemingly no possible consensus in sight.&lt;/p>
+&lt;p>I posit that this is simply an optimization problem to be solved by everyone for themselves. The rest of my notes below dig into a bit more detail on the potential ways in which this could be navigated by a candidate as well as a hiring manager.&lt;/p>
+&lt;h2 id="ground-truths">Ground Truths&lt;/h2>
+&lt;p>Before we begin, we will set forth a few facts, and a few assumptions that I believe are true, to form the ground for our aforementioned digging. I have tons of anecdotes from my experience screening 10s of thousands, interviewing 1000s, and hiring 100s of people, but I won&amp;rsquo;t list any of them here because, in a rational discussion, anecdotes serve only as bias and nothing else.&lt;/p>
+&lt;h3 id="facts">Facts&lt;/h3>
+&lt;ul>
+&lt;li>A company, though seemingly a faceless entity, is not taking a hiring decision as one. It&amp;rsquo;s the hiring manager (and sometimes recruiters/HR) who are taking them, partly guided by their motivations and partly by the company&amp;rsquo;s practices&lt;/li>
+&lt;li>In a country like India, every position gets hundreds, if not thousands or 10s of thousands of applicants&lt;/li>
+&lt;li>The world is not perfect. Although we want an ideal state on the other side, that will only come in a piecemeal fashion, not everywhere&lt;/li>
+&lt;li>An offer is an offer until accepted/signed. Then it becomes a &amp;ldquo;contract&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="assumptions">Assumptions&lt;/h3>
+&lt;ul>
+&lt;li>Most people want to work with other people that they can trust&lt;/li>
+&lt;li>Most people want to optimize hiring for themselves (Candidates for their career, hiring managers for their own, companies for their profits)&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-scenarios">Common scenarios&lt;/h2>
+&lt;p>It is assumed that the ideal state is where the below issues don&amp;rsquo;t happen.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Company&lt;/p>
+&lt;ul>
+&lt;li>Gives exploding offers (Accept/Reject in 1-2 days or the offer goes away)&lt;/li>
+&lt;li>Give out offers as an x% increment based on past compensation&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Candidate&lt;/p>
+&lt;ul>
+&lt;li>Wants another offer even after accepting one because
+&lt;ul>
+&lt;li>That will bring in another 10-20% hike&lt;/li>
+&lt;li>Or they had to take a bad offer earlier (either much lower money than they are worth, or a company that they don&amp;rsquo;t really want to go to) because they were desperate and had no other choice&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="is-reneging-on-a-contract-bad">Is reneging on a contract bad?&lt;/h2>
+&lt;p>The answer is &lt;strong>NO&lt;/strong>.&lt;/p>
+&lt;p>One would be naive to think of this in terms of good/bad because that&amp;rsquo;s not what matters.&lt;/p>
+&lt;p>You may have a genuine reason, or you may have a completely frivolous reason to renege. The company may be a 10000 people/trillion$ behemoth barely impacted by a particular candidate&amp;rsquo;s decision or a barely surviving 2 people startup that will go under because of it. The outcomes may be wildly different depending on who&amp;rsquo;s on the other end.&lt;/p>
+&lt;p>The real questions to ask are:&lt;/p>
+&lt;p>&lt;strong>1. Can there be trust in this relationship being built on top of a reneged contract?&lt;/strong>&lt;/p>
+&lt;p>The answer to this is the same as asking whether you can build a stable house on a shaky foundation. A house may still fall even if there were no apparent cracks in the foundation, but if you see visible cracks already you would think twice about building a house on top of it. This is true for any relationship whether friendship, love, or employment. You can choose to take a risk and turn out lucky, but many may be risk averse and avoid it (to their benefit or detriment ultimately, but that&amp;rsquo;s beside the fact).&lt;/p>
+&lt;p>&lt;strong>2. Now that I know this, what should I do?&lt;/strong>&lt;/p>
+&lt;p>The answer is simple. &lt;strong>Optimize for yourself&lt;/strong>&lt;/p>
+&lt;p>Implementation though, as usual, is much harder and one has to decide for themselves and their situation what they want to do.&lt;/p>
+&lt;p>An ideal hiring manager would optimize for the long term, purely on the skills of the candidate in their
+An ideal candidate would optimize for their long-term career, choose a company that plays by the rules, treats their employees well, is fair in compensation at the hiring stage and later on&lt;/p>
+&lt;p>The world is far from ideal though. An ideal hiring manager and an ideal candidate are hard to find and for good reason because both are burnt by bad experiences on the other side.&lt;/p>
+&lt;p>Thus I don&amp;rsquo;t prescribe a one-size-fits-all approach and everyone chooses some shade of grey instead of being perfectly black or white. One can optimize for the short term or the long term, and optimize on different metrics, but always optimize knowing what you are optimizing for and what you are trading off against. Because if you don&amp;rsquo;t think of the complete picture, you run the risk of getting stuck in a local maxima.&lt;/p>
+&lt;h3 id="local-maxima-optimization-risks">Local maxima optimization risks&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>For Hiring Manager&lt;/strong>
+&lt;ul>
+&lt;li>Lose out on good candidates if you pass on candidates coming to you after reneging on a contract
+&lt;ul>
+&lt;li>Typically not that big a problem for companies since there are many other good candidates to choose from&lt;/li>
+&lt;li>However, there&amp;rsquo;s no guarantee that the candidates who didn&amp;rsquo;t renege on offers won&amp;rsquo;t just leave quite quickly after joining&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Hire a fleeing candidate, if you choose to hire a candidate who reneged on another contract
+&lt;ul>
+&lt;li>The candidate that you hired after they broke off their contract with another company, won&amp;rsquo;t they break yours right after they sign it&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>For Candidate&lt;/strong>
+&lt;ul>
+&lt;li>Lose out on good companies
+&lt;ul>
+&lt;li>Typically a company/hiring manager that wants to do the right thing/be ideal, also expects the candidates to be ideal.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Get into a bad company
+&lt;ul>
+&lt;li>A company that was willing to get you to break another contract for themselves, how empathetic would they be when it comes to breaking their contract with you?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>As is usual, the risks for the candidate far outweigh those for the company, but such is life. Neither you/nor I can change this.&lt;/p>
+&lt;p>But what this means is that if you feel that really had to sign a bad contract in desperation and surely need to go to a better company/offer, while knowing the risks, go for it. But if it&amp;rsquo;s because you just want to keep getting the highest bid on the market if it&amp;rsquo;s probably another 5/10% more, maybe you&amp;rsquo;ve given in to the greed a bit too much.&lt;/p>
+&lt;p>Again, it&amp;rsquo;s for you to decide for yourself without caring about what the current/future hiring manager will think. Because irrespective of your circumstances, they&amp;rsquo;d form their opinion based on their own biases/experiences/policies and act accordingly.&lt;/p>
+&lt;p>Similarly, ideally, a hiring manager would listen to every case, devote ample time to it understand the genuine reasons behind them, and take the candidates through. But the sheer glut of applications would mean it&amp;rsquo;s an easy optimization for a hiring manager to apply as a filter.&lt;/p>
+&lt;p>I&amp;rsquo;ll likely be crucified to say this, because no one wants to hear it. &lt;strong>The best optimization, with the least trade-offs, as a candidate is likely to build in that optionality for yourself. Where you are so good that you can take the liberty to say No to bad companies and bad offers.&lt;/strong> This isn&amp;rsquo;t always possible, but we can at least strive for it.&lt;/p>
+&lt;h3 id="what-i-dobelieve">What I do/believe&lt;/h3>
+&lt;p>&lt;strong>Note again, dear reader, that this is merely what I do or believe. I do not prescribe you to follow the same. Find your own optimization strategy.&lt;/strong>&lt;/p>
+&lt;h4 id="as-a-hiring-manager">As a hiring manager&lt;/h4>
+&lt;ul>
+&lt;li>Be upfront and honest with the candidates about the compensation, the process, the hikes they can expect, and everything else, because a foundation built on trust lasts long&lt;/li>
+&lt;li>Make the team/company not only about the offer but strive to make it a place where people would want to join and stay&lt;/li>
+&lt;li>Always make an offer in line with the range of that role
+&lt;ul>
+&lt;li>Does not form a basis on previous compensation or other offers&lt;/li>
+&lt;li>Fair to existing employees and all other hires as well since everyone remains on par&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Ok with candidates in the interview process with multiple companies, have received other offers, want to use those offers to negotiate&lt;/li>
+&lt;li>Never compare candidates, evaluate them in their absolute sense, and hire as soon as one meets the bar&lt;/li>
+&lt;li>Give reasonable time for candidates to accept offers
+&lt;ul>
+&lt;li>Typically at least 1-2 weeks, but more if the candidate is waiting for other offers and is upfront about it&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>If the candidate has already signed a contract, then typically I&amp;rsquo;d want to avoid going forward with their candidature
+&lt;ul>
+&lt;li>Unless they have a genuine reason not because of a meagre hike. But generally, the volume of applications and the inability to sufficiently distinguish genuine reasons from a lie serves as a detriment against going into the details of this for most cases&lt;/li>
+&lt;li>I know the risks for me as a hiring manager that I outlined above, but I can choose to take those risks&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="as-a-candidate">As a candidate&lt;/h4>
+&lt;ul>
+&lt;li>Be upfront and honest with my potential employer(s), because a foundation built on trust lasts long&lt;/li>
+&lt;li>If one does need to renege on a contract, communicate in time and honestly about it to avoid burning bridges&lt;/li>
+&lt;li>Say NO, liberally. Many times when you think saying no means you will lose out results in either of these two scenarios:
+&lt;ul>
+&lt;li>The company was never worth it to work for anyways&lt;/li>
+&lt;li>The company buckled in and towed your line&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-i-dont-dobelieve-inor-what-do-i-absolutely-detest">What I don&amp;rsquo;t do/believe in/or what do I absolutely detest&lt;/h3>
+&lt;ul>
+&lt;li>Holding a grudge against someone who reneged on an offer (I&amp;rsquo;m actually happy if this happens because this reduces the chances of a much bigger burden on my team where someone joins and then quickly leaves because they already had one foot out the door)&lt;/li>
+&lt;li>Adding penalty clauses in contracts&lt;/li>
+&lt;li>Blacklisting candidates/forming a cartel or cabal to share their names&lt;/li>
+&lt;li>Cooking up lies&lt;/li>
+&lt;/ul></content></item></channel></rss>

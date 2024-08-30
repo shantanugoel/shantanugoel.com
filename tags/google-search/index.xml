@@ -1,6 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Search on</title><link>/tags/google-search/</link><description>Recent content in Google Search on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 12 May 2011 04:26:21 +0000</lastBuildDate><atom:link href="/tags/google-search/index.xml" rel="self" type="application/rss+xml"/><item><title>Use Encrypted Google Search As Default in Chrome</title><link>/posts/use-encrypted-google-search-as-default-in-chrome/</link><pubDate>Thu, 12 May 2011 04:26:21 +0000</pubDate><guid>/posts/use-encrypted-google-search-as-default-in-chrome/</guid><description>Google just launched an encrypted search portal which is a Godsend for people on public networks since there is a lot that can be gleaned from your search queries. For doing your protected searches, however, you have to go to a different portal which I linked to above. Now, the omnibar (the address bar in Google Chrome) also serves as a search box but searches on the normal google portal by default.</description></item><item><title>ZDNet Fail. Answer is Stop Tech Blogging</title><link>/posts/zdnet-fail-answer-is-stop-tech-blogging/</link><pubDate>Fri, 19 Nov 2010 15:45:04 +0000</pubDate><guid>/posts/zdnet-fail-answer-is-stop-tech-blogging/</guid><description>Just read this article over at zdnet. What it basically says is condensed in these two points:
-Android is a failure for Google because it is open and carriers/OEMs are stripping off google search from it and putting replacements like baidu/Bing. (BTW, half the people say Android is fail because it is not open and the other half say it is fail because it is open. Which one is it, please decide ;) )</description></item><item><title>One Month Completed....</title><link>/posts/one-month-completed/</link><pubDate>Thu, 28 Feb 2008 04:10:00 +0000</pubDate><guid>/posts/one-month-completed/</guid><description>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Search on</title><link>/tags/google-search/</link><description>Recent content in Google Search on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 May 2011 04:26:21 +0000</lastBuildDate><atom:link href="/tags/google-search/index.xml" rel="self" type="application/rss+xml"/><item><title>Use Encrypted Google Search As Default in Chrome</title><link>/2011/05/12/use-encrypted-google-search-as-default-in-chrome/</link><pubDate>Thu, 12 May 2011 04:26:21 +0000</pubDate><guid>/2011/05/12/use-encrypted-google-search-as-default-in-chrome/</guid><description>Google just launched an encrypted search portal which is a Godsend for people on public networks since there is a lot that can be gleaned from your search queries. For doing your protected searches, however, you have to go to a different portal which I linked to above. Now, the omnibar (the address bar in Google Chrome) also serves as a search box but searches on the normal google portal by default.</description><content>&lt;p>Google just launched an &lt;a href="https://encrypted.google.com/">encrypted search portal&lt;/a> which is a Godsend for people on public networks since there is a lot that can be gleaned from your search queries. For doing your protected searches, however, you have to go to a different portal which I linked to above. Now, the omnibar (the address bar in Google Chrome) also serves as a search box but searches on the normal google portal by default. Here is a simple, few seconds process to switch it over to encrypted search.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Click on the wrench/tool icon at the top of Google Chrome and go to Options.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &amp;ldquo;Basics&amp;rdquo; tab, go to the &amp;ldquo;Search&amp;rdquo; item and click on &amp;ldquo;Manage Search Engines&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to the very bottom of the new page that opens and you will see three empty boxes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For the first box (leftmost), give any nickname for the engine. I gave &amp;ldquo;EncryptedGoogle&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For second box, give a keyword that invokes the new search engine. I gave &amp;ldquo;encrypted.google.com&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For last box, give the url for the search engine. This should be&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>https://encrypted.google.com/search?{google:RLZ}{google:acceptedSuggestion}{google:originalQueryForSuggestion}sourceid=chrome&amp;amp;ie={inputEncoding}&amp;amp;q=%s&lt;/code>&lt;/p>
+&lt;ol start="7">
+&lt;li>Press Enter and the engine will be added to the list. Then hover over the engine row and click on &amp;ldquo;Make as default&amp;rdquo;. And you are done.&lt;/li>
+&lt;/ol>
+&lt;p>Happy safe searching :)&lt;/p></content></item><item><title>ZDNet Fail. Answer is Stop Tech Blogging</title><link>/2010/11/19/zdnet-fail-answer-is-stop-tech-blogging/</link><pubDate>Fri, 19 Nov 2010 15:45:04 +0000</pubDate><guid>/2010/11/19/zdnet-fail-answer-is-stop-tech-blogging/</guid><description>Just read this article over at zdnet. What it basically says is condensed in these two points:
+Android is a failure for Google because it is open and carriers/OEMs are stripping off google search from it and putting replacements like baidu/Bing. (BTW, half the people say Android is fail because it is not open and the other half say it is fail because it is open. Which one is it, please decide ;) )</description><content>&lt;p>Just read this &lt;a href="http://www.zdnet.com/blog/open-source/android-fail-the-answer-is-a-google-phone/7822">article&lt;/a> over at zdnet. What it basically says is condensed in these two points:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Android is a failure for Google because it is open and carriers/OEMs are stripping off google search from it and putting replacements like baidu/Bing. (BTW, half the people say Android is fail because it is not open and the other half say it is fail because it is open. Which one is it, please decide ;) )&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The solution is a Google Phone with google branding, sold unlocked at full price.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Let me answer 2nd point first. Dana Blankenhorn, thanks for that nice blast from the past advice. Google already did it with Nexus One, like, one year ago duh..&lt;/p>
+&lt;p>Now, on to the first point. Even if lot of people are stripping off Google search, they still have a big share of the mobile search market. They didn&amp;rsquo;t create Android solely to earn from it directly. It was more of a way to ensure that they still have an avenue for mobile revenue which would have otherwise been completely lost (iPhone). Another thing here is that if they didn&amp;rsquo;t keep it open enough for other players, it might have not got such widespread adoption or they might have been killed in US/EU under antitrust laws.&lt;/p>
+&lt;p>So, all I can say to Dana and ZDNet is &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&amp;gt; kthxbi :P&lt;/p></content></item><item><title>One Month Completed....</title><link>/2008/02/28/one-month-completed/</link><pubDate>Thu, 28 Feb 2008 04:10:00 +0000</pubDate><guid>/2008/02/28/one-month-completed/</guid><description>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:
 Front-paged at LifeHacker, HacksZine, and many others.
 Over 10000 (Ten Thousand) &amp;ldquo;unique&amp;rdquo; human visitors.
 Over 30000 (Thirty Thousand) page views by humans.
-Over 500000 (Half Million) total hits for all website files included.</description></item></channel></rss>
+Over 500000 (Half Million) total hits for all website files included.</description><content>&lt;p>&lt;img src="/img/uploads/trophy_small.jpg" alt="tech.shantanugoel.com completes one month">&lt;/p>
+&lt;p>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Front-paged at &lt;a href="http://lifehacker.com/358749/retrieve-any-file-on-your-home-computer-via-email-windows-edition">LifeHacker&lt;/a>, &lt;a href="http://hackszine.com/blog/archive/2008/02/remote_file_access_through_ema.html">HacksZine&lt;/a>, and &lt;a href="http://www.google.co.in/search?q=shantanu+goel+remote+file+access+through+e-mail+outlook&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;aq=t&amp;amp;rls=com.ubuntu:en-US:official&amp;amp;client=firefox-a">many others&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Over 10000 (Ten Thousand) &amp;ldquo;&lt;strong>unique&lt;/strong>&amp;rdquo; &lt;strong>&lt;em>human&lt;/em>&lt;/strong> visitors.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Over 30000 (Thirty Thousand) page views by &lt;strong>&lt;em>humans&lt;/em>&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Over 500000 (Half Million) total hits for all website files included.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Around 800 downloads of my projects&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Makes it to the first page on google for many keywords (like wm6.1 htc wizard, ubuntu two soundcards, and many others)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A &lt;a href="http://www.google.co.in/search?q=shantanu+goel">google&lt;/a> or &lt;a href="http://search.yahoo.com/search?p=shantanu+goel">yahoo&lt;/a> search for my name “shantanu goel” now gives around 6–7 links about me (4–5 from this blog) out of the first 10 results. (This changes quite dynamically though)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>But this is all because of you, the readers. Thanks a lot and keep coming. I hope I can continue writing stuff you like, because ultimately a blog is written for the people and not for search engines.&lt;/p></content></item></channel></rss>

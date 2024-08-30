@@ -1,2 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android Market Update All on</title><link>/tags/android-market-update-all/</link><description>Recent content in Android Market Update All on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 05 Oct 2010 07:35:39 +0000</lastBuildDate><atom:link href="/tags/android-market-update-all/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Paid Apps Now Live In India</title><link>/posts/android-paid-apps-now-live-in-india/</link><pubDate>Tue, 05 Oct 2010 07:35:39 +0000</pubDate><guid>/posts/android-paid-apps-now-live-in-india/</guid><description>Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):
-The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android Market Update All on</title><link>/tags/android-market-update-all/</link><description>Recent content in Android Market Update All on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 05 Oct 2010 07:35:39 +0000</lastBuildDate><atom:link href="/tags/android-market-update-all/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Paid Apps Now Live In India</title><link>/2010/10/05/android-paid-apps-now-live-in-india/</link><pubDate>Tue, 05 Oct 2010 07:35:39 +0000</pubDate><guid>/2010/10/05/android-paid-apps-now-live-in-india/</guid><description>Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):
+The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies.</description><content>&lt;p>Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies. Good stuff!)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can see the paid apps on main list and in the &amp;ldquo;Just In&amp;rdquo; Tab but there is no &amp;ldquo;Top Paid&amp;rdquo; tab available. (**Update: **If you can&amp;rsquo;t see the &amp;ldquo;top paid&amp;rdquo; tab, then go to settings-&amp;gt;Applications-&amp;gt;All-&amp;gt;Market and clear data and cache &amp;amp; launch market app again. You will be able to see top paid tab as well :) )&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can, however, search for any paid app or follow a direct marketplace link fine.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Final payment is done in the original currency of the app developer (e.g. pounds or dollars)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The payment method is credit cards through Google Checkout.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Debit cards won&amp;rsquo;t work for payment. Even though google checkout accepts them, they show up as &amp;ldquo;invalid&amp;rdquo; while buying apps. I presume that this is because of the 24 hour refund feature of Android marketplace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Carrier Billing is not available though&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Another new thing reported. &amp;ldquo;Update All&amp;rdquo; feature which was so far available only on Froyo ROMs has also been included for devices with older Android versions. I&amp;rsquo;m not sure which all versions have it but it is at least showing up on 2.1 (Eclair) ROMs now.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Let me know if you can see the paid apps as well. If you cannot, try these two things:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Open Phone app and dial &amp;ldquo;*#*#2432546#*#*&amp;rdquo; and wait. You should get a &amp;ldquo;Checkin succeeded&amp;rdquo; notification.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Restart your phone.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item></channel></rss>

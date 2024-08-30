@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bypass Firewall on</title><link>/tags/bypass-firewall/</link><description>Recent content in Bypass Firewall on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 08 Sep 2008 15:30:38 +0000</lastBuildDate><atom:link href="/tags/bypass-firewall/index.xml" rel="self" type="application/rss+xml"/><item><title>Hack: Pidgin-Gtalk Connection Problems - Get Around The Corporate Firewall</title><link>/posts/hack-pidgin-gtalk-connection-problems-get-around-the-corporate-firewall/</link><pubDate>Mon, 08 Sep 2008 15:30:38 +0000</pubDate><guid>/posts/hack-pidgin-gtalk-connection-problems-get-around-the-corporate-firewall/</guid><description>I recently wrote a simple answering machine program/plugin for pidgin and someone asked me to port it to 32 bit. So I fired up pidgin within my virtual box installation at work (as I have only a 64 bit machine at home) but couldn&amp;rsquo;t get it to connect. Tried all sorts of methods found over the net of changing ports etc, set port forwarding in Virtual Box NAT, even switched to using a bridged host interface but still no go.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bypass Firewall on</title><link>/tags/bypass-firewall/</link><description>Recent content in Bypass Firewall on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 08 Sep 2008 15:30:38 +0000</lastBuildDate><atom:link href="/tags/bypass-firewall/index.xml" rel="self" type="application/rss+xml"/><item><title>Hack: Pidgin-Gtalk Connection Problems - Get Around The Corporate Firewall</title><link>/2008/09/08/hack-pidgin-gtalk-connection-problems-get-around-the-corporate-firewall/</link><pubDate>Mon, 08 Sep 2008 15:30:38 +0000</pubDate><guid>/2008/09/08/hack-pidgin-gtalk-connection-problems-get-around-the-corporate-firewall/</guid><description>I recently wrote a simple answering machine program/plugin for pidgin and someone asked me to port it to 32 bit. So I fired up pidgin within my virtual box installation at work (as I have only a 64 bit machine at home) but couldn&amp;rsquo;t get it to connect. Tried all sorts of methods found over the net of changing ports etc, set port forwarding in Virtual Box NAT, even switched to using a bridged host interface but still no go.</description><content>&lt;p>I recently wrote a simple answering machine program/plugin for pidgin and someone asked me to port it to 32 bit. So I fired up pidgin within my virtual box installation at work (as I have only a 64 bit machine at home) but couldn&amp;rsquo;t get it to connect. Tried all sorts of methods found over the net of changing ports etc, set port forwarding in Virtual Box NAT, even switched to using a bridged host interface but still no go. On a whim, installed pidgin in the host, i.e., windows and still the same issue. Hmm, interesting.. But wait, gtalk client works, then what gives.&lt;/p>
+&lt;p>Well, after a bit of snooping around, discovered that it&amp;rsquo;s a special funda that my company employs (and probably yours too) to monitor your IM conversations. The server talk.google.com was redirected to another server set up by my company that masquerades as gtalk server and tries to act as a &amp;ldquo;Man In The Middle&amp;rdquo; to hijack your connection and listen to everything while you live in the fantasy that since its an &amp;ldquo;SSL encrypted&amp;rdquo; connection, everything is secure. However, &amp;ldquo;fortunately&amp;rdquo; pidgin refuses to connect here (More details in the end)&lt;/p>
+&lt;p>But as they say, rules are meant to be bent and broken. Here, is a simple way 3-step procedure to circumvent around this.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Open up your gtalk account settings in pidgin and go to Advanced tab.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check &amp;ldquo;Force old port&amp;rdquo;, uncheck &amp;ldquo;plaintext auth&amp;rdquo; and uncheck &amp;ldquo;Require SSL/TLS&amp;rdquo;. Also change &amp;ldquo;Connect port&amp;rdquo; to 443.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;strong>main&lt;/strong> part: Go to an online nslookup service and do an nslookup for talk.google.com. Put the IP that you get in place of &amp;ldquo;talk.google.com&amp;rdquo; in the settings.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>That&amp;rsquo;s it. Go and chat away. (or if you want to know the reasoning behind this, hit the link below)&lt;/p>
+&lt;p>&lt;strong>More Details:&lt;/strong>&lt;/p>
+&lt;p>Skip this if you want, only for the people who are interested, here are some details on why pidgin does not connect in this situation and how you can find out if your company is using this tactic.&lt;/p>
+&lt;ol>
+&lt;li>How pidgin tries to connect to gtalk servers is that first it makes a connection to talk.google.com and gets and verifies the certificate from there. Then it tries to connect to gmail.com. Now there can be various situations:&lt;/li>
+&lt;/ol>
+&lt;pre>&lt;code>1.
+1. Its unable to complete the transaction in the first place because you didn't use the port 443, so firewall blocks it hence it can't communand tries to fallback to plaintext authorization which is not supported by google and hence it fails.
+2. You chose correct settings to go around firewall but now after verifying certificate, it just keeps &amp;quot;connecting&amp;quot;. Basically, it passes through the talk.google.com phase and then tries to connect to gmail.com (don't know why) and gets stuck on this step because the company is masquerading the gtalk server but not the gmail server.
+&lt;/code>&lt;/pre>
+&lt;ol start="2">
+&lt;li>Look for the following symptoms to see if your company is doing &amp;ldquo;something&amp;rdquo;&lt;/li>
+&lt;/ol>
+&lt;pre>&lt;code>1.
+1. Do &amp;quot;nslookup talk.google.com&amp;quot; in your command prompt (not through web), then say you get an IP x.y.z.w. Now do &amp;quot;nslookup x.y.z.w&amp;quot; again in command prompt. Now you will get the real name of the server that is your company's. Can try this for other IM servers as well (e.g. yahoo)
+2. When pidgin asks you to verify the certificate, don't take it lightly. Just fetch and see the certificate and it'll definitely be pointing to some other domain.
+&lt;/code>&lt;/pre>
+&lt;p>Enough fundas for today. Let me know if this helped you out or if you have your own techniques of finding and circumventing around such stuff.&lt;/p></content></item></channel></rss>
