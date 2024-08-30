@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Camera on</title><link>/tags/camera/</link><description>Recent content in Camera on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 May 2008 19:17:42 +0000</lastBuildDate><atom:link href="/tags/camera/index.xml" rel="self" type="application/rss+xml"/><item><title>Tip: Getting Your Webcam To Work In Ubuntu</title><link>/2008/05/10/tip-getting-your-webcam-to-work-in-ubuntu/</link><pubDate>Sat, 10 May 2008 19:17:42 +0000</pubDate><guid>/2008/05/10/tip-getting-your-webcam-to-work-in-ubuntu/</guid><description>I have an old noname cheapo webcam, that I dusted out of my junk (why? More on that in a post coming soon). I hoped that it would work in my Ubuntu setup out of the box like most of my other hardware. I connected it to my laptop&amp;rsquo;s usb port. dmesg gave the following output:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Camera on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/camera/</link><description>Recent content in Camera on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sat, 10 May 2008 19:17:42 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/camera/index.xml" rel="self" type="application/rss+xml"/><item><title>Tip: Getting Your Webcam To Work In Ubuntu</title><link>https://shantanugoel.com/2008/05/10/tip-getting-your-webcam-to-work-in-ubuntu/</link><pubDate>Sat, 10 May 2008 19:17:42 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/05/10/tip-getting-your-webcam-to-work-in-ubuntu/</guid><description>I have an old noname cheapo webcam, that I dusted out of my junk (why? More on that in a post coming soon). I hoped that it would work in my Ubuntu setup out of the box like most of my other hardware. I connected it to my laptop&amp;rsquo;s usb port. dmesg gave the following output:
 [21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2 [21328.319698] usb 1-1: configuration #1 chosen from 1 choice [21328.</description><content>&lt;p>I have an old noname cheapo webcam, that I dusted out of my junk (why? More on that in a post coming soon). I hoped that it would work in my Ubuntu setup out of the box like most of my other hardware. I connected it to my laptop&amp;rsquo;s usb port. dmesg gave the following output:&lt;/p>
-&lt;pre tabindex="0">&lt;code>[21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2
-[21328.319698] usb 1-1: configuration #1 chosen from 1 choice
-[21328.439705] Linux video capture interface: v2.00
-[21328.458509] zc0301: V4L2 driver for ZC0301[P] Image Processor and Control Chip v1:1.05
-[21328.459113] usb 1-1: ZC0301[P] Image Processor and Control Chip detected (vid/pid 0x0AC8/0x301B)
-[21328.520576] usb 1-1: PB-0330 image sensor detected
-[21328.870287] usb 1-1: Initialization succeeded
-[21328.870919] usb 1-1: V4L2 device registered as /dev/video0
-[21328.871001] usbcore: registered new interface driver zc0301
-[21328.913737] usbcore: registered new interface driver gspca
-[21328.913811] ubuntu/media/gspcav1/gspca_core.c: gspca driver 01.00.12 registered
-&lt;/code>&lt;/pre>&lt;p>Great! Everything set up, I thought. But running various programs, camorama, camE, kopete, everything gave weird errors like &amp;ldquo;Connection could not be made&amp;rdquo;, &amp;ldquo;device not ready&amp;rdquo; or just showed a blank screen. But soon, after  few trial and errors, I found the solution. Basically the &amp;ldquo;zc0301&amp;rdquo; module is the culprit and all you have to do to get your camera working is prevent it from loading. So, this is what I did:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo modprobe -r gspca
-sudo modprobe -r zc0301
-sudo modprobe gspca
-&lt;/code>&lt;/pre>&lt;p>And voila! the webcam started working like magic. Of course, this tip is only for webcams that use this particular chip. And if you want to make this change permanent so that you don&amp;rsquo;t have to run these commands everytime you want to use your webcam, all you have to do is add the following line to your /etc/modprobe.d/blacklist file&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.319698] usb 1-1: configuration #1 chosen from 1 choice
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.439705] Linux video capture interface: v2.00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.458509] zc0301: V4L2 driver for ZC0301[P] Image Processor and Control Chip v1:1.05
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.459113] usb 1-1: ZC0301[P] Image Processor and Control Chip detected (vid/pid 0x0AC8/0x301B)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.520576] usb 1-1: PB-0330 image sensor detected
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.870287] usb 1-1: Initialization succeeded
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.870919] usb 1-1: V4L2 device registered as /dev/video0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.871001] usbcore: registered new interface driver zc0301
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.913737] usbcore: registered new interface driver gspca
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.913811] ubuntu/media/gspcav1/gspca_core.c: gspca driver 01.00.12 registered
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Great! Everything set up, I thought. But running various programs, camorama, camE, kopete, everything gave weird errors like &amp;ldquo;Connection could not be made&amp;rdquo;, &amp;ldquo;device not ready&amp;rdquo; or just showed a blank screen. But soon, after  few trial and errors, I found the solution. Basically the &amp;ldquo;zc0301&amp;rdquo; module is the culprit and all you have to do to get your camera working is prevent it from loading. So, this is what I did:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo modprobe -r gspca
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo modprobe -r zc0301
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo modprobe gspca
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And voila! the webcam started working like magic. Of course, this tip is only for webcams that use this particular chip. And if you want to make this change permanent so that you don&amp;rsquo;t have to run these commands everytime you want to use your webcam, all you have to do is add the following line to your /etc/modprobe.d/blacklist file&lt;/p>
 &lt;p>&lt;code>blacklist zc0301&lt;/code>&lt;/p>
 &lt;p>This would prevent the module from loading whenever you connect your webcam to your computer. Let me know if this worked for you or if you have some of your own tips/tricks/hacks to get this or other webcams working on linux.&lt;/p></content></item></channel></rss>

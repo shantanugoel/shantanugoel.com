@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Synology on</title><link>/tags/synology/</link><description>Recent content in Synology on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 03 Apr 2017 19:20:59 +0530</lastBuildDate><atom:link href="/tags/synology/index.xml" rel="self" type="application/rss+xml"/><item><title>email-actions: An SMTP server that triggers actions from email</title><link>/2017/04/03/email-actions-trigger-tasks-from-email-smtp-server/</link><pubDate>Mon, 03 Apr 2017 19:20:59 +0530</pubDate><guid>/2017/04/03/email-actions-trigger-tasks-from-email-smtp-server/</guid><description>Releasing my project email-actions today. You install it from github or from pypi.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Synology on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/synology/</link><description>Recent content in Synology on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Mon, 03 Apr 2017 19:20:59 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/synology/index.xml" rel="self" type="application/rss+xml"/><item><title>email-actions: An SMTP server that triggers actions from email</title><link>https://shantanugoel.com/2017/04/03/email-actions-trigger-tasks-from-email-smtp-server/</link><pubDate>Mon, 03 Apr 2017 19:20:59 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2017/04/03/email-actions-trigger-tasks-from-email-smtp-server/</guid><description>Releasing my project email-actions today. You install it from github or from pypi.
 email-actions email-actions is a tiny SMTP server with a rules based engine to trigger any actions (notifications/commands etc) based on the emails sent to this server. Think of it like IFTTT but where input trigger is email and can be set up and run locally as well.
 Why did you make email-actions Like most of my projects, email-actions is a &amp;lsquo;scratch-your-own-itch&amp;rsquo; project.</description><content>&lt;p>Releasing my project &lt;a href="https://github.com/shantanugoel/email-actions">email-actions&lt;/a> today. You install it from github or from pypi.&lt;/p>
 &lt;h1 id="email-actions">email-actions&lt;/h1>
@@ -44,26 +44,28 @@ Download station had a hack (by changing internal files) to run custom script af
 &lt;ul>
 &lt;li>Install directly&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>git clone git@github.com:shantanugoel/email-actions.git
-cd email-actions
-python setup.py install
-&lt;/code>&lt;/pre>&lt;h1 id="usage">Usage&lt;/h1>
-&lt;pre tabindex="0">&lt;code>usage: email_actions [-h] [-v] [-H HOSTNAME] [-p PORT] [-l LOG] -c CONFIG
-optional arguments:
--h, --help show this help message and exit
--v, --version show program&amp;#39;s version number and exit
--H HOSTNAME, --hostname HOSTNAME
-Host IP or name to bind the server to
--p PORT, --port PORT Port number to bind the server to
--l LOG, --log LOG Set log level. 0=&amp;gt; Warning, 1=&amp;gt;Info, 2=&amp;gt;Debug
-required arguments:
--c CONFIG, --config CONFIG
-Specify config file (yaml format) to be used. If it
-doesn&amp;#39;t exist, we&amp;#39;ll try to create it
-&lt;/code>&lt;/pre>&lt;p>Examples:&lt;/p>
-&lt;pre tabindex="0">&lt;code>email_actions -H 127.0.0.1 -p 8500 -l 2 -c /home/shantanu/email_actions_cfg.yml
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>email_actions -c /home/shantanu/email_actions_cfg.yml
-&lt;/code>&lt;/pre>&lt;p>Most of the options above are self explanatory. If you don&amp;rsquo;t specify a hostname, it will choose &lt;code>localhost&lt;/code> by default. If you don&amp;rsquo;t specify a port, it&amp;rsquo;ll choose &lt;code>8025&lt;/code> by default.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>git clone git@github.com:shantanugoel/email-actions.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd email-actions
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python setup.py install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="usage">Usage&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>usage: email_actions [-h] [-v] [-H HOSTNAME] [-p PORT] [-l LOG] -c CONFIG
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this help message and exit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v, --version show program&amp;#39;s version number and exit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -H HOSTNAME, --hostname HOSTNAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Host IP or name to bind the server to
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p PORT, --port PORT Port number to bind the server to
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -l LOG, --log LOG Set log level. 0=&amp;gt; Warning, 1=&amp;gt;Info, 2=&amp;gt;Debug
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>required arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -c CONFIG, --config CONFIG
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Specify config file (yaml format) to be used. If it
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> doesn&amp;#39;t exist, we&amp;#39;ll try to create it
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Examples:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>email_actions -H 127.0.0.1 -p 8500 -l 2 -c /home/shantanu/email_actions_cfg.yml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>email_actions -c /home/shantanu/email_actions_cfg.yml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Most of the options above are self explanatory. If you don&amp;rsquo;t specify a hostname, it will choose &lt;code>localhost&lt;/code> by default. If you don&amp;rsquo;t specify a port, it&amp;rsquo;ll choose &lt;code>8025&lt;/code> by default.&lt;/p>
 &lt;p>&lt;strong>Note&lt;/strong> I recommend running the server on localhost or an internal network interface so that it can&amp;rsquo;t be abused from internet. Right now it doesn&amp;rsquo;t support authentication (limitation of aiosmtpd. Will be fixed soon), so if you must open it up to the internet, add your own scheme of verification either through a randomly generated email address in &amp;ldquo;To&amp;rdquo; rule or some other check in subject/content in your own external script that you are triggering.&lt;/p>
 &lt;p>Specifying a config file is mandatory. If the specified file doesn&amp;rsquo;t exist, we&amp;rsquo;ll generate a dummy one which you can fill. But essentially this is a step that you can&amp;rsquo;t avoid. The config file is explained in more detail below.&lt;/p>
 &lt;h2 id="config-file-format">Config file format&lt;/h2>
@@ -73,50 +75,53 @@ doesn&amp;#39;t exist, we&amp;#39;ll try to create it
 &lt;p>The config file has the following general format. All text after &lt;code>#&lt;/code> is an explanation, not a part of the config itself.&lt;/p>
 &lt;p>Names within &lt;code>&amp;lt;&amp;gt;&lt;/code> can be substituted by user as per their choice. Names outside &lt;code>&amp;lt;&amp;gt;&lt;/code> are reserved by email-actions and must be used as is.&lt;/p>
 &lt;p>All settings are case-sensitive. So take care of that.&lt;/p>
-&lt;pre tabindex="0">&lt;code>global: # Optional keyword that specifies global variables for plugins. These are available in all instances of your plugins in each filter
-&amp;lt;plugin_name&amp;gt;: # Plugin name for which you are specifying a global variable
-&amp;lt;setting_1&amp;gt;: &amp;lt;abcd&amp;gt; # Variable/setting for this plugin.
-&amp;lt;setting_2&amp;gt;: &amp;lt;efgh&amp;gt; # Variable/setting for this plugin.
-filters: #Mandatory keyword to signify start of your filters specifications.
-&amp;lt;filter_name&amp;gt;: # User specified name for a filter
-rules: # Rules specifications start
-to: &amp;lt;email_id&amp;gt; # A rule that matches
-&lt;/code>&lt;/pre>&lt;p>Example: Take a look at the below sample config (Also found in &lt;a href="https://github.com/shantanugoel/email-actions/blob/master/sample/config.yml">this location&lt;/a>)&lt;/p>
-&lt;pre tabindex="0">&lt;code># Specify a global variable for join plugin&amp;#39;s api key
-global:
-join:
-apikey: my_join_app_api_key
-# Specify 2 filters.
-# my_filter matches only the emails which are sent to abc@a.com and runs below 2 actions:
-## Send join push notification using the global join api key
-## Send an email using the credentials specified
-# my_second_filter runs on all emails since there is no rule specified
-# It runs below 2 actions:
-## Send join notification using another_api_key. Local variable overrides the global one
-## Run external command with given args and also sets up a environment variable called &amp;#34;MY_ENV_VAR&amp;#34; which can be accessed in external command
-filters:
-my_filter:
-rules:
-to: abc@a.com
-actions:
-join:
-email:
-host: smtp.example.com
-username: my_email_username
-password: my_email_password
-port: 587
-secure: True
-my_second_filter:
-join:
-apikey: another_api_key
-exec:
-cmd: /home/shantanu/test.sh
-args:
-- /home/shantanu/abc_file
-- another_arg
-env:
-MY_ENV_VAR: &amp;#39;Some Value&amp;#39;
-&lt;/code>&lt;/pre>&lt;h2 id="rules">Rules&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>global: &lt;span style="color:#75715e"># Optional keyword that specifies global variables for plugins. These are available in all instances of your plugins in each filter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>plugin_name&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#75715e"># Plugin name for which you are specifying a global variable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>setting_1&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#f92672">&amp;lt;&lt;/span>abcd&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#75715e"># Variable/setting for this plugin.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>setting_2&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#f92672">&amp;lt;&lt;/span>efgh&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#75715e"># Variable/setting for this plugin.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>filters: &lt;span style="color:#75715e">#Mandatory keyword to signify start of your filters specifications.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>filter_name&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#75715e"># User specified name for a filter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rules: &lt;span style="color:#75715e"># Rules specifications start&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> to: &lt;span style="color:#f92672">&amp;lt;&lt;/span>email_id&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#75715e"># A rule that matches&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example: Take a look at the below sample config (Also found in &lt;a href="https://github.com/shantanugoel/email-actions/blob/master/sample/config.yml">this location&lt;/a>)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Specify a global variable for join plugin&amp;#39;s api key&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>global:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> join:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apikey: my_join_app_api_key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Specify 2 filters.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># my_filter matches only the emails which are sent to abc@a.com and runs below 2 actions:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Send join push notification using the global join api key&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Send an email using the credentials specified&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># my_second_filter runs on all emails since there is no rule specified&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># It runs below 2 actions:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Send join notification using another_api_key. Local variable overrides the global one&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Run external command with given args and also sets up a environment variable called &amp;#34;MY_ENV_VAR&amp;#34; which can be accessed in external command&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>filters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> my_filter:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rules:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> to: abc&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>a&lt;span style="color:#f92672">.&lt;/span>com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> actions:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> join:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> email:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> host: smtp&lt;span style="color:#f92672">.&lt;/span>example&lt;span style="color:#f92672">.&lt;/span>com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: my_email_username
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password: my_email_password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> port: &lt;span style="color:#ae81ff">587&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secure: True
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> my_second_filter:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> join:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apikey: another_api_key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exec:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cmd: &lt;span style="color:#f92672">/&lt;/span>home&lt;span style="color:#f92672">/&lt;/span>shantanu&lt;span style="color:#f92672">/&lt;/span>test&lt;span style="color:#f92672">.&lt;/span>sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#f92672">/&lt;/span>home&lt;span style="color:#f92672">/&lt;/span>shantanu&lt;span style="color:#f92672">/&lt;/span>abc_file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span> another_arg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> env:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MY_ENV_VAR: &lt;span style="color:#e6db74">&amp;#39;Some Value&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rules">Rules&lt;/h2>
 &lt;p>Currently, below rules are supported. These can be specified under a &lt;code>rules&lt;/code> block.&lt;/p>
 &lt;table>
 &lt;thead>

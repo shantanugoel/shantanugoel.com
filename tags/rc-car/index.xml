@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rc Car on</title><link>/tags/rc-car/</link><description>Recent content in Rc Car on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Aug 2014 15:33:12 +0000</lastBuildDate><atom:link href="/tags/rc-car/index.xml" rel="self" type="application/rss+xml"/><item><title>Browser controlled Raspberry Pi Camera Car</title><link>/2014/08/03/browser-controlled-raspberry-pi-camera-car/</link><pubDate>Sun, 03 Aug 2014 15:33:12 +0000</pubDate><guid>/2014/08/03/browser-controlled-raspberry-pi-camera-car/</guid><description>Spent this weekend building a remote controlled car with a live camera feed with a Raspberry Pi doing the communication and brains duty. Pretty nice real time movement control and camera pan/tilt control through websockets with a live stream feeding back to any browser directly from the car through mjpg-streamer
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rc Car on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/rc-car/</link><description>Recent content in Rc Car on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sun, 03 Aug 2014 15:33:12 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/rc-car/index.xml" rel="self" type="application/rss+xml"/><item><title>Browser controlled Raspberry Pi Camera Car</title><link>https://shantanugoel.com/2014/08/03/browser-controlled-raspberry-pi-camera-car/</link><pubDate>Sun, 03 Aug 2014 15:33:12 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2014/08/03/browser-controlled-raspberry-pi-camera-car/</guid><description>Spent this weekend building a remote controlled car with a live camera feed with a Raspberry Pi doing the communication and brains duty. Pretty nice real time movement control and camera pan/tilt control through websockets with a live stream feeding back to any browser directly from the car through mjpg-streamer
 (PS: Video is at the bottom of the post. Browser/video on TV courtesy ChromeCast. Casted my Nexus 5 screen to the TV simultaneously while controlling the car :) )</description><content>&lt;p>Spent this weekend building a remote controlled car with a live camera feed with a Raspberry Pi doing the communication and brains duty. Pretty nice real time movement control and camera pan/tilt control through websockets with a live stream feeding back to any browser directly from the car through mjpg-streamer&lt;/p>
 &lt;p>(PS: Video is at the bottom of the post. Browser/video on TV courtesy ChromeCast. Casted my Nexus 5 screen to the TV simultaneously while controlling the car :) )&lt;/p>
 &lt;p>Code: &lt;a href="https://github.com/shantanugoel/raspi-car">https://github.com/shantanugoel/raspi-car&lt;/a>&lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2014/08/2014-08-03-03.44.32-300x225.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/08/2014-08-03-03.44.32-300x225.jpg" />
 &lt;/figure>
 &lt;figure class="left" >
-&lt;img src="/img/2014/08/2014-08-03-03.44.40-300x225.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/08/2014-08-03-03.44.40-300x225.jpg" />
 &lt;/figure>
 &lt;p>&lt;strong>HW Used:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -113,7 +113,7 @@
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/0OENujtgdg0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
 >&lt;/iframe>
-&lt;/div></content></item><item><title>Converting A Toy RC Car Into An Autonomous Fun Car The Indian Way</title><link>/2014/07/23/converting-a-toy-rc-car-into-an-autonomous-fun-car-the-indian-way/</link><pubDate>Wed, 23 Jul 2014 17:05:12 +0000</pubDate><guid>/2014/07/23/converting-a-toy-rc-car-into-an-autonomous-fun-car-the-indian-way/</guid><description>Dangerous is a mind which is left grounded at home for days. Being stuck at home and having a few pieces of joy around made me do this over the weekend.
+&lt;/div></content></item><item><title>Converting A Toy RC Car Into An Autonomous Fun Car The Indian Way</title><link>https://shantanugoel.com/2014/07/23/converting-a-toy-rc-car-into-an-autonomous-fun-car-the-indian-way/</link><pubDate>Wed, 23 Jul 2014 17:05:12 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2014/07/23/converting-a-toy-rc-car-into-an-autonomous-fun-car-the-indian-way/</guid><description>Dangerous is a mind which is left grounded at home for days. Being stuck at home and having a few pieces of joy around made me do this over the weekend.
 Ingredients:
 An old Toy RC car broken out of shape by my 4 year old
 DAGU Mini Driver
@@ -140,19 +140,19 @@ A car that runs automatically making 8 shape on the floor (More like random frac
 &lt;p>A car that runs automatically making 8 shape on the floor (More like random fractals due to the wheels having no grip)&lt;/p>
 &lt;p>
 &lt;figure class="left" >
-&lt;img src="/img/2014/07/1-300x225.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/07/1-300x225.jpg" />
 &lt;/figure>
 &lt;figure class="left" >
-&lt;img src="/img/2014/07/2-300x225.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/07/2-300x225.jpg" />
 &lt;/figure>
 &lt;figure class="left" >
-&lt;img src="/img/2014/07/3-300x225.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/07/3-300x225.jpg" />
 &lt;/figure>
 &lt;figure class="left" >
-&lt;img src="/img/2014/07/4-225x300.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/07/4-225x300.jpg" />
 &lt;/figure>
 &lt;figure class="left" >
-&lt;img src="/img/2014/07/5-225x300.jpg" />
+&lt;img src="https://shantanugoel.com/img/2014/07/5-225x300.jpg" />
 &lt;/figure>
 &lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Transparent Dns Proxy on</title><link>/tags/transparent-dns-proxy/</link><description>Recent content in Transparent Dns Proxy on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 17 Sep 2016 17:14:43 +0000</lastBuildDate><atom:link href="/tags/transparent-dns-proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>TLDR;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Transparent Dns Proxy on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/transparent-dns-proxy/</link><description>Recent content in Transparent Dns Proxy on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sat, 17 Sep 2016 17:14:43 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/transparent-dns-proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>TLDR;
 Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.
-Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.</description><content>&lt;h2 id="hahahugoshortcode269s0hbhb">
+Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.</description><content>&lt;h2 id="hahahugoshortcode270s0hbhb">
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/censored.jpg" alt="Censored!" />
+&lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
 &lt;/h2>
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
@@ -20,13 +20,13 @@ Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly f
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Now, bit.ly has been blocked in India. FML. Block everything. Block the internet itself BC. &lt;a href="https://t.co/e5MFLVXIao">pic.twitter.com/e5MFLVXIao&lt;/a>&lt;/p>&amp;mdash; Shantanu Goel (@shantanugoel) &lt;a href="https://twitter.com/shantanugoel/status/777074151450304513?ref_src=twsrc%5Etfw">September 17, 2016&lt;/a>&lt;/blockquote>
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_054.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_054.png" />
 &lt;/figure>
 &lt;h2 id="something-bigger-than-blocking">Something bigger than blocking&lt;/h2>
 &lt;p>But the rage didn&amp;rsquo;t stop at this.&lt;/p>
 &lt;p>I tried the usual way of adding &amp;ldquo;https&amp;rdquo; to bypass the block but it was highly unusual to see another error which said bit.ly closed my connection. I was sure bit.ly supports https as I could see on my Airtel connection. So this was weird.&lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_056-300x160.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_056-300x160.png" />
 &lt;/figure>
 &lt;p>I tried a simple ping to bit.ly and well well well! It turns out, I am not even connecting to bit.ly at all but one of the servers of my ISP itself. The other sites like google.com were being resolved correctly.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Well, I&amp;#39;ll be damned :o bit.ly is pointing to &lt;a href="https://t.co/Yp6tdKp23o">https://t.co/Yp6tdKp23o&lt;/a> &lt;a href="https://t.co/thTD2dvEv3">pic.twitter.com/thTD2dvEv3&lt;/a>&lt;/p>&amp;mdash; Shantanu Goel (@shantanugoel) &lt;a href="https://twitter.com/shantanugoel/status/777081685305270272?ref_src=twsrc%5Etfw">September 17, 2016&lt;/a>&lt;/blockquote>
@@ -35,22 +35,22 @@ Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly f
 &lt;p>I was using google&amp;rsquo;s public DNS servers at my router as well as PC level and resolve.conf is set to use localhost. So I was pretty sure I am using the google dns and I shouldn&amp;rsquo;t have got a fake IP back. &lt;strong>This was an even bigger red flag!&lt;/strong>&lt;/p>
 &lt;p>I ran the nslookup on bit.ly through an online service and it gave me the correct bit.ly server IPs but running nslookup on my PC or even on my router gave me back the fake IP.
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_057-300x197.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_057-300x197.png" />
 &lt;/figure>
 &lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/058-300x189.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/058-300x189.png" />
 &lt;/figure>
 &lt;h2 id="transparent-dns-proxy--dns-hijacking">Transparent DNS Proxy / DNS Hijacking&lt;/h2>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/transparent-dns-proxy-300x185.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/transparent-dns-proxy-300x185.png" />
 &lt;/figure>
 &lt;p>This is how (bad) ISPs do this. They look for all traffic on port 53 (the DNS port) and don&amp;rsquo;t let them go to the actual DNS server and fulfill it from their own DNS servers, thus forcing you to go to a location of their bidding.&lt;/p>
 &lt;p>In my case, I tried running the various &amp;ldquo;DNS leak tests&amp;rdquo;/&amp;ldquo;Transparent Proxy detection&amp;rdquo; tests but they all came out fine. Because my ISP is doing something clever here. I am assuming that they look at all the addresses that you are trying to reach, and then serve the ones they are interested in from their servers while passing on the rest of the requests to your originally intended dns server.&lt;/p>
 &lt;p>How these tests work is that they see your IP, then ask your browser to connect to some specific server (like 7325abcd.mydnsleaktest.com) and see the IP which is actually touching their dns servers to query that address. I looked at these results and they all showed google to be the one connecting to them and so that seemed fine.&lt;/p>
 &lt;p>Luckily, my ISP is not doing this (cannot do this?) for the opendns test and it detected the proxying immediately.&lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_059-300x78.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_059-300x78.png" />
 &lt;/figure>
 &lt;h2 id="implicationshow-to-protect-yourself">Implications/How to protect yourself&lt;/h2>
 &lt;p>The situation is grim now because your ISP can control everything you visit on the internet and you wouldn&amp;rsquo;t even know. You could be sending all your searches to your ISP, giving your passwords to them through fake sites, or they could silently replace the script/css etc servers and track all of your behavior, the implications are endless.&lt;/p>

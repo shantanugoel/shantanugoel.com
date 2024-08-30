@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu on</title><link>/tags/shantanu/</link><description>Recent content in Shantanu on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 03 Oct 2008 21:19:08 +0000</lastBuildDate><atom:link href="/tags/shantanu/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: Shantz Pidgin Away Alerts (splert) Updated to 0.03</title><link>/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</link><pubDate>Fri, 03 Oct 2008 21:19:08 +0000</pubDate><guid>/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</guid><description>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/shantanu/</link><description>Recent content in Shantanu on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Fri, 03 Oct 2008 21:19:08 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/shantanu/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: Shantz Pidgin Away Alerts (splert) Updated to 0.03</title><link>https://shantanugoel.com/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</link><pubDate>Fri, 03 Oct 2008 21:19:08 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</guid><description>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.
 The main changes are:
 Now you can use other 3rd party twitter bots with it to get updates through twitter since the official twitter bot is down since a long time and there are no chances of coming back soon.</description><content>&lt;p>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.&lt;/p>
 &lt;p>The main changes are:&lt;/p>
@@ -10,11 +10,11 @@ Now you can use other 3rd party twitter bots with it to get updates through twit
 &lt;p>You can also use it even when you are not &amp;ldquo;away&amp;rdquo; by specifying the status when you want it to work. (e.g. any, available, unavailable, invisible, etc. Use splert -h to see all available status types). As an example, you can use this to selectively talk to people when you are busy.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>(As usual, binary files as well as 32 bit and 64 bit ubuntu/debian deb packages are available)&lt;/p></content></item><item><title>One Month Completed....</title><link>/2008/02/28/one-month-completed/</link><pubDate>Thu, 28 Feb 2008 04:10:00 +0000</pubDate><guid>/2008/02/28/one-month-completed/</guid><description>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:
+&lt;p>(As usual, binary files as well as 32 bit and 64 bit ubuntu/debian deb packages are available)&lt;/p></content></item><item><title>One Month Completed....</title><link>https://shantanugoel.com/2008/02/28/one-month-completed/</link><pubDate>Thu, 28 Feb 2008 04:10:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/28/one-month-completed/</guid><description>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:
 Front-paged at LifeHacker, HacksZine, and many others.
 Over 10000 (Ten Thousand) &amp;ldquo;unique&amp;rdquo; human visitors.
 Over 30000 (Thirty Thousand) page views by humans.
-Over 500000 (Half Million) total hits for all website files included.</description><content>&lt;p>&lt;img src="/img/uploads/trophy_small.jpg" alt="tech.shantanugoel.com completes one month">&lt;/p>
+Over 500000 (Half Million) total hits for all website files included.</description><content>&lt;p>&lt;img src="https://shantanugoel.com/img/uploads/trophy_small.jpg" alt="tech.shantanugoel.com completes one month">&lt;/p>
 &lt;p>Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -39,7 +39,7 @@ Over 500000 (Half Million) total hits for all website files included.</descripti
 &lt;p>A &lt;a href="http://www.google.co.in/search?q=shantanu+goel">google&lt;/a> or &lt;a href="http://search.yahoo.com/search?p=shantanu+goel">yahoo&lt;/a> search for my name “shantanu goel” now gives around 6–7 links about me (4–5 from this blog) out of the first 10 results. (This changes quite dynamically though)&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>But this is all because of you, the readers. Thanks a lot and keep coming. I hope I can continue writing stuff you like, because ultimately a blog is written for the people and not for search engines.&lt;/p></content></item><item><title>shantz-csv-to-opml</title><link>/2008/02/22/shantz-csv-to-opml/</link><pubDate>Fri, 22 Feb 2008 04:53:53 +0000</pubDate><guid>/2008/02/22/shantz-csv-to-opml/</guid><description>INTRODUCTION
+&lt;p>But this is all because of you, the readers. Thanks a lot and keep coming. I hope I can continue writing stuff you like, because ultimately a blog is written for the people and not for search engines.&lt;/p></content></item><item><title>shantz-csv-to-opml</title><link>https://shantanugoel.com/2008/02/22/shantz-csv-to-opml/</link><pubDate>Fri, 22 Feb 2008 04:53:53 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/22/shantz-csv-to-opml/</guid><description>INTRODUCTION
 This is a very simple script that I did for a friend. It can be used to quickly generate blogrolls.
 Input: csv file with blog author names and blog links
 Output: OPML file that can be imported into many blogging/blogrolling software and websites (e.g. wordpress, blogrolling.com, etc)
@@ -49,12 +49,12 @@ shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output op
 &lt;p>Input: csv file with blog author names and blog links&lt;/p>
 &lt;p>Output: OPML file that can be imported into many blogging/blogrolling software and websites (e.g. wordpress, blogrolling.com, etc)&lt;/p>
 &lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
-Input File Format:
-Each line should be like this:
-&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
-e.g.
-Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
-&lt;/code>&lt;/pre>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Input File Format:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Each line should be like this:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e.g.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p>
 &lt;p>Version History:
 0.1 - Initial Version&lt;/p></content></item></channel></rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dns Hijack on</title><link>/tags/dns-hijack/</link><description>Recent content in Dns Hijack on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 13 Mar 2017 16:46:24 +0530</lastBuildDate><atom:link href="/tags/dns-hijack/index.xml" rel="self" type="application/rss+xml"/><item><title>Bypass ISP DNS hijack by changing DNS port on Ubiquiti USG router</title><link>/2017/03/13/bypass-isp-dns-hijack-ubiquiti-ubnt-usg/</link><pubDate>Mon, 13 Mar 2017 16:46:24 +0530</pubDate><guid>/2017/03/13/bypass-isp-dns-hijack-ubiquiti-ubnt-usg/</guid><description>The Background We talked earlier about how certain ISPs block websites by using DNS hijack methods and I had recommended using DNSCrypt to bypass it. Well, as part of my home network overhaul, I moved over from the consumer grade (but still decent enough) Asus router over to Ubiquiti stack which, among other things, lead me to use their &amp;ldquo;Unify Security Gateway (USG)&amp;rdquo; as the router. Now, this router is pretty decent and is running Ubiquiti&amp;rsquo;s EdgeOS (derived from Vyatta OS, which in turn is based on linux/debian).</description><content>&lt;h2 id="the-background">The Background&lt;/h2>
-&lt;p>We talked earlier about how certain &lt;a href="/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/">ISPs block websites by using DNS hijack methods&lt;/a> and I had recommended using DNSCrypt to bypass it. Well, as part of my home network overhaul, I moved over from the consumer grade (but still decent enough) Asus router over to Ubiquiti stack which, among other things, lead me to use their &amp;ldquo;Unify Security Gateway (USG)&amp;rdquo; as the router. Now, this router is pretty decent and is running Ubiquiti&amp;rsquo;s EdgeOS (derived from Vyatta OS, which in turn is based on linux/debian). You can install and tweak a lot of stuff through command line if you&amp;rsquo;d like but alas there&amp;rsquo;s no dnscrypt-proxy available for it.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dns Hijack on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/dns-hijack/</link><description>Recent content in Dns Hijack on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Mon, 13 Mar 2017 16:46:24 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/dns-hijack/index.xml" rel="self" type="application/rss+xml"/><item><title>Bypass ISP DNS hijack by changing DNS port on Ubiquiti USG router</title><link>https://shantanugoel.com/2017/03/13/bypass-isp-dns-hijack-ubiquiti-ubnt-usg/</link><pubDate>Mon, 13 Mar 2017 16:46:24 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2017/03/13/bypass-isp-dns-hijack-ubiquiti-ubnt-usg/</guid><description>The Background We talked earlier about how certain ISPs block websites by using DNS hijack methods and I had recommended using DNSCrypt to bypass it. Well, as part of my home network overhaul, I moved over from the consumer grade (but still decent enough) Asus router over to Ubiquiti stack which, among other things, lead me to use their &amp;ldquo;Unify Security Gateway (USG)&amp;rdquo; as the router. Now, this router is pretty decent and is running Ubiquiti&amp;rsquo;s EdgeOS (derived from Vyatta OS, which in turn is based on linux/debian).</description><content>&lt;h2 id="the-background">The Background&lt;/h2>
+&lt;p>We talked earlier about how certain &lt;a href="https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/">ISPs block websites by using DNS hijack methods&lt;/a> and I had recommended using DNSCrypt to bypass it. Well, as part of my home network overhaul, I moved over from the consumer grade (but still decent enough) Asus router over to Ubiquiti stack which, among other things, lead me to use their &amp;ldquo;Unify Security Gateway (USG)&amp;rdquo; as the router. Now, this router is pretty decent and is running Ubiquiti&amp;rsquo;s EdgeOS (derived from Vyatta OS, which in turn is based on linux/debian). You can install and tweak a lot of stuff through command line if you&amp;rsquo;d like but alas there&amp;rsquo;s no dnscrypt-proxy available for it.&lt;/p>
 &lt;p>I had the below options now to overcome my ISP&amp;rsquo;s DNS hijacking:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -12,11 +12,11 @@
 &lt;p>Use one of the other options I had originally discussed (hosts file, VPN, alternate port)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>I rejected the first option as it meant setting up a cross compilation environment just for one program and also it may be hard to keep up in future. The 2nd option wasn&amp;rsquo;t too good either as I didn&amp;rsquo;t want my network infrastructure&amp;rsquo;s basic need of DNS to depend on another device which may not be as resilient due to other regular use. From the other earlier discussed alternatives, I didn&amp;rsquo;t want to do the manual upkeep of hosts file or fall into the expensive/slow/insecure trap of VPNs. So I settled on the next best solution of using an alternate port for my DNS queries, with the hope that the ISP is dumb (or cost conscious) enough to rely only on port number to higjack DNS and not use DPI for it (even though &lt;a href="/2017/01/24/act-fibernet-deep-packet-inspection-blocking-sites/">they do use DPI for at least some types of blocking&lt;/a>).&lt;/p>
+&lt;p>I rejected the first option as it meant setting up a cross compilation environment just for one program and also it may be hard to keep up in future. The 2nd option wasn&amp;rsquo;t too good either as I didn&amp;rsquo;t want my network infrastructure&amp;rsquo;s basic need of DNS to depend on another device which may not be as resilient due to other regular use. From the other earlier discussed alternatives, I didn&amp;rsquo;t want to do the manual upkeep of hosts file or fall into the expensive/slow/insecure trap of VPNs. So I settled on the next best solution of using an alternate port for my DNS queries, with the hope that the ISP is dumb (or cost conscious) enough to rely only on port number to higjack DNS and not use DPI for it (even though &lt;a href="https://shantanugoel.com/2017/01/24/act-fibernet-deep-packet-inspection-blocking-sites/">they do use DPI for at least some types of blocking&lt;/a>).&lt;/p>
 &lt;h2 id="testing-the-waters">Testing the Waters&lt;/h2>
 &lt;p>First thing was to try whether this would even work or not. So I tried it easily by querying for a blocked torrent site first through ISP&amp;rsquo;s DNS servers, then OpenDNS servers on default DNS port (53) and then Open DNS servers on port 5353 (Yes, OpenDNS responds to dns queries on 5353 as well, fortunately.)&lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2017/03/dns-queries-thumb.jpg" />
+&lt;img src="https://shantanugoel.com/img/2017/03/dns-queries-thumb.jpg" />
 &lt;/figure>
 &lt;p>In the first 2 attempts, the IP returned was my ISP&amp;rsquo;s hijacked reply (pointing to their own generic server that they use to respond to blocked site requests) but in the last one (using port 5353), the DNS request went unmodified and came back with the real IP of the website. Success!&lt;/p>
 &lt;h2 id="configuring-the-usg">Configuring the USG&lt;/h2>
@@ -32,20 +32,23 @@
 &lt;/li>
 &lt;/ul>
 &lt;p>There&amp;rsquo;s no UI option for this though, so you&amp;rsquo;ve to drop down to the CLI. Launch an ssh session to the USG ip and use the credentials that you&amp;rsquo;ve set in the unify controller to log in. Then run the below set of commands. The procedure is slightly different from a regular linux box (where you&amp;rsquo;d directly edit dnsmasq.conf) due to the specific nature of config management of ubiquiti devices.&lt;/p>
-&lt;pre tabindex="0">&lt;code># Switch to configuration mode
-$ configure
-# Below commands will generate the appropriate dnsmasq.conf automaticall
-# Don&amp;#39;t use resolve.conf
-$ set service dns forwarding options &amp;#34;no-resolv&amp;#34;
-# Set the opendns nameserver for all sites
-$ set service dns forwarding options &amp;#34;server=208.67.222.222#5353&amp;#34;
-# Generate the config files, save and exit
-$ commit;save;exit
-&lt;/code>&lt;/pre>&lt;p>Now, you can try browsing (or doing nslookup) for the blocked website and it&amp;rsquo;ll go through succesfully. Note that like all other CLI changes for USG, the above changes can be lost whenever you make some other config change through UI or update USG firmware. To make it persistent across such events, you need to follow the &lt;a href="https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json">config.gateway json process&lt;/a>.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>TLDR;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Switch to configuration mode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ configure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Below commands will generate the appropriate dnsmasq.conf automaticall
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Don&amp;#39;t use resolve.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ set service dns forwarding options &amp;#34;no-resolv&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Set the opendns nameserver for all sites
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ set service dns forwarding options &amp;#34;server=208.67.222.222#5353&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Generate the config files, save and exit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ commit;save;exit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, you can try browsing (or doing nslookup) for the blocked website and it&amp;rsquo;ll go through succesfully. Note that like all other CLI changes for USG, the above changes can be lost whenever you make some other config change through UI or update USG firmware. To make it persistent across such events, you need to follow the &lt;a href="https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json">config.gateway json process&lt;/a>.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>TLDR;
 Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.
-Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.</description><content>&lt;h2 id="hahahugoshortcode269s0hbhb">
+Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.</description><content>&lt;h2 id="hahahugoshortcode270s0hbhb">
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/censored.jpg" alt="Censored!" />
+&lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
 &lt;/h2>
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
@@ -63,13 +66,13 @@ Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly f
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Now, bit.ly has been blocked in India. FML. Block everything. Block the internet itself BC. &lt;a href="https://t.co/e5MFLVXIao">pic.twitter.com/e5MFLVXIao&lt;/a>&lt;/p>&amp;mdash; Shantanu Goel (@shantanugoel) &lt;a href="https://twitter.com/shantanugoel/status/777074151450304513?ref_src=twsrc%5Etfw">September 17, 2016&lt;/a>&lt;/blockquote>
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_054.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_054.png" />
 &lt;/figure>
 &lt;h2 id="something-bigger-than-blocking">Something bigger than blocking&lt;/h2>
 &lt;p>But the rage didn&amp;rsquo;t stop at this.&lt;/p>
 &lt;p>I tried the usual way of adding &amp;ldquo;https&amp;rdquo; to bypass the block but it was highly unusual to see another error which said bit.ly closed my connection. I was sure bit.ly supports https as I could see on my Airtel connection. So this was weird.&lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_056-300x160.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_056-300x160.png" />
 &lt;/figure>
 &lt;p>I tried a simple ping to bit.ly and well well well! It turns out, I am not even connecting to bit.ly at all but one of the servers of my ISP itself. The other sites like google.com were being resolved correctly.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Well, I&amp;#39;ll be damned :o bit.ly is pointing to &lt;a href="https://t.co/Yp6tdKp23o">https://t.co/Yp6tdKp23o&lt;/a> &lt;a href="https://t.co/thTD2dvEv3">pic.twitter.com/thTD2dvEv3&lt;/a>&lt;/p>&amp;mdash; Shantanu Goel (@shantanugoel) &lt;a href="https://twitter.com/shantanugoel/status/777081685305270272?ref_src=twsrc%5Etfw">September 17, 2016&lt;/a>&lt;/blockquote>
@@ -78,22 +81,22 @@ Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly f
 &lt;p>I was using google&amp;rsquo;s public DNS servers at my router as well as PC level and resolve.conf is set to use localhost. So I was pretty sure I am using the google dns and I shouldn&amp;rsquo;t have got a fake IP back. &lt;strong>This was an even bigger red flag!&lt;/strong>&lt;/p>
 &lt;p>I ran the nslookup on bit.ly through an online service and it gave me the correct bit.ly server IPs but running nslookup on my PC or even on my router gave me back the fake IP.
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_057-300x197.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_057-300x197.png" />
 &lt;/figure>
 &lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/058-300x189.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/058-300x189.png" />
 &lt;/figure>
 &lt;h2 id="transparent-dns-proxy--dns-hijacking">Transparent DNS Proxy / DNS Hijacking&lt;/h2>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/transparent-dns-proxy-300x185.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/transparent-dns-proxy-300x185.png" />
 &lt;/figure>
 &lt;p>This is how (bad) ISPs do this. They look for all traffic on port 53 (the DNS port) and don&amp;rsquo;t let them go to the actual DNS server and fulfill it from their own DNS servers, thus forcing you to go to a location of their bidding.&lt;/p>
 &lt;p>In my case, I tried running the various &amp;ldquo;DNS leak tests&amp;rdquo;/&amp;ldquo;Transparent Proxy detection&amp;rdquo; tests but they all came out fine. Because my ISP is doing something clever here. I am assuming that they look at all the addresses that you are trying to reach, and then serve the ones they are interested in from their servers while passing on the rest of the requests to your originally intended dns server.&lt;/p>
 &lt;p>How these tests work is that they see your IP, then ask your browser to connect to some specific server (like 7325abcd.mydnsleaktest.com) and see the IP which is actually touching their dns servers to query that address. I looked at these results and they all showed google to be the one connecting to them and so that seemed fine.&lt;/p>
 &lt;p>Luckily, my ISP is not doing this (cannot do this?) for the opendns test and it detected the proxying immediately.&lt;/p>
 &lt;figure class="left" >
-&lt;img src="/img/2016/09/Selection_059-300x78.png" />
+&lt;img src="https://shantanugoel.com/img/2016/09/Selection_059-300x78.png" />
 &lt;/figure>
 &lt;h2 id="implicationshow-to-protect-yourself">Implications/How to protect yourself&lt;/h2>
 &lt;p>The situation is grim now because your ISP can control everything you visit on the internet and you wouldn&amp;rsquo;t even know. You could be sending all your searches to your ISP, giving your passwords to them through fake sites, or they could silently replace the script/css etc servers and track all of your behavior, the implications are endless.&lt;/p>
