@@ -1,6 +1,6 @@
 {
-  "name": "Shantanu Vs The World",
-  "short_name": "Shantanu Vs The World",
+  "name": "Shantanu's Notesverse",
+  "short_name": "Shantanu's Notesverse",
   "start_url": "/notes/",
   "scope": "/notes/",
   "display": "standalone",
