@@ -1,76 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fake Server Trick on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/fake-server-trick/</link><description>Recent content in Fake Server Trick on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Thu, 31 Jan 2008 18:30:33 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/fake-server-trick/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows Mobile 6 - Case of the Missing Calls: Solved</title><link>https://shantanugoel.com/2008/01/31/windows-mobile-6-case-of-the-missing-calls-solved/</link><pubDate>Thu, 31 Jan 2008 18:30:33 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/01/31/windows-mobile-6-case-of-the-missing-calls-solved/</guid><description>As the pic above says, it turned out to be quite elementary in the end. But what is &amp;ldquo;it&amp;rdquo; actually?
-The Problem: Since the beginning of time (read launching of WM6), millions of WM users (ok ok, will not exaggerate from now on) have been facing a very peculiar issue. The issue is that people tell them all the time that they are avoiding those people, and not taking their calls.</description><content>&lt;p>&lt;img src="https://shantanugoel.com/img/uploads/sherlock_small.jpg" alt="Sherlock">&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fake Server Trick on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/fake-server-trick/</link><description>Recent content in Fake Server Trick on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 31 Jan 2008 18:30:33 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/fake-server-trick/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows Mobile 6 - Case of the Missing Calls: Solved</title><link>https://shantanugoel.com/2008/01/31/windows-mobile-6-case-of-the-missing-calls-solved/</link><pubDate>Thu, 31 Jan 2008 18:30:33 +0000</pubDate><guid>https://shantanugoel.com/2008/01/31/windows-mobile-6-case-of-the-missing-calls-solved/</guid><description>&lt;p>&lt;img src="https://shantanugoel.com/img/uploads/sherlock_small.jpg" alt="Sherlock">&lt;/p>
+&lt;p>As the pic above says, it turned out to be quite elementary in the end. But what is &amp;ldquo;it&amp;rdquo; actually?&lt;/p>
+&lt;p>&lt;strong>The Problem:&lt;/strong> Since the beginning of time (read launching of WM6), millions of WM users (ok ok, will not exaggerate from now on) have been facing a very peculiar issue. The issue is that people tell them all the time that they are avoiding those people, and not taking their calls. But as the perplexed WM&amp;rsquo;er flips through his calls log, he can&amp;rsquo;t find any sign of a missed call. Yes, the issue is that many times, the phone will go into a state where the caller will hear the ring go, there will be no sign on your phone of the same, not even a missed call. People all around the world have been after the solution with all their might, suggesting:&lt;/p></description><content>&lt;p>&lt;img src="https://shantanugoel.com/img/uploads/sherlock_small.jpg" alt="Sherlock">&lt;/p>
 &lt;p>As the pic above says, it turned out to be quite elementary in the end. But what is &amp;ldquo;it&amp;rdquo; actually?&lt;/p>
 &lt;p>&lt;strong>The Problem:&lt;/strong> Since the beginning of time (read launching of WM6), millions of WM users (ok ok, will not exaggerate from now on) have been facing a very peculiar issue. The issue is that people tell them all the time that they are avoiding those people, and not taking their calls. But as the perplexed WM&amp;rsquo;er flips through his calls log, he can&amp;rsquo;t find any sign of a missed call. Yes, the issue is that many times, the phone will go into a state where the caller will hear the ring go, there will be no sign on your phone of the same, not even a missed call. People all around the world have been after the solution with all their might, suggesting:&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>To change over to Radio Rom x.xx.xx and swear it solved all their issues but we have had equal number of people in both camps (fixed and non-fixed) for every radio rom.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Various kinds of flashing techniques and orders but no concrete solution here either.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Standing on their heads and chanting &amp;ldquo;OM&amp;rdquo; for 10000 years (I&amp;rsquo;m at it again &lt;img src="https://shantanugoel.com/img/uploads/smile3.gif" alt=""> )&lt;/p>
-&lt;/li>
+&lt;li>To change over to Radio Rom x.xx.xx and swear it solved all their issues but we have had equal number of people in both camps (fixed and non-fixed) for every radio rom.&lt;/li>
+&lt;li>Various kinds of flashing techniques and orders but no concrete solution here either.&lt;/li>
+&lt;li>Standing on their heads and chanting &amp;ldquo;OM&amp;rdquo; for 10000 years (I&amp;rsquo;m at it again :))&lt;/li>
 &lt;/ol>
-&lt;p>Anyways, the long and short of it is, they didn&amp;rsquo;t get anywhere. But worry no more, the messiah is here to save you all from social embarrassment. Click on Continue reading to find the solution.&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;p>**What To Expect: **This will fix the missing call issue, plus on the phones I tested, the following issues were also fixed:&lt;/p>
-&lt;pre>&lt;code>* Signal strength meter remains stuck at whatever the strength was when the phone was booted.
-* The phone LCD turns on for no reason sometime.
-* I personally found the signal quality to be better. Previously I wasn't able to take/make any calls in my office cubicle but now I can.
-* A solution so simple, obvious and the fact that you already know it. ![](/img/uploads/smile3.gif)
-&lt;/code>&lt;/pre>
+&lt;p>Anyways, the long and short of it is, they didn&amp;rsquo;t get anywhere. But worry no more, the messiah is here to save you all from social embarrassment.&lt;/p>
+&lt;p>&lt;strong>What To Expect:&lt;/strong> This will fix the missing call issue, plus on the phones I tested, the following issues were also fixed:&lt;/p>
+&lt;ul>
+&lt;li>Signal strength meter remains stuck at whatever the strength was when the phone was booted.&lt;/li>
+&lt;li>The phone LCD turns on for no reason sometime.&lt;/li>
+&lt;li>I personally found the signal quality to be better. Previously I wasn&amp;rsquo;t able to take/make any calls in my office cubicle but now I can.&lt;/li>
+&lt;li>A solution so simple, obvious and the fact that you already know it. :)&lt;/li>
+&lt;/ul>
 &lt;p>&lt;strong>The Disclaimer:&lt;/strong> Though I&amp;rsquo;ve promised you almost everything (except the kitchen sink), and I&amp;rsquo;m pretty sure that this should work for you (as I&amp;rsquo;ve tested this on three different HTC wizards, running different variations of WM6 ROMS), but still YMMV. (Just to save my skin from a disgruntled user who didn&amp;rsquo;t get it fixed and turned into a blood sucking psychopath, or even worse, a lawsuit-happy Jeff Thomson).&lt;/p>
 &lt;p>Another thing to be noted is that if you use ActiveSync to sync with an exchange server, you&amp;rsquo;d probably not be able to solve your problems. Read on to find about it [Thnx to Alex, vboyz103 for reminding me to put it here]&lt;/p>
 &lt;p>&lt;strong>The Reasoning:&lt;/strong> Let me take you through my journey of discovering the solution to the problem. There are a lot of events that happened, many things I saw that led me to the solution:&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>Once I saw my phone light up for no reason and then after a few seconds I received a call on my landline saying I was not picking up my phone. I then tried calling up my phone again and again, every time I didn&amp;rsquo;t get any notification on my phone &amp;ldquo;except&amp;rdquo; a momentary flash up.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Another day I was tapping away at my keyboard, with my phone nearby. Then suddenly again there was a flash up, no call notification, BUT my speakers started humming, for a long time, i.e., as if in a call and not due to those momentary SDCCH transmissions. This meant that the radio ROM was indeed receiving the call, but somehow it could not notify the OS to tell me. &lt;em>Something was breaking the notification mechanism.&lt;/em>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>All times this happened, and I came to know, I checked to know what all tasks were running and somehow Active Sync was always there.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>I tried killing active sync and then calling. Active Sync would be there again. But if I kill it and dont call, then it won&amp;rsquo;t be there. &lt;em>Hmmm..&lt;/em>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>I had heard that switching off and flight mode solves this issue temporarily. I tried it. Flight mode could be switched on but was not able to switch off. That is my phone didn&amp;rsquo;t come back, &lt;strong>until&lt;/strong> I tried killing active sync and voila, phone could be turned on again.&lt;/p>
-&lt;/li>
+&lt;li>Once I saw my phone light up for no reason and then after a few seconds I received a call on my landline saying I was not picking up my phone. I then tried calling up my phone again and again, every time I didn&amp;rsquo;t get any notification on my phone &amp;ldquo;except&amp;rdquo; a momentary flash up.&lt;/li>
+&lt;li>Another day I was tapping away at my keyboard, with my phone nearby. Then suddenly again there was a flash up, no call notification, BUT my speakers started humming, for a long time, i.e., as if in a call and not due to those momentary SDCCH transmissions. This meant that the radio ROM was indeed receiving the call, but somehow it could not notify the OS to tell me. &lt;em>Something was breaking the notification mechanism.&lt;/em>&lt;/li>
+&lt;li>All times this happened, and I came to know, I checked to know what all tasks were running and somehow Active Sync was always there.&lt;/li>
+&lt;li>I tried killing active sync and then calling. Active Sync would be there again. But if I kill it and dont call, then it won&amp;rsquo;t be there. &lt;em>Hmmm..&lt;/em>&lt;/li>
+&lt;li>I had heard that switching off and flight mode solves this issue temporarily. I tried it. Flight mode could be switched on but was not able to switch off. That is my phone didn&amp;rsquo;t come back, &lt;strong>until&lt;/strong> I tried killing active sync and voila, phone could be turned on again.&lt;/li>
 &lt;/ul>
-&lt;p>**The Solution: **Now, I was pretty sure that it had something to do with Active Sync. Another thing was I never had the missing calls issue, until this december when I switched to a new ROM. Was the new ROM bad? Couldn&amp;rsquo;t be because people had reported issues on earlier ROMs as well which I had used but never faced the problem. Then it suddenly dawned on me in zen-like-fashion. The legendary &amp;ldquo;&lt;strong>Fake Server Trick&lt;/strong>&amp;rdquo;. In all my flashes, it was part of my initial rituals to do (along with the customary sacrificial goat) this but this time I had forgotten to. I immediately did it and when I reached the Active Sync schedule settings it was selected to &amp;ldquo;&lt;strong>As Items Arrive&lt;/strong>&amp;rdquo;. Voila! I did the trick at a time when I was missing calls and immediately saw the results. Called from another phone and I got a ring &lt;img src="https://shantanugoel.com/img/uploads/smile1.gif" alt="">. Somehow, it was eating up the notifications thinking they are some &amp;ldquo;items&amp;rdquo; meant for it. Since then, I tried it out on two more phones of friends with different WM6 ROMs and they havent seen the problem ever since, plus they got all the other benefits too as listed in &amp;ldquo;What to Expect&amp;rdquo;.&lt;/p>
-&lt;p>**The Trick: **Most of you who came here must be knowing the fake server trick, but if you don&amp;rsquo;t, then here it is:&lt;/p>
+&lt;p>&lt;strong>The Solution:&lt;/strong> Now, I was pretty sure that it had something to do with Active Sync. Another thing was I never had the missing calls issue, until this december when I switched to a new ROM. Was the new ROM bad? Couldn&amp;rsquo;t be because people had reported issues on earlier ROMs as well which I had used but never faced the problem. Then it suddenly dawned on me in zen-like-fashion. The legendary &amp;ldquo;&lt;strong>Fake Server Trick&lt;/strong>&amp;rdquo;. In all my flashes, it was part of my initial rituals to do (along with the customary sacrificial goat) this but this time I had forgotten to. I immediately did it and when I reached the Active Sync schedule settings it was selected to &amp;ldquo;&lt;strong>As Items Arrive&lt;/strong>&amp;rdquo;. Voila! I did the trick at a time when I was missing calls and immediately saw the results. Called from another phone and I got a ring! Somehow, it was eating up the notifications thinking they are some &amp;ldquo;items&amp;rdquo; meant for it. Since then, I tried it out on two more phones of friends with different WM6 ROMs and they havent seen the problem ever since, plus they got all the other benefits too as listed in &amp;ldquo;What to Expect&amp;rdquo;.&lt;/p>
+&lt;p>&lt;strong>The Trick:&lt;/strong> Most of you who came here must be knowing the fake server trick, but if you don&amp;rsquo;t, then here it is:&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>Turn on your Device&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Go to Start &amp;gt; Programs &amp;gt; Activesync.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Tap Menu at the bottom right hand corner of the screen.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Tap on Add Server Source.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Enter anything in all the boxes. Don&amp;rsquo;t need to go to any advanced options, etc. e.g. you can add &amp;ldquo;fake&amp;rdquo; in all options&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Go back into the Menu, and tap &amp;ldquo;Schedule&amp;rdquo;&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Change both the Peak times and Off-peak times boxes to Manually.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Press the OK button at top-right.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>You are done.&lt;/p>
-&lt;/li>
+&lt;li>Turn on your Device&lt;/li>
+&lt;li>Go to Start &amp;gt; Programs &amp;gt; Activesync.&lt;/li>
+&lt;li>Tap Menu at the bottom right hand corner of the screen.&lt;/li>
+&lt;li>Tap on Add Server Source.&lt;/li>
+&lt;li>Enter anything in all the boxes. Don&amp;rsquo;t need to go to any advanced options, etc. e.g. you can add &amp;ldquo;fake&amp;rdquo; in all options&lt;/li>
+&lt;li>Go back into the Menu, and tap &amp;ldquo;Schedule&amp;rdquo;&lt;/li>
+&lt;li>Change both the Peak times and Off-peak times boxes to Manually.&lt;/li>
+&lt;li>Press the OK button at top-right.&lt;/li>
+&lt;li>You are done.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;strong>Note:&lt;/strong> If you face any sync errors after doing this trick, then delete the config you just made for exchange and then try. Basically once you have done the schedule setting, you don&amp;rsquo;t require the exchange config anymore.&lt;/p>
 &lt;p>&lt;strong>Epilogue:&lt;/strong> Now, this has been working for me and my friends for the past few days. I deliberately delayed this post to be exactly sure. You are welcome to give me a simple thanks if it works for you. BUT if it doesn&amp;rsquo;t then also please let me know, may be we can debug it together.&lt;/p></content></item></channel></rss>

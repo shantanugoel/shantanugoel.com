@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gscripts on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/gscripts/</link><description>Recent content in Gscripts on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sun, 09 Mar 2008 16:10:18 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/gscripts/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu TIP: Extending Nautilus, Scripting Your Way To UI Bliss</title><link>https://shantanugoel.com/2008/03/09/ubuntu-tip-extending-nautilus-scripting-your-way-to-ui-bliss/</link><pubDate>Sun, 09 Mar 2008 16:10:18 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/03/09/ubuntu-tip-extending-nautilus-scripting-your-way-to-ui-bliss/</guid><description>I&amp;rsquo;m back from my vacation and this is a smallish post before we return to our regular programming (I&amp;rsquo;m full of puns ).
-Rahul (my friend and guest author on this blog) introduced me to an old-but-useful trick a few days ago that I didn&amp;rsquo;t know about. It&amp;rsquo;s about customizing nautilus to display a context menu that has a few of your chosen scripts to weave their magic on the selected object.</description><content>&lt;p>I&amp;rsquo;m back from my vacation and this is a smallish post before we return to our regular programming (I&amp;rsquo;m full of puns &lt;img src="https://shantanugoel.com/img/uploads/smile3.gif" alt=""> ).&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gscripts on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/gscripts/</link><description>Recent content in Gscripts on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 09 Mar 2008 16:10:18 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/gscripts/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu TIP: Extending Nautilus, Scripting Your Way To UI Bliss</title><link>https://shantanugoel.com/2008/03/09/ubuntu-tip-extending-nautilus-scripting-your-way-to-ui-bliss/</link><pubDate>Sun, 09 Mar 2008 16:10:18 +0000</pubDate><guid>https://shantanugoel.com/2008/03/09/ubuntu-tip-extending-nautilus-scripting-your-way-to-ui-bliss/</guid><description>&lt;p>I&amp;rsquo;m back from my vacation and this is a smallish post before we return to our regular programming (I&amp;rsquo;m full of puns &lt;img src="https://shantanugoel.com/img/uploads/smile3.gif" alt=""> ).&lt;/p>
+&lt;p>Rahul (my friend and guest author on this blog) introduced me to an old-but-useful trick a few days ago that I didn&amp;rsquo;t know about. It&amp;rsquo;s about customizing nautilus to display a context menu that has a few of your chosen scripts to weave their magic on the selected object. And the procedure to do this is summarized in just two steps:&lt;/p></description><content>&lt;p>I&amp;rsquo;m back from my vacation and this is a smallish post before we return to our regular programming (I&amp;rsquo;m full of puns &lt;img src="https://shantanugoel.com/img/uploads/smile3.gif" alt=""> ).&lt;/p>
 &lt;p>Rahul (my friend and guest author on this blog) introduced me to an old-but-useful trick a few days ago that I didn&amp;rsquo;t know about. It&amp;rsquo;s about customizing nautilus to display a context menu that has a few of your chosen scripts to weave their magic on the selected object. And the procedure to do this is summarized in just two steps:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -13,43 +13,12 @@ Rahul (my friend and guest author on this blog) introduced me to an old-but-usef
 &lt;p>To get you started immediately, here is a crude example to open a terminal/console window in any folder/path through right-click menu:&lt;/p>
 &lt;hr>
 &lt;p>Step 1) Write your script (any scripting language: shell, perl, python, etc):&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;blockquote>
-&lt;p>Step 2) Save it in ~/.gnome2/nautilus-scripts, name it as &amp;ldquo;Terminal&amp;rdquo; and make it executable.&lt;/p>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>Step 3) Now, you should see a &amp;ldquo;Scripts&amp;rdquo; option in your right-click menu as shown below. Clicking on &amp;ldquo;Terminal&amp;rdquo; will open a new terminal window with the present working directory being set to the selected folder.&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>&lt;a href="https://shantanugoel.com/img/uploads/nautilus_scripts.png">&lt;img src="https://shantanugoel.com/img/uploads/nautilus_scripts_thumb.jpg" alt="Nautilus_scripts">&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>gnome-terminal --working-directory&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$1&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 2) Save it in ~/.gnome2/nautilus-scripts, name it as &amp;ldquo;Terminal&amp;rdquo; and make it executable.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod +x Terminal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 3) Now, you should see a &amp;ldquo;Scripts&amp;rdquo; option in your right-click menu as shown below. Clicking on &amp;ldquo;Terminal&amp;rdquo; will open a new terminal window with the present working directory being set to the selected folder.
+&lt;a href="https://shantanugoel.com/img/uploads/nautilus_scripts.png">&lt;img src="https://shantanugoel.com/img/uploads/nautilus_scripts_thumb.jpg" alt="Nautilus_scripts">&lt;/a>&lt;/p>
 &lt;p>&lt;strong>Note:&lt;/strong> If you don&amp;rsquo;t see the &amp;ldquo;scripts&amp;rdquo; menu option (or your script name in the extended menu), then just run&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>Let me know if you face any problems with this or have any other questions.&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote></content></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo killall nautilus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Let me know if you face any problems with this or have any other questions.&lt;/p></content></item></channel></rss>

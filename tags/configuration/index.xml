@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/configuration/</link><description>Recent content in Configuration on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Thu, 06 Mar 2008 03:30:20 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu TIP: Automating Package Installation – apt-get to the rescue</title><link>https://shantanugoel.com/2008/03/06/ubuntu-tip-automating-package-installation--apt-get-to-the-rescue/</link><pubDate>Thu, 06 Mar 2008 03:30:20 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/03/06/ubuntu-tip-automating-package-installation--apt-get-to-the-rescue/</guid><description>Admin Note: Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..
-Have you ever had to reinstall your ubuntu installation, and then bear the pain of manually installing the applications you&amp;rsquo;ve come to love (i mean use :)) everyday?</description><content>&lt;p>&lt;strong>Admin Note:&lt;/strong> Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/configuration/</link><description>Recent content in Configuration on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 06 Mar 2008 03:30:20 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu TIP: Automating Package Installation – apt-get to the rescue</title><link>https://shantanugoel.com/2008/03/06/ubuntu-tip-automating-package-installation--apt-get-to-the-rescue/</link><pubDate>Thu, 06 Mar 2008 03:30:20 +0000</pubDate><guid>https://shantanugoel.com/2008/03/06/ubuntu-tip-automating-package-installation--apt-get-to-the-rescue/</guid><description>&lt;p>&lt;strong>Admin Note:&lt;/strong> Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..&lt;/p>
+&lt;p>Have you ever had to reinstall your ubuntu installation, and then bear the pain of manually installing the applications you&amp;rsquo;ve come to love (i mean use :)) everyday? If yes, then cheer up buddy, because all you really need is some magic (read scripting), some typing and spend some time digging the package names of your favourite applications.&lt;/p></description><content>&lt;p>&lt;strong>Admin Note:&lt;/strong> Rahul is a long time friend of mine, and is a well known geek amongst his friends and colleagues. I&amp;rsquo;m happy to announce that he will be enriching this site from time-to-time as a guest editor/author. First up is a small tid-bit of a script that he wrote to ease up his life between installations and reinstallations of everyone&amp;rsquo;s favourite OS: Ubuntu. Over to his post..&lt;/p>
 &lt;p>Have you ever had to reinstall your ubuntu installation, and then bear the pain of manually installing the applications you&amp;rsquo;ve come to love (i mean use :)) everyday? If yes, then cheer up buddy, because all you really need is some magic (read scripting), some typing and spend some time digging the package names of your favourite applications.&lt;/p>
 &lt;p>To get started, you&amp;rsquo;ll need to type the package information in a configuration file. The format of the file is really simple&lt;/p>
 &lt;ul>
@@ -13,70 +13,48 @@ Have you ever had to reinstall your ubuntu installation, and then bear the pain 
 &lt;p>Any other line, the first word is taken as the package name you want to install&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;!-- raw HTML omitted -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod +x rapt-client-install-packages.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run this script as root (or using sudo command)&lt;/p>
 &lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;p>In case you do not specify the configFile (e.g. package-names.lst), it will bug you to manually enter packages names :D.&lt;/p>
-&lt;p>What this script does is&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;ol>
-&lt;li>read package names from the file specified (or bug user for package names in case filename is not specified)&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;ol start="2">
-&lt;li>install these packages&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;p>That&amp;rsquo;s it. And if everything runs fine, you should have a system will all your beloved apps installed.&lt;/p>
-&lt;p>The below snippet from the sample configuration file would install the packages – hardinfo, gmountiso, devilspie and nautilus-open-terminal. The lines for sysinfo and istanbul would be ignored. In case you later wish to install these packages, all you need to do is uncomment the line, and run the script again :).&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;p>Note:&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;ol>
-&lt;li>The script will fail in case the package cannot be found using the repositories enabled on your system.&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;ol start="2">
-&lt;li>In case you use additional repositories, you must add these manually to your apt configuration file, and do&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;p>sudo ./rapt-client-install-packages.sh configFile&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">In&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">do&lt;/span> &lt;span style="color:#a6e22e">not&lt;/span> &lt;span style="color:#a6e22e">specify&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">configFile&lt;/span> (&lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">g&lt;/span>. &lt;span style="color:#f92672">package&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">names&lt;/span>.&lt;span style="color:#a6e22e">lst&lt;/span>), &lt;span style="color:#a6e22e">it&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">bug&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">manually&lt;/span> &lt;span style="color:#a6e22e">enter&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span> &lt;span style="color:#a6e22e">names&lt;/span> :&lt;span style="color:#a6e22e">D&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">What&lt;/span> &lt;span style="color:#a6e22e">this&lt;/span> &lt;span style="color:#a6e22e">script&lt;/span> &lt;span style="color:#a6e22e">does&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">1.&lt;/span> &lt;span style="color:#a6e22e">read&lt;/span> &lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">names&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#a6e22e">specified&lt;/span> (&lt;span style="color:#a6e22e">or&lt;/span> &lt;span style="color:#a6e22e">bug&lt;/span> &lt;span style="color:#a6e22e">user&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">names&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">filename&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span> &lt;span style="color:#a6e22e">not&lt;/span> &lt;span style="color:#a6e22e">specified&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">2.&lt;/span> &lt;span style="color:#a6e22e">install&lt;/span> &lt;span style="color:#a6e22e">these&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">That&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#a6e22e">it&lt;/span>. &lt;span style="color:#a6e22e">And&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">everything&lt;/span> &lt;span style="color:#a6e22e">runs&lt;/span> &lt;span style="color:#a6e22e">fine&lt;/span>, &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">should&lt;/span> &lt;span style="color:#a6e22e">have&lt;/span> &lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#a6e22e">system&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">all&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">beloved&lt;/span> &lt;span style="color:#a6e22e">apps&lt;/span> &lt;span style="color:#a6e22e">installed&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">below&lt;/span> &lt;span style="color:#a6e22e">snippet&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">sample&lt;/span> &lt;span style="color:#a6e22e">configuration&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#a6e22e">would&lt;/span> &lt;span style="color:#a6e22e">install&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">–&lt;/span> &lt;span style="color:#a6e22e">hardinfo&lt;/span>, &lt;span style="color:#a6e22e">gmountiso&lt;/span>, &lt;span style="color:#a6e22e">devilspie&lt;/span> &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">nautilus&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">open&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">terminal&lt;/span>. &lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">lines&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">sysinfo&lt;/span> &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">istanbul&lt;/span> &lt;span style="color:#a6e22e">would&lt;/span> &lt;span style="color:#a6e22e">be&lt;/span> &lt;span style="color:#a6e22e">ignored&lt;/span>. &lt;span style="color:#a6e22e">In&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">later&lt;/span> &lt;span style="color:#a6e22e">wish&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">install&lt;/span> &lt;span style="color:#a6e22e">these&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span>, &lt;span style="color:#a6e22e">all&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">need&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">do&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span> &lt;span style="color:#a6e22e">uncomment&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">script&lt;/span> &lt;span style="color:#a6e22e">again&lt;/span> :).
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>#sysinfo = UNIX/Linux system information
+hardinfo = UNIX/Linux hardware information
+gmountiso = a PyGTK GUI to mount your cd images
+#istanbul = Desktop session recorder
+devilspie = find windows and perform actions on them
+nautilus-open-terminal = nautilus plugin for opening terminals in arbitrary local paths&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Note&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt; &lt;span style="color:#ae81ff">1.&lt;/span> &lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">script&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">fail&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">cannot&lt;/span> &lt;span style="color:#a6e22e">be&lt;/span> &lt;span style="color:#a6e22e">found&lt;/span> &lt;span style="color:#a6e22e">using&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">repositories&lt;/span> &lt;span style="color:#a6e22e">enabled&lt;/span> &lt;span style="color:#a6e22e">on&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">system&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt; &lt;span style="color:#ae81ff">2.&lt;/span> &lt;span style="color:#a6e22e">In&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">use&lt;/span> &lt;span style="color:#a6e22e">additional&lt;/span> &lt;span style="color:#a6e22e">repositories&lt;/span>, &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">must&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span> &lt;span style="color:#a6e22e">these&lt;/span> &lt;span style="color:#a6e22e">manually&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">apt&lt;/span> &lt;span style="color:#a6e22e">configuration&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span>, &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">``&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">`&lt;/span>&lt;span style="color:#a6e22e">bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">sudo&lt;/span> &lt;span style="color:#a6e22e">apt&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">get&lt;/span> &lt;span style="color:#a6e22e">update&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>

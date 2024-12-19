@@ -1,36 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Incremental Backup on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/incremental-backup/</link><description>Recent content in Incremental Backup on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Thu, 28 Feb 2008 04:00:00 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/incremental-backup/index.xml" rel="self" type="application/rss+xml"/><item><title> TIP: Automating Website Backups - Part IIb (Reducing Backup Size Contd.)</title><link>https://shantanugoel.com/2008/02/28/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</link><pubDate>Thu, 28 Feb 2008 04:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/28/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</guid><description>Last time, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”filename” and it will return the names of the files that are newer than filename.</description><content>&lt;p>&lt;a href="http://tech.shantanugoel.com/2008/02/25/tip-automating-website-backups-part-ii-reducing-backup-size.html">Last time&lt;/a>, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”&lt;em>filename&lt;/em>” and it will return the names of the files that are newer than &lt;em>filename&lt;/em>.&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;p>So, the command given above will find all the files that have changed since you took the backup “&lt;em>backup_x.tgz&lt;/em>” and store those filenames and paths into “_files.txt”. _The “-type f” option makes sure that only filenames are listed and not directory names, because tar creates a lot of issues when presented with directory names (Explore yourself about this).&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Incremental Backup on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/incremental-backup/</link><description>Recent content in Incremental Backup on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 28 Feb 2008 04:00:00 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/incremental-backup/index.xml" rel="self" type="application/rss+xml"/><item><title> TIP: Automating Website Backups - Part IIb (Reducing Backup Size Contd.)</title><link>https://shantanugoel.com/2008/02/28/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</link><pubDate>Thu, 28 Feb 2008 04:00:00 +0000</pubDate><guid>https://shantanugoel.com/2008/02/28/tip-automating-website-backups-part-iib-reducing-backup-size-contd/</guid><description>&lt;p>&lt;a href="http://tech.shantanugoel.com/2008/02/25/tip-automating-website-backups-part-ii-reducing-backup-size.html">Last time&lt;/a>, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”&lt;em>filename&lt;/em>” and it will return the names of the files that are newer than &lt;em>filename&lt;/em>.&lt;/p></description><content>&lt;p>&lt;a href="http://tech.shantanugoel.com/2008/02/25/tip-automating-website-backups-part-ii-reducing-backup-size.html">Last time&lt;/a>, I had told you about how to reduce the backup size. Well, this is a short note further developing on the approaches discussed there. Basically, telling tar to backup only those files which have changed. For this, Linux has a command “find” which I am very fond of. You can give it a option “-newer” followed by a f”&lt;em>filename&lt;/em>” and it will return the names of the files that are newer than &lt;em>filename&lt;/em>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>find ~ -type f -newer ~/backups/backup_x.tgz &amp;gt; files.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So, the command given above will find all the files that have changed since you took the backup “&lt;em>backup_x.tgz&lt;/em>” and store those filenames and paths into “_files.txt”. _The “-type f” option makes sure that only filenames are listed and not directory names, because tar creates a lot of issues when presented with directory names (Explore yourself about this).&lt;/p>
 &lt;p>Now, all we have to do is give this “&lt;em>files.txt&lt;/em>” to tar as an input to tell it which files to archive.&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;p>The “-T files.txt” option makes this happen. Moreover, I have introduced 2 new options here, that were not present in our last part. They are:&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cvzpGf ~/backups/backup_$date.tgz -T files.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The “-T files.txt” option makes this happen. Moreover, I have introduced 2 new options here, that were not present in our last part. They are:&lt;/p>
 &lt;ul>
 &lt;li>p – Tells tar to preserve file permissions&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;ul>
 &lt;li>G – Tells tar to ignore any file read errors etc and continue&lt;/li>
 &lt;/ul>
-&lt;/blockquote>
-&lt;/blockquote>
 &lt;p>Apart from this, you can also take a look at the “-mtime x” option for find command which lets you specify to list files which have changed in past x days. There are other similar options available for find. Look at “man find” and take your pick. Similar options exist for tar, but I have had a lot of weird issues using them, so I’d recommend sticking with this two step process of “find” followed by “tar”.&lt;/p>
 &lt;p>Now, the above mentioned commands and options can be used in innumerous ways and combinations to achieve your perfect balance of space and ease of use etc for backups. I’ll list down a sample script here, that will make a full backup on every first day of the week, and then make incremental backups over each day for rest 6 days. So, you’ll save a lot of space (more than 5 times), but you will have to use all 7 backup files to make a full restore. (I’m listing just the backup part, you can add the “mutt” command yourself, for e-mailing as mentioned in &lt;a href="http://tech.shantanugoel.com/2008/02/17/tip-automating-website-backups.html">Part I&lt;/a>)&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;!-- raw HTML omitted -->
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;p>That’s it for today. Lemme know if you have any doubts, or if you would like to see any other questions answered in this series. The question that will be answered next time is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> date&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>date +%w&lt;span style="color:#e6db74">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> ! -e &lt;span style="color:#e6db74">&amp;#34;test/a&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -z &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$date&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tar cvzpGf ~/backups/backup_&lt;span style="color:#e6db74">`&lt;/span>date +%w&lt;span style="color:#e6db74">`&lt;/span>.tgz ~/public_html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo inif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> date2&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">$((&lt;/span>$date&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> find ~ -type f -newer ~/backups/backup_$date2 &amp;gt; files.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tar cvzpGf ~/backups/backup_$date.tgz -T files.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That’s it for today. Lemme know if you have any doubts, or if you would like to see any other questions answered in this series. The question that will be answered next time is:&lt;/p>
 &lt;p>**Q2: **Cron? Using tar, making up the script file is enough command line for me. Isn’t there an easy way?&lt;/p></content></item></channel></rss>

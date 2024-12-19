@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantz on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/shantz/</link><description>Recent content in Shantz on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Fri, 03 Oct 2008 21:19:08 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/shantz/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: Shantz Pidgin Away Alerts (splert) Updated to 0.03</title><link>https://shantanugoel.com/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</link><pubDate>Fri, 03 Oct 2008 21:19:08 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</guid><description>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.
-The main changes are:
-Now you can use other 3rd party twitter bots with it to get updates through twitter since the official twitter bot is down since a long time and there are no chances of coming back soon.</description><content>&lt;p>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantz on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/shantz/</link><description>Recent content in Shantz on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 03 Oct 2008 21:19:08 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/shantz/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: Shantz Pidgin Away Alerts (splert) Updated to 0.03</title><link>https://shantanugoel.com/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</link><pubDate>Fri, 03 Oct 2008 21:19:08 +0000</pubDate><guid>https://shantanugoel.com/2008/10/03/project-shantz-pidgin-away-alerts-splert-updated-to-003/</guid><description>&lt;p>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.&lt;/p>
+&lt;p>The main changes are:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Now you can use other 3rd party twitter bots with it to get updates through twitter since the official twitter bot is down since a long time and there are no chances of coming back soon.&lt;/p></description><content>&lt;p>I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.&lt;/p>
 &lt;p>The main changes are:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -10,10 +12,7 @@ Now you can use other 3rd party twitter bots with it to get updates through twit
 &lt;p>You can also use it even when you are not &amp;ldquo;away&amp;rdquo; by specifying the status when you want it to work. (e.g. any, available, unavailable, invisible, etc. Use splert -h to see all available status types). As an example, you can use this to selectively talk to people when you are busy.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>(As usual, binary files as well as 32 bit and 64 bit ubuntu/debian deb packages are available)&lt;/p></content></item><item><title>Project: shantz-wp-qotd Updated and shantz-wp-prefix-suffix released</title><link>https://shantanugoel.com/2008/02/24/project-shantz-wp-qotd-updated-and-shantz-wp-prefix-suffix-released/</link><pubDate>Sun, 24 Feb 2008 09:44:24 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/24/project-shantz-wp-qotd-updated-and-shantz-wp-prefix-suffix-released/</guid><description>I updated my wordpress plugin shantz-wp-qotd. (A feature rich, customizable wordpress quotes plugin) today to version 1.2.0. The new version has the following changes:
-Added option to exclude pages from displaying quotes
-Fixed a bug that quotes source selection checkboxes always remain checked after updating settings.
-Cosmetic: Fixed a few spelling mistakes :)</description><content>&lt;p>I updated my wordpress plugin shantz-wp-qotd. (A feature rich, customizable wordpress quotes plugin) today to version 1.2.0. The new version has the following changes:&lt;/p>
+&lt;p>(As usual, binary files as well as 32 bit and 64 bit ubuntu/debian deb packages are available)&lt;/p></content></item><item><title>Project: shantz-wp-qotd Updated and shantz-wp-prefix-suffix released</title><link>https://shantanugoel.com/2008/02/24/project-shantz-wp-qotd-updated-and-shantz-wp-prefix-suffix-released/</link><pubDate>Sun, 24 Feb 2008 09:44:24 +0000</pubDate><guid>https://shantanugoel.com/2008/02/24/project-shantz-wp-qotd-updated-and-shantz-wp-prefix-suffix-released/</guid><description>&lt;p>I updated my wordpress plugin shantz-wp-qotd. (A feature rich, customizable wordpress quotes plugin) today to version 1.2.0. The new version has the following changes:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Added option to exclude pages from displaying quotes&lt;/p>
@@ -26,13 +25,30 @@ Cosmetic: Fixed a few spelling mistakes :)</description><content>&lt;p>I updated
 &lt;/li>
 &lt;/ul>
 &lt;p>&lt;a href="https://shantanugoel.com/img/uploads/screenshot-1.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D1_thumb.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot-2.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D2_thumb1.jpg" alt="Screenshot-2">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot-3.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D3_thumb.jpg" alt="Screenshot-3">&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://shantanugoel.com/img/uploads/screenshot_2D1.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D1_thumb1.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot_2D2.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D2_thumb.jpg" alt="Screenshot-2">&lt;/a>&lt;/p></content></item><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>For the uninitiated:
-I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:
-Added Custom tag support for adding quotes anywhere in your posts/pages
-Added Custom quote separator support and multi-line quotes support
-Config Screenshots:
-I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.</description><content>&lt;p>For the uninitiated:&lt;/p>
-&lt;!-- raw HTML omitted -->
+&lt;p>&lt;a href="https://shantanugoel.com/img/uploads/screenshot_2D1.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D1_thumb1.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot_2D2.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D2_thumb.jpg" alt="Screenshot-2">&lt;/a>&lt;/p></description><content>&lt;p>I updated my wordpress plugin shantz-wp-qotd. (A feature rich, customizable wordpress quotes plugin) today to version 1.2.0. The new version has the following changes:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added option to exclude pages from displaying quotes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Fixed a bug that quotes source selection checkboxes always remain checked after updating settings.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Cosmetic: Fixed a few spelling mistakes :)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://shantanugoel.com/img/uploads/screenshot-1.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D1_thumb.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot-2.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D2_thumb1.jpg" alt="Screenshot-2">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot-3.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D3_thumb.jpg" alt="Screenshot-3">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://shantanugoel.com/img/uploads/screenshot_2D1.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D1_thumb1.jpg" alt="Screenshot-1">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/screenshot_2D2.png">&lt;img src="https://shantanugoel.com/img/uploads/screenshot_2D2_thumb.jpg" alt="Screenshot-2">&lt;/a>&lt;/p></content></item><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><guid>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>&lt;p>For the uninitiated:&lt;/p>
+&lt;blockquote>
+&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;/blockquote>
+&lt;p>I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p></description><content>&lt;p>For the uninitiated:&lt;/p>
+&lt;blockquote>
+&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;/blockquote>
 &lt;p>I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -44,9 +60,9 @@ I recommend that you update to this new version asap, as apart from the above me
 &lt;/ul>
 &lt;p>Config Screenshots:&lt;/p>
 &lt;p>&lt;a href="https://shantanugoel.com/img/uploads/Screenshot1.png">&lt;img src="https://shantanugoel.com/img/uploads/Screenshot1_thumb.jpg" alt="Screenshot1">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/Screenshot2.png">&lt;img src="https://shantanugoel.com/img/uploads/Screenshot2_thumb.jpg" alt="Screenshot2">&lt;/a> &lt;a href="https://shantanugoel.com/img/uploads/Screenshot3.png">&lt;img src="https://shantanugoel.com/img/uploads/Screenshot3_thumb.jpg" alt="Screenshot3">&lt;/a>&lt;/p>
-&lt;p>I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.&lt;/p></content></item><item><title>Shantz WordPress QOTD</title><link>https://shantanugoel.com/2008/02/10/shantz-wordpress-qotd/</link><pubDate>Sun, 10 Feb 2008 10:22:57 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/10/shantz-wordpress-qotd/</guid><description>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.
-== Description ==
-There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.</description><content>&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;p>I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.&lt;/p></content></item><item><title>Shantz WordPress QOTD</title><link>https://shantanugoel.com/2008/02/10/shantz-wordpress-qotd/</link><pubDate>Sun, 10 Feb 2008 10:22:57 +0000</pubDate><guid>https://shantanugoel.com/2008/02/10/shantz-wordpress-qotd/</guid><description>&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;p>&lt;strong>== Description ==&lt;/strong>&lt;/p>
+&lt;p>There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.&lt;/p></description><content>&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
 &lt;p>&lt;strong>== Description ==&lt;/strong>&lt;/p>
 &lt;p>There are many quotes plugins out there. This one has been started with a view to have the best of features and options, ease of use and multiple sources to get the quotes from.&lt;/p>
 &lt;p>&lt;strong>Features:&lt;/strong>&lt;/p>

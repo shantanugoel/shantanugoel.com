@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Updated on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/updated/</link><description>Recent content in Updated on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sun, 17 Feb 2008 15:44:18 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/updated/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>For the uninitiated:
-I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:
-Added Custom tag support for adding quotes anywhere in your posts/pages
-Added Custom quote separator support and multi-line quotes support
-Config Screenshots:
-I recommend that you update to this new version asap, as apart from the above mentioned changes, the code is a bit more cleaner as well, which would run a bit better IMO and also help in any modification if you have in mind.</description><content>&lt;p>For the uninitiated:&lt;/p>
-&lt;!-- raw HTML omitted -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Updated on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/updated/</link><description>Recent content in Updated on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Feb 2008 15:44:18 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/updated/index.xml" rel="self" type="application/rss+xml"/><item><title>Project: "shantz-wp-qotd ", My Wordpress Plugin, Updated to 1.1.0</title><link>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</link><pubDate>Sun, 17 Feb 2008 15:44:18 +0000</pubDate><guid>https://shantanugoel.com/2008/02/17/project-shantz-wp-qotd-my-wordpress-plugin-update-to-110/</guid><description>&lt;p>For the uninitiated:&lt;/p>
+&lt;blockquote>
+&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;/blockquote>
+&lt;p>I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p></description><content>&lt;p>For the uninitiated:&lt;/p>
+&lt;blockquote>
+&lt;p>Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p>
+&lt;/blockquote>
 &lt;p>I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p>
 &lt;ul>
 &lt;li>

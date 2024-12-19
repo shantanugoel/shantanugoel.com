@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aws-S3 on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/aws-s3/</link><description>Recent content in Aws-S3 on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sun, 05 Jan 2020 16:25:46 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/aws-s3/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating my hugo blog from Gitlab/AWS S3 to Github Pages with Actions</title><link>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</link><pubDate>Sun, 05 Jan 2020 16:25:46 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</guid><description>Until Now - The State of the union This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:
-Push commit to the source repository on GitLab GitLab CI kicks off on receiving the push CI downloads latest version of hugo and generates the static site Runs aws-cli to sync the new files to AWS S3 S3 serves the static site Cloudflare provides: DNS services (so I can use https://shantanugoel.</description><content>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aws-S3 on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/aws-s3/</link><description>Recent content in Aws-S3 on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 05 Jan 2020 16:25:46 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/aws-s3/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating my hugo blog from Gitlab/AWS S3 to Github Pages with Actions</title><link>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</link><pubDate>Sun, 05 Jan 2020 16:25:46 +0530</pubDate><guid>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</guid><description>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
+&lt;p>This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:&lt;/p>
+&lt;ul>
+&lt;li>Push commit to the source repository on GitLab&lt;/li>
+&lt;li>GitLab CI kicks off on receiving the push
+&lt;ul>
+&lt;li>CI downloads latest version of hugo and generates the static site&lt;/li>
+&lt;li>Runs aws-cli to sync the new files to AWS S3&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>S3 serves the static site&lt;/li>
+&lt;li>Cloudflare provides:
+&lt;ul>
+&lt;li>DNS services (so I can use &lt;a href="https://shantanugoel.com">https://shantanugoel.com&lt;/a> without having to prefix it with a &lt;code>www&lt;/code>)&lt;/li>
+&lt;li>CDN/Caching services for resilience and keeping S3 bills low for data transfer&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="why-what-broke-the-camels-back">Why? What broke the camel&amp;rsquo;s back&lt;/h2>
+&lt;p>I was mostly happy with this setup with a couple of niggles at the back of my mind, vis. a vis.:&lt;/p></description><content>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
 &lt;p>This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:&lt;/p>
 &lt;ul>
 &lt;li>Push commit to the source repository on GitLab&lt;/li>

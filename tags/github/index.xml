@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/github/</link><description>Recent content in Github on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sun, 05 Jan 2020 16:25:46 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating my hugo blog from Gitlab/AWS S3 to Github Pages with Actions</title><link>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</link><pubDate>Sun, 05 Jan 2020 16:25:46 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</guid><description>Until Now - The State of the union This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:
-Push commit to the source repository on GitLab GitLab CI kicks off on receiving the push CI downloads latest version of hugo and generates the static site Runs aws-cli to sync the new files to AWS S3 S3 serves the static site Cloudflare provides: DNS services (so I can use https://shantanugoel.</description><content>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/github/</link><description>Recent content in Github on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 05 Jan 2020 16:25:46 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating my hugo blog from Gitlab/AWS S3 to Github Pages with Actions</title><link>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</link><pubDate>Sun, 05 Jan 2020 16:25:46 +0530</pubDate><guid>https://shantanugoel.com/2020/01/05/migrate-hugo-blog-gitlab-s3-github-pages-actions/</guid><description>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
+&lt;p>This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:&lt;/p>
+&lt;ul>
+&lt;li>Push commit to the source repository on GitLab&lt;/li>
+&lt;li>GitLab CI kicks off on receiving the push
+&lt;ul>
+&lt;li>CI downloads latest version of hugo and generates the static site&lt;/li>
+&lt;li>Runs aws-cli to sync the new files to AWS S3&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>S3 serves the static site&lt;/li>
+&lt;li>Cloudflare provides:
+&lt;ul>
+&lt;li>DNS services (so I can use &lt;a href="https://shantanugoel.com">https://shantanugoel.com&lt;/a> without having to prefix it with a &lt;code>www&lt;/code>)&lt;/li>
+&lt;li>CDN/Caching services for resilience and keeping S3 bills low for data transfer&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="why-what-broke-the-camels-back">Why? What broke the camel&amp;rsquo;s back&lt;/h2>
+&lt;p>I was mostly happy with this setup with a couple of niggles at the back of my mind, vis. a vis.:&lt;/p></description><content>&lt;h2 id="until-now---the-state-of-the-union">Until Now - The State of the union&lt;/h2>
 &lt;p>This blog is generated using hugo, an awesome static site generator. So far, the workflow I used to deploy it was:&lt;/p>
 &lt;ul>
 &lt;li>Push commit to the source repository on GitLab&lt;/li>
@@ -110,8 +128,9 @@ Another thing I wanted while going this way was to keep the source repository an
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">PUBLISH_DIR&lt;/span>: &lt;span style="color:#ae81ff">./public&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Now, anytime you commit and push a change to your source repository, it will be live on your destination within a minute or so.&lt;/li>
-&lt;/ul></content></item><item><title>Create a bit.ly like shorturl static website</title><link>https://shantanugoel.com/2017/09/17/create-bitly-clone-shorturl-static-website/</link><pubDate>Sun, 17 Sep 2017 23:46:24 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2017/09/17/create-bitly-clone-shorturl-static-website/</guid><description>I decided to create my own shorturl website last week for personal use and ended up developing a python project (deecubes)that can be used by anyone to do the same. This is a post to explain what/why/how about it.
-Why my own shorturl website? So far I had been using sites like bit.ly or TinyURL whenever I needed to generate a shorturl (e.g. for giving to someone for easily remember, noting down on paper, putting links on resume, etc) but I had concerns that:</description><content>&lt;p>I decided to create my own shorturl website last week for personal use and ended up developing a python project (&lt;a href="https://shgl.in/deecubes/">deecubes&lt;/a>)that can be used by anyone to do the same. This is a post to explain what/why/how about it.&lt;/p>
+&lt;/ul></content></item><item><title>Create a bit.ly like shorturl static website</title><link>https://shantanugoel.com/2017/09/17/create-bitly-clone-shorturl-static-website/</link><pubDate>Sun, 17 Sep 2017 23:46:24 +0530</pubDate><guid>https://shantanugoel.com/2017/09/17/create-bitly-clone-shorturl-static-website/</guid><description>&lt;p>I decided to create my own shorturl website last week for personal use and ended up developing a python project (&lt;a href="https://shgl.in/deecubes/">deecubes&lt;/a>)that can be used by anyone to do the same. This is a post to explain what/why/how about it.&lt;/p>
+&lt;h2 id="why-my-own-shorturl-website">Why my own shorturl website?&lt;/h2>
+&lt;p>So far I had been using sites like bit.ly or TinyURL whenever I needed to generate a shorturl (e.g. for giving to someone for easily remember, noting down on paper, putting links on resume, etc) but I had concerns that:&lt;/p></description><content>&lt;p>I decided to create my own shorturl website last week for personal use and ended up developing a python project (&lt;a href="https://shgl.in/deecubes/">deecubes&lt;/a>)that can be used by anyone to do the same. This is a post to explain what/why/how about it.&lt;/p>
 &lt;h2 id="why-my-own-shorturl-website">Why my own shorturl website?&lt;/h2>
 &lt;p>So far I had been using sites like bit.ly or TinyURL whenever I needed to generate a shorturl (e.g. for giving to someone for easily remember, noting down on paper, putting links on resume, etc) but I had concerns that:&lt;/p>
 &lt;ul>
@@ -145,7 +164,7 @@ Why my own shorturl website? So far I had been using sites like bit.ly or TinyUR
 &lt;li>It&amp;rsquo;s written in pure python&lt;/li>
 &lt;li>It takes a long form url and creates a static website shorturl that can be auto-generated or custom&lt;/li>
 &lt;li>It&amp;rsquo;s deterministic, so you can be sure of generating the same website from the same inputs&lt;/li>
-&lt;li>Preview can be seen at &lt;!-- raw HTML omitted -->/preview.html (e.g. &lt;a href="https://shgl.in/deecubes/preview.html">https://shgl.in/deecubes/preview.html&lt;/a> )&lt;/li>
+&lt;li>Preview can be seen at &lt;code>&amp;lt;shorturl&amp;gt;/preview.html&lt;/code> (e.g. &lt;a href="https://shgl.in/deecubes/preview.html">https://shgl.in/deecubes/preview.html&lt;/a> )&lt;/li>
 &lt;li>Published on pypi, so can install with pip&lt;/li>
 &lt;li>Several ways to use/deploy (as simple as ftp or bash/batch scripts or manual git commits/push or commit directly through github website etc )&lt;/li>
 &lt;/ul>

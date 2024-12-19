@@ -1,28 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>I3theme Sidebar Issue on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/i3theme-sidebar-issue/</link><description>Recent content in I3theme Sidebar Issue on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Sun, 06 Apr 2008 14:20:25 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/i3theme-sidebar-issue/index.xml" rel="self" type="application/rss+xml"/><item><title>Hack: Fixing The WordPress i3theme Sidebar Issue (Part II)</title><link>https://shantanugoel.com/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</link><pubDate>Sun, 06 Apr 2008 14:20:25 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</guid><description>Some time back I had posted a little hack to fix an issue that users of i3theme have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.
-Go to your wp-content/themes/ folder and open the style.</description><content>&lt;p>Some time back I had &lt;a href="https://shantanugoel.com/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html">posted a little hack&lt;/a> to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/">i3theme&lt;/a> have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>I3theme Sidebar Issue on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/i3theme-sidebar-issue/</link><description>Recent content in I3theme Sidebar Issue on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 06 Apr 2008 14:20:25 +0000</lastBuildDate><atom:link href="https://shantanugoel.com/tags/i3theme-sidebar-issue/index.xml" rel="self" type="application/rss+xml"/><item><title>Hack: Fixing The WordPress i3theme Sidebar Issue (Part II)</title><link>https://shantanugoel.com/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</link><pubDate>Sun, 06 Apr 2008 14:20:25 +0000</pubDate><guid>https://shantanugoel.com/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</guid><description>&lt;p>Some time back I had &lt;a href="https://shantanugoel.com/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html">posted a little hack&lt;/a> to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/">i3theme&lt;/a> have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Go to your wp-content/themes/&lt;!-- raw HTML omitted --> folder and open the style.css file in your favourite text editor.&lt;/p>
+&lt;p>Go to your &lt;code>wp-content/themes/&amp;lt;i3theme&amp;gt;&lt;/code> folder and open the style.css file in your favourite text editor.&lt;/p></description><content>&lt;p>Some time back I had &lt;a href="https://shantanugoel.com/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html">posted a little hack&lt;/a> to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/">i3theme&lt;/a> have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to your &lt;code>wp-content/themes/&amp;lt;i3theme&amp;gt;&lt;/code> folder and open the style.css file in your favourite text editor.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Search for &amp;ldquo;#sidebar&amp;rdquo; (without the quotes) until you reach the following code:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>#sidebar-right,
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#sidebar-right&lt;span style="color:#f92672">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#sidebar-left {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> width: 210px;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: #666666;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line-height: 160%;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">210&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">color&lt;/span>: &lt;span style="color:#ae81ff">#666666&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">line-height&lt;/span>: &lt;span style="color:#ae81ff">160&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>Now, modify this code to look like:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>#sidebar-right,
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#sidebar-right&lt;span style="color:#f92672">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#sidebar-left {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> width: 210px;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: #666666;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line-height: 160%;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> word-wrap: break-word;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">210&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">color&lt;/span>: &lt;span style="color:#ae81ff">#666666&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">line-height&lt;/span>: &lt;span style="color:#ae81ff">160&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">word-wrap&lt;/span>: &lt;span style="color:#66d9ef">break-word&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>That&amp;rsquo;s it. Save your file and you are done.&lt;/li>
