@@ -45,7 +45,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Generate the config files, save and exit
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ commit;save;exit
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, you can try browsing (or doing nslookup) for the blocked website and it&amp;rsquo;ll go through succesfully. Note that like all other CLI changes for USG, the above changes can be lost whenever you make some other config change through UI or update USG firmware. To make it persistent across such events, you need to follow the &lt;a href="https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json">config.gateway json process&lt;/a>.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode271s0hbhb">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, you can try browsing (or doing nslookup) for the blocked website and it&amp;rsquo;ll go through succesfully. Note that like all other CLI changes for USG, the above changes can be lost whenever you make some other config change through UI or update USG firmware. To make it persistent across such events, you need to follow the &lt;a href="https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json">config.gateway json process&lt;/a>.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode270s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
@@ -53,7 +53,7 @@
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.&lt;/p>
-&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode271s0hbhb">
+&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode270s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
