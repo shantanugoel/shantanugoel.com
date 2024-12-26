@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Capacities on Shantanu Vs The World</title><link>https://shantanugoel.com/tags/capacities/</link><description>Recent content in Capacities on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 26 Dec 2024 16:42:03 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/tags/capacities/index.xml" rel="self" type="application/rss+xml"/><item><title>PKMs: Less Management More Knowledge</title><link>https://shantanugoel.com/2024/12/26/pkm-less-management-more-knowledge/</link><pubDate>Thu, 26 Dec 2024 16:42:03 +0530</pubDate><guid>https://shantanugoel.com/2024/12/26/pkm-less-management-more-knowledge/</guid><description>&lt;p>&lt;em>&lt;strong>PKM: Personal Knowledge Management&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>I love it. I love taking notes. I love saving all bits and bobs of information that I come across. Bookmarks, memes, quotes, code snippets, whatever. I love it.&lt;/p>
+&lt;p>But I run into a bunch of issues with them.&lt;/p>
+&lt;ul>
+&lt;li>I can&amp;rsquo;t find them. I can&amp;rsquo;t remember them. I can&amp;rsquo;t use them.&lt;/li>
+&lt;li>I spend a lot more time managing them than I do learning.&lt;/li>
+&lt;/ul>
+&lt;p>I had an epiphany recently that why was I so miserable with my PKMs? In my quest for the perfect knowledge management system, I&amp;rsquo;ve made a lot of mistakes which lead to the above issues:&lt;/p></description><content>&lt;p>&lt;em>&lt;strong>PKM: Personal Knowledge Management&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>I love it. I love taking notes. I love saving all bits and bobs of information that I come across. Bookmarks, memes, quotes, code snippets, whatever. I love it.&lt;/p>
+&lt;p>But I run into a bunch of issues with them.&lt;/p>
+&lt;ul>
+&lt;li>I can&amp;rsquo;t find them. I can&amp;rsquo;t remember them. I can&amp;rsquo;t use them.&lt;/li>
+&lt;li>I spend a lot more time managing them than I do learning.&lt;/li>
+&lt;/ul>
+&lt;p>I had an epiphany recently that why was I so miserable with my PKMs? In my quest for the perfect knowledge management system, I&amp;rsquo;ve made a lot of mistakes which lead to the above issues:&lt;/p>
+&lt;ul>
+&lt;li>Trying to organize them very thoroughly. Create deeply thoughtful, insanely hierarchical structures of folders and files (or similar concepts represented in various apps)&lt;/li>
+&lt;li>Trying to do everything in a single app.&lt;/li>
+&lt;li>Running after a shit ton of features.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>PKMs should be more about &lt;em>Knowledge&lt;/em> and less about &lt;em>Management&lt;/em>.&lt;/p>
+&lt;/blockquote>
+&lt;p>I remembered how I was amazed when I used gmail for the first time. I didn&amp;rsquo;t have to create tons of nested folders. I used labels a bit, and they are insanely more powerful than folders. And rest I basically just used search. I had the same experience when I joined Google as an engineer and stopped organizing all my work docs in neat structures, because everything was just a search away, wherever they were whether a wiki or a text file or an email etc.&lt;/p>
+&lt;p>I also remembered the unix philosphy of doing one thing well, and how that scales amazingly.&lt;/p>
+&lt;p>So, I set out to overhaul my PKM system a bit with these ideas in mind. I tried a lot of apps and settled on a few.&lt;/p>
+&lt;p>I&amp;rsquo;ll talk about what I chose and a bit about why, but what I will not talk about is their long list of features. Because like I said, that&amp;rsquo;s a slippery slope and I ruthlessly narrowed down my main criteria as:&lt;/p>
+&lt;ul>
+&lt;li>Easy to store&lt;/li>
+&lt;li>Easy to retrieve (on demand, as well as discovery)&lt;/li>
+&lt;li>Available cross platform (Windows, Linux, Mac, iOS, iPadOS, Chrome - since I use all these platforms)&lt;/li>
+&lt;/ul>
+&lt;p>I settled finally on three apps:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://hoarder.app/">Hoarder&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://capacities.io/">Capacities&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://notability.com/">Notability&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Now, I was using notability already since long for handwritten notes on my app. So that obviously remains in the stack. For a little while, I had tried to use OneNote instead in the allure of reducing an app to use since OneNote does both handwrittten and typed notes, but it&amp;rsquo;s such a bad UX and quite different and clanky across all platforms as well. So I will continue with Notability for this, and I type these out in my regular note app anyways while ending my day. I continue with taking handwritten notes because they are amazingly intuitive without breaking the flow when reading books or in meeetings.&lt;/p>
+&lt;p>Now I use hoarder for bookmarks, and capacities for everything else.&lt;/p>
+&lt;p>Hoarder is a self hosted web app which also has mobile apps and extensions. It auto tags everything you share to it (One click on chrome, or share sheet on phone) using AI (You&amp;rsquo;ve to bring your own. I use Google Gemini 1.5 Flash). It also scrapes the content and downloads a clean readable version for offline use or if the pages go away, or can also store the full page archive/screenshots etc. In the time that I&amp;rsquo;ve been using it, it&amp;rsquo;s been so easy to store and search my bookmarks. But it also allows me to &lt;code>discover&lt;/code> them when I browse tags. I plan to write some code on top of it to show me a random unread bookmark every day.&lt;/p>
+&lt;p>Capacities changed my view towards notes completely. The first time I oepened it, I was wierded out. Because it does not even have a way to create a &amp;ldquo;note&amp;rdquo; per se and &amp;ldquo;organize&amp;rdquo; it. For capacities, everything is an object.
+&lt;img src="https://shantanugoel.com/img/2024/capacities.png" alt="Capacities">&lt;/p>
+&lt;p>What this means is that it liberates you from organizing your notes. You create objects (use built-in ones or define your own). E.g. I don&amp;rsquo;t need to figure out that a tip/how-to that I found goes under Linux or Windows or is it for my laptops or for my home lab components like the NAS or raspberry pi or whatever. It&amp;rsquo;s just a How To. I save it as a How To and then you can search for it when you want. I can use tags if I need, or can set various properties on the types (enabled by the Object Type system), and can easily link to other objects from anywhere which helps in the recall process, aided also by their amazing search. It has a ton of other features which I love as well but at the core of it, I think using this object system (think of it like a super lean and super fast notion) is what made me switch.&lt;/p>
+&lt;p>Hopefully, this is where my search for the perfect PKM system ends, as my searches for the stored knowledge start getting fulfilled.&lt;/p></content></item></channel></rss>
