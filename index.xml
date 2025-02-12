@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu Vs The World</title><link>https://shantanugoel.com/</link><description>Recent content on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Jan 2025 00:46:31 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a Resilient Home DNS Setup with DNSdist</title><link>https://shantanugoel.com/2025/01/02/resilient-home-dns-dnsdist/</link><pubDate>Thu, 02 Jan 2025 00:46:31 +0530</pubDate><guid>https://shantanugoel.com/2025/01/02/resilient-home-dns-dnsdist/</guid><description>&lt;p>Running Pi-hole or AdGuard Home provides great network-wide ad blocking, but creates a single point of failure. When your DNS server crashes or needs maintenance, your entire network loses DNS resolution. I had this problem and thus far had chosen to do a sub-optimal solution of using both AdGuard DNS as well as an upstream Google DNS server in my internet gateway. &lt;code>dnsmasq&lt;/code> running on the gateway that manages DNS requests from all the clients in my network has no concept of a failover DNS server, or server priorities. It dispatches requests to all the servers it has configured, and &lt;em>ideally&lt;/em> should honor whichever servers responds first.&lt;/p></description><content>&lt;p>Running Pi-hole or AdGuard Home provides great network-wide ad blocking, but creates a single point of failure. When your DNS server crashes or needs maintenance, your entire network loses DNS resolution. I had this problem and thus far had chosen to do a sub-optimal solution of using both AdGuard DNS as well as an upstream Google DNS server in my internet gateway. &lt;code>dnsmasq&lt;/code> running on the gateway that manages DNS requests from all the clients in my network has no concept of a failover DNS server, or server priorities. It dispatches requests to all the servers it has configured, and &lt;em>ideally&lt;/em> should honor whichever servers responds first.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu Vs The World</title><link>https://shantanugoel.com/</link><description>Recent content on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 12 Feb 2025 10:13:46 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Analyzing Superbowl Ads Trends Over The Years (with a bit of help from AI)</title><link>https://shantanugoel.com/2025/02/12/analyze-superbowl-ads--trends/</link><pubDate>Wed, 12 Feb 2025 10:13:46 +0530</pubDate><guid>https://shantanugoel.com/2025/02/12/analyze-superbowl-ads--trends/</guid><description>&lt;p>&lt;a href="https://x.com/AdTechGod">AdTechGod&lt;/a> recently posted an interesting question on twitter &amp;ldquo;How many Super Bowl advertisers return year after year, and how much churn is there? I assume the ROAS isn&amp;rsquo;t strong enough to justify long term commitments.&amp;rdquo;
+&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-10-19-55.png" alt="Do Super Bowl Advertisers Return?">&lt;/p>
+&lt;p>This got me thinking about the Super Bowl ads and how they have changed over the years, and I set out to do some analysis on it.&lt;/p>
+&lt;h2 id="first-steps">First steps&lt;/h2>
+&lt;p>At the outset, I needed to get some information about the ads shown during Super Bowl in the past years. I found a few data sets which were fairly incomplete but a good starting point nonetheless, and I did a quick and dirty pivot table to get an initial insight.&lt;/p></description><content>&lt;p>&lt;a href="https://x.com/AdTechGod">AdTechGod&lt;/a> recently posted an interesting question on twitter &amp;ldquo;How many Super Bowl advertisers return year after year, and how much churn is there? I assume the ROAS isn&amp;rsquo;t strong enough to justify long term commitments.&amp;rdquo;
+&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-10-19-55.png" alt="Do Super Bowl Advertisers Return?">&lt;/p>
+&lt;p>This got me thinking about the Super Bowl ads and how they have changed over the years, and I set out to do some analysis on it.&lt;/p>
+&lt;h2 id="first-steps">First steps&lt;/h2>
+&lt;p>At the outset, I needed to get some information about the ads shown during Super Bowl in the past years. I found a few data sets which were fairly incomplete but a good starting point nonetheless, and I did a quick and dirty pivot table to get an initial insight.&lt;/p>
+&lt;p>&lt;a href="https://x.com/shantanugoel/status/1889138261924434010">https://x.com/shantanugoel/status/1889138261924434010&lt;/a>
+&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-10-28-10.png" alt="Initial insights Into Super Bowl Ads Historical Data">&lt;/p>
+&lt;h2 id="preparing-the-data">Preparing The Data&lt;/h2>
+&lt;h3 id="part-1">Part 1&lt;/h3>
+&lt;p>I wanted to do a bit more though. The data I had was fairly limited, both in terms of information as well as the years it covered. So I wanted to create my own. I found superbowl-ads.com which seemed to be a pretty good source but of course they didn&amp;rsquo;t have an API or anything and needed scraping. It&amp;rsquo;s not too bad to write a scraper for a website like this, but it would have still taken me a few hours. So, I whipped out cursor.&lt;/p>
+&lt;p>I went through the site, created a model of:&lt;/p>
+&lt;ul>
+&lt;li>What things are needed to be scraped and what to avoid
+&lt;ul>
+&lt;li>e.g. each year&amp;rsquo;s ads were linked to a page titled with that year number, the individual ad links were under a &lt;code>cactus-post-item&lt;/code> div, the sidebar &lt;code>cactus-sidebar&lt;/code> had additional/unrelated ads and thus needed to be ignored, and so on.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>What format are the ads titled in that I could parse to decompose into the data I need to take out brand name, ad title, etc.
+&lt;ul>
+&lt;li>There were quite a few. And a few variations on each. So I had to list down various such formats in which they appear&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>What information I needed to take out from each ad
+&lt;ul>
+&lt;li>Brand name, Ad title, year at a minimum. Which could be taken out from the above things&lt;/li>
+&lt;li>I also wanted to get more information about the ads itself though like themes of the ads, what kind of industry/product they were advertising, etc. So I thought of collecting the video url as well.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>I needed to select a data format in which I should save this data. I had a few options that I thought about: csv, json, sqlite, etc and I went with json, mainly because they are human readable, so I can easily look at and update info if needed. CSVs could do this too, but they are much less structured and post processing often becomes a pain where the delimiter is also used in the content itself.&lt;/li>
+&lt;/ul>
+&lt;p>With this, I could give a good extensive prompt to cursor to create a scraper in python that could get this data in place for me. It needed a few iterations back and forth to fix a few issues (runtime errors, broken links, more format issues, etc) but in 30 minutes or so I got it to work, and collected data in the below looking format&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;year&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2025&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brand&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;GODADDY&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;“Social Slickness”&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;original_title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;GoDaddy Super Bowl LIX 2025 Ad “Social Slickness”&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;page_url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://www.superbowl-ads.com/godaddy-super-bowl-lix-2025-ad-social-slickness/&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;video_url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://www.youtube.com/embed/K2Gj9BufAqo?feature=oembed&amp;amp;autoplay=1&amp;amp;wmode=opaque&amp;amp;rel=0&amp;amp;showinfo=0&amp;amp;iv_load_policy=3&amp;amp;modestbranding=0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;description&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="part-2">Part 2&lt;/h3>
+&lt;p>Next, I wanted to augment this data with some more information that was about the ad content itself, rather than just the brands/industry. I could go through each one of them myself like a psycho, and spend weeks compiling this information. But WHO DOES THAT NOW? So, I got the good old Google Gemini AI into action. I got cursor to create a data enhancer script that:&lt;/p>
+&lt;ul>
+&lt;li>Takes the json output from above&lt;/li>
+&lt;li>Sends each youtube URL to Gemini AI&lt;/li>
+&lt;li>Gets back things like:
+&lt;ul>
+&lt;li>A 100 word summary of the ad itself&lt;/li>
+&lt;li>A category representing the product/industry being advertised&lt;/li>
+&lt;li>A list of keywords/tags that describe the themes used in the ad&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>I also had to make sure that the categories/themes pick from a specific list of things rather than being completely left up to Gemini so that I can actually do aggregation/analysis of them.&lt;/li>
+&lt;/ul>
+&lt;p>With this, I was able to convert the above data into something like below:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;year&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2025&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brand&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;GODADDY&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;“Social Slickness”&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;original_title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;GoDaddy Super Bowl LIX 2025 Ad “Social Slickness”&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;page_url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://www.superbowl-ads.com/godaddy-super-bowl-lix-2025-ad-social-slickness/&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;video_url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://www.youtube.com/embed/K2Gj9BufAqo?feature=oembed&amp;amp;autoplay=1&amp;amp;wmode=opaque&amp;amp;rel=0&amp;amp;showinfo=0&amp;amp;iv_load_policy=3&amp;amp;modestbranding=0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;description&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;GoDaddy&amp;#39;s Super Bowl LIX ad, \&amp;#34;Social Slickness,\&amp;#34; is a hypothetical advertisement from 2025. Without specific details about the ad&amp;#39;s content, we can only speculate. It&amp;#39;s likely that the ad would promote GoDaddy&amp;#39;s website building and domain registration services, focusing on the social media aspect of online business. The ad may showcase how GoDaddy empowers small businesses to build a strong online presence and succeed in the social media landscape. It might use humor or a celebrity endorsement to capture attention during the high-profile game.&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;category&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Technology&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;theme_tags&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Humor&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Social Message&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Celebrity&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="part-3">Part 3&lt;/h3>
+&lt;p>With this hand, I had a pretty malleable form of data that I could work with. Now, everyone knows that the easiest way to play around with data is plain old Microsoft Excel. So I got cursor to write another script yet again :D, this time to convert the json data into an excel sheet. I also got it to convert the themes into a one-hot encoding type scheme so it becomes easier to do pivot tables on them.&lt;/p>
+&lt;p>I also had to do a lot of clean up manually, especially around brand names, because scraping is scraping and is marred by human errors in the original data as well as not being able to cover each and every edge case. There&amp;rsquo;s also some data missing (particularly from year 2017) but I think this doesn&amp;rsquo;t create much of an issue for the overall analysis.&lt;/p>
+&lt;p>With all this, I had the data looking like below:&lt;/p>
+&lt;p>&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-10-59-58.png" alt="Final Super Bowl Ads Historical Data">&lt;/p>
+&lt;h2 id="analysis--insights">Analysis &amp;amp; Insights&lt;/h2>
+&lt;p>We&amp;rsquo;re into the juicy parts now :D&lt;/p>
+&lt;h3 id="categoriesindustries">Categories/Industries&lt;/h3>
+&lt;p>First thing I did was to break down this data per the industry, and there were quite a few curious things that came out:&lt;/p>
+&lt;ul>
+&lt;li>Food &amp;amp; Beverages (Mostly beverages though) and Automotive are the biggest sectors in Super Bowl Ads&lt;/li>
+&lt;li>Ironically, Sports &amp;amp; Fitness sector is one of the least represented, in one of the biggest sporting events&lt;/li>
+&lt;li>Automotive and Entertainment started rising in representation after 2011. Probably signals recovery spending after the 2008 crash?&lt;/li>
+&lt;li>Financial services had a big jump in 2021/2022. Probably playing on post-covid sentiment on the need to invest/save more?&lt;/li>
+&lt;li>Automotive seems to be slowing down now in the past few years&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-11-04-15.png" alt="Category / Industry Breakdown for Super Bowl Ads Historical Data">&lt;/p>
+&lt;h3 id="themes">Themes&lt;/h3>
+&lt;p>I also wanted to understand the kind of themes that the ads played on.&lt;/p>
+&lt;ul>
+&lt;li>No surprises in the top themes. We all love and remember the funny ads from the past super bowls, and &lt;strong>Humor&lt;/strong> does indeed take the top spot, by a huge margin&lt;/li>
+&lt;li>I wanted to see if &lt;strong>Patriotism&lt;/strong> has become more common theme in the last few years with all the politics and the nationalism waves going around, but doesn&amp;rsquo;t seem like so&lt;/li>
+&lt;li>Going big if you are spending so much makes sense, so &lt;strong>Cinmeatic&lt;/strong> themes, using &lt;strong>Celebrities&lt;/strong> and &lt;strong>Action&lt;/strong> turned out to be pretty big as well, with ** Emotional** themes not being far behind&lt;/li>
+&lt;li>For some reason, &lt;strong>Family&lt;/strong> theme has picked up in the last 7-8 years though traditionally it didn&amp;rsquo;t used to be so much used&lt;/li>
+&lt;li>&lt;strong>Social Message&lt;/strong> themes are becoming more popular as well over the last 10 years.
+&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-11-41-03.png" alt="Final Themes Breakdown for Super Bowl Ads Historical Data">&lt;/li>
+&lt;/ul>
+&lt;h3 id="brands">Brands&lt;/h3>
+&lt;p>Finally we come to the part which started it all, the brands.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Anheuser-Busch&lt;/strong> (Bud light/ Budweiser etc) is the largest spender. Leading the pack year after year, although they&amp;rsquo;ve slowed down a bit compared to the early 2000s&lt;/li>
+&lt;li>&lt;strong>Pepsi/Coke/Doritos&lt;/strong> (Soft drinks/snack providers) follow as a distant second. &lt;strong>Pepsi seems to outspend Coke by more than 2x in Super Bowl considering Dorritos is their sub brand as well&lt;/strong> (There are a few other sub brands for both Coke and Pepsi as well in the list)&lt;/li>
+&lt;li>It&amp;rsquo;s interesting to note that while there are occasional other snacks/soft drinks/beer brands that show up, but 3 of these brands (&lt;strong>Anheuser-Busch, Pepsi and Coke outspend every other player by far&lt;/strong>)&lt;/li>
+&lt;li>My thought process around these taking the top spot in advertiser list is that they probably want to associate drinking/snacking with the game time and use this as the right time to hit home to make people associate their brand as being synonymous with watching sports&lt;/li>
+&lt;li>This is followed by movies/series etc ads which is expected to promote big budget content&lt;/li>
+&lt;li>&lt;strong>ETrade&lt;/strong> seems to be the sort of lone star in terms fo financial services brands coming back year after year&lt;/li>
+&lt;li>Amongst the automotive brands, which is the second largest overall sector, more common ones seem to be the non-premium brands like &lt;strong>Hyundai/Toyota/Kia&lt;/strong> etc which take up the most space. I guess they need to spend big to make their recall better in a crowded market with not much differentiation in the product&lt;/li>
+&lt;li>Amongst the tech companies, &lt;strong>Amazon&lt;/strong> shows most ads, but that includes their prime video content too. Other than that &lt;strong>Google&lt;/strong> is most common. &lt;strong>Square space&lt;/strong> showing up here is a bit surprising but they&amp;rsquo;ve been spending every year since last few years.&lt;/li>
+&lt;li>Biggest surprise, &lt;strong>YAHOO!&lt;/strong> of all people had an ad in 2024 out of the blue with Bill Murray, promoting their email services lol.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://shantanugoel.com/img/2025/2025-02-12-11-47-06.png" alt="Brands Breakdown for Super Bowl Ads Historical Data">&lt;/p></content></item><item><title>Building a Resilient Home DNS Setup with DNSdist</title><link>https://shantanugoel.com/2025/01/02/resilient-home-dns-dnsdist/</link><pubDate>Thu, 02 Jan 2025 00:46:31 +0530</pubDate><guid>https://shantanugoel.com/2025/01/02/resilient-home-dns-dnsdist/</guid><description>&lt;p>Running Pi-hole or AdGuard Home provides great network-wide ad blocking, but creates a single point of failure. When your DNS server crashes or needs maintenance, your entire network loses DNS resolution. I had this problem and thus far had chosen to do a sub-optimal solution of using both AdGuard DNS as well as an upstream Google DNS server in my internet gateway. &lt;code>dnsmasq&lt;/code> running on the gateway that manages DNS requests from all the clients in my network has no concept of a failover DNS server, or server priorities. It dispatches requests to all the servers it has configured, and &lt;em>ideally&lt;/em> should honor whichever servers responds first.&lt;/p></description><content>&lt;p>Running Pi-hole or AdGuard Home provides great network-wide ad blocking, but creates a single point of failure. When your DNS server crashes or needs maintenance, your entire network loses DNS resolution. I had this problem and thus far had chosen to do a sub-optimal solution of using both AdGuard DNS as well as an upstream Google DNS server in my internet gateway. &lt;code>dnsmasq&lt;/code> running on the gateway that manages DNS requests from all the clients in my network has no concept of a failover DNS server, or server priorities. It dispatches requests to all the servers it has configured, and &lt;em>ideally&lt;/em> should honor whichever servers responds first.&lt;/p>
 &lt;p>This worked, sort of, but I often had requests leaking through to upstream servers. I recently found out about &lt;code>dnsdist&lt;/code> and used that to fix it.&lt;/p>
 &lt;p>We will use dnsdist as a DNS load balance to create a failover setup. It will:&lt;/p>
 &lt;ul>
@@ -1759,7 +1873,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2017/01/streamable-blocked-thumb.jpg" />
 &lt;/figure>
-&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode277s0hbhb">
+&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode278s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
@@ -1767,7 +1881,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.&lt;/p>
-&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode277s0hbhb">
+&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode278s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
