@@ -2,7 +2,7 @@
 &lt;p>I&amp;rsquo;ve been seeing a few folks talking about &lt;a href="https://ampcode.com">Amp&lt;/a> recently, which is an agentic coding tool built by &lt;code>Sourcegraph&lt;/code>, the folks who had built Cody. I have worked with Cody before and had a great time with it before it got overshadowed by Windsurg/Cursor etc, so I wanted to give Amp a try as well. Now, this is &lt;em>NOT&lt;/em> a full fledge review but only my first hands on impressions from implementing a mid sized feature over the weekend. Thanks to &lt;code>Quinn&lt;/code> (CEO of Sourcegraph/Amp) who gave me a bunch of extra credits to try it out.&lt;/p></description><content>&lt;h2 id="intro">Intro&lt;/h2>
 &lt;p>I&amp;rsquo;ve been seeing a few folks talking about &lt;a href="https://ampcode.com">Amp&lt;/a> recently, which is an agentic coding tool built by &lt;code>Sourcegraph&lt;/code>, the folks who had built Cody. I have worked with Cody before and had a great time with it before it got overshadowed by Windsurg/Cursor etc, so I wanted to give Amp a try as well. Now, this is &lt;em>NOT&lt;/em> a full fledge review but only my first hands on impressions from implementing a mid sized feature over the weekend. Thanks to &lt;code>Quinn&lt;/code> (CEO of Sourcegraph/Amp) who gave me a bunch of extra credits to try it out.&lt;/p>
 &lt;p>I wanted to build a dashboard for my &lt;a href="https://x.com/shantanugoel/status/1883794181061283997">Amazon Price Tracker Telegram bot&lt;/a> so I can see various analytics about it (Product price history charts, products being tracked, various stats around them, etc) and maybe even open up it up to public at some point. This served as a good one to try out Amp with because it was a decent sized feature while also not starting from scratch so it would give me an idea of how Amp plays with existing code bases.
-(Spoiler Alert: This page was part of the outcome)
+(Spoiler Alert: This page was part of the outcome, with absolutely 0 manual code)
 &lt;img src="https://shantanugoel.com/img/2025/amp-8.png" alt="">&lt;/p>
 &lt;p>Here are a few things I noticed.&lt;/p>
 &lt;h2 id="the-good-stuff">The Good Stuff&lt;/h2>
@@ -1939,7 +1939,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2017/01/streamable-blocked-thumb.jpg" />
 &lt;/figure>
-&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode278s0hbhb">
+&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode279s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
@@ -1947,7 +1947,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.&lt;/p>
-&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode278s0hbhb">
+&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode279s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
