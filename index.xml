@@ -56,6 +56,9 @@
 &lt;li>
 &lt;p>&lt;strong>Folder References&lt;/strong>: I was able to &lt;code>@&lt;/code> refer files but could not do so for folders. A place where it caused me issues was that I wanted it to create a file under &lt;code>docs\dashboard&lt;/code> folder, but mentioning just &lt;code>dashboard&lt;/code> resulted in it creating a new folder &lt;code>dashboard&lt;/code> under root itself. This could potentially lead to some file managment headaches.&lt;/p>
 &lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Easy access to Cost&lt;/strong>: I can see my running costs in the dashboard on Amp&amp;rsquo;s website. But it will be useful to see that within the editor/thread (Either the cost incurred on this thread, or remaining credits)&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="cost">Cost&lt;/h2>
 &lt;p>It roughly cost me around $10 in credits to get this work done. If I was using claude 4 sonnet in MAX mode in cursor, I&amp;rsquo;d probably be paying ~$12 or more because like I mentioned above I typically see a few issues in cursor which were taken care of by Amp so I&amp;rsquo;d likely use a bit more tokens there. Plus Amp pricing for model usage does not have any markup while Cursor has a 20% markup. If I was using the normal mode in cursor, it&amp;rsquo;d likely end up a bit cheaper (probably around $7-8 or so) but with a lot more effort on my part.&lt;/p>
@@ -1936,7 +1939,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2017/01/streamable-blocked-thumb.jpg" />
 &lt;/figure>
-&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode279s0hbhb">
+&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode278s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
@@ -1944,7 +1947,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.&lt;/p>
-&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode279s0hbhb">
+&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode278s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
