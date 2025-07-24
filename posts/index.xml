@@ -301,10 +301,10 @@
 &lt;p>Exhauted, I bought another one off Amazon which was similar but surprisingly it didn&amp;rsquo;t work with Synology. Scanning it via &lt;code>nmap&lt;/code>, I couldn&amp;rsquo;t see any ports open either that could be onvif or rtsp related.&lt;/p>
 &lt;p>Searching on the internet, I found that you could put a file named &lt;code>ceshi.ini&lt;/code> on an sd card and put it in the camera with the content mentioning things like &lt;code>rtsp=1&lt;/code> and &lt;code>onvif=1&lt;/code> and this should enable it. But it didn&amp;rsquo;t work.&lt;/p>
 &lt;p>I was about to send it back to Amazon, but then for some reason decided to try other variants of this and finally the following content in the file worked for me. I put the file on the sd card and rebooted the camera and it finally started working.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[CONST_PARAM]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rtsp_enable=1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>onvif_enable=1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Adding this here as a note for my future self because I have a knack of forgetting my own fixes and then running into them later on my own blog :D&lt;/p>
+&lt;pre tabindex="0">&lt;code>[CONST_PARAM]
+rtsp_enable=1
+onvif_enable=1
+&lt;/code>&lt;/pre>&lt;p>Adding this here as a note for my future self because I have a knack of forgetting my own fixes and then running into them later on my own blog :D&lt;/p>
 &lt;p>&lt;a href="https://x.com/shantanugoel/status/1869399305779634377">https://x.com/shantanugoel/status/1869399305779634377&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://shantanugoel.com/img/2024/twitter-lost-found.jpg" alt="Lost and Found">&lt;/p></content></item><item><title>3dprinting Changes Lives</title><link>https://shantanugoel.com/2024/04/12/3d-printing-changes-lives/</link><pubDate>Fri, 12 Apr 2024 18:28:07 +0530</pubDate><guid>https://shantanugoel.com/2024/04/12/3d-printing-changes-lives/</guid><description>&lt;p>Imagine that you wake up one day and discover that you have the power to bring your ideas to life! You think of something, design it and it appears in front of you. Wouldn&amp;rsquo;t that be life-changing for you?&lt;/p>
 &lt;p>&lt;img src="https://shantanugoel.com/img/uploads/shakalakaboomboom.gif" alt="If you can imagine it, you can have it">&lt;/p>
@@ -1460,8 +1460,8 @@ Another thing I wanted while going this way was to keep the source repository an
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then we come to this instruction which looks a bit familiar to us because we&amp;rsquo;ve already seen that address esp+0x5c earlier. So, this seems like the initialization statement for a variable which is set to 0 and then later checked whether it is still 0 or not.&lt;/p>
 &lt;h3 id="the-vulnerability">The vulnerability&lt;/h3>
 &lt;p>Our task then is to make this variable (at location esp+0x5c) 0 or non-zero depending on what do the 2 puts statements do. The only access to influence the program we have is through the input we can give to &lt;code>gets&lt;/code>. Hmm, so we dig deeper into the gets manpage and we see below:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>gets() reads a line from stdin into the buffer pointed to by s until either a terminating newline or EOF, which it replaces with a null byte (&amp;#39;\0&amp;#39;). No check for buffer overrun is performed (see BUGS below).
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Great! So we know that we need to update a value at address esp+0x5c and we know that we have a possibility to have unchecked writes done starting from esp+0x1c. You know where this is going, and we almost don&amp;rsquo;t even need further dynamic analysis to crack this now. But I&amp;rsquo;ll take you through a bit of dynamic analysis for a brief introduction to it and for confirming our theory.&lt;/p>
+&lt;pre tabindex="0">&lt;code>gets() reads a line from stdin into the buffer pointed to by s until either a terminating newline or EOF, which it replaces with a null byte (&amp;#39;\0&amp;#39;). No check for buffer overrun is performed (see BUGS below).
+&lt;/code>&lt;/pre>&lt;p>Great! So we know that we need to update a value at address esp+0x5c and we know that we have a possibility to have unchecked writes done starting from esp+0x1c. You know where this is going, and we almost don&amp;rsquo;t even need further dynamic analysis to crack this now. But I&amp;rsquo;ll take you through a bit of dynamic analysis for a brief introduction to it and for confirming our theory.&lt;/p>
 &lt;h3 id="dynamic-analysis">Dynamic Analysis&lt;/h3>
 &lt;p>While in static analysis we carry out all our inspections without running the program, in dynamic analysis we monitor the internal state of the program while it is running. For this, we will run the program inside gdb. You should know the following basic commands for this:&lt;/p>
 &lt;p>&lt;code>r&lt;/code>: Run the currently loaded program from beginning&lt;/p>
@@ -1661,28 +1661,26 @@ Download station had a hack (by changing internal files) to run custom script af
 &lt;ul>
 &lt;li>Install directly&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>git clone git@github.com:shantanugoel/email-actions.git
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd email-actions
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python setup.py install
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="usage">Usage&lt;/h1>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>usage: email_actions [-h] [-v] [-H HOSTNAME] [-p PORT] [-l LOG] -c CONFIG
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this help message and exit
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v, --version show program&amp;#39;s version number and exit
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -H HOSTNAME, --hostname HOSTNAME
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Host IP or name to bind the server to
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p PORT, --port PORT Port number to bind the server to
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -l LOG, --log LOG Set log level. 0=&amp;gt; Warning, 1=&amp;gt;Info, 2=&amp;gt;Debug
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>required arguments:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -c CONFIG, --config CONFIG
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Specify config file (yaml format) to be used. If it
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> doesn&amp;#39;t exist, we&amp;#39;ll try to create it
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Examples:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>email_actions -H 127.0.0.1 -p 8500 -l 2 -c /home/shantanu/email_actions_cfg.yml
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>email_actions -c /home/shantanu/email_actions_cfg.yml
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Most of the options above are self explanatory. If you don&amp;rsquo;t specify a hostname, it will choose &lt;code>localhost&lt;/code> by default. If you don&amp;rsquo;t specify a port, it&amp;rsquo;ll choose &lt;code>8025&lt;/code> by default.&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone git@github.com:shantanugoel/email-actions.git
+cd email-actions
+python setup.py install
+&lt;/code>&lt;/pre>&lt;h1 id="usage">Usage&lt;/h1>
+&lt;pre tabindex="0">&lt;code>usage: email_actions [-h] [-v] [-H HOSTNAME] [-p PORT] [-l LOG] -c CONFIG
+optional arguments:
+-h, --help show this help message and exit
+-v, --version show program&amp;#39;s version number and exit
+-H HOSTNAME, --hostname HOSTNAME
+Host IP or name to bind the server to
+-p PORT, --port PORT Port number to bind the server to
+-l LOG, --log LOG Set log level. 0=&amp;gt; Warning, 1=&amp;gt;Info, 2=&amp;gt;Debug
+required arguments:
+-c CONFIG, --config CONFIG
+Specify config file (yaml format) to be used. If it
+doesn&amp;#39;t exist, we&amp;#39;ll try to create it
+&lt;/code>&lt;/pre>&lt;p>Examples:&lt;/p>
+&lt;pre tabindex="0">&lt;code>email_actions -H 127.0.0.1 -p 8500 -l 2 -c /home/shantanu/email_actions_cfg.yml
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>email_actions -c /home/shantanu/email_actions_cfg.yml
+&lt;/code>&lt;/pre>&lt;p>Most of the options above are self explanatory. If you don&amp;rsquo;t specify a hostname, it will choose &lt;code>localhost&lt;/code> by default. If you don&amp;rsquo;t specify a port, it&amp;rsquo;ll choose &lt;code>8025&lt;/code> by default.&lt;/p>
 &lt;p>&lt;strong>Note&lt;/strong> I recommend running the server on localhost or an internal network interface so that it can&amp;rsquo;t be abused from internet. Right now it doesn&amp;rsquo;t support authentication (limitation of aiosmtpd. Will be fixed soon), so if you must open it up to the internet, add your own scheme of verification either through a randomly generated email address in &amp;ldquo;To&amp;rdquo; rule or some other check in subject/content in your own external script that you are triggering.&lt;/p>
 &lt;p>Specifying a config file is mandatory. If the specified file doesn&amp;rsquo;t exist, we&amp;rsquo;ll generate a dummy one which you can fill. But essentially this is a step that you can&amp;rsquo;t avoid. The config file is explained in more detail below.&lt;/p>
 &lt;h2 id="config-file-format">Config file format&lt;/h2>
@@ -1692,53 +1690,50 @@ Download station had a hack (by changing internal files) to run custom script af
 &lt;p>The config file has the following general format. All text after &lt;code>#&lt;/code> is an explanation, not a part of the config itself.&lt;/p>
 &lt;p>Names within &lt;code>&amp;lt;&amp;gt;&lt;/code> can be substituted by user as per their choice. Names outside &lt;code>&amp;lt;&amp;gt;&lt;/code> are reserved by email-actions and must be used as is.&lt;/p>
 &lt;p>All settings are case-sensitive. So take care of that.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>global: &lt;span style="color:#75715e"># Optional keyword that specifies global variables for plugins. These are available in all instances of your plugins in each filter&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>plugin_name&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#75715e"># Plugin name for which you are specifying a global variable&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>setting_1&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#f92672">&amp;lt;&lt;/span>abcd&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#75715e"># Variable/setting for this plugin.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>setting_2&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#f92672">&amp;lt;&lt;/span>efgh&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#75715e"># Variable/setting for this plugin.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>filters: &lt;span style="color:#75715e">#Mandatory keyword to signify start of your filters specifications.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>filter_name&lt;span style="color:#f92672">&amp;gt;&lt;/span>: &lt;span style="color:#75715e"># User specified name for a filter&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rules: &lt;span style="color:#75715e"># Rules specifications start&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> to: &lt;span style="color:#f92672">&amp;lt;&lt;/span>email_id&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#75715e"># A rule that matches&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example: Take a look at the below sample config (Also found in &lt;a href="https://github.com/shantanugoel/email-actions/blob/master/sample/config.yml">this location&lt;/a>)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Specify a global variable for join plugin&amp;#39;s api key&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>global:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> join:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apikey: my_join_app_api_key
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Specify 2 filters.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># my_filter matches only the emails which are sent to abc@a.com and runs below 2 actions:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Send join push notification using the global join api key&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Send an email using the credentials specified&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># my_second_filter runs on all emails since there is no rule specified&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># It runs below 2 actions:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Send join notification using another_api_key. Local variable overrides the global one&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## Run external command with given args and also sets up a environment variable called &amp;#34;MY_ENV_VAR&amp;#34; which can be accessed in external command&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>filters:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> my_filter:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rules:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> to: abc&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>a&lt;span style="color:#f92672">.&lt;/span>com
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> actions:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> join:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> email:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> host: smtp&lt;span style="color:#f92672">.&lt;/span>example&lt;span style="color:#f92672">.&lt;/span>com
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: my_email_username
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password: my_email_password
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> port: &lt;span style="color:#ae81ff">587&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secure: True
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> my_second_filter:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> join:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apikey: another_api_key
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exec:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cmd: &lt;span style="color:#f92672">/&lt;/span>home&lt;span style="color:#f92672">/&lt;/span>shantanu&lt;span style="color:#f92672">/&lt;/span>test&lt;span style="color:#f92672">.&lt;/span>sh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#f92672">/&lt;/span>home&lt;span style="color:#f92672">/&lt;/span>shantanu&lt;span style="color:#f92672">/&lt;/span>abc_file
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span> another_arg
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> env:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MY_ENV_VAR: &lt;span style="color:#e6db74">&amp;#39;Some Value&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rules">Rules&lt;/h2>
+&lt;pre tabindex="0">&lt;code>global: # Optional keyword that specifies global variables for plugins. These are available in all instances of your plugins in each filter
+&amp;lt;plugin_name&amp;gt;: # Plugin name for which you are specifying a global variable
+&amp;lt;setting_1&amp;gt;: &amp;lt;abcd&amp;gt; # Variable/setting for this plugin.
+&amp;lt;setting_2&amp;gt;: &amp;lt;efgh&amp;gt; # Variable/setting for this plugin.
+filters: #Mandatory keyword to signify start of your filters specifications.
+&amp;lt;filter_name&amp;gt;: # User specified name for a filter
+rules: # Rules specifications start
+to: &amp;lt;email_id&amp;gt; # A rule that matches
+&lt;/code>&lt;/pre>&lt;p>Example: Take a look at the below sample config (Also found in &lt;a href="https://github.com/shantanugoel/email-actions/blob/master/sample/config.yml">this location&lt;/a>)&lt;/p>
+&lt;pre tabindex="0">&lt;code># Specify a global variable for join plugin&amp;#39;s api key
+global:
+join:
+apikey: my_join_app_api_key
+# Specify 2 filters.
+# my_filter matches only the emails which are sent to abc@a.com and runs below 2 actions:
+## Send join push notification using the global join api key
+## Send an email using the credentials specified
+# my_second_filter runs on all emails since there is no rule specified
+# It runs below 2 actions:
+## Send join notification using another_api_key. Local variable overrides the global one
+## Run external command with given args and also sets up a environment variable called &amp;#34;MY_ENV_VAR&amp;#34; which can be accessed in external command
+filters:
+my_filter:
+rules:
+to: abc@a.com
+actions:
+join:
+email:
+host: smtp.example.com
+username: my_email_username
+password: my_email_password
+port: 587
+secure: True
+my_second_filter:
+join:
+apikey: another_api_key
+exec:
+cmd: /home/shantanu/test.sh
+args:
+- /home/shantanu/abc_file
+- another_arg
+env:
+MY_ENV_VAR: &amp;#39;Some Value&amp;#39;
+&lt;/code>&lt;/pre>&lt;h2 id="rules">Rules&lt;/h2>
 &lt;p>Currently, below rules are supported. These can be specified under a &lt;code>rules&lt;/code> block.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1920,26 +1915,23 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>There&amp;rsquo;s no UI option for this though, so you&amp;rsquo;ve to drop down to the CLI. Launch an ssh session to the USG ip and use the credentials that you&amp;rsquo;ve set in the unify controller to log in. Then run the below set of commands. The procedure is slightly different from a regular linux box (where you&amp;rsquo;d directly edit dnsmasq.conf) due to the specific nature of config management of ubiquiti devices.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Switch to configuration mode
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ configure
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Below commands will generate the appropriate dnsmasq.conf automaticall
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Don&amp;#39;t use resolve.conf
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ set service dns forwarding options &amp;#34;no-resolv&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Set the opendns nameserver for all sites
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ set service dns forwarding options &amp;#34;server=208.67.222.222#5353&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Generate the config files, save and exit
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ commit;save;exit
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, you can try browsing (or doing nslookup) for the blocked website and it&amp;rsquo;ll go through succesfully. Note that like all other CLI changes for USG, the above changes can be lost whenever you make some other config change through UI or update USG firmware. To make it persistent across such events, you need to follow the &lt;a href="https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json">config.gateway json process&lt;/a>.&lt;/p></content></item><item><title>ACT Fibernet blocks sites using deep packet inspection</title><link>https://shantanugoel.com/2017/01/24/act-fibernet-deep-packet-inspection-blocking-sites/</link><pubDate>Tue, 24 Jan 2017 16:04:28 +0530</pubDate><guid>https://shantanugoel.com/2017/01/24/act-fibernet-deep-packet-inspection-blocking-sites/</guid><description>&lt;p>ISPs in India have been blocking websites since many years. It&amp;rsquo;s often done without much sense to it. The goveernment/telecom bodies and courts sometimes tell the ISPs to block content instead of telling the same to the websites that host the content. Sometimes, the orders are to block certain urls and ISPs are over-enthusiastic in implementing the orders and block complete websites. It&amp;rsquo;s all frustrating but it becomes enraging when you find out that the ISPs are messing with your traffic in a less than ethical way to implement this. Earlier, I pointed out how ACT was &lt;a href="https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/">hijacking my DNS&lt;/a> to implement the blocks. Now, they seem to have started doing something else, not sure if it is worse or better though. They are now doing deep packet inspection to find out the sites that I am visiting and thus block them by stopping the responses to my requests.&lt;/p></description><content>&lt;p>ISPs in India have been blocking websites since many years. It&amp;rsquo;s often done without much sense to it. The goveernment/telecom bodies and courts sometimes tell the ISPs to block content instead of telling the same to the websites that host the content. Sometimes, the orders are to block certain urls and ISPs are over-enthusiastic in implementing the orders and block complete websites. It&amp;rsquo;s all frustrating but it becomes enraging when you find out that the ISPs are messing with your traffic in a less than ethical way to implement this. Earlier, I pointed out how ACT was &lt;a href="https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/">hijacking my DNS&lt;/a> to implement the blocks. Now, they seem to have started doing something else, not sure if it is worse or better though. They are now doing deep packet inspection to find out the sites that I am visiting and thus block them by stopping the responses to my requests.&lt;/p>
+&lt;pre tabindex="0">&lt;code># Switch to configuration mode
+$ configure
+# Below commands will generate the appropriate dnsmasq.conf automaticall
+# Don&amp;#39;t use resolve.conf
+$ set service dns forwarding options &amp;#34;no-resolv&amp;#34;
+# Set the opendns nameserver for all sites
+$ set service dns forwarding options &amp;#34;server=208.67.222.222#5353&amp;#34;
+# Generate the config files, save and exit
+$ commit;save;exit
+&lt;/code>&lt;/pre>&lt;p>Now, you can try browsing (or doing nslookup) for the blocked website and it&amp;rsquo;ll go through succesfully. Note that like all other CLI changes for USG, the above changes can be lost whenever you make some other config change through UI or update USG firmware. To make it persistent across such events, you need to follow the &lt;a href="https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json">config.gateway json process&lt;/a>.&lt;/p></content></item><item><title>ACT Fibernet blocks sites using deep packet inspection</title><link>https://shantanugoel.com/2017/01/24/act-fibernet-deep-packet-inspection-blocking-sites/</link><pubDate>Tue, 24 Jan 2017 16:04:28 +0530</pubDate><guid>https://shantanugoel.com/2017/01/24/act-fibernet-deep-packet-inspection-blocking-sites/</guid><description>&lt;p>ISPs in India have been blocking websites since many years. It&amp;rsquo;s often done without much sense to it. The goveernment/telecom bodies and courts sometimes tell the ISPs to block content instead of telling the same to the websites that host the content. Sometimes, the orders are to block certain urls and ISPs are over-enthusiastic in implementing the orders and block complete websites. It&amp;rsquo;s all frustrating but it becomes enraging when you find out that the ISPs are messing with your traffic in a less than ethical way to implement this. Earlier, I pointed out how ACT was &lt;a href="https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/">hijacking my DNS&lt;/a> to implement the blocks. Now, they seem to have started doing something else, not sure if it is worse or better though. They are now doing deep packet inspection to find out the sites that I am visiting and thus block them by stopping the responses to my requests.&lt;/p></description><content>&lt;p>ISPs in India have been blocking websites since many years. It&amp;rsquo;s often done without much sense to it. The goveernment/telecom bodies and courts sometimes tell the ISPs to block content instead of telling the same to the websites that host the content. Sometimes, the orders are to block certain urls and ISPs are over-enthusiastic in implementing the orders and block complete websites. It&amp;rsquo;s all frustrating but it becomes enraging when you find out that the ISPs are messing with your traffic in a less than ethical way to implement this. Earlier, I pointed out how ACT was &lt;a href="https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/">hijacking my DNS&lt;/a> to implement the blocks. Now, they seem to have started doing something else, not sure if it is worse or better though. They are now doing deep packet inspection to find out the sites that I am visiting and thus block them by stopping the responses to my requests.&lt;/p>
 &lt;p>A few days ago, there were a few tweets mentioning that &lt;a href="streamable.com">Streamable&lt;/a> was blocked by few Indian ISPs. While checking it out, I noticed that I was not able to access it either on ACT ISP. I tried pinging the site and a traceroute to it and it seemed to work fine with no anomalies which puzzled me. Then I tried using https to access the site, and it opened up fine. This meant that ACT isn&amp;rsquo;t blocking the access based on the dns but by looking at something in my packets and so using https bypassed it (due to encryption of the data lying within).&lt;/p>
 &lt;p>I further tried doing the same through curl and found that if I fake the &amp;ldquo;Host&amp;rdquo; header in the command, I could access streamable.com even through http. A few other tests confirmed that ACT actually does a partial match for the blocked site because it blocked host headers like fakestreamable.com or streamable.com.in etc as well. But using something like &amp;ldquo;fake.com&amp;rdquo; worked. You can try this with below command and vary the site name after &amp;ldquo;Host:&amp;rdquo; in the command.&lt;/p>
 &lt;p>&lt;code>curl -L -g -4 -v --header &amp;quot;Host: streamable.com&amp;quot; streamable.com&lt;/code>&lt;/p>
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2017/01/streamable-blocked-thumb.jpg" />
 &lt;/figure>
-&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode278s0hbhb">
+&lt;p>I hope Indian ISPs can stop this malpractice of interfering with our data.&lt;/p></content></item><item><title>Indian ISP ACT Fibernet blocks bit.ly. Does DNS Hijacking</title><link>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</link><pubDate>Sat, 17 Sep 2016 17:14:43 +0000</pubDate><guid>https://shantanugoel.com/2016/09/17/indian-isp-act-fibernet-blocks-bit-ly-does-dns-hijacking/</guid><description>&lt;h2 id="hahahugoshortcode279s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
@@ -1947,7 +1939,7 @@ A minimal plugin needs to do following things:&lt;/p>
 &lt;p>&lt;strong>TLDR;&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.&lt;/p>
-&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode278s0hbhb">
+&lt;p>Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p></description><content>&lt;h2 id="hahahugoshortcode279s0hbhb">
 &lt;figure class="left" >
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" />
 &lt;/figure>
@@ -2328,27 +2320,25 @@ Initial version. Working for Nexus 4 Android 4.3&lt;/p></content></item><item><t
 &lt;p>I had come across this while reverse engineering the DLNA protocol extensions that Samsung had built in their TVs to get subtitles working over DLNA but didn&amp;rsquo;t put much thought into it. Fueled by the new Raspberry Pi I recently acquired (more on this later below), I set out to find out the details of this service and exploit it for my need and a few hours later, samsung-messagebox was born :)&lt;/p>
 &lt;p>You can get it from here: &lt;a href="https://github.com/shantanugoel/samsung-messagebox">https://github.com/shantanugoel/samsung-messagebox&lt;/a>&lt;/p>
 &lt;p>Usage:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> usage: samsung-msgbox.py -i IP -m MSG [-p PORT] [-t TIME] [-r RECEIVER]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [-x RECEIVER_NO] [-s SENDER] [-y SENDER_NO] [-h]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Send an arbitrary text message to Samsung TVs which is displayed onscreen.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Developed by Shantanu Goel (http://tech.shantanugoel.com/) version 1.0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Arguments:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -i IP, --ip IP Required. IP Address of the TV
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -m MSG, --msg MSG Required. Message body text to be sent to TV
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p PORT, --port PORT Optional. Port on which message should be sent
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -t TIME, --time TIME Optional. Receive date and time in epoch/unix format
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -r RECEIVER, --receiver RECEIVER
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Optional. Receiver Name
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -x RECEIVER_NO, --receiverno RECEIVER_NO
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Optional. Receiver Number
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -s SENDER, --sender SENDER
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Optional. Sender Name
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -y SENDER_NO, --senderno SENDER_NO
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Optional. Sender Number
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I&amp;rsquo;ve tested it currently with my 2010 C Series TV. Hopefully, it should work with any TV that has this service. If you face any problems then let me know and I can try to add support for your TV.&lt;/p>
+&lt;pre tabindex="0">&lt;code> usage: samsung-msgbox.py -i IP -m MSG [-p PORT] [-t TIME] [-r RECEIVER]
+[-x RECEIVER_NO] [-s SENDER] [-y SENDER_NO] [-h]
+Send an arbitrary text message to Samsung TVs which is displayed onscreen.
+Developed by Shantanu Goel (http://tech.shantanugoel.com/) version 1.0
+Arguments:
+-i IP, --ip IP Required. IP Address of the TV
+-m MSG, --msg MSG Required. Message body text to be sent to TV
+-p PORT, --port PORT Optional. Port on which message should be sent
+-t TIME, --time TIME Optional. Receive date and time in epoch/unix format
+-r RECEIVER, --receiver RECEIVER
+Optional. Receiver Name
+-x RECEIVER_NO, --receiverno RECEIVER_NO
+Optional. Receiver Number
+-s SENDER, --sender SENDER
+Optional. Sender Name
+-y SENDER_NO, --senderno SENDER_NO
+Optional. Sender Number
+-h, --help
+&lt;/code>&lt;/pre>&lt;p>I&amp;rsquo;ve tested it currently with my 2010 C Series TV. Hopefully, it should work with any TV that has this service. If you face any problems then let me know and I can try to add support for your TV.&lt;/p>
 &lt;p>&lt;strong>Raspberry PI:&lt;/strong> So, where does raspberry pi figure in all this? Well, I wanted to display my incoming call/text alerts on my TV. So, I made a small webserver in python that I run on my raspberry pi, listening for some special parameters. Whenever I get a call or SMS, I created a tasker profile to call this server with the call/sms parameters and the server in turn calls the above samsung-messagebox.py script to display the alerts. I&amp;rsquo;m also planning to integrate it with a dropbox based service to put it to more uses. Let me know if you have any ideas in mind.&lt;/p>
 &lt;p>Some pics of this working:&lt;/p>
 &lt;p>
@@ -3303,27 +3293,27 @@ A5: Speakerphone [ Set:Off ]&lt;/p>
 &lt;/ol>
 &lt;p>Let me know if you have your own hacks like this or know of a way to have a full fledged capturing of all headset buttons.&lt;/p>
 &lt;p>&lt;em>Sorry I lost the file somewhere over the years during a server move and it&amp;rsquo;s no longer available&lt;/em>&lt;/p></content></item><item><title>BadTokenException Error In Android Dialog</title><link>https://shantanugoel.com/2010/07/08/badtokenexception-android-dialog-getapplicationcontext/</link><pubDate>Thu, 08 Jul 2010 11:24:14 +0000</pubDate><guid>https://shantanugoel.com/2010/07/08/badtokenexception-android-dialog-getapplicationcontext/</guid><description>&lt;p>If you are creating a custom Dialog for Android, and following the &lt;a href="http://developer.android.com/guide/topics/ui/dialogs.html">Android Developers’ Creating Dialogs&lt;/a> tutorial, then most likely you would have faced a Force Close with this exception showing up in logcat. I did too. Although I figured it out quickly, it might not be easy to find out for many, so posting it here for reference. Basically, the code given in the tutorial goes something like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Context mContext = getApplicationContext();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dialog dialog = new Dialog(mContext);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dialog.setContentView(R.layout.custom_dialog);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dialog.setTitle(&amp;#34;Custom Dialog&amp;#34;);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TextView text = (TextView) dialog.findViewById(R.id.text);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>text.setText(&amp;#34;Hello, this is a custom dialog!&amp;#34;);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ImageView image = (ImageView) dialog.findViewById(R.id.image);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>image.setImageResource(R.drawable.android);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All looks well, but when you execute it, you will get a Force Close. The error appearing in logcat would be something like this:&lt;/p></description><content>&lt;p>If you are creating a custom Dialog for Android, and following the &lt;a href="http://developer.android.com/guide/topics/ui/dialogs.html">Android Developers’ Creating Dialogs&lt;/a> tutorial, then most likely you would have faced a Force Close with this exception showing up in logcat. I did too. Although I figured it out quickly, it might not be easy to find out for many, so posting it here for reference. Basically, the code given in the tutorial goes something like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Context mContext = getApplicationContext();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dialog dialog = new Dialog(mContext);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dialog.setContentView(R.layout.custom_dialog);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dialog.setTitle(&amp;#34;Custom Dialog&amp;#34;);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TextView text = (TextView) dialog.findViewById(R.id.text);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>text.setText(&amp;#34;Hello, this is a custom dialog!&amp;#34;);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ImageView image = (ImageView) dialog.findViewById(R.id.image);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>image.setImageResource(R.drawable.android);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All looks well, but when you execute it, you will get a Force Close. The error appearing in logcat would be something like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Uncaught handler: thread main exiting due to uncaught exception
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>android.view.WindowManager$BadTokenException: Unable to add window -- token null is not for an application
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It isn’t apparent immediately that what is causing this error. The very first line in the code “Context mContext = getApplicationContext();” is the culprit.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Context mContext = getApplicationContext();
+Dialog dialog = new Dialog(mContext);
+dialog.setContentView(R.layout.custom_dialog);
+dialog.setTitle(&amp;#34;Custom Dialog&amp;#34;);
+TextView text = (TextView) dialog.findViewById(R.id.text);
+text.setText(&amp;#34;Hello, this is a custom dialog!&amp;#34;);
+ImageView image = (ImageView) dialog.findViewById(R.id.image);
+image.setImageResource(R.drawable.android);
+&lt;/code>&lt;/pre>&lt;p>All looks well, but when you execute it, you will get a Force Close. The error appearing in logcat would be something like this:&lt;/p></description><content>&lt;p>If you are creating a custom Dialog for Android, and following the &lt;a href="http://developer.android.com/guide/topics/ui/dialogs.html">Android Developers’ Creating Dialogs&lt;/a> tutorial, then most likely you would have faced a Force Close with this exception showing up in logcat. I did too. Although I figured it out quickly, it might not be easy to find out for many, so posting it here for reference. Basically, the code given in the tutorial goes something like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Context mContext = getApplicationContext();
+Dialog dialog = new Dialog(mContext);
+dialog.setContentView(R.layout.custom_dialog);
+dialog.setTitle(&amp;#34;Custom Dialog&amp;#34;);
+TextView text = (TextView) dialog.findViewById(R.id.text);
+text.setText(&amp;#34;Hello, this is a custom dialog!&amp;#34;);
+ImageView image = (ImageView) dialog.findViewById(R.id.image);
+image.setImageResource(R.drawable.android);
+&lt;/code>&lt;/pre>&lt;p>All looks well, but when you execute it, you will get a Force Close. The error appearing in logcat would be something like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Uncaught handler: thread main exiting due to uncaught exception
+android.view.WindowManager$BadTokenException: Unable to add window -- token null is not for an application
+&lt;/code>&lt;/pre>&lt;p>It isn’t apparent immediately that what is causing this error. The very first line in the code “Context mContext = getApplicationContext();” is the culprit.&lt;/p>
 &lt;p>&lt;strong>Solution:&lt;/strong> Just replace “getApplicationContext()” with “this” (i.e. “Context mContext = this;” ) and it will work fine.&lt;/p>
 &lt;p>&lt;strong>Explanation:&lt;/strong> As to why this is exactly an issue, I’m a bit fuzzy about it myself but this much I’m sure that the contexts that you get with getApplicationContext and this are different. On reading about this function from Android SDK help:&lt;/p>
 &lt;blockquote>
@@ -3865,30 +3855,30 @@ A5: Speakerphone [ Set:Off ]&lt;/p>
 &lt;p>Hmm, a setback but a minor one. Javascript is still a client-side executed environment so all hope wasn’t lost. I could have waded through the browser cache to find the js files loaded by the portal and went through the functions to reconstruct the data that I need but I chose an easier way. There is this excellent addon for firefox called “Live Headers”. It shows you all the transactions happening between your browser and the server. So, I just fired it up, filled in my login details in the portal and hit “Login”. On seeing the live headers log, I found out the exact url as well as the POST data that they were sending to do the actual login and from there it was a piece of cake. With “wget”, it is as simple as executing&lt;/p>
 &lt;p>&lt;code>wget &amp;lt;url&amp;gt; --post-data=&amp;lt;data&amp;gt;&lt;/code>&lt;/p>
 &lt;p>So, by substituting the information that I got, this is the command that you need to execute on your PC (For linux/mac it is already installed generally and for windows, you will need to download from &lt;a href="http://gnuwin32.sourceforge.net/packages/wget.htm">here&lt;/a>)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>wget http://123.176.37.2/newportal/Ajax.php --post-data=&amp;#34;function=ExecuteLogin&amp;amp;user=YOURBEAMUSERNAME&amp;amp;pwd=YOURBEAMPASSWORD&amp;amp;remember=false&amp;amp;timestamp=1271186686298&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please remember to replace YOURBEAMUSERNAME and YOURBEAMPASSWORD with your actual username and password respectively. Also, please note that the above command is all one single line (it might appear in multiple lines in your browser).&lt;/p>
+&lt;pre tabindex="0">&lt;code>wget http://123.176.37.2/newportal/Ajax.php --post-data=&amp;#34;function=ExecuteLogin&amp;amp;user=YOURBEAMUSERNAME&amp;amp;pwd=YOURBEAMPASSWORD&amp;amp;remember=false&amp;amp;timestamp=1271186686298&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>Please remember to replace YOURBEAMUSERNAME and YOURBEAMPASSWORD with your actual username and password respectively. Also, please note that the above command is all one single line (it might appear in multiple lines in your browser).&lt;/p>
 &lt;p>So, everytime you need to login just run this command. Now, how to do this automatically? For linux, just put it inside a shell script for linux and set it to run automatically on bootup. For windows, paste the command in a text file, and save it as beam_login.bat and put it in your start up folder so that it runs everytime on boot. (You might want to put some delays in there as it might take some time to get connected to the network or you can query the network interface to run it when the network is up. Let me know if you want to know how to do this for your platform and I can help you).&lt;/p>
 &lt;p>So, this is for the PC, now how about if I need to use non-browser capable devices. This is easy if you have a router with a custom linux firmware (because they generally have wget installed or allow you to install it). I have an Asus wl-500w with oleg’s custom firmware installed and it was a piece of cake with it. I just created the following shell script&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/sh
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -e Ajax.php &lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">then&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm Ajax.php
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#Limit the number of retries to prevent the router from going into continuous loop &lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>num_retries&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $num_retries -gt &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">do&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget http://123.176.37.2/newportal/Ajax.php --post-data&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;function=ExecuteLogin&amp;amp;user=YOURBEAMUSERNAME&amp;amp;pwd=YOURBEAMPASSWORD&amp;amp;remember=false&amp;amp;timestamp=1271186686298&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -e Ajax.php &lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">then&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm Ajax.php
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>break
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sleep 2s
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>num_retries&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>expr $num_retries - 1&lt;span style="color:#e6db74">`&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then I set it to run on boot and voila!! A tip for other users of any of the asus routers with oleg’s firmware (like wl-500g, wl-520gu, wl-500gp etc). The firmware has some scripts in the /local/sbin folder that are run at various times. I suggest you put the above code inside the &lt;strong>post-firewall&lt;/strong> script. (Do not forget to run “flashfs save &amp;amp;&amp;amp; flasfs commit &amp;amp;&amp;amp; flashfs enable” to save your changes). Now, every time my router reboots, it automatically logs in to the connection :)&lt;/p>
+&lt;pre tabindex="0">&lt;code>#!/bin/sh
+if [ -e Ajax.php ]
+then
+rm Ajax.php
+fi
+#Limit the number of retries to prevent the router from going into continuous loop
+num_retries=10
+while [ $num_retries -gt 0 ]
+do
+wget http://123.176.37.2/newportal/Ajax.php --post-data=&amp;#34;function=ExecuteLogin&amp;amp;user=YOURBEAMUSERNAME&amp;amp;pwd=YOURBEAMPASSWORD&amp;amp;remember=false&amp;amp;timestamp=1271186686298&amp;#34;
+if [ -e Ajax.php ]
+then
+rm Ajax.php
+break
+else
+sleep 2s
+num_retries=`expr $num_retries - 1`
+fi
+done
+&lt;/code>&lt;/pre>&lt;p>Then I set it to run on boot and voila!! A tip for other users of any of the asus routers with oleg’s firmware (like wl-500g, wl-520gu, wl-500gp etc). The firmware has some scripts in the /local/sbin folder that are run at various times. I suggest you put the above code inside the &lt;strong>post-firewall&lt;/strong> script. (Do not forget to run “flashfs save &amp;amp;&amp;amp; flasfs commit &amp;amp;&amp;amp; flashfs enable” to save your changes). Now, every time my router reboots, it automatically logs in to the connection :)&lt;/p>
 &lt;p>Hope I have been clear in the isntructions. If you are unclear about anything or need any help in implementing it for your specific platform, do let me know.&lt;/p></content></item><item><title>Real Time Data Plotting with GNUPlot</title><link>https://shantanugoel.com/2009/12/29/real-time-plot-gnuplot/</link><pubDate>Tue, 29 Dec 2009 11:15:51 +0000</pubDate><guid>https://shantanugoel.com/2009/12/29/real-time-plot-gnuplot/</guid><description>&lt;p>I wrote this script a few days ago to plot real-time / streaming data with gnuplot. The motivation was that I needed to test a piece of code for a touchscreen driver that I had written at work. The issue was that the UI wasn’t quite ready yet, so I wanted to test just the driver to be working fine. Now, the very first thought for the software to use that came to me was “gnuplot” but I found that it can’t really do this in an easy way. A colleague suggested me to use “replot” command with gnuplot. I whipped out my perl hat and a few hours later, voila!! my very own real time data plotter was ready. Now, I can stream data from any program to this script or provide the data on STDIN and can see the data being plotted continuously. BTW, it was awesome to see all the shapes that I drew on my target board’s LCD touchscreen to come alive on my PC monitor almost instantaneously.&lt;/p></description><content>&lt;p>I wrote this script a few days ago to plot real-time / streaming data with gnuplot. The motivation was that I needed to test a piece of code for a touchscreen driver that I had written at work. The issue was that the UI wasn’t quite ready yet, so I wanted to test just the driver to be working fine. Now, the very first thought for the software to use that came to me was “gnuplot” but I found that it can’t really do this in an easy way. A colleague suggested me to use “replot” command with gnuplot. I whipped out my perl hat and a few hours later, voila!! my very own real time data plotter was ready. Now, I can stream data from any program to this script or provide the data on STDIN and can see the data being plotted continuously. BTW, it was awesome to see all the shapes that I drew on my target board’s LCD touchscreen to come alive on my PC monitor almost instantaneously.&lt;/p>
 &lt;p>I call it “rtgnuplotter”. A weird name I know :P, but I just wanted to refer to it as a real time data plotter based on gnuplot.&lt;/p>
 &lt;p>I’d love to hear from you if you found it useful. Please send in your bug reports and feature requests and I’d be glad if you could spread a word about it amongst your data-loving friends :)&lt;/p></content></item><item><title>RT-GNUPlot-ter</title><link>https://shantanugoel.com/2009/12/29/real-time-streaming-data-plot-gnuplot/</link><pubDate>Tue, 29 Dec 2009 10:52:56 +0000</pubDate><guid>https://shantanugoel.com/2009/12/29/real-time-streaming-data-plot-gnuplot/</guid><description>&lt;p>This is a script to plot streaming / real-time data (i.e. plot the points as the data comes in) with gnuplot. The script is written in perl and works in windows as well as linux. Please read on to see the requirements, installation, usage and download link. I should also thank my colleague Rabindra Mandal, who gave me the initial idea and &lt;a href="http://users.softlab.ece.ntua.gr/~ttsiod/gnuplotStreaming.html">Thanassis Tsiodras&lt;/a>, whose script I looked at before creating mine (though mine is quite different in nature. Tsiodras&amp;rsquo; script is for &amp;ldquo;moving&amp;rdquo; data like things with limitless ranges, while mine is more for data that has limitless occurences within a limited range as my main motivation behind it was to plot touchscreen data)&lt;/p></description><content>&lt;p>This is a script to plot streaming / real-time data (i.e. plot the points as the data comes in) with gnuplot. The script is written in perl and works in windows as well as linux. Please read on to see the requirements, installation, usage and download link. I should also thank my colleague Rabindra Mandal, who gave me the initial idea and &lt;a href="http://users.softlab.ece.ntua.gr/~ttsiod/gnuplotStreaming.html">Thanassis Tsiodras&lt;/a>, whose script I looked at before creating mine (though mine is quite different in nature. Tsiodras&amp;rsquo; script is for &amp;ldquo;moving&amp;rdquo; data like things with limitless ranges, while mine is more for data that has limitless occurences within a limited range as my main motivation behind it was to plot touchscreen data)&lt;/p>
@@ -3910,28 +3900,26 @@ A5: Speakerphone [ Set:Off ]&lt;/p>
 &lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
 &lt;p>The script is named rtgnuplotter.pl. The various details regarding its usage are as below:&lt;/p>
 &lt;p>Input Parameters:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-xrange min:max (Optional) Horizantal Range
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-yrange min:max (Optional) Vertical Range
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-invertx (Optional) Invert horizontal Axis
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-inverty (Optional) Invert Vertical Axis
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-hex (Optional) Input data is in hex (without leading 0x)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-joindots (Optional) Data points are connected with lines
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-h\-help\-v (Optional) Print usage and version info
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Input Data: The input data for rtgnuplotter is expected to be two space separated numbers, the first number being for x axis and second for y axis. Each set of coordinates denoting a point to be plotted should be on a new line. Hexadecimal as well as decimal numbers are supported. For Hexadecimal input, use the “-hex” option but the numbers should not have “0x” prefix.&lt;/p>
+&lt;pre tabindex="0">&lt;code>-xrange min:max (Optional) Horizantal Range
+-yrange min:max (Optional) Vertical Range
+-invertx (Optional) Invert horizontal Axis
+-inverty (Optional) Invert Vertical Axis
+-hex (Optional) Input data is in hex (without leading 0x)
+-joindots (Optional) Data points are connected with lines
+-h\-help\-v (Optional) Print usage and version info
+&lt;/code>&lt;/pre>&lt;p>Input Data: The input data for rtgnuplotter is expected to be two space separated numbers, the first number being for x axis and second for y axis. Each set of coordinates denoting a point to be plotted should be on a new line. Hexadecimal as well as decimal numbers are supported. For Hexadecimal input, use the “-hex” option but the numbers should not have “0x” prefix.&lt;/p>
 &lt;p>Usage: All the options for rtgnuplotter are optional. You can run it with/without any options and it will wait for you to provide input on standard input. You can also pipe data into the script from another program using “|”. Few examples of the usage are:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>perl rtgnuplotter.pl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tail -f mydata.log | grep --line-buffered “Data Points” | sed --unbuffered ‘s/.*x=\([0-9.-]*\).*y=\([0-9.-]*\).*/\1 \2/’ | perl rtgnuplotter.pl
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the second example above, we get the data being written to a logfile by some other program, grep for the lines that have our points, then extract just the numbers with sed and then pass them to rtgnuplotter. Please note that “&amp;ndash;line-buffered” and “&amp;ndash;unbuffered” options used with grep and sed respectively, are important, otherwise you might not see your data being plotted immediately.&lt;/p>
+&lt;pre tabindex="0">&lt;code>perl rtgnuplotter.pl
+tail -f mydata.log | grep --line-buffered “Data Points” | sed --unbuffered ‘s/.*x=\([0-9.-]*\).*y=\([0-9.-]*\).*/\1 \2/’ | perl rtgnuplotter.pl
+&lt;/code>&lt;/pre>&lt;p>In the second example above, we get the data being written to a logfile by some other program, grep for the lines that have our points, then extract just the numbers with sed and then pass them to rtgnuplotter. Please note that “&amp;ndash;line-buffered” and “&amp;ndash;unbuffered” options used with grep and sed respectively, are important, otherwise you might not see your data being plotted immediately.&lt;/p>
 &lt;p>The zip file also contains a test file “inp.pl” that you can use to test the script. inp.pl generates some random numbers To run the test, just cd to the place where you unzipped the file and run the command line given in 2nd example in one command window and “perl inp.pl &amp;gt; temp.txt” in another.&lt;/p>
 &lt;p>&lt;em>Lost the files in a server move and not available anymore&lt;/em>&lt;/p></content></item><item><title>Continuous Monitoring With Tail Fails</title><link>https://shantanugoel.com/2009/12/23/continuous-monitor-tail-fails/</link><pubDate>Wed, 23 Dec 2009 18:10:44 +0000</pubDate><guid>https://shantanugoel.com/2009/12/23/continuous-monitor-tail-fails/</guid><description>&lt;p>If you can&amp;rsquo;t get tail command to continuously monitor a file, then read on. I was working on a script yesterday, a part of which depended on continuous monitoring of a text file. I had used our trusty old &amp;ldquo;tail&amp;rdquo; command for this but while testing by manually putting in some data into the file, it was failing but curiously it was working fine when used in actual scenario. Befuddled, I did a simple test. I created a simple text file &amp;ldquo;a.txt&amp;rdquo; with a few lines of data and then ran the following command.&lt;/p></description><content>&lt;p>If you can&amp;rsquo;t get tail command to continuously monitor a file, then read on. I was working on a script yesterday, a part of which depended on continuous monitoring of a text file. I had used our trusty old &amp;ldquo;tail&amp;rdquo; command for this but while testing by manually putting in some data into the file, it was failing but curiously it was working fine when used in actual scenario. Befuddled, I did a simple test. I created a simple text file &amp;ldquo;a.txt&amp;rdquo; with a few lines of data and then ran the following command.&lt;/p>
 &lt;p>&lt;code>tail -f a.txt&lt;/code>&lt;/p>
 &lt;p>It showed the last few lines of the file and kept waiting. So far so good. Then I opened the file in vim editor, wrote a few more lines, saved the file and then waited but nothing in the window that was running the tail command. Thinking that the data might be buffered and not flushed to the disc yet, I ran the sync command but still nothing.&lt;/p>
 &lt;p>Then I got a hint that when I used the &amp;ldquo;-F&amp;rdquo; or &amp;ldquo;&amp;ndash;follow=name&amp;rdquo; option instead of &amp;ldquo;-f&amp;rdquo;, the tail command was able to detect the change just fine, the only problem being that in this mode, it prints the last few lines again, not just the newly added line. The main difference in these new options is that tail command tracks the file for changes by its name and not by the file descriptor, and then it dawned on me. The problem is not in the tail command but my testing method itself. When I save the file opened in vim, it creates a new file with a new inode while the one opened by tail is still the old one (which is now a temporary file which has actually been deleted). When I quit tail, then the kernel deletes the file automatically. This is also confirmed by running &amp;ldquo;lsof | grep a.txt&amp;rdquo; (lsof lists the open files and then we find the ones related to a.txt). The output shown is;&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>tail 11966 shantanu 3r REG 8,6 8 224954 /home/shantanu/dev/perl/plot/a.txt~ (deleted)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim 12576 shantanu 9u REG 8,6 12288 210918 /home/shantanu/dev/perl/plot/.a.txt.swp
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>which shows what we had discussed above. This gets worked around when I use the -F option because then tail periodically reopens the file by name and reads it again, thus bypassing the above issue. Then I simply tried running tail again on the same file and doing something like &amp;ldquo;echo abc &amp;raquo; a.txt&amp;rdquo; and I could see the behaviour as expected with tail immediately detecting the change and displaying it in its window. Hope this helps if you have been pulling out your hair thinking you have gone crazy as your favourite little tool that you have been using for so many years has suddenly stopped working and no one else apart from you is even complaining :P&lt;/p></content></item><item><title>Paradise For Overclockers, Gamers and PC Enthusiasts In India</title><link>https://shantanugoel.com/2009/12/07/overclockers-pc-enthusiasts-gamers-india/</link><pubDate>Mon, 07 Dec 2009 18:05:27 +0000</pubDate><guid>https://shantanugoel.com/2009/12/07/overclockers-pc-enthusiasts-gamers-india/</guid><description>&lt;p>This is just to let you know that a few of my friends have started &lt;a href="http://www.overclocked.in">Overclocked&lt;/a>, a haven for PC enthusiasts in India. Overclocked is an online store for the people who like to stretch the performance of their machines to the maximum. They store a lot of high end computer stuff that isn&amp;rsquo;t easy to find in India and that too for a reasonable price. They also assemble mean gaming machines while giving you quite a bang for your buck with gauranteed satisfaction, shipped anywhere in India, and that&amp;rsquo;s not all, they can personalize it too with a variety of custom modifications (I really like their laser engravings).&lt;/p></description><content>&lt;p>This is just to let you know that a few of my friends have started &lt;a href="http://www.overclocked.in">Overclocked&lt;/a>, a haven for PC enthusiasts in India. Overclocked is an online store for the people who like to stretch the performance of their machines to the maximum. They store a lot of high end computer stuff that isn&amp;rsquo;t easy to find in India and that too for a reasonable price. They also assemble mean gaming machines while giving you quite a bang for your buck with gauranteed satisfaction, shipped anywhere in India, and that&amp;rsquo;s not all, they can personalize it too with a variety of custom modifications (I really like their laser engravings).&lt;/p>
+&lt;pre tabindex="0">&lt;code>tail 11966 shantanu 3r REG 8,6 8 224954 /home/shantanu/dev/perl/plot/a.txt~ (deleted)
+vim 12576 shantanu 9u REG 8,6 12288 210918 /home/shantanu/dev/perl/plot/.a.txt.swp
+&lt;/code>&lt;/pre>&lt;p>which shows what we had discussed above. This gets worked around when I use the -F option because then tail periodically reopens the file by name and reads it again, thus bypassing the above issue. Then I simply tried running tail again on the same file and doing something like &amp;ldquo;echo abc &amp;raquo; a.txt&amp;rdquo; and I could see the behaviour as expected with tail immediately detecting the change and displaying it in its window. Hope this helps if you have been pulling out your hair thinking you have gone crazy as your favourite little tool that you have been using for so many years has suddenly stopped working and no one else apart from you is even complaining :P&lt;/p></content></item><item><title>Paradise For Overclockers, Gamers and PC Enthusiasts In India</title><link>https://shantanugoel.com/2009/12/07/overclockers-pc-enthusiasts-gamers-india/</link><pubDate>Mon, 07 Dec 2009 18:05:27 +0000</pubDate><guid>https://shantanugoel.com/2009/12/07/overclockers-pc-enthusiasts-gamers-india/</guid><description>&lt;p>This is just to let you know that a few of my friends have started &lt;a href="http://www.overclocked.in">Overclocked&lt;/a>, a haven for PC enthusiasts in India. Overclocked is an online store for the people who like to stretch the performance of their machines to the maximum. They store a lot of high end computer stuff that isn&amp;rsquo;t easy to find in India and that too for a reasonable price. They also assemble mean gaming machines while giving you quite a bang for your buck with gauranteed satisfaction, shipped anywhere in India, and that&amp;rsquo;s not all, they can personalize it too with a variety of custom modifications (I really like their laser engravings).&lt;/p></description><content>&lt;p>This is just to let you know that a few of my friends have started &lt;a href="http://www.overclocked.in">Overclocked&lt;/a>, a haven for PC enthusiasts in India. Overclocked is an online store for the people who like to stretch the performance of their machines to the maximum. They store a lot of high end computer stuff that isn&amp;rsquo;t easy to find in India and that too for a reasonable price. They also assemble mean gaming machines while giving you quite a bang for your buck with gauranteed satisfaction, shipped anywhere in India, and that&amp;rsquo;s not all, they can personalize it too with a variety of custom modifications (I really like their laser engravings).&lt;/p>
 &lt;p>Apart from the computer hardware, they also sell a lot of games (Primarily PC but consoles as well, and that too for a cool discount from the MRP, again shipped anywhere in India). They also have a &lt;a href="http://www.overclocked.in/forums">forum&lt;/a> where people can hang out and discuss how to eek out that last bit from their PCs.&lt;/p>
 &lt;p>Do check them out. I&amp;rsquo;m sure you will like the stuff they have on offer and if you have any comments/suggestions or queries, don&amp;rsquo;t hesitate to contact them via their contact page or the forums. I&amp;rsquo;m sure they will be glad to listen to you. I&amp;rsquo;d say that a word of kudos will be great as these guys are doing this along with their full time professions and such places are hard to find in India :)&lt;/p></content></item><item><title>grub and knetworkmanager problems in Kubuntu Karmic</title><link>https://shantanugoel.com/2009/11/08/grub-knetworkmanager-kubuntu-karmic/</link><pubDate>Sun, 08 Nov 2009 12:08:00 +0000</pubDate><guid>https://shantanugoel.com/2009/11/08/grub-knetworkmanager-kubuntu-karmic/</guid><description>&lt;p>I generally move from &lt;a href="https://shantanugoel.com/2008/05/21/ubuntu-what-exactly-does-lts-mean.html">LTS&lt;/a> to LTS releases of Ubuntu but reluctantly had to update my system to Karmic when my old HDD gave in. I also thought of trying out Kubuntu (KDE based) this time as I had heard that its doing a lot of interesting things (Akonadi/Nepomuk etc) and that with 4.3.1 it is stable as well. The installation went fine, all over within less than half an hour and then the problems started. Here are the 2 main issues that I faced along with their solutions, in the hope that if someone else runs into same issues does not have to waste time (and hair) on it :)&lt;/p></description><content>&lt;p>I generally move from &lt;a href="https://shantanugoel.com/2008/05/21/ubuntu-what-exactly-does-lts-mean.html">LTS&lt;/a> to LTS releases of Ubuntu but reluctantly had to update my system to Karmic when my old HDD gave in. I also thought of trying out Kubuntu (KDE based) this time as I had heard that its doing a lot of interesting things (Akonadi/Nepomuk etc) and that with 4.3.1 it is stable as well. The installation went fine, all over within less than half an hour and then the problems started. Here are the 2 main issues that I faced along with their solutions, in the hope that if someone else runs into same issues does not have to waste time (and hair) on it :)&lt;/p>
 &lt;p>&lt;strong>1. Bootloader Issue:&lt;/strong> I dual boot my system along with Win XP (Needed for some office work) and generally install the bootloader onto a separate boot partition instead of overwriting the MBR. But this time when I did the same, I couldn&amp;rsquo;t boot (not even the grub menu). When I did this, the very helpful message that I got on restarting after installing kubuntu was “Error loading operating system”. I could still go back to my good windows install by setting the boot flag onto its partition. I mucked around with it a lot, trying to install grub2 again and found that actually it fails when I try to do the above (install on a partition). I also tried copying the boot sector from my /boot partition to C: and use ntldr to boot into linux but that also didn’t work. This lead me to believe that the same thing happened during my main installation and the installer failed to tell me anything about it. I tried then to install it on MBR but that also mucked up things and I couldn’t even get the error message, a cursor just kept blinking. Finally, the solution. I had to install kubuntu again and this time selected to overwrite MBR (this is default, BTW).&lt;/p>
@@ -4162,28 +4150,23 @@ __.. ,
 &lt;p>So, google listened to my unspoken thoughts and from this morning onwards, we have a new commenting feature on shared items. Click on the pic below to see it. So, they have given an alternate commenting system that you can use in your friend circle to discuss any item. Really cool, I&amp;rsquo;d say. What do you think?&lt;/p>
 &lt;p>(PS: The people who were &amp;ldquo;predicting&amp;rdquo; a couple of months ago that Google is going to &lt;strong>shut down&lt;/strong> &lt;strong>Google Reader&lt;/strong>, well, I don&amp;rsquo;t think so. I think they are workign full steam on it to make it an essential part in their grand scheme of things to create an ecosystem, along with &lt;strong>Google Friend Connect&lt;/strong>)&lt;/p>
 &lt;p>&lt;a href="https://shantanugoel.com/img/2009/03/googlereadershareditemscomments.png">&lt;img src="https://shantanugoel.com/img/2009/03/googlereadershareditemscomments-thumb.png" alt="google-reader-shared-items-comments">&lt;/a>&lt;/p></content></item><item><title>Shutdown Script For Asus WL-500W With Oleg Firmware</title><link>https://shantanugoel.com/2009/03/09/shutdown-script-asus-wl-500w-oleg-firmware/</link><pubDate>Mon, 09 Mar 2009 13:30:04 +0000</pubDate><guid>https://shantanugoel.com/2009/03/09/shutdown-script-asus-wl-500w-oleg-firmware/</guid><description>&lt;p>If you have an &lt;a href="http://tech.shantanugoel.com/tag/asus-wl-500w">Asus WL-500W&lt;/a>, the DIYers&amp;rsquo; favourite wireless router, and have installed the Oleg custom firmware on it, then you would have set up a shutdown script for it, that allows your router to shut down gracefully. This is especially important if you have a USB hard disk attached to it. There are many such scripts available in Oleg&amp;rsquo;s firmware that you can tweak. All of these reside in &amp;ldquo;/usr/local/sbin/&amp;rdquo;. The one that we are going to talk about today is named &amp;ldquo;pre-shutdown&amp;rdquo; and it is exceuted just before the router is about to shutdown. Here is my script that will stop all the programs that have been started, finalizes all data accesses for the hard drive, unmounts all the partitions and if they can&amp;rsquo;t be unmounted, then mounts them as read only to reduce the risks, and then allows the router to continue shutdown. Although this script is written for Asus WL-500W but it will work with most other routers that use oleg or unslung firmware (like Linksys NSLU2, Asus WL-500G, WL-500gP etc):&lt;/p></description><content>&lt;p>If you have an &lt;a href="http://tech.shantanugoel.com/tag/asus-wl-500w">Asus WL-500W&lt;/a>, the DIYers&amp;rsquo; favourite wireless router, and have installed the Oleg custom firmware on it, then you would have set up a shutdown script for it, that allows your router to shut down gracefully. This is especially important if you have a USB hard disk attached to it. There are many such scripts available in Oleg&amp;rsquo;s firmware that you can tweak. All of these reside in &amp;ldquo;/usr/local/sbin/&amp;rdquo;. The one that we are going to talk about today is named &amp;ldquo;pre-shutdown&amp;rdquo; and it is exceuted just before the router is about to shutdown. Here is my script that will stop all the programs that have been started, finalizes all data accesses for the hard drive, unmounts all the partitions and if they can&amp;rsquo;t be unmounted, then mounts them as read only to reduce the risks, and then allows the router to continue shutdown. Although this script is written for Asus WL-500W but it will work with most other routers that use oleg or unslung firmware (like Linksys NSLU2, Asus WL-500G, WL-500gP etc):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /bin/sh
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/etc/init.d/rc.unslung stop
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sleep 5s
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sync
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sleep 5s
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i in &lt;span style="color:#e6db74">`&lt;/span>cat /proc/mounts | awk &lt;span style="color:#e6db74">&amp;#39;/ext3/{print($1)}&amp;#39;&lt;/span>&lt;span style="color:#e6db74">`&lt;/span> ; &lt;span style="color:#66d9ef">do&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> umount $i
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $? !&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">]&lt;/span> ; &lt;span style="color:#66d9ef">then&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;Could not unmount &lt;/span>$i&lt;span style="color:#e6db74">. Mounting as read only&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mount -oremount,ro $i
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;Unmount &lt;/span>$i&lt;span style="color:#e6db74">.&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fi&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>swapoff -a
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sleep 1s
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>[TIP] Add Directories Recursively To Perforce (P4) Depot</title><link>https://shantanugoel.com/2009/03/03/add-directories-recursively-to-perforce-p4-depot/</link><pubDate>Tue, 03 Mar 2009 13:30:00 +0000</pubDate><guid>https://shantanugoel.com/2009/03/03/add-directories-recursively-to-perforce-p4-depot/</guid><description>&lt;p>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4. So, here it is how to achieve this. Run the following command after cd&amp;rsquo;ing to the directory you want to add:&lt;/p></description><content>&lt;p>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4. So, here it is how to achieve this. Run the following command after cd&amp;rsquo;ing to the directory you want to add:&lt;/p>
+&lt;pre tabindex="0">&lt;code>#! /bin/sh
+/opt/etc/init.d/rc.unslung stop
+sleep 5s
+sync
+sleep 5s
+for i in `cat /proc/mounts | awk &amp;#39;/ext3/{print($1)}&amp;#39;` ; do
+umount $i
+if [ $? != 0 ] ; then
+echo &amp;#34;Could not unmount $i. Mounting as read only&amp;#34;
+mount -oremount,ro $i
+else
+echo &amp;#34;Unmount $i.&amp;#34;
+fi
+done
+swapoff -a
+sleep 1s
+&lt;/code>&lt;/pre></content></item><item><title>[TIP] Add Directories Recursively To Perforce (P4) Depot</title><link>https://shantanugoel.com/2009/03/03/add-directories-recursively-to-perforce-p4-depot/</link><pubDate>Tue, 03 Mar 2009 13:30:00 +0000</pubDate><guid>https://shantanugoel.com/2009/03/03/add-directories-recursively-to-perforce-p4-depot/</guid><description>&lt;p>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4. So, here it is how to achieve this. Run the following command after cd&amp;rsquo;ing to the directory you want to add:&lt;/p></description><content>&lt;p>Perforce is an excellent revision control system for the code but the GUIs (P4WIN and P4V) are too slow to be productive. Hence, I like to do most of my work through command lines. Now, the other day I needed to add a directory and all its subdirectories and files to the repository (or perforce depot). This is a trivial task through the GUI. Just drag the top level directory onto the changelist area and the GUI takes care of everything but there is no straightforward way to do this through command line, until, I discovered the &amp;ldquo;-x&amp;rdquo; option of P4. So, here it is how to achieve this. Run the following command after cd&amp;rsquo;ing to the directory you want to add:&lt;/p>
 &lt;p>For Unix/Linux (or if you have the unix utils installed in windows through GNUWin32, UnixUtils or Cygwin):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>find . -type f -print | p4 -x - add
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For Windows:&lt;/p>
@@ -4217,10 +4200,10 @@ __.. ,
 &lt;p>Create a new shell script for starting twonky automatically (Replace the paths according to where you stored the twonky files in step 1). All you need to do is create a text file with following contents and mark it as executable. We&amp;rsquo;ll name it init.sh.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/sh
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>route add -net 224.0.0.0 netmask 240.0.0.0 dev br0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /tmp/harddisk/part0/twonky&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt;/tmp/harddisk/part0/twonky/twonkymedia &amp;amp;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;pre tabindex="0">&lt;code>#!/bin/sh
+route add -net 224.0.0.0 netmask 240.0.0.0 dev br0
+cd /tmp/harddisk/part0/twonky&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt;/tmp/harddisk/part0/twonky/twonkymedia &amp;amp;
+&lt;/code>&lt;/pre>&lt;ol start="3">
 &lt;li>
 &lt;p>Copy this script to your harddisk to where you extracted twonky files.&lt;/p>
 &lt;/li>
@@ -4539,8 +4522,8 @@ And much, much more!&lt;/p>
 &lt;p>There has been so much hype over the “Incognito” (or Private Browsing) mode of Google Chrome / Microsoft IE8, with many internet users screeming Hallelujiah. But I don’t understand what the hoopla is all about. This mode has always been there in Mozilla firefox as well. You just need to devote less than one minute (yes, you read that right, less than one minute) to set it up. Well, actions are better than words, so here it goes:&lt;/p></description><content>&lt;p>&lt;strong>Update:&lt;/strong> Part 2 of this post is now up &lt;a href="https://shantanugoel.com/2008/09/11/firefox-incognito-private-browsing-mode-part-ii.html">here&lt;/a> to allay some of the drawbacks that were pointed out.&lt;/p>
 &lt;p>There has been so much hype over the “Incognito” (or Private Browsing) mode of Google Chrome / Microsoft IE8, with many internet users screeming Hallelujiah. But I don’t understand what the hoopla is all about. This mode has always been there in Mozilla firefox as well. You just need to devote less than one minute (yes, you read that right, less than one minute) to set it up. Well, actions are better than words, so here it goes:&lt;/p>
 &lt;p>Step 1.) Run the following command to start the firefox profile manager.(In Linux, press Alt+F2 and in Windows, press Win+R to bring up the run dialogue box)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>firefox -ProfileManager
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If it says something on the lines of “cannot find command” then use full path to firefox/firefox.exe in linux/Windows respectively.&lt;/p>
+&lt;pre tabindex="0">&lt;code>firefox -ProfileManager
+&lt;/code>&lt;/pre>&lt;p>If it says something on the lines of “cannot find command” then use full path to firefox/firefox.exe in linux/Windows respectively.&lt;/p>
 &lt;p>&lt;a href="https://shantanugoel.com/img/uploads/firefox_2Dprofile_2Dmanager.jpg">&lt;img src="https://shantanugoel.com/img/uploads/firefox_2Dprofile_2Dmanager_thumb.jpg" alt="Firefox-profile-manager">&lt;/a>&lt;/p>
 &lt;p>Step 2.) Press “Create Profile” and enter “Incognito” (or a name of your choice) as your new profile name and press “Finish”.&lt;/p>
 &lt;p>&lt;a href="https://shantanugoel.com/img/uploads/firefox_2Dprofile_2Dmanager2.jpg">&lt;img src="https://shantanugoel.com/img/uploads/firefox_2Dprofile_2Dmanager2_thumb.jpg" alt="Firefox-profile-manager2">&lt;/a>&lt;/p>
@@ -4549,8 +4532,8 @@ And much, much more!&lt;/p>
 &lt;p>Step 4.) Go to Edit-&amp;gt;Preferences-&amp;gt;Privacy. Select “Always clear my private data when I close Firefox” and unselect “Ask me before clearing private data”.&lt;/p>
 &lt;p>&lt;a href="https://shantanugoel.com/img/uploads/firefox_2Dprivacy_2Dpreferences.jpg">&lt;img src="https://shantanugoel.com/img/uploads/firefox_2Dprivacy_2Dpreferences_thumb.jpg" alt="Firefox-privacy-preferences">&lt;/a>&lt;/p>
 &lt;p>Step 5.) That’s it. Setup is done. Now, whenever you want to go undercover, run the following command&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>firefox -P Incognito -no-remote
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note 1: You can run incognito mode and normal mode together simultaneously.&lt;/p>
+&lt;pre tabindex="0">&lt;code>firefox -P Incognito -no-remote
+&lt;/code>&lt;/pre>&lt;p>Note 1: You can run incognito mode and normal mode together simultaneously.&lt;/p>
 &lt;p>Note 2: Its advised that you put the above command in a shortcut for easy/quick access.&lt;/p>
 &lt;p>Isn’t that simple? Now, can you roll back that drool factor of being able to go “undercover” in google chrome or Internet Explorer 8?&lt;/p></content></item><item><title>Hack: Pidgin-Gtalk Connection Problems - Get Around The Corporate Firewall</title><link>https://shantanugoel.com/2008/09/08/hack-pidgin-gtalk-connection-problems-get-around-the-corporate-firewall/</link><pubDate>Mon, 08 Sep 2008 15:30:38 +0000</pubDate><guid>https://shantanugoel.com/2008/09/08/hack-pidgin-gtalk-connection-problems-get-around-the-corporate-firewall/</guid><description>&lt;p>I recently wrote a simple answering machine program/plugin for pidgin and someone asked me to port it to 32 bit. So I fired up pidgin within my virtual box installation at work (as I have only a 64 bit machine at home) but couldn&amp;rsquo;t get it to connect. Tried all sorts of methods found over the net of changing ports etc, set port forwarding in Virtual Box NAT, even switched to using a bridged host interface but still no go. On a whim, installed pidgin in the host, i.e., windows and still the same issue. Hmm, interesting.. But wait, gtalk client works, then what gives.&lt;/p></description><content>&lt;p>I recently wrote a simple answering machine program/plugin for pidgin and someone asked me to port it to 32 bit. So I fired up pidgin within my virtual box installation at work (as I have only a 64 bit machine at home) but couldn&amp;rsquo;t get it to connect. Tried all sorts of methods found over the net of changing ports etc, set port forwarding in Virtual Box NAT, even switched to using a bridged host interface but still no go. On a whim, installed pidgin in the host, i.e., windows and still the same issue. Hmm, interesting.. But wait, gtalk client works, then what gives.&lt;/p>
 &lt;p>Well, after a bit of snooping around, discovered that it&amp;rsquo;s a special funda that my company employs (and probably yours too) to monitor your IM conversations. The server talk.google.com was redirected to another server set up by my company that masquerades as gtalk server and tries to act as a &amp;ldquo;Man In The Middle&amp;rdquo; to hijack your connection and listen to everything while you live in the fantasy that since its an &amp;ldquo;SSL encrypted&amp;rdquo; connection, everything is secure. However, &amp;ldquo;fortunately&amp;rdquo; pidgin refuses to connect here (More details in the end)&lt;/p>
@@ -4615,42 +4598,42 @@ And much, much more!&lt;/p>
 &lt;p>The modified source code can be browsed/downloaded from the &lt;a href="https://launchpad.net/xwinwrap">Shantz XWinWrap Launchpad Bzr repository&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>xwinwrap [-g {w}x{h}+{x}+{y}] [-ni] [-argb] [-fs] [-s] [-st] [-sp] [-a] [-b] [-nf] [-o OPACITY] [-sh SHAPE] [-ov] -- COMMAND ARG1...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Options:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-g    - Specify Geometry (w=width, h=height, x=x-coord, y=y-coord. ex: -g 640x480+100+100)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-ni   - Ignore Input
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-d - Desktop Window Hack. Provide name of the &amp;#34;Desktop&amp;#34; window as parameter
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-argb - RGB
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-fs   - Full Screen
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-s    - Sticky
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-st   - Skip Taskbar
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-sp   - Skip Pager
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-a    - Above
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-b    - Below
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-nf   - No Focus
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-o    - Opacity value between 0 to 1 (ex: -o 0.20)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-sh   - Shape of window (choose between rectangle, circle or triangle. Default is rectangle)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-ov   - Set override_redirect flag (For seamless desktop background integration)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-debug - Enable Debug messages
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>xwinwrap [-g {w}x{h}+{x}+{y}] [-ni] [-argb] [-fs] [-s] [-st] [-sp] [-a] [-b] [-nf] [-o OPACITY] [-sh SHAPE] [-ov] -- COMMAND ARG1...
+Options:
+-g    - Specify Geometry (w=width, h=height, x=x-coord, y=y-coord. ex: -g 640x480+100+100)
+-ni   - Ignore Input
+-d - Desktop Window Hack. Provide name of the &amp;#34;Desktop&amp;#34; window as parameter
+-argb - RGB
+-fs   - Full Screen
+-s    - Sticky
+-st   - Skip Taskbar
+-sp   - Skip Pager
+-a    - Above
+-b    - Below
+-nf   - No Focus
+-o    - Opacity value between 0 to 1 (ex: -o 0.20)
+-sh   - Shape of window (choose between rectangle, circle or triangle. Default is rectangle)
+-ov   - Set override_redirect flag (For seamless desktop background integration)
+-debug - Enable Debug messages
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
 &lt;p>(Examples use glmatrix however you can use something like mplayer, vlc, electric sheep etc instead of these)&lt;/p>
 &lt;ul>
 &lt;li>To run glmatrix in fullscreen wallpaper mode&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>./xwinwrap -ov -fs -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;pre tabindex="0">&lt;code>./xwinwrap -ov -fs -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
+&lt;/code>&lt;/pre>&lt;ul>
 &lt;li>To run glmatrix in a small window wallpaper mode&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>./xwinwrap -ov -g 400x400+400+200 -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;pre tabindex="0">&lt;code>./xwinwrap -ov -g 400x400+400+200 -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
+&lt;/code>&lt;/pre>&lt;ul>
 &lt;li>To run glmatrix in small circle wallpaper mode&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>./xwinwrap -ov -g 400x400+400+200 -sh circle -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;pre tabindex="0">&lt;code>./xwinwrap -ov -g 400x400+400+200 -sh circle -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
+&lt;/code>&lt;/pre>&lt;ul>
 &lt;li>To run glmatrix in small triangular wallpaper mode&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>./xwinwrap -ov -g 400x400+400+200 -sh triangle -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>ChangeLog:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>./xwinwrap -ov -g 400x400+400+200 -sh triangle -- /usr/lib/xscreensaver/glmatrix -root -window-id WID
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>ChangeLog:&lt;/strong>&lt;/p>
 &lt;p>15-Feb-2009:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -4786,8 +4769,8 @@ And much, much more!&lt;/p>
 &lt;p>You should have &lt;a href="http://lavrsen.dk/twiki/bin/view/Motion/DownloadFiles">motion&lt;/a> installed. If you are using Debian/Ubuntu or one of their derivatives, this is as simple as typing&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo apt-get install motion
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Otherwise, just go to the link above and download.&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo apt-get install motion
+&lt;/code>&lt;/pre>&lt;p>Otherwise, just go to the link above and download.&lt;/p>
 &lt;p>&lt;strong>How-to:&lt;/strong>&lt;/p>
 &lt;p>This is very simple.&lt;/p>
 &lt;ol>
@@ -4801,16 +4784,16 @@ And much, much more!&lt;/p>
 &lt;p>Run the following command.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>motion -c ./motion.conf
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;pre tabindex="0">&lt;code>motion -c ./motion.conf
+&lt;/code>&lt;/pre>&lt;ol start="4">
 &lt;li>Run the following(in a different terminal, after cd&amp;rsquo;ing to the same folder):&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>./shantz-locker.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And that&amp;rsquo;s it. See the magic (a pretty useless one, I admit :-D) happen.&lt;/p>
+&lt;pre tabindex="0">&lt;code>./shantz-locker.sh
+&lt;/code>&lt;/pre>&lt;p>And that&amp;rsquo;s it. See the magic (a pretty useless one, I admit :-D) happen.&lt;/p>
 &lt;p>&lt;strong>Options:&lt;/strong>&lt;/p>
 &lt;p>The shantz-locker.sh script takes a few options that you can use to customize the program according to your needs.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Usage: ./shantz-locker [-l &amp;lt;LockThreshold&amp;gt;] [-u UnlockThreshold] [-s LockScanInterval] [-t UnlockScanInterval]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>#LockThreshold - Determines the threshold (based on no. of samples sans motion) to lock your PC. Default is 5
+&lt;pre tabindex="0">&lt;code>Usage: ./shantz-locker [-l &amp;lt;LockThreshold&amp;gt;] [-u UnlockThreshold] [-s LockScanInterval] [-t UnlockScanInterval]
+&lt;/code>&lt;/pre>&lt;p>#LockThreshold - Determines the threshold (based on no. of samples sans motion) to lock your PC. Default is 5
 #UnlockThreshold - Determines the threshold (based on no. of samples with motion) to unlock your PC. Default is 2
 #LockScanInterval - How soon to check if there is motion when your PC is in unlocked state. Default interval is 5 seconds
 #UnlockScanInterval - How soon to check if there is motion when your PC is in locked state. Default interval is 2 seconds&lt;/p>
@@ -5155,36 +5138,34 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And you can use mencoder to capture and encode video from your webcam:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mencoder tv:// -tv driver&lt;span style="color:#f92672">=&lt;/span>v4l2:width&lt;span style="color:#f92672">=&lt;/span>60:height&lt;span style="color:#f92672">=&lt;/span>40:fps&lt;span style="color:#f92672">=&lt;/span>60:device&lt;span style="color:#f92672">=&lt;/span>/dev/video0 -nosound -ovc lavc -lavcopts vcodec&lt;span style="color:#f92672">=&lt;/span>mjpeg -o test.avi
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Have fun playing with the huge number of options available. You could even cat the test.avi file into a folder of your web server and have instant streaming video :-) .&lt;/p></content></item><item><title>Tip: Getting Your Webcam To Work In Ubuntu</title><link>https://shantanugoel.com/2008/05/10/tip-getting-your-webcam-to-work-in-ubuntu/</link><pubDate>Sat, 10 May 2008 19:17:42 +0000</pubDate><guid>https://shantanugoel.com/2008/05/10/tip-getting-your-webcam-to-work-in-ubuntu/</guid><description>&lt;p>I have an old noname cheapo webcam, that I dusted out of my junk (why? More on that in a post coming soon). I hoped that it would work in my Ubuntu setup out of the box like most of my other hardware. I connected it to my laptop&amp;rsquo;s usb port. dmesg gave the following output:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.319698] usb 1-1: configuration #1 chosen from 1 choice
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.439705] Linux video capture interface: v2.00
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.458509] zc0301: V4L2 driver for ZC0301[P] Image Processor and Control Chip v1:1.05
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.459113] usb 1-1: ZC0301[P] Image Processor and Control Chip detected (vid/pid 0x0AC8/0x301B)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.520576] usb 1-1: PB-0330 image sensor detected
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.870287] usb 1-1: Initialization succeeded
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.870919] usb 1-1: V4L2 device registered as /dev/video0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.871001] usbcore: registered new interface driver zc0301
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.913737] usbcore: registered new interface driver gspca
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.913811] ubuntu/media/gspcav1/gspca_core.c: gspca driver 01.00.12 registered
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Great! Everything set up, I thought. But running various programs, camorama, camE, kopete, everything gave weird errors like &amp;ldquo;Connection could not be made&amp;rdquo;, &amp;ldquo;device not ready&amp;rdquo; or just showed a blank screen. But soon, after  few trial and errors, I found the solution. Basically the &amp;ldquo;zc0301&amp;rdquo; module is the culprit and all you have to do to get your camera working is prevent it from loading. So, this is what I did:&lt;/p></description><content>&lt;p>I have an old noname cheapo webcam, that I dusted out of my junk (why? More on that in a post coming soon). I hoped that it would work in my Ubuntu setup out of the box like most of my other hardware. I connected it to my laptop&amp;rsquo;s usb port. dmesg gave the following output:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.319698] usb 1-1: configuration #1 chosen from 1 choice
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.439705] Linux video capture interface: v2.00
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.458509] zc0301: V4L2 driver for ZC0301[P] Image Processor and Control Chip v1:1.05
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.459113] usb 1-1: ZC0301[P] Image Processor and Control Chip detected (vid/pid 0x0AC8/0x301B)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.520576] usb 1-1: PB-0330 image sensor detected
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.870287] usb 1-1: Initialization succeeded
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.870919] usb 1-1: V4L2 device registered as /dev/video0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.871001] usbcore: registered new interface driver zc0301
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.913737] usbcore: registered new interface driver gspca
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[21328.913811] ubuntu/media/gspcav1/gspca_core.c: gspca driver 01.00.12 registered
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Great! Everything set up, I thought. But running various programs, camorama, camE, kopete, everything gave weird errors like &amp;ldquo;Connection could not be made&amp;rdquo;, &amp;ldquo;device not ready&amp;rdquo; or just showed a blank screen. But soon, after  few trial and errors, I found the solution. Basically the &amp;ldquo;zc0301&amp;rdquo; module is the culprit and all you have to do to get your camera working is prevent it from loading. So, this is what I did:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo modprobe -r gspca
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo modprobe -r zc0301
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo modprobe gspca
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And voila! the webcam started working like magic. Of course, this tip is only for webcams that use this particular chip. And if you want to make this change permanent so that you don&amp;rsquo;t have to run these commands everytime you want to use your webcam, all you have to do is add the following line to your /etc/modprobe.d/blacklist file&lt;/p>
+&lt;pre tabindex="0">&lt;code>[21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2
+[21328.319698] usb 1-1: configuration #1 chosen from 1 choice
+[21328.439705] Linux video capture interface: v2.00
+[21328.458509] zc0301: V4L2 driver for ZC0301[P] Image Processor and Control Chip v1:1.05
+[21328.459113] usb 1-1: ZC0301[P] Image Processor and Control Chip detected (vid/pid 0x0AC8/0x301B)
+[21328.520576] usb 1-1: PB-0330 image sensor detected
+[21328.870287] usb 1-1: Initialization succeeded
+[21328.870919] usb 1-1: V4L2 device registered as /dev/video0
+[21328.871001] usbcore: registered new interface driver zc0301
+[21328.913737] usbcore: registered new interface driver gspca
+[21328.913811] ubuntu/media/gspcav1/gspca_core.c: gspca driver 01.00.12 registered
+&lt;/code>&lt;/pre>&lt;p>Great! Everything set up, I thought. But running various programs, camorama, camE, kopete, everything gave weird errors like &amp;ldquo;Connection could not be made&amp;rdquo;, &amp;ldquo;device not ready&amp;rdquo; or just showed a blank screen. But soon, after  few trial and errors, I found the solution. Basically the &amp;ldquo;zc0301&amp;rdquo; module is the culprit and all you have to do to get your camera working is prevent it from loading. So, this is what I did:&lt;/p></description><content>&lt;p>I have an old noname cheapo webcam, that I dusted out of my junk (why? More on that in a post coming soon). I hoped that it would work in my Ubuntu setup out of the box like most of my other hardware. I connected it to my laptop&amp;rsquo;s usb port. dmesg gave the following output:&lt;/p>
+&lt;pre tabindex="0">&lt;code>[21328.211333] usb 1-1: new full speed USB device using ohci_hcd and address 2
+[21328.319698] usb 1-1: configuration #1 chosen from 1 choice
+[21328.439705] Linux video capture interface: v2.00
+[21328.458509] zc0301: V4L2 driver for ZC0301[P] Image Processor and Control Chip v1:1.05
+[21328.459113] usb 1-1: ZC0301[P] Image Processor and Control Chip detected (vid/pid 0x0AC8/0x301B)
+[21328.520576] usb 1-1: PB-0330 image sensor detected
+[21328.870287] usb 1-1: Initialization succeeded
+[21328.870919] usb 1-1: V4L2 device registered as /dev/video0
+[21328.871001] usbcore: registered new interface driver zc0301
+[21328.913737] usbcore: registered new interface driver gspca
+[21328.913811] ubuntu/media/gspcav1/gspca_core.c: gspca driver 01.00.12 registered
+&lt;/code>&lt;/pre>&lt;p>Great! Everything set up, I thought. But running various programs, camorama, camE, kopete, everything gave weird errors like &amp;ldquo;Connection could not be made&amp;rdquo;, &amp;ldquo;device not ready&amp;rdquo; or just showed a blank screen. But soon, after  few trial and errors, I found the solution. Basically the &amp;ldquo;zc0301&amp;rdquo; module is the culprit and all you have to do to get your camera working is prevent it from loading. So, this is what I did:&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo modprobe -r gspca
+sudo modprobe -r zc0301
+sudo modprobe gspca
+&lt;/code>&lt;/pre>&lt;p>And voila! the webcam started working like magic. Of course, this tip is only for webcams that use this particular chip. And if you want to make this change permanent so that you don&amp;rsquo;t have to run these commands everytime you want to use your webcam, all you have to do is add the following line to your /etc/modprobe.d/blacklist file&lt;/p>
 &lt;p>&lt;code>blacklist zc0301&lt;/code>&lt;/p>
 &lt;p>This would prevent the module from loading whenever you connect your webcam to your computer. Let me know if this worked for you or if you have some of your own tips/tricks/hacks to get this or other webcams working on linux.&lt;/p></content></item><item><title>The Elusive Super Phone</title><link>https://shantanugoel.com/2008/05/08/the-elusive-super-phone/</link><pubDate>Thu, 08 May 2008 17:15:28 +0000</pubDate><guid>https://shantanugoel.com/2008/05/08/the-elusive-super-phone/</guid><description>&lt;p>HTC announce their shiny new Touch Diamond recently. Everyone ooh&amp;rsquo;ed and aah&amp;rsquo;ed while ogling at it until they realized that HTC has taken a step back (or forward towards matching Apple&amp;rsquo;s iPhone crap) by removing the expansion card slot from the phone. Yes, it has 4 GB of internal storage but I&amp;rsquo;d rather have an SDHC card slot with the ever falling prices of solid state memory (an 8 GB Class 6 SDHC card is worth not more than around 60$ these days). With a history of ultimate-gift-to-mankind phones like HTC Tytn, HTC Tytn II (Kaiser), iPhone, etc that excite so much on the first look and then start becoming dimmer and unwanted as the euphoria settles, we are left to wonder when will we see the real &amp;ldquo;Super Phone&amp;rdquo;. The do-it-all-be-all-end-all phone.&lt;/p></description><content>&lt;p>HTC announce their shiny new Touch Diamond recently. Everyone ooh&amp;rsquo;ed and aah&amp;rsquo;ed while ogling at it until they realized that HTC has taken a step back (or forward towards matching Apple&amp;rsquo;s iPhone crap) by removing the expansion card slot from the phone. Yes, it has 4 GB of internal storage but I&amp;rsquo;d rather have an SDHC card slot with the ever falling prices of solid state memory (an 8 GB Class 6 SDHC card is worth not more than around 60$ these days). With a history of ultimate-gift-to-mankind phones like HTC Tytn, HTC Tytn II (Kaiser), iPhone, etc that excite so much on the first look and then start becoming dimmer and unwanted as the euphoria settles, we are left to wonder when will we see the real &amp;ldquo;Super Phone&amp;rdquo;. The do-it-all-be-all-end-all phone.&lt;/p>
 &lt;p>Well, my prediction is (Nostradamus style) : **NEVER. **No sir, you are not going to see your dream phone any time soon, or any time at all, for that matter.&lt;/p>
@@ -5203,11 +5184,11 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;p>&lt;strong>End Note:&lt;/strong> I can understand that there would be a lot of people who believe that use of GLib is dumbing down programming in C. After all, we take pride being in control of our code and this is why we love progrmming in C because we have options to do things in our own way. Yes, that is all true but there comes a time where you&amp;rsquo;d like to spend more time in developing the core functionality of your app, or focus more on giving a rapid shape to your new idea, rather than reinventing the wheel and fumbling around with writing the helper functions. So, keeping that in mind I believe GLib is wonderful piece of code that has enabled me to churn out new apps that much faster.&lt;/p></content></item><item><title>Http 406 Errors Galore</title><link>https://shantanugoel.com/2008/05/01/http-406-errors-galore/</link><pubDate>Thu, 01 May 2008 15:30:05 +0000</pubDate><guid>https://shantanugoel.com/2008/05/01/http-406-errors-galore/</guid><description>&lt;p>If you have ever had these errors or just want to be prepared in case they pop up somtime (and they surely will), then read on as I discuss various situations that lead to them and also their solutions.&lt;/p>
 &lt;p>I generally use desktop clients (mostly blogjet, but also Windows Live Writer and Scribe Fire sometimes) to blog to my WordPress based blogs. Some months ago, I started getting &amp;ldquo;Http 406: Not Acceptable&amp;rdquo; error while posting a particular post. Tried posting through the WordPress inbuilt TinyMCE editor, but got the same result. A little bit of research told me that this was because the post contained some words that were considered harmful by the &amp;ldquo;mod_security&amp;rdquo; plugin for apache that had been installed by my host to prevent hacking attempts. The quick resolution was to include the following lines in my .htaccess:&lt;/p></description><content>&lt;p>If you have ever had these errors or just want to be prepared in case they pop up somtime (and they surely will), then read on as I discuss various situations that lead to them and also their solutions.&lt;/p>
 &lt;p>I generally use desktop clients (mostly blogjet, but also Windows Live Writer and Scribe Fire sometimes) to blog to my WordPress based blogs. Some months ago, I started getting &amp;ldquo;Http 406: Not Acceptable&amp;rdquo; error while posting a particular post. Tried posting through the WordPress inbuilt TinyMCE editor, but got the same result. A little bit of research told me that this was because the post contained some words that were considered harmful by the &amp;ldquo;mod_security&amp;rdquo; plugin for apache that had been installed by my host to prevent hacking attempts. The quick resolution was to include the following lines in my .htaccess:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;ifmodule mod_security.c&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SecFilterEngine Off
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SecFilterScanPOST Off
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/ifmodule&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sure enough, I put them in, published the post, and it worked. But since this meant opening up my site to the real hacking attempts, I commented them out and went about my work, occassionally turning them on as and when required.&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;ifmodule mod_security.c&amp;gt;
+SecFilterEngine Off
+SecFilterScanPOST Off
+&amp;lt;/ifmodule&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>Sure enough, I put them in, published the post, and it worked. But since this meant opening up my site to the real hacking attempts, I commented them out and went about my work, occassionally turning them on as and when required.&lt;/p>
 &lt;p>But, a few days ago, after a server upgrade, the problem reared its head again, and in a more vicious manner. I started getting the dreaded 406 error again, and this time for any post, even a blank post, and through all clients. But this time, TinyMCE was working without issues. A little bit of looking around my site told me that the problem was that my desktop clients were not able to connect to my &amp;ldquo;x mlrpc.php&amp;rdquo; file which is responsible for taking care of all the remote api provided by WordPress. Trying to access it through any means provided the 406 error. My site&amp;rsquo;s error log was filled with:&lt;/p>
 &lt;blockquote>
 &lt;p>An appropriate representation of the requested resource /x mlrpc.php could not be found on this server.&lt;/p>&lt;/blockquote>
@@ -5269,12 +5250,10 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;/ul>
 &lt;p>As a very rudimentary sample of what it can do for you, take a look at my blog’s header above. I just gave it a few pics and ran a command, and it resized them, turned them into polaroid pics, rotated them at random angles, made the background transparent, strung them together to make a webpage header/banner.&lt;/p>
 &lt;p>Since the command was specific for the number and names of images, I made a simple perl script to automate the command making process so you can also download this script (link at the end of post) and run it to create your own header. (You might want to tweak the $w and $h variables in the script to specify your header’s width and height). Running it would be like&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>./pano.pl &amp;lt;imagenames&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e.g.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./pano.pl myimages/*
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After I made this script, I came across &lt;a href="http://stason.org/photos/gallery/">Stas Bekman’s photo gallery&lt;/a> which has a much better and cool stack effect with photos. And he generously agreed to share his script (much more sophisticated than my my few lines) with me. His script is also attached below.&lt;/p>
+&lt;pre tabindex="0">&lt;code>./pano.pl &amp;lt;imagenames&amp;gt;
+e.g.
+./pano.pl myimages/*
+&lt;/code>&lt;/pre>&lt;p>After I made this script, I came across &lt;a href="http://stason.org/photos/gallery/">Stas Bekman’s photo gallery&lt;/a> which has a much better and cool stack effect with photos. And he generously agreed to share his script (much more sophisticated than my my few lines) with me. His script is also attached below.&lt;/p>
 &lt;p>Let me know if you use any of these scripts (as it is or after modifying them) to create any cool effects.&lt;/p></content></item><item><title>5 Reasons I Like Linux (And 5 Why I Dislike It)</title><link>https://shantanugoel.com/2008/04/19/5-reasons-i-like-linux-and-5-why-i-dislike-it/</link><pubDate>Sat, 19 Apr 2008 20:20:40 +0000</pubDate><guid>https://shantanugoel.com/2008/04/19/5-reasons-i-like-linux-and-5-why-i-dislike-it/</guid><description>&lt;p>&lt;strong>Disclaimer Notes:&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>
@@ -5383,10 +5362,10 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;p>Hit the link if you are interested in knowing more about open source or are just like me, looking for something to advocate open source to all in easy terms.&lt;/p>
 &lt;p>&lt;a href="http://useopensource.blogspot.com/2007/08/why-do-people-make-software-for-free.html">Why do people make software for free?&lt;/a>&lt;/p></content></item><item><title>Migrating From PHP4 To PHP5: Solving WP-Cache (and maybe other) Issues</title><link>https://shantanugoel.com/2008/04/07/migrating-from-php4-to-php5-solving-wp-cache-and-maybe-other-issues/</link><pubDate>Mon, 07 Apr 2008 13:37:17 +0000</pubDate><guid>https://shantanugoel.com/2008/04/07/migrating-from-php4-to-php5-solving-wp-cache-and-maybe-other-issues/</guid><description>&lt;p>&lt;strong>Situation:&lt;/strong> You are migrating your WordPress blog from PHP4 to PHP5 (intentionally or being forced to as you web host won&amp;rsquo;t support PHP4 anymore). Most of the times, this is as simple as adding some simple lines to .htaccess (e.g. &lt;code>AddHandler application/x-httpd-php5 .php&lt;/code> ). And you might not notice any issues. But many of you still do. The issues range from weird page layouts, to some controls not working, to some errors popping up here and there, and probably your blog not even displaying. This occurs because even though WordPress is PHP5 compatible, some of the plugins you are using might not be. But even if you ensure that all your plugins are PHP5 compatible, there is still one more problem that I just saw today.&lt;/p></description><content>&lt;p>&lt;strong>Situation:&lt;/strong> You are migrating your WordPress blog from PHP4 to PHP5 (intentionally or being forced to as you web host won&amp;rsquo;t support PHP4 anymore). Most of the times, this is as simple as adding some simple lines to .htaccess (e.g. &lt;code>AddHandler application/x-httpd-php5 .php&lt;/code> ). And you might not notice any issues. But many of you still do. The issues range from weird page layouts, to some controls not working, to some errors popping up here and there, and probably your blog not even displaying. This occurs because even though WordPress is PHP5 compatible, some of the plugins you are using might not be. But even if you ensure that all your plugins are PHP5 compatible, there is still one more problem that I just saw today.&lt;/p>
 &lt;p>**Problem: **My host supports both PHP4 and PHP5. I decided to migrate &lt;a href="http://blog.shantanugoel.com/">my personal blog&lt;/a> to PHP5 today by adding the aforementioned line to my .htaccess. Immediately, my blog disappeared, and in its place, all that was left was a few errors:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[07-Apr-2008 12:11:49] PHP Warning: flock() expects parameter 1 to be resource, boolean given in /…/wp-cache-phase2.php on line 105
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[07-Apr-2008 12:11:49] PHP Warning: fopen/…/wp-cache-e3ba4b7161eb59d50c5e976a0b66782a.meta) [&amp;lt;a href=&amp;#39;function.fopen&amp;#39;&amp;gt;function.fopen&amp;lt;/a&amp;gt;]: failed to open stream: Permission denied in /…/wp-cache-phase2.php on line 240
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[07-Apr-2008 12:11:49] PHP Warning: fputs(): supplied argument is not a valid stream resource in /…/wp-cache-phase2.php on line 241
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note: I&amp;rsquo;ve deleted the exact file paths above for security reasons.&lt;/p>
+&lt;pre tabindex="0">&lt;code>[07-Apr-2008 12:11:49] PHP Warning: flock() expects parameter 1 to be resource, boolean given in /…/wp-cache-phase2.php on line 105
+[07-Apr-2008 12:11:49] PHP Warning: fopen/…/wp-cache-e3ba4b7161eb59d50c5e976a0b66782a.meta) [&amp;lt;a href=&amp;#39;function.fopen&amp;#39;&amp;gt;function.fopen&amp;lt;/a&amp;gt;]: failed to open stream: Permission denied in /…/wp-cache-phase2.php on line 240
+[07-Apr-2008 12:11:49] PHP Warning: fputs(): supplied argument is not a valid stream resource in /…/wp-cache-phase2.php on line 241
+&lt;/code>&lt;/pre>&lt;p>Note: I&amp;rsquo;ve deleted the exact file paths above for security reasons.&lt;/p>
 &lt;p>It gave me an idea that it had something to do with wp-cache. When I tried to open the settings for wp-cache, it again gve error that web server doesn&amp;rsquo;t have the permissions to write the file wp-cache-config.php, wp_cache_mutex.lock etc.&lt;/p>
 &lt;p>&lt;strong>Analysis:&lt;/strong> On checking the file permissions for these mentioned files, I found that they already belong to the user under which the web server runs. So, write permissions shouldn&amp;rsquo;t have been a problem. I guessed that maybe this issue is because of another &amp;ldquo;handler&amp;rdquo; (x-httpd-php5) now trying to modify the files while earlier they were created by the php4 handler. But I couldn&amp;rsquo;t change the permissions now because they were created by the web server and I can&amp;rsquo;t modify/delete them through ssh/ftp under my username.&lt;/p>
 &lt;p>**Solution: **So, the solution (or workaround as you may call it) was to login to my cpanel, and use the &amp;ldquo;File Manager&amp;rdquo; there, since all operations done by it would also be carried out by the web-server. So, all I did was:&lt;/p>
@@ -5672,27 +5651,27 @@ Can be used only with paste option&lt;/p>
 &lt;li>For any queries/help/updates, please post a comment here.&lt;/li>
 &lt;/ol>
 &lt;p>Examples:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>shantanu@wtf:~/stuff$ ./shantz-cp -a *
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File /home/shantanu/stuff/conky.sh already exists at ID 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File /home/shantanu/stuff/hosts.txt already exists at ID 0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File /home/shantanu/stuff/movie2mobile.py already exists at ID 2
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Added /home/shantanu/stuff/places_menu.txt at ID 3
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Added /home/shantanu/stuff/rapt at ID 4
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>shantanu@wtf:~/stuff$ ./shantz-cp -l
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>No of files in basket: 5
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File ID. 0: /home/shantanu/stuff/hosts.txt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File ID. 1: /home/shantanu/stuff/conky.sh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File ID. 2: /home/shantanu/stuff/movie2mobile.py
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File ID. 3: /home/shantanu/stuff/places_menu.txt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>File ID. 4: /home/shantanu/stuff/rapt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>shantanu@wtf:~/stuff$ ./shantz-cp -ri 2
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Removed /home/shantanu/stuff/movie2mobile.py from basket
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>shantanu@wtf:~/stuff$ ./shantz-cp -pi 1 3 temp/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copied /home/shantanu/stuff/conky.sh to /home/shantanu/stuff/temp/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copied /home/shantanu/stuff/places_menu.txt to /home/shantanu/stuff/temp/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>shantanu@wtf:~/stuff$ ./shantz-cp -m -pi 0 /home/shantanu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Moved /home/shantanu/stuff/hosts.txt to /home/shantanu/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Project: shantz-wp-qotd and shantz-wp-prefix-suffix updated</title><link>https://shantanugoel.com/2008/03/15/project-shantz-wp-qotd-and-shantz-wp-prefix-suffix-updated/</link><pubDate>Sat, 15 Mar 2008 17:26:52 +0000</pubDate><guid>https://shantanugoel.com/2008/03/15/project-shantz-wp-qotd-and-shantz-wp-prefix-suffix-updated/</guid><description>&lt;p>Just some news on my WordPress plugins front. shantz-wp-qotd has been updated to version 1.2.1 and shantz-wp-prefix-suffix has been updated to 1.0.1. It is just a minor update meant for people still using a WordPress version &amp;lt; 2.1. The update makes the &amp;ldquo;page exclusion&amp;rdquo; feature of both the plugins (i.e. the option to prevent the plugins from acting on &amp;ldquo;pages&amp;rdquo;) compatible with WP &amp;lt; 2.1 as well.&lt;/p>
+&lt;pre tabindex="0">&lt;code>shantanu@wtf:~/stuff$ ./shantz-cp -a *
+File /home/shantanu/stuff/conky.sh already exists at ID 1
+File /home/shantanu/stuff/hosts.txt already exists at ID 0
+File /home/shantanu/stuff/movie2mobile.py already exists at ID 2
+Added /home/shantanu/stuff/places_menu.txt at ID 3
+Added /home/shantanu/stuff/rapt at ID 4
+shantanu@wtf:~/stuff$ ./shantz-cp -l
+No of files in basket: 5
+File ID. 0: /home/shantanu/stuff/hosts.txt
+File ID. 1: /home/shantanu/stuff/conky.sh
+File ID. 2: /home/shantanu/stuff/movie2mobile.py
+File ID. 3: /home/shantanu/stuff/places_menu.txt
+File ID. 4: /home/shantanu/stuff/rapt
+shantanu@wtf:~/stuff$ ./shantz-cp -ri 2
+Removed /home/shantanu/stuff/movie2mobile.py from basket
+shantanu@wtf:~/stuff$ ./shantz-cp -pi 1 3 temp/
+Copied /home/shantanu/stuff/conky.sh to /home/shantanu/stuff/temp/
+Copied /home/shantanu/stuff/places_menu.txt to /home/shantanu/stuff/temp/
+shantanu@wtf:~/stuff$ ./shantz-cp -m -pi 0 /home/shantanu
+Moved /home/shantanu/stuff/hosts.txt to /home/shantanu/
+&lt;/code>&lt;/pre></content></item><item><title>Project: shantz-wp-qotd and shantz-wp-prefix-suffix updated</title><link>https://shantanugoel.com/2008/03/15/project-shantz-wp-qotd-and-shantz-wp-prefix-suffix-updated/</link><pubDate>Sat, 15 Mar 2008 17:26:52 +0000</pubDate><guid>https://shantanugoel.com/2008/03/15/project-shantz-wp-qotd-and-shantz-wp-prefix-suffix-updated/</guid><description>&lt;p>Just some news on my WordPress plugins front. shantz-wp-qotd has been updated to version 1.2.1 and shantz-wp-prefix-suffix has been updated to 1.0.1. It is just a minor update meant for people still using a WordPress version &amp;lt; 2.1. The update makes the &amp;ldquo;page exclusion&amp;rdquo; feature of both the plugins (i.e. the option to prevent the plugins from acting on &amp;ldquo;pages&amp;rdquo;) compatible with WP &amp;lt; 2.1 as well.&lt;/p>
 &lt;p>Go to their respective pages for downloads:&lt;/p></description><content>&lt;p>Just some news on my WordPress plugins front. shantz-wp-qotd has been updated to version 1.2.1 and shantz-wp-prefix-suffix has been updated to 1.0.1. It is just a minor update meant for people still using a WordPress version &amp;lt; 2.1. The update makes the &amp;ldquo;page exclusion&amp;rdquo; feature of both the plugins (i.e. the option to prevent the plugins from acting on &amp;ldquo;pages&amp;rdquo;) compatible with WP &amp;lt; 2.1 as well.&lt;/p>
 &lt;p>Go to their respective pages for downloads:&lt;/p></content></item><item><title>Caution: "Network Solutions", Stay As Far As Possible</title><link>https://shantanugoel.com/2008/03/14/caution-network-solutions-stay-as-far-as-possible/</link><pubDate>Fri, 14 Mar 2008 20:56:23 +0000</pubDate><guid>https://shantanugoel.com/2008/03/14/caution-network-solutions-stay-as-far-as-possible/</guid><description>&lt;p>If you had a dream of starting your own website, your online abode, and you wanted to see whether the pretty little name for your dream house is available or not, what do you do? Check its availability on one of the many domain sellers&amp;rsquo; sites. And if you picked &amp;ldquo;&lt;a href="http://www.networksolutions.com/">Network Solutions&lt;/a>&amp;rdquo; to do the search, then you have just been scammed my dear friend.&lt;/p>
 &lt;p>Did you wonder, that though Network Solutions showed the domain name as available, but yet when you searched and found a cheaper registrar, the domain name was suddenly…&lt;strong>GONE&lt;/strong>..What about the second one you had searched for at NetSol? Gone. Third One? Gone. Now, what is the probability of all 3 names being registered within 5 minutes of you searching for them? Probably one in a billion. No, its one in one (100%) if you searched on Network Solutions, as a &lt;a href="http://blog.twilightfairy.in/">friend&lt;/a> of mine found out the hard way.&lt;/p></description><content>&lt;p>If you had a dream of starting your own website, your online abode, and you wanted to see whether the pretty little name for your dream house is available or not, what do you do? Check its availability on one of the many domain sellers&amp;rsquo; sites. And if you picked &amp;ldquo;&lt;a href="http://www.networksolutions.com/">Network Solutions&lt;/a>&amp;rdquo; to do the search, then you have just been scammed my dear friend.&lt;/p>
@@ -5773,43 +5752,33 @@ Can be used only with paste option&lt;/p>
 &lt;blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
 &lt;p>sudo ./rapt-client-install-packages.sh configFile&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">In&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">do&lt;/span> &lt;span style="color:#a6e22e">not&lt;/span> &lt;span style="color:#a6e22e">specify&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">configFile&lt;/span> (&lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">g&lt;/span>. &lt;span style="color:#f92672">package&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">names&lt;/span>.&lt;span style="color:#a6e22e">lst&lt;/span>), &lt;span style="color:#a6e22e">it&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">bug&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">manually&lt;/span> &lt;span style="color:#a6e22e">enter&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span> &lt;span style="color:#a6e22e">names&lt;/span> :&lt;span style="color:#a6e22e">D&lt;/span>.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">What&lt;/span> &lt;span style="color:#a6e22e">this&lt;/span> &lt;span style="color:#a6e22e">script&lt;/span> &lt;span style="color:#a6e22e">does&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">1.&lt;/span> &lt;span style="color:#a6e22e">read&lt;/span> &lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">names&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#a6e22e">specified&lt;/span> (&lt;span style="color:#a6e22e">or&lt;/span> &lt;span style="color:#a6e22e">bug&lt;/span> &lt;span style="color:#a6e22e">user&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">names&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">filename&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span> &lt;span style="color:#a6e22e">not&lt;/span> &lt;span style="color:#a6e22e">specified&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">2.&lt;/span> &lt;span style="color:#a6e22e">install&lt;/span> &lt;span style="color:#a6e22e">these&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">That&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#a6e22e">it&lt;/span>. &lt;span style="color:#a6e22e">And&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">everything&lt;/span> &lt;span style="color:#a6e22e">runs&lt;/span> &lt;span style="color:#a6e22e">fine&lt;/span>, &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">should&lt;/span> &lt;span style="color:#a6e22e">have&lt;/span> &lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#a6e22e">system&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">all&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">beloved&lt;/span> &lt;span style="color:#a6e22e">apps&lt;/span> &lt;span style="color:#a6e22e">installed&lt;/span>.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">below&lt;/span> &lt;span style="color:#a6e22e">snippet&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">sample&lt;/span> &lt;span style="color:#a6e22e">configuration&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#a6e22e">would&lt;/span> &lt;span style="color:#a6e22e">install&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">–&lt;/span> &lt;span style="color:#a6e22e">hardinfo&lt;/span>, &lt;span style="color:#a6e22e">gmountiso&lt;/span>, &lt;span style="color:#a6e22e">devilspie&lt;/span> &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">nautilus&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">open&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">terminal&lt;/span>. &lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">lines&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">sysinfo&lt;/span> &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">istanbul&lt;/span> &lt;span style="color:#a6e22e">would&lt;/span> &lt;span style="color:#a6e22e">be&lt;/span> &lt;span style="color:#a6e22e">ignored&lt;/span>. &lt;span style="color:#a6e22e">In&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">later&lt;/span> &lt;span style="color:#a6e22e">wish&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">install&lt;/span> &lt;span style="color:#a6e22e">these&lt;/span> &lt;span style="color:#a6e22e">packages&lt;/span>, &lt;span style="color:#a6e22e">all&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">need&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">do&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span> &lt;span style="color:#a6e22e">uncomment&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">script&lt;/span> &lt;span style="color:#a6e22e">again&lt;/span> :).
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>#sysinfo = UNIX/Linux system information
+&lt;pre tabindex="0">&lt;code>
+In case you do not specify the configFile (e.g. package-names.lst), it will bug you to manually enter packages names :D.
+What this script does is
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; 1. read package names from the file specified (or bug user for package names in case filename is not specified)
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; 2. install these packages
+&amp;gt;&amp;gt;
+That&amp;#39;s it. And if everything runs fine, you should have a system will all your beloved apps installed.
+The below snippet from the sample configuration file would install the packages – hardinfo, gmountiso, devilspie and nautilus-open-terminal. The lines for sysinfo and istanbul would be ignored. In case you later wish to install these packages, all you need to do is uncomment the line, and run the script again :).
+&lt;/code>&lt;/pre>&lt;p>#sysinfo = UNIX/Linux system information
 hardinfo = UNIX/Linux hardware information
 gmountiso = a PyGTK GUI to mount your cd images
 #istanbul = Desktop session recorder
 devilspie = find windows and perform actions on them
 nautilus-open-terminal = nautilus plugin for opening terminals in arbitrary local paths&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Note&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt; &lt;span style="color:#ae81ff">1.&lt;/span> &lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">script&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">fail&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">cannot&lt;/span> &lt;span style="color:#a6e22e">be&lt;/span> &lt;span style="color:#a6e22e">found&lt;/span> &lt;span style="color:#a6e22e">using&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">repositories&lt;/span> &lt;span style="color:#a6e22e">enabled&lt;/span> &lt;span style="color:#a6e22e">on&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">system&lt;/span>.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span>&amp;gt; &lt;span style="color:#ae81ff">2.&lt;/span> &lt;span style="color:#a6e22e">In&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">use&lt;/span> &lt;span style="color:#a6e22e">additional&lt;/span> &lt;span style="color:#a6e22e">repositories&lt;/span>, &lt;span style="color:#a6e22e">you&lt;/span> &lt;span style="color:#a6e22e">must&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span> &lt;span style="color:#a6e22e">these&lt;/span> &lt;span style="color:#a6e22e">manually&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">apt&lt;/span> &lt;span style="color:#a6e22e">configuration&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span>, &lt;span style="color:#a6e22e">and&lt;/span> &lt;span style="color:#a6e22e">do&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">``&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">`&lt;/span>&lt;span style="color:#a6e22e">bash&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">sudo&lt;/span> &lt;span style="color:#a6e22e">apt&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">get&lt;/span> &lt;span style="color:#a6e22e">update&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;pre tabindex="0">&lt;code>
+Note:
+&amp;gt;&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; 1. The script will fail in case the package cannot be found using the repositories enabled on your system.
+&amp;gt;&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; 2. In case you use additional repositories, you must add these manually to your apt configuration file, and do
+```bash
+sudo apt-get update
+&lt;/code>&lt;/pre>&lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
@@ -6272,24 +6241,24 @@ Post a comment here, or contact me through the contact page.&lt;/p>
 &lt;p>Input: csv file with blog author names and blog links&lt;/p>
 &lt;p>Output: OPML file that can be imported into many blogging/blogrolling software and websites (e.g. wordpress, blogrolling.com, etc)&lt;/p>
 &lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Input File Format:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Each line should be like this:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e.g.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p></description><content>&lt;p>&lt;strong>INTRODUCTION&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
+Input File Format:
+Each line should be like this:
+&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
+e.g.
+Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
+&lt;/code>&lt;/pre>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p></description><content>&lt;p>&lt;strong>INTRODUCTION&lt;/strong>&lt;/p>
 &lt;p>This is a very simple script that I did for a friend. It can be used to quickly generate blogrolls.&lt;/p>
 &lt;p>Input: csv file with blog author names and blog links&lt;/p>
 &lt;p>Output: OPML file that can be imported into many blogging/blogrolling software and websites (e.g. wordpress, blogrolling.com, etc)&lt;/p>
 &lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Input File Format:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Each line should be like this:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e.g.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p>
+&lt;pre tabindex="0">&lt;code>shantz-csv-to-opml.pl &amp;lt;input file in csv format&amp;gt; &amp;lt;output opml filename&amp;gt;
+Input File Format:
+Each line should be like this:
+&amp;lt;Name of Author&amp;gt;,&amp;lt;bloglink&amp;gt;,&amp;lt;bloglink&amp;gt;...
+e.g.
+Shantanu Goel, http://tech.shantanugoel.com, http://blog.shantanugoel.com
+&lt;/code>&lt;/pre>&lt;p>There can be any number of blogs for any author, if blogs are more than one, then multiple entries for that author will be made in opml file each indexed with increasing number like Shantanu Goel 1, Shantanu Goel 2, etc&lt;/p>
 &lt;p>Version History:
 0.1 - Initial Version&lt;/p></content></item><item><title>Project: Retrieve Files From Remote Computer Through E-mail</title><link>https://shantanugoel.com/2008/02/19/project-retrieve-files-from-remote-computer-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:52:16 +0000</pubDate><guid>https://shantanugoel.com/2008/02/19/project-retrieve-files-from-remote-computer-through-e-mail/</guid><description>&lt;p>I came across &lt;a href="http://lifehacker.com/357710/retrieve-any-file-on-your-home-computer-by-email">this post&lt;/a> on lifehacker today (original post and solution &lt;a href="http://murphymac.com/retrieve-a-remote-file-by-email/">here&lt;/a>), which talks about a method of retrieving files from a remote computer through e-mail. Pretty archaic, I know, but again, it is a very simple method and works behind all the firewalls and stuff &lt;img src="https://shantanugoel.com/img/uploads/smile1.gif" alt="">. But, the catch is that it is only for mac’s. Thought of creating something similar for the PC and mashed together some code during lunch time at office to make our dear old outlook remote-file-sending-capable.&lt;/p></description><content>&lt;p>I came across &lt;a href="http://lifehacker.com/357710/retrieve-any-file-on-your-home-computer-by-email">this post&lt;/a> on lifehacker today (original post and solution &lt;a href="http://murphymac.com/retrieve-a-remote-file-by-email/">here&lt;/a>), which talks about a method of retrieving files from a remote computer through e-mail. Pretty archaic, I know, but again, it is a very simple method and works behind all the firewalls and stuff &lt;img src="https://shantanugoel.com/img/uploads/smile1.gif" alt="">. But, the catch is that it is only for mac’s. Thought of creating something similar for the PC and mashed together some code during lunch time at office to make our dear old outlook remote-file-sending-capable.&lt;/p></content></item><item><title>Remote File Access Through E-Mail</title><link>https://shantanugoel.com/2008/02/19/remote-file-access-through-e-mail/</link><pubDate>Tue, 19 Feb 2008 17:43:30 +0000</pubDate><guid>https://shantanugoel.com/2008/02/19/remote-file-access-through-e-mail/</guid><description>&lt;p>&lt;strong>Introduction:&lt;/strong>&lt;/p>
 &lt;p>This is a (proof-of-concept) outlook macro that you can use with an outlook rule to retrieve your files from your home/office PC by sending it a mail with a subject having a predefined special keyword and the body containing the names and paths of the files. The remote PC will then mail you the files on a predefined e-mail ID.&lt;/p>
@@ -6378,8 +6347,8 @@ Post a comment here, or contact me through the contact page.&lt;/p>
 &lt;p>Note: This guide is only for linux based hosts. But you can follow a similar approach for windows based hosting as well.&lt;/p>
 &lt;p>Step 1) Backup through command line.&lt;/p>
 &lt;p>You can use “tar” for this. With tar, you can create compressed archives quickly for a complete directory tree.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>tar cvzf ~/backups/backup_`date +%w`.tgz ~/public_html
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Explanation:&lt;/p>
+&lt;pre tabindex="0">&lt;code>tar cvzf ~/backups/backup_`date +%w`.tgz ~/public_html
+&lt;/code>&lt;/pre>&lt;p>Explanation:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>tar is the name of the command&lt;/p>
@@ -6398,8 +6367,8 @@ Post a comment here, or contact me through the contact page.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>Step 2) Mailing the backup to yourself through command line. (The server might develop some problem, hard disk might crash or your backups on server might be lost, so this is a good option to have)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="display:flex;">&lt;span>mutt &lt;span style="color:#f92672">-&lt;/span>s &lt;span style="color:#e6db74">&amp;#34;Backup `date`&amp;#34;&lt;/span> &lt;span style="color:#f92672">-&lt;/span>a &lt;span style="color:#f92672">~/&lt;/span>backups&lt;span style="color:#f92672">/&lt;/span>backup_&lt;span style="color:#f92672">`&lt;/span>&lt;span style="color:#66d9ef">date&lt;/span> &lt;span style="color:#f92672">+%&lt;/span>w&lt;span style="color:#f92672">`&lt;/span>.tgz myuserid&lt;span style="color:#f92672">@&lt;/span>mymail.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Explanation:&lt;/p>
+&lt;pre tabindex="0">&lt;code>mutt -s &amp;#34;Backup `date`&amp;#34; -a ~/backups/backup_`date +%w`.tgz myuserid@mymail.com
+&lt;/code>&lt;/pre>&lt;p>Explanation:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>mutt =&amp;gt; mailing user agent that sends the mail (You can use others, but I prefer mutt)&lt;/p>
@@ -6419,16 +6388,16 @@ Post a comment here, or contact me through the contact page.&lt;/p>
 &lt;/ul>
 &lt;p>Step 3) Final Step. Automating it all. What you need to do is add the above commands into a script and then find a way to make it run automatically.&lt;/p>
 &lt;p>The script looks like:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> tar cvzf ~/backups/backup_&lt;span style="color:#e6db74">`&lt;/span>date +%w&lt;span style="color:#e6db74">`&lt;/span>.tgz ~/public_html
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mutt -s &lt;span style="color:#e6db74">&amp;#34;Backup `date`&amp;#34;&lt;/span> -a ~/backups/backup_&lt;span style="color:#e6db74">`&lt;/span>date +%w&lt;span style="color:#e6db74">`&lt;/span>.tgz myuserid@mymail.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save it as “backup.sh” and make it executable by running “chmod +x backup.sh”. We’ll assume that you save it in ~/backups directory. You can store it anywhere, just remember it.&lt;/p>
+&lt;pre tabindex="0">&lt;code>#!/bin/bash
+tar cvzf ~/backups/backup_`date +%w`.tgz ~/public_html
+mutt -s &amp;#34;Backup `date`&amp;#34; -a ~/backups/backup_`date +%w`.tgz myuserid@mymail.com
+&lt;/code>&lt;/pre>&lt;p>Save it as “backup.sh” and make it executable by running “chmod +x backup.sh”. We’ll assume that you save it in ~/backups directory. You can store it anywhere, just remember it.&lt;/p>
 &lt;p>Now, you need to tell the server to run it automatically at a specified time. We’ll use “cron” for this. (If you are not comfortable with command line, then login to your website control panel, and look for an option called cron, where you can make the schedule graphically) Run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>crontab -e
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will open a file with your scheduled tasks info. Make sure that you don’t touch any of the existing lines. Add the following line at the end.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MAILTO=&amp;#34;myusername&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>00 22 * * * ~/backups/backup.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The first line will make sure that the output of the script, any errors etc, are sent to the your local mail account, that you can check for debugging purposes.&lt;/p>
+&lt;pre tabindex="0">&lt;code>crontab -e
+&lt;/code>&lt;/pre>&lt;p>This will open a file with your scheduled tasks info. Make sure that you don’t touch any of the existing lines. Add the following line at the end.&lt;/p>
+&lt;pre tabindex="0">&lt;code>MAILTO=&amp;#34;myusername&amp;#34;
+00 22 * * * ~/backups/backup.sh
+&lt;/code>&lt;/pre>&lt;p>The first line will make sure that the output of the script, any errors etc, are sent to the your local mail account, that you can check for debugging purposes.&lt;/p>
 &lt;p>The second line is of the format “# m h dom mon dow command”
 m=&amp;gt; minute of the hour
 h=&amp;raquo; hour of the day
@@ -6481,10 +6450,10 @@ frequently as technicians.”&lt;/p></content></item><item><title>SmartPhones/Ne
 &lt;/ul>&lt;/blockquote>
 &lt;p>&amp;ldquo;WOW&amp;rdquo; What else can I say?!!&lt;/p></content></item><item><title>TIP: Switching Soundcards In Ubuntu</title><link>https://shantanugoel.com/2008/02/12/tip-switching-soundcards-in-ubuntu/</link><pubDate>Tue, 12 Feb 2008 18:00:47 +0000</pubDate><guid>https://shantanugoel.com/2008/02/12/tip-switching-soundcards-in-ubuntu/</guid><description>&lt;p>If you have multiple soundcards in your system and have to switch between them regularly (e.g. laptop owners like me, who use an external soundcard while being docked to groove to the highest and the lowest of frequencies through those 7.1 channels and use the in-built sound card while on the move) you would definitely be under-whelmed by the less-than-stellar performance of ubuntu in switching between the sound cards. For me at least, ubuntu (fiesty 7.04 amd64) never seems to recognize that I&amp;rsquo;ve connected the speakers to my Audigy 2 ZS Notebook PCMCIA card, and merrily continues to huff-puff through the tinny laptop speakers until I manually go into the sound preferences, switch over to multichannel playback and vice versa. Well, I still haven&amp;rsquo;t found an automated solution for the switching, but here is a little cli-magic to do this in a click.&lt;/p></description><content>&lt;p>If you have multiple soundcards in your system and have to switch between them regularly (e.g. laptop owners like me, who use an external soundcard while being docked to groove to the highest and the lowest of frequencies through those 7.1 channels and use the in-built sound card while on the move) you would definitely be under-whelmed by the less-than-stellar performance of ubuntu in switching between the sound cards. For me at least, ubuntu (fiesty 7.04 amd64) never seems to recognize that I&amp;rsquo;ve connected the speakers to my Audigy 2 ZS Notebook PCMCIA card, and merrily continues to huff-puff through the tinny laptop speakers until I manually go into the sound preferences, switch over to multichannel playback and vice versa. Well, I still haven&amp;rsquo;t found an automated solution for the switching, but here is a little cli-magic to do this in a click.&lt;/p>
 &lt;p>If you have alsa on ur system, just use the command &amp;ldquo;asoundconf list&amp;rdquo; first to list out all the soundcards connected to your system. e.g. on my system, the output is&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$asoundconf list
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>IXP
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AUDIGY2
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here, IXP is my internal sound card and AUDIGY2 is my external (PCMCIA) sound card. Now, all you need to is use &lt;code>asoundconf set-default-card &amp;lt;cardname&amp;gt;&lt;/code> to switch over to any card desired. So, what I did was make 2 bash scripts, and insert this command in them with each having one of my soundcards&amp;rsquo; names.&lt;/p>
+&lt;pre tabindex="0">&lt;code>$asoundconf list
+IXP
+AUDIGY2
+&lt;/code>&lt;/pre>&lt;p>Here, IXP is my internal sound card and AUDIGY2 is my external (PCMCIA) sound card. Now, all you need to is use &lt;code>asoundconf set-default-card &amp;lt;cardname&amp;gt;&lt;/code> to switch over to any card desired. So, what I did was make 2 bash scripts, and insert this command in them with each having one of my soundcards&amp;rsquo; names.&lt;/p>
 &lt;p>script 1 - setixp.sh&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>asoundconf set-default-card IXP
@@ -6705,7 +6674,7 @@ Simply overwrite the old files with the new ones.&lt;/p>
 &lt;li>Initial version&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></content></item><item><title>Nokia + Windows Mobile = Let's Kick Some &lt;InsertWMPhoneMakerName> Butt</title><link>https://shantanugoel.com/2008/02/08/nokia-windows-mobile-lets-kick-some-butt/</link><pubDate>Fri, 08 Feb 2008 05:00:58 +0000</pubDate><guid>https://shantanugoel.com/2008/02/08/nokia-windows-mobile-lets-kick-some-butt/</guid><description>&lt;p>As everyone knows, I’m an out-and-out Windows Mobile worshipper. It’s like a girlfriend, who is very difficult to manage and understand at first, but is a great source of joy if you know how to manage her. I don’t like any other phones now; the extensibility given by WM will do that to you.&lt;/p>
+&lt;/ul></content></item><item><title>Nokia + Windows Mobile = Let's Kick Some "InsertWMPhoneMakerName" Butt</title><link>https://shantanugoel.com/2008/02/08/nokia-windows-mobile-lets-kick-some-butt/</link><pubDate>Fri, 08 Feb 2008 05:00:58 +0000</pubDate><guid>https://shantanugoel.com/2008/02/08/nokia-windows-mobile-lets-kick-some-butt/</guid><description>&lt;p>As everyone knows, I’m an out-and-out Windows Mobile worshipper. It’s like a girlfriend, who is very difficult to manage and understand at first, but is a great source of joy if you know how to manage her. I don’t like any other phones now; the extensibility given by WM will do that to you.&lt;/p>
 &lt;p>I also “admire” Nokia because of the quality and reliability they provide with their phones. Having worked for them in a project (Nokia Networks/Nokia Seimens Networks actually), I know how much testing they put in before releasing something. That coupled with the recent &lt;a href="https://shantanugoel.com/2008/01/28/htc-the-best-windows-mobile-business-unit.html">crap-doings&lt;/a> by even the largest of the WM Phone companies like HTC, have made me try to look elsewhere.&lt;/p></description><content>&lt;p>As everyone knows, I’m an out-and-out Windows Mobile worshipper. It’s like a girlfriend, who is very difficult to manage and understand at first, but is a great source of joy if you know how to manage her. I don’t like any other phones now; the extensibility given by WM will do that to you.&lt;/p>
 &lt;p>I also “admire” Nokia because of the quality and reliability they provide with their phones. Having worked for them in a project (Nokia Networks/Nokia Seimens Networks actually), I know how much testing they put in before releasing something. That coupled with the recent &lt;a href="https://shantanugoel.com/2008/01/28/htc-the-best-windows-mobile-business-unit.html">crap-doings&lt;/a> by even the largest of the WM Phone companies like HTC, have made me try to look elsewhere.&lt;/p>
 &lt;p>Now, if this &lt;a href="http://www.itwire.com/content/view/16510/127/">news&lt;/a> comes true, then we are in for a treat, as the two giants might just come together to give us a sweet little toy for our “smart” cravings &lt;img src="https://shantanugoel.com/img/uploads/smile3.gif" alt="">. Read the news and let us know how you feel about it.&lt;/p>
@@ -6728,11 +6697,11 @@ Simply overwrite the old files with the new ones.&lt;/p>
 &lt;p>iv) Remote Folder: This is the folder where you want to upload your stuff but is relative to the path where your ftp connection lands you. You’ll need to make a manual ftp connection to your ftp server first to check this. Check the examples after next step.&lt;/p>
 &lt;p>v) Base URL: This is the complete web path, that wordpress (or any user over the web) will use to access the image.&lt;/p>
 &lt;p>Examples: If your ftp server address is &lt;a href="ftp://ftp.mysite.com/">ftp.mysite.com&lt;/a>, and your wordpress blog address is &lt;a href="http://blog.mysite.com/">http://blog.mysite.com&lt;/a> . Your file directory structure is something like given below:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>/-&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/public_html -&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/public_html/wordpress
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/another_folder
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When you connect to ftp manuall, you land up at “/”, you make a new folder at /public_html/wordpress/uploads, where you are going to upload your files. And your blog address &lt;a href="http://blog.mysite.com/">http://blog.mysite.com&lt;/a> points at /public_html/wordpress/ when you go to it through your web browser, then your field values will be:&lt;/p>
+&lt;pre tabindex="0">&lt;code>/-&amp;gt;
+/public_html -&amp;gt;
+/public_html/wordpress
+/another_folder
+&lt;/code>&lt;/pre>&lt;p>When you connect to ftp manuall, you land up at “/”, you make a new folder at /public_html/wordpress/uploads, where you are going to upload your files. And your blog address &lt;a href="http://blog.mysite.com/">http://blog.mysite.com&lt;/a> points at /public_html/wordpress/ when you go to it through your web browser, then your field values will be:&lt;/p>
 &lt;p>Remote Folder: /public_html/wordpress/uploads&lt;/p>
 &lt;p>Base URL: &lt;a href="http://blog.mysite.com/uploads">http://blog.mysite.com/uploads&lt;/a>&lt;/p>
 &lt;p>Notes: So, basically what you can do is for remote folder, connect to ftp, “cd” to the folder where you want to upload and do “pwd”, this is your remote folder address. For Base url, find out, where your blog address points to (take help of your webhost support if u need), then find your upload folder’s path relative to it, and add that relative path in front of your blog address.&lt;/p>
