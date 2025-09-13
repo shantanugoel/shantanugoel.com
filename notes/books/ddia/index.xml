@@ -1,44 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designing Data-Intensive Applications on Shantanu's Notesverse</title><link>https://shantanugoel.com/notes/books/ddia/</link><description>Recent content in Designing Data-Intensive Applications on Shantanu's Notesverse</description><generator>Hugo</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><atom:link href="https://shantanugoel.com/notes/books/ddia/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1: Foundations of Data Systems</title><link>https://shantanugoel.com/notes/books/ddia/chapter-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-1/</guid><description>&lt;h1 id="foundations-of-data-systems">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designing Data-Intensive Applications on Shantanu's Notesverse</title><link>https://shantanugoel.com/notes/books/ddia/</link><description>Recent content in Designing Data-Intensive Applications on Shantanu's Notesverse</description><generator>Hugo</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><atom:link href="https://shantanugoel.com/notes/books/ddia/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1: Foundations of Data Systems</title><link>https://shantanugoel.com/notes/books/ddia/chapter-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-1/</guid><description>&lt;h1 id="foundations-of-data-systems"&gt;
  Foundations of Data Systems
- &lt;a class="anchor" href="#foundations-of-data-systems">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="3-important-characteristics-of-data-systems">
+ &lt;a class="anchor" href="#foundations-of-data-systems"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="3-important-characteristics-of-data-systems"&gt;
  3 Important Characteristics of Data Systems
- &lt;a class="anchor" href="#3-important-characteristics-of-data-systems">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Reliability&lt;/strong>: System should continue to work correctly even in the face of adversity and maintain same perf levels&lt;/li>
-&lt;li>&lt;strong>Scalability&lt;/strong>: As the system grows, there should be reasonable ways to deal with the growth&lt;/li>
-&lt;li>&lt;strong>Maintainability&lt;/strong>: Different people should be able to work on it productively across time&lt;/li>
-&lt;/ul>
-&lt;h3 id="reliability">
+ &lt;a class="anchor" href="#3-important-characteristics-of-data-systems"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reliability&lt;/strong&gt;: System should continue to work correctly even in the face of adversity and maintain same perf levels&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: As the system grows, there should be reasonable ways to deal with the growth&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maintainability&lt;/strong&gt;: Different people should be able to work on it productively across time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="reliability"&gt;
  Reliability
- &lt;a class="anchor" href="#reliability">#&lt;/a>
-&lt;/h3>
-&lt;p>This can include:&lt;/p>
-&lt;ul>
-&lt;li>Performing expected functions correctly&lt;/li>
-&lt;li>Tolerate user mistakes or unexpected inputs&lt;/li>
-&lt;li>Maintain good enough performance under load&lt;/li>
-&lt;li>Prevent unauthorized access and abuse&lt;/li>
-&lt;/ul>
-&lt;p>Types of faults:&lt;/p></description></item><item><title>Chapter 2: Data Models and Query Languages</title><link>https://shantanugoel.com/notes/books/ddia/chapter-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-2/</guid><description>&lt;h1 id="data-models-and-query-languages">
+ &lt;a class="anchor" href="#reliability"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;This can include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Performing expected functions correctly&lt;/li&gt;
+&lt;li&gt;Tolerate user mistakes or unexpected inputs&lt;/li&gt;
+&lt;li&gt;Maintain good enough performance under load&lt;/li&gt;
+&lt;li&gt;Prevent unauthorized access and abuse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Types of faults:&lt;/p&gt;</description></item><item><title>Chapter 2: Data Models and Query Languages</title><link>https://shantanugoel.com/notes/books/ddia/chapter-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-2/</guid><description>&lt;h1 id="data-models-and-query-languages"&gt;
  Data Models and Query Languages
- &lt;a class="anchor" href="#data-models-and-query-languages">#&lt;/a>
-&lt;/h1>
-&lt;p>Most applications are built by layering one data model on top of another. Each layer hides the complexity of the layer below it by providing a clean data model.&lt;/p>
-&lt;h2 id="relational-model-vs-document-model">
+ &lt;a class="anchor" href="#data-models-and-query-languages"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Most applications are built by layering one data model on top of another. Each layer hides the complexity of the layer below it by providing a clean data model.&lt;/p&gt;
+&lt;h2 id="relational-model-vs-document-model"&gt;
  Relational model v/s Document model
- &lt;a class="anchor" href="#relational-model-vs-document-model">#&lt;/a>
-&lt;/h2>
-&lt;p>SQL based on relational model proposed by Edgar Codd in 1970. Data is organized into relations (tables in SQL) where each relation is an unordered collection of tuples (rows in SQL).&lt;/p></description></item><item><title>Chapter 3: Storage and Retrieval</title><link>https://shantanugoel.com/notes/books/ddia/chapter-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-3/</guid><description>&lt;h1 id="storage-and-retrieval">
+ &lt;a class="anchor" href="#relational-model-vs-document-model"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;SQL based on relational model proposed by Edgar Codd in 1970. Data is organized into relations (tables in SQL) where each relation is an unordered collection of tuples (rows in SQL).&lt;/p&gt;</description></item><item><title>Chapter 3: Storage and Retrieval</title><link>https://shantanugoel.com/notes/books/ddia/chapter-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-3/</guid><description>&lt;h1 id="storage-and-retrieval"&gt;
  Storage and Retrieval
- &lt;a class="anchor" href="#storage-and-retrieval">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="data-structures-that-power-your-db">
+ &lt;a class="anchor" href="#storage-and-retrieval"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="data-structures-that-power-your-db"&gt;
  Data Structures that power your DB
- &lt;a class="anchor" href="#data-structures-that-power-your-db">#&lt;/a>
-&lt;/h2>
-&lt;p>&lt;strong>log&lt;/strong> -&amp;gt; In DB context, refers to &amp;ldquo;an append only sequence of records&amp;rdquo;.&lt;/p>
-&lt;p>Many DBs use a log to store data (but need additional processing e.g. concurrency control, reclaiming disk space, handling errors etc)&lt;/p>
-&lt;p>Writing data in a log is fast since it only appends to the end of the file but reading can be slow since it requires scanning the entire file, and hence DBs need an &lt;strong>index&lt;/strong>.&lt;/p></description></item></channel></rss>
+ &lt;a class="anchor" href="#data-structures-that-power-your-db"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;log&lt;/strong&gt; -&amp;gt; In DB context, refers to &amp;ldquo;an append only sequence of records&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Many DBs use a log to store data (but need additional processing e.g. concurrency control, reclaiming disk space, handling errors etc)&lt;/p&gt;
+&lt;p&gt;Writing data in a log is fast since it only appends to the end of the file but reading can be slow since it requires scanning the entire file, and hence DBs need an &lt;strong&gt;index&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>

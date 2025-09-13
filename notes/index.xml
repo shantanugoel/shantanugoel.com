@@ -1,253 +1,253 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu's Notesverse</title><link>https://shantanugoel.com/notes/</link><description>Recent content on Shantanu's Notesverse</description><generator>Hugo</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><atom:link href="https://shantanugoel.com/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1: Foundations of Data Systems</title><link>https://shantanugoel.com/notes/books/ddia/chapter-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-1/</guid><description>&lt;h1 id="foundations-of-data-systems">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu's Notesverse</title><link>https://shantanugoel.com/notes/</link><description>Recent content on Shantanu's Notesverse</description><generator>Hugo</generator><language>en-us</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><atom:link href="https://shantanugoel.com/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1: Foundations of Data Systems</title><link>https://shantanugoel.com/notes/books/ddia/chapter-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-1/</guid><description>&lt;h1 id="foundations-of-data-systems"&gt;
  Foundations of Data Systems
- &lt;a class="anchor" href="#foundations-of-data-systems">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="3-important-characteristics-of-data-systems">
+ &lt;a class="anchor" href="#foundations-of-data-systems"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="3-important-characteristics-of-data-systems"&gt;
  3 Important Characteristics of Data Systems
- &lt;a class="anchor" href="#3-important-characteristics-of-data-systems">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Reliability&lt;/strong>: System should continue to work correctly even in the face of adversity and maintain same perf levels&lt;/li>
-&lt;li>&lt;strong>Scalability&lt;/strong>: As the system grows, there should be reasonable ways to deal with the growth&lt;/li>
-&lt;li>&lt;strong>Maintainability&lt;/strong>: Different people should be able to work on it productively across time&lt;/li>
-&lt;/ul>
-&lt;h3 id="reliability">
+ &lt;a class="anchor" href="#3-important-characteristics-of-data-systems"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reliability&lt;/strong&gt;: System should continue to work correctly even in the face of adversity and maintain same perf levels&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: As the system grows, there should be reasonable ways to deal with the growth&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maintainability&lt;/strong&gt;: Different people should be able to work on it productively across time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="reliability"&gt;
  Reliability
- &lt;a class="anchor" href="#reliability">#&lt;/a>
-&lt;/h3>
-&lt;p>This can include:&lt;/p>
-&lt;ul>
-&lt;li>Performing expected functions correctly&lt;/li>
-&lt;li>Tolerate user mistakes or unexpected inputs&lt;/li>
-&lt;li>Maintain good enough performance under load&lt;/li>
-&lt;li>Prevent unauthorized access and abuse&lt;/li>
-&lt;/ul>
-&lt;p>Types of faults:&lt;/p></description></item><item><title>China</title><link>https://shantanugoel.com/notes/travel/china/china/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/travel/china/china/</guid><description>&lt;p>Primary Cities covered: Shanghai&lt;/p>
-&lt;h2 id="general">
+ &lt;a class="anchor" href="#reliability"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;This can include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Performing expected functions correctly&lt;/li&gt;
+&lt;li&gt;Tolerate user mistakes or unexpected inputs&lt;/li&gt;
+&lt;li&gt;Maintain good enough performance under load&lt;/li&gt;
+&lt;li&gt;Prevent unauthorized access and abuse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Types of faults:&lt;/p&gt;</description></item><item><title>China</title><link>https://shantanugoel.com/notes/travel/china/china/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/travel/china/china/</guid><description>&lt;p&gt;Primary Cities covered: Shanghai&lt;/p&gt;
+&lt;h2 id="general"&gt;
  General
- &lt;a class="anchor" href="#general">#&lt;/a>
-&lt;/h2>
-&lt;p>Apps to install:&lt;/p>
-&lt;ul>
-&lt;li>Alipay
-&lt;ul>
-&lt;li>Can pay for food, taxis, etc or even online payments.&lt;/li>
-&lt;li>Didi (Chinese Uber) and Metro/Bus tickets are integrated. Don&amp;rsquo;t need their separate apps.&lt;/li>
-&lt;li>Indian credit cards work.
-&lt;ul>
-&lt;li>May trigger fraud alert on Alipay side. If so, they may ask you to send a photo of your credit card (with some part of number hidden) etc.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Change iPhone account region to some country other than India to be able to install from app store. For Android, can install apk from internet.
-&lt;ul>
-&lt;li>Can switch back to India region after installation.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>WeChat (Not preferred since it needs someone to invite you)&lt;/li>
-&lt;li>Baidu maps. Google maps are not that good (even if you make them work with vpn). Apple maps are passable if you can&amp;rsquo;t understand Baidu maps.&lt;/li>
-&lt;/ul>
-&lt;h2 id="transportation">
+ &lt;a class="anchor" href="#general"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Apps to install:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alipay
+&lt;ul&gt;
+&lt;li&gt;Can pay for food, taxis, etc or even online payments.&lt;/li&gt;
+&lt;li&gt;Didi (Chinese Uber) and Metro/Bus tickets are integrated. Don&amp;rsquo;t need their separate apps.&lt;/li&gt;
+&lt;li&gt;Indian credit cards work.
+&lt;ul&gt;
+&lt;li&gt;May trigger fraud alert on Alipay side. If so, they may ask you to send a photo of your credit card (with some part of number hidden) etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Change iPhone account region to some country other than India to be able to install from app store. For Android, can install apk from internet.
+&lt;ul&gt;
+&lt;li&gt;Can switch back to India region after installation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;WeChat (Not preferred since it needs someone to invite you)&lt;/li&gt;
+&lt;li&gt;Baidu maps. Google maps are not that good (even if you make them work with vpn). Apple maps are passable if you can&amp;rsquo;t understand Baidu maps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="transportation"&gt;
  Transportation
- &lt;a class="anchor" href="#transportation">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Airport to city taxi can be tricky
-&lt;ul>
-&lt;li>Easy to get Didi, but they may not be able to find you where you are at the airport, and hard to communicate since they only speak chinese.&lt;/li>
-&lt;li>Local taxi drivers will try to rip you off&lt;/li>
-&lt;li>Best to book a hotel shuttle or from klook etc&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Otherwise didi is easy to book in the city, or from city to airport&lt;/li>
-&lt;li>Metro is easy to use and cheap&lt;/li>
-&lt;/ul>
-&lt;h2 id="food">
+ &lt;a class="anchor" href="#transportation"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Airport to city taxi can be tricky
+&lt;ul&gt;
+&lt;li&gt;Easy to get Didi, but they may not be able to find you where you are at the airport, and hard to communicate since they only speak chinese.&lt;/li&gt;
+&lt;li&gt;Local taxi drivers will try to rip you off&lt;/li&gt;
+&lt;li&gt;Best to book a hotel shuttle or from klook etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Otherwise didi is easy to book in the city, or from city to airport&lt;/li&gt;
+&lt;li&gt;Metro is easy to use and cheap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="food"&gt;
  Food
- &lt;a class="anchor" href="#food">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Vegetarian food is not that common in Shanghai, but look for Buddhist restaurants or vegan restaurants.&lt;/li>
-&lt;/ul>
-&lt;h2 id="shopping">
+ &lt;a class="anchor" href="#food"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Vegetarian food is not that common in Shanghai, but look for Buddhist restaurants or vegan restaurants.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="shopping"&gt;
  Shopping
- &lt;a class="anchor" href="#shopping">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Very few people shop offline in Shanghai and everybody orders from TaoBao&lt;/li>
-&lt;li>Hard for foreigners to buy from taobao. May need help from a local.&lt;/li>
-&lt;/ul>
-&lt;h2 id="attractions">
+ &lt;a class="anchor" href="#shopping"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Very few people shop offline in Shanghai and everybody orders from TaoBao&lt;/li&gt;
+&lt;li&gt;Hard for foreigners to buy from taobao. May need help from a local.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="attractions"&gt;
  Attractions
- &lt;a class="anchor" href="#attractions">#&lt;/a>
-&lt;/h2>
-&lt;h2 id="visa--paperwork">
+ &lt;a class="anchor" href="#attractions"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h2 id="visa--paperwork"&gt;
  Visa / Paperwork
- &lt;a class="anchor" href="#visa--paperwork">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Need to physically visit Mumbai VFS to get visa.&lt;/li>
-&lt;/ul>
-&lt;h2 id="data--phone">
+ &lt;a class="anchor" href="#visa--paperwork"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Need to physically visit Mumbai VFS to get visa.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="data--phone"&gt;
  Data / Phone
- &lt;a class="anchor" href="#data--phone">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Physical sim available at the airport.
-&lt;ul>
-&lt;li>Google etc and most non-china sites/apps dont work on this until you connect a vpn&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Google and all other non-china sites/apps will work on your roaming pack on home country sim&lt;/li>
-&lt;li>Can buy a HK sim/eSim as well to use locally which also works for google etc.&lt;/li>
-&lt;/ul>
-&lt;h2 id="money">
+ &lt;a class="anchor" href="#data--phone"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Physical sim available at the airport.
+&lt;ul&gt;
+&lt;li&gt;Google etc and most non-china sites/apps dont work on this until you connect a vpn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Google and all other non-china sites/apps will work on your roaming pack on home country sim&lt;/li&gt;
+&lt;li&gt;Can buy a HK sim/eSim as well to use locally which also works for google etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="money"&gt;
  Money
- &lt;a class="anchor" href="#money">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Alipay is used everywhere. Not much cash needed but keep some for emergency if it doesn&amp;rsquo;t work.&lt;/li>
-&lt;li>Credit card usage is not that common&lt;/li>
-&lt;/ul></description></item><item><title>Hong Kong</title><link>https://shantanugoel.com/notes/travel/hongkong/hk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/travel/hongkong/hk/</guid><description>&lt;h2 id="general">
+ &lt;a class="anchor" href="#money"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Alipay is used everywhere. Not much cash needed but keep some for emergency if it doesn&amp;rsquo;t work.&lt;/li&gt;
+&lt;li&gt;Credit card usage is not that common&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Hong Kong</title><link>https://shantanugoel.com/notes/travel/hongkong/hk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/travel/hongkong/hk/</guid><description>&lt;h2 id="general"&gt;
  General
- &lt;a class="anchor" href="#general">#&lt;/a>
-&lt;/h2>
-&lt;h2 id="transportation">
+ &lt;a class="anchor" href="#general"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h2 id="transportation"&gt;
  Transportation
- &lt;a class="anchor" href="#transportation">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Take an Oyster card for the metro
-&lt;ul>
-&lt;li>Can be refilled only via cash. But can be done at MRT stations as well as 7/11 stores&lt;/li>
-&lt;li>Can also be used for paying at various shops&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Can tap credit card directly for the bus&lt;/li>
-&lt;/ul>
-&lt;h2 id="food">
+ &lt;a class="anchor" href="#transportation"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Take an Oyster card for the metro
+&lt;ul&gt;
+&lt;li&gt;Can be refilled only via cash. But can be done at MRT stations as well as 7/11 stores&lt;/li&gt;
+&lt;li&gt;Can also be used for paying at various shops&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Can tap credit card directly for the bus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="food"&gt;
  Food
- &lt;a class="anchor" href="#food">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Not many options for vegetarians, but you will be able to find some Indian or vegan places with some effort&lt;/li>
-&lt;/ul>
-&lt;h2 id="shopping">
+ &lt;a class="anchor" href="#food"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Not many options for vegetarians, but you will be able to find some Indian or vegan places with some effort&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="shopping"&gt;
  Shopping
- &lt;a class="anchor" href="#shopping">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Computer centers are the main places to buy electronics
-&lt;ul>
-&lt;li>Wan Chai Computer Center is what I liked&lt;/li>
-&lt;li>Mong Kok computer center is also good, and also has other types of shops nearby for toys/clothing/shoes etc&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Toy street has tons of toys&lt;/li>
-&lt;/ul>
-&lt;h2 id="attractions">
+ &lt;a class="anchor" href="#shopping"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Computer centers are the main places to buy electronics
+&lt;ul&gt;
+&lt;li&gt;Wan Chai Computer Center is what I liked&lt;/li&gt;
+&lt;li&gt;Mong Kok computer center is also good, and also has other types of shops nearby for toys/clothing/shoes etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Toy street has tons of toys&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="attractions"&gt;
  Attractions
- &lt;a class="anchor" href="#attractions">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Lots of places to hike&lt;/li>
-&lt;/ul>
-&lt;h2 id="visa--paperwork">
+ &lt;a class="anchor" href="#attractions"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lots of places to hike&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="visa--paperwork"&gt;
  Visa / Paperwork
- &lt;a class="anchor" href="#visa--paperwork">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>No visa needed if visit is under 14 days. Just register for Pre-Arrival Registration online.&lt;/li>
-&lt;li>PAR is rejected automatically for passports issued from a few states (e.g. Telangana, Chandigarh, etc) and need to apply for visa in such cases.&lt;/li>
-&lt;/ul>
-&lt;h2 id="data--phone">
+ &lt;a class="anchor" href="#visa--paperwork"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No visa needed if visit is under 14 days. Just register for Pre-Arrival Registration online.&lt;/li&gt;
+&lt;li&gt;PAR is rejected automatically for passports issued from a few states (e.g. Telangana, Chandigarh, etc) and need to apply for visa in such cases.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="data--phone"&gt;
  Data / Phone
- &lt;a class="anchor" href="#data--phone">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Unlike China, all websites/apps work without a vpn&lt;/li>
-&lt;li>Cheap SIMs are available at the airport as well as all 7/11 stores&lt;/li>
-&lt;/ul>
-&lt;h2 id="money">
+ &lt;a class="anchor" href="#data--phone"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Unlike China, all websites/apps work without a vpn&lt;/li&gt;
+&lt;li&gt;Cheap SIMs are available at the airport as well as all 7/11 stores&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="money"&gt;
  Money
- &lt;a class="anchor" href="#money">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>Very heavy on cash. Most smaller stores will not accept cards, or will charge a fee.&lt;/li>
-&lt;/ul></description></item><item><title>Japan</title><link>https://shantanugoel.com/notes/travel/japan/japan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/travel/japan/japan/</guid><description>&lt;p>Primary cities covered: Tokyo&lt;/p>
-&lt;h2 id="tokyo-pre-travel-references">
+ &lt;a class="anchor" href="#money"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Very heavy on cash. Most smaller stores will not accept cards, or will charge a fee.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Japan</title><link>https://shantanugoel.com/notes/travel/japan/japan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/travel/japan/japan/</guid><description>&lt;p&gt;Primary cities covered: Tokyo&lt;/p&gt;
+&lt;h2 id="tokyo-pre-travel-references"&gt;
  Tokyo Pre-Travel References
- &lt;a class="anchor" href="#tokyo-pre-travel-references">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="general">
+ &lt;a class="anchor" href="#tokyo-pre-travel-references"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="general"&gt;
  General
- &lt;a class="anchor" href="#general">#&lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://www.japan-guide.com/">Japan Travel Guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.japan-guide.com/e/e2164.html">Tokyo Travel Guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.reddit.com/r/JapanTravelTips/">Japan Travel Tips Subreddit&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="transportation">
+ &lt;a class="anchor" href="#general"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.japan-guide.com/"&gt;Japan Travel Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.japan-guide.com/e/e2164.html"&gt;Tokyo Travel Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/JapanTravelTips/"&gt;Japan Travel Tips Subreddit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="transportation"&gt;
  Transportation
- &lt;a class="anchor" href="#transportation">#&lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://www.reddit.com/r/JapanTravel/wiki/advice/transport/iccards/">https://www.reddit.com/r/JapanTravel/wiki/advice/transport/iccards/&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.reddit.com/r/JapanTravelTips/comments/1d5jnlx/do_you_have_a_jr_pass_or_ic_card_suicapasmoetc/">https://www.reddit.com/r/JapanTravelTips/comments/1d5jnlx/do_you_have_a_jr_pass_or_ic_card_suicapasmoetc/&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="food">
+ &lt;a class="anchor" href="#transportation"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/JapanTravel/wiki/advice/transport/iccards/"&gt;https://www.reddit.com/r/JapanTravel/wiki/advice/transport/iccards/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/JapanTravelTips/comments/1d5jnlx/do_you_have_a_jr_pass_or_ic_card_suicapasmoetc/"&gt;https://www.reddit.com/r/JapanTravelTips/comments/1d5jnlx/do_you_have_a_jr_pass_or_ic_card_suicapasmoetc/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="food"&gt;
  Food
- &lt;a class="anchor" href="#food">#&lt;/a>
-&lt;/h3>
-&lt;p>For vegetarians:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://www.neverendingvoyage.com/vegetarian-survival-guide-to-japan/">https://www.neverendingvoyage.com/vegetarian-survival-guide-to-japan/&lt;/a>&lt;/li>
-&lt;li>Install Happy Cow app&lt;/li>
-&lt;li>&lt;a href="https://justhungry.com/japan-dining-out-cards">Printable cards for communicating dietary restrictions&lt;/a>&lt;/li>
-&lt;li>Yodobashi Camera has Cobara Hetta Curry/Naan for Indian food&lt;/li>
-&lt;/ul>
-&lt;h3 id="shopping">
+ &lt;a class="anchor" href="#food"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;For vegetarians:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.neverendingvoyage.com/vegetarian-survival-guide-to-japan/"&gt;https://www.neverendingvoyage.com/vegetarian-survival-guide-to-japan/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install Happy Cow app&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://justhungry.com/japan-dining-out-cards"&gt;Printable cards for communicating dietary restrictions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Yodobashi Camera has Cobara Hetta Curry/Naan for Indian food&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="shopping"&gt;
  Shopping
- &lt;a class="anchor" href="#shopping">#&lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>Take your passport with you when shopping for removing tax on items&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Akihabara&lt;/p>
-&lt;ul>
-&lt;li>Yodobashi Camera&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Thrift Stores&lt;/p></description></item><item><title>Multiple Hugo Themes For Different Paths In Same Site</title><link>https://shantanugoel.com/notes/braindump/hugo-multiple-themes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/braindump/hugo-multiple-themes/</guid><description>&lt;h1 id="multiple-hugo-themes-for-different-paths-in-same-site">
+ &lt;a class="anchor" href="#shopping"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Take your passport with you when shopping for removing tax on items&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Akihabara&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yodobashi Camera&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thrift Stores&lt;/p&gt;</description></item><item><title>Multiple Hugo Themes For Different Paths In Same Site</title><link>https://shantanugoel.com/notes/braindump/hugo-multiple-themes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/braindump/hugo-multiple-themes/</guid><description>&lt;h1 id="multiple-hugo-themes-for-different-paths-in-same-site"&gt;
  Multiple Hugo Themes For Different Paths In Same Site
- &lt;a class="anchor" href="#multiple-hugo-themes-for-different-paths-in-same-site">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="background">
+ &lt;a class="anchor" href="#multiple-hugo-themes-for-different-paths-in-same-site"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="background"&gt;
  Background
- &lt;a class="anchor" href="#background">#&lt;/a>
-&lt;/h2>
-&lt;p>I decided recently to publish a few of my notes online but wanted to keep it simple and naturally thought of using hugo for it. Now, I could simply setup another subdomain (e.g. notes.shantanugoel.com) but wanted to avoid doing so, and rather use something like shantanugoel.com/notes. This is possible but it&amp;rsquo;d use the same blog theme that I am using on my main domain shantanugoel.com. So I set out to find a way to use a main blog theme for my site while using a separate notes theme for the /notes path.&lt;/p></description></item><item><title>Chapter 2: Data Models and Query Languages</title><link>https://shantanugoel.com/notes/books/ddia/chapter-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-2/</guid><description>&lt;h1 id="data-models-and-query-languages">
+ &lt;a class="anchor" href="#background"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I decided recently to publish a few of my notes online but wanted to keep it simple and naturally thought of using hugo for it. Now, I could simply setup another subdomain (e.g. notes.shantanugoel.com) but wanted to avoid doing so, and rather use something like shantanugoel.com/notes. This is possible but it&amp;rsquo;d use the same blog theme that I am using on my main domain shantanugoel.com. So I set out to find a way to use a main blog theme for my site while using a separate notes theme for the /notes path.&lt;/p&gt;</description></item><item><title>Chapter 2: Data Models and Query Languages</title><link>https://shantanugoel.com/notes/books/ddia/chapter-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-2/</guid><description>&lt;h1 id="data-models-and-query-languages"&gt;
  Data Models and Query Languages
- &lt;a class="anchor" href="#data-models-and-query-languages">#&lt;/a>
-&lt;/h1>
-&lt;p>Most applications are built by layering one data model on top of another. Each layer hides the complexity of the layer below it by providing a clean data model.&lt;/p>
-&lt;h2 id="relational-model-vs-document-model">
+ &lt;a class="anchor" href="#data-models-and-query-languages"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Most applications are built by layering one data model on top of another. Each layer hides the complexity of the layer below it by providing a clean data model.&lt;/p&gt;
+&lt;h2 id="relational-model-vs-document-model"&gt;
  Relational model v/s Document model
- &lt;a class="anchor" href="#relational-model-vs-document-model">#&lt;/a>
-&lt;/h2>
-&lt;p>SQL based on relational model proposed by Edgar Codd in 1970. Data is organized into relations (tables in SQL) where each relation is an unordered collection of tuples (rows in SQL).&lt;/p></description></item><item><title>Chapter 3: Storage and Retrieval</title><link>https://shantanugoel.com/notes/books/ddia/chapter-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-3/</guid><description>&lt;h1 id="storage-and-retrieval">
+ &lt;a class="anchor" href="#relational-model-vs-document-model"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;SQL based on relational model proposed by Edgar Codd in 1970. Data is organized into relations (tables in SQL) where each relation is an unordered collection of tuples (rows in SQL).&lt;/p&gt;</description></item><item><title>Chapter 3: Storage and Retrieval</title><link>https://shantanugoel.com/notes/books/ddia/chapter-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/notes/books/ddia/chapter-3/</guid><description>&lt;h1 id="storage-and-retrieval"&gt;
  Storage and Retrieval
- &lt;a class="anchor" href="#storage-and-retrieval">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="data-structures-that-power-your-db">
+ &lt;a class="anchor" href="#storage-and-retrieval"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="data-structures-that-power-your-db"&gt;
  Data Structures that power your DB
- &lt;a class="anchor" href="#data-structures-that-power-your-db">#&lt;/a>
-&lt;/h2>
-&lt;p>&lt;strong>log&lt;/strong> -&amp;gt; In DB context, refers to &amp;ldquo;an append only sequence of records&amp;rdquo;.&lt;/p>
-&lt;p>Many DBs use a log to store data (but need additional processing e.g. concurrency control, reclaiming disk space, handling errors etc)&lt;/p>
-&lt;p>Writing data in a log is fast since it only appends to the end of the file but reading can be slow since it requires scanning the entire file, and hence DBs need an &lt;strong>index&lt;/strong>.&lt;/p></description></item></channel></rss>
+ &lt;a class="anchor" href="#data-structures-that-power-your-db"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;log&lt;/strong&gt; -&amp;gt; In DB context, refers to &amp;ldquo;an append only sequence of records&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Many DBs use a log to store data (but need additional processing e.g. concurrency control, reclaiming disk space, handling errors etc)&lt;/p&gt;
+&lt;p&gt;Writing data in a log is fast since it only appends to the end of the file but reading can be slow since it requires scanning the entire file, and hence DBs need an &lt;strong&gt;index&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>
