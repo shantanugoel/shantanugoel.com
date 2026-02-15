@@ -35,7 +35,7 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;h3 id="80s-a-time-of-total-chad-programmers"&gt;80s: A time of total chad programmers&lt;/h3&gt;
 &lt;p&gt;The things that made it more difficult for me was that the game uses a lot of clever tricks given how low on resources the consoles used to be those days. Few such things I discovered:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;When I was trying to get the positions of the player and the enemies, I kept faltering even after I discovered the memory locations. Debugging this through the Tilemap viewer and the sprite viewer, I found that when the player moves, even though his coordinates are changing, he isn&amp;rsquo;t really moving. The game keeps the player literally fixed in the center of the screen and scrolls a fixed background instead in the opposite direction and efficiently brings in the enemies as sprites.&lt;/li&gt;
+&lt;li&gt;When I was trying to get the positions of the player and the enemies, I kept faltering even after I discovered the memory locations. Debugging this through the Tilemap viewer and the sprite viewer, I found that when the player moves, even though his coordinates are changing, he isn&amp;rsquo;t really moving. The game keeps the player literally fixed in the center of the screen and scrolls the background instead in a window of fixed width in the opposite direction, and efficiently brings in the enemies as sprites. The window keeps wrapping around giving the illusion of continuous progress. You can see below how little is actually changing on the screen at any given time.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src="https://shantanugoel.com/img/2026/move_background.gif" alt=""&gt;&lt;/p&gt;
 &lt;ul&gt;
