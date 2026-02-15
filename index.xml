@@ -59,7 +59,7 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;p&gt;Everything was not bad though. A couple of advantages I had were:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Given the low amount of working RAM the game had at its disposal (just 2 KB), it often brought a lot of the parameters in to the first page (0x00 to 0xFF - 255 bytes) from other areas of RAM and ROM so it could access them faster.&lt;/li&gt;
-&lt;li&gt;Mesen has a very nice lua scripting interface, so I wrote a &lt;code&gt;God Mode&lt;/code&gt; script which allowed me to explore the game easily. I made the script so that it gave me infinite health, killed any enemy as soon as it appeared on the screen, and kept overwriting the timer to always have 9999 seconds left so it didn&amp;rsquo;t time out.&lt;/li&gt;
+&lt;li&gt;Mesen has a very nice lua scripting interface, so I wrote a &lt;code&gt;God Mode&lt;/code&gt; &lt;a href="https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/scripts/god_mode.lua"&gt;script&lt;/a&gt; which allowed me to explore the game easily. I made the script so that it gave me infinite health, killed any enemy as soon as it appeared on the screen, and kept overwriting the timer to always have 9999 seconds left so it didn&amp;rsquo;t time out.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I started out on Day 1, doing a lot of research, and building around 49 parameters which I thought was pretty extensive. Little did I know that I will have to keep figuring out more and more as I tried and failed. Few examples of things I added as I went along, and there were many more besides figuring out their limits and their nature to determine their encoding etc:&lt;/p&gt;
 &lt;ul&gt;
@@ -87,6 +87,7 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;/ul&gt;
 &lt;p&gt;Each of these fixes, as I figured them out, felt like cleaning a fogged lens. Suddenly the agent could make sense of the things because &lt;code&gt;The Matrix&lt;/code&gt; was all around him.&lt;/p&gt;
 &lt;p&gt;Finally I settled on a 99-parameter state representation made out of the RAM map I pieced together as below:&lt;/p&gt;
+&lt;p&gt;Link: &lt;a href="https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/RAM_MAP.md"&gt;https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/RAM_MAP.md&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-md" data-lang="md"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;# RAM Map - Kung Fu (NES)
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;This document tracks the memory addresses used for state extraction in the &lt;span style="color:#e6db74"&gt;`kungfu_rl_rs`&lt;/span&gt; project.
@@ -179,6 +180,7 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;p&gt;Finally I created an action space of these 13 combos, the thinking being that the player can just not do anything, move in a direction without attacking, or attack with a direction (Just kicking is still same as kicking in the same direction as you are facing)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Link: &lt;a href="https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/src/env.rs"&gt;https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/src/env.rs&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;pub&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;enum&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Action&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Noop &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Right &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;,
@@ -243,6 +245,7 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;li&gt;Added a tiny punishment for wasting time. More the time spent in the middle, the more it would cut points from the agent. This pushed the agent to get a move on, and not wait to get through the things eventually.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Finally I did a lot of tweaks to scale them to appropriate ranges, my aim being that the overall rewards should not become too small or too small (to avoid vanishing or exploding gradients issues).&lt;/p&gt;
+&lt;p&gt;Link: &lt;a href="https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/src/env.rs"&gt;https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/src/env.rs&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;impl&lt;/span&gt; Default &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; RewardConfig {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fn&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;default&lt;/span&gt;() -&amp;gt; &lt;span style="color:#a6e22e"&gt;Self&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Self {
@@ -268,6 +271,7 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;p&gt;DQN can be fragile. Early training runs looked promising, and then collapsed. Q-values explored, policies oscillated, and the agent would forget what it had just learned. The rewards can be noisy because exploration adds randomness. Yet, you can never drop randomness (epsilon) too much because the game randomizes enemy behavior unlike games like Super Mario. So you dont want the agent learning a specific level but expect stochasticity.&lt;/p&gt;
 &lt;p&gt;There&amp;rsquo;s no easy way to determine these. There are some typical things that you can take from earlier attempts but ultimately one needs to tweak this for the problem at hand. I had to slow down the learning rate, have a longer warm period before training, a bigger replay buffer, and many more. This makes all the difference between cramming for an exam and spaced repetition, or between getting lucky or truly acing with talent.&lt;/p&gt;
 &lt;p&gt;I played around with the below parameters, making them more configurable at every turn, and dusting out every single laptop in the house to run parallel training runs.&lt;/p&gt;
+&lt;p&gt;Link: &lt;a href="https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/src/dqn.rs"&gt;https://github.com/shantanugoel/kungfu_nes_rl_rust/blob/main/src/dqn.rs&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;impl&lt;/span&gt; Default &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; AgentConfig {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fn&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;default&lt;/span&gt;() -&amp;gt; &lt;span style="color:#a6e22e"&gt;Self&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Self {
