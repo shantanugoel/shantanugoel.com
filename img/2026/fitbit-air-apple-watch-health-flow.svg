@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Fitbit Air and Apple Watch health data flow</title>
+  <desc id="desc">Fitbit Air sends data through Google Health and Health Sync into Apple Health. Apple Watch writes directly to Apple Health. Bevel reads the combined data from Apple Health.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10151d"/>
+      <stop offset="1" stop-color="#171d28"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 1 L9 4.5 L0 8 Z" fill="#aeb8c7"/>
+    </marker>
+    <style>
+      .box { stroke-width:2.5; filter:url(#shadow) }
+      .fitbit { fill:#173a38; stroke:#38d4c1 }
+      .google { fill:#172b4d; stroke:#4285f4 }
+      .syncbox { fill:#403614; stroke:#f4b400 }
+      .watch { fill:#343a43; stroke:#d8dee8 }
+      .health { fill:#451f2a; stroke:#ff5c75 }
+      .bevel { fill:#30264a; stroke:#a78bfa }
+      .label { fill:#f7f9fc; font:600 30px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; text-anchor:middle }
+      .sub { fill:#aeb8c7; font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; text-anchor:middle }
+      .arrow { fill:none; stroke:#aeb8c7; stroke-width:3.5; marker-end:url(#arrow) }
+      .arrow-label { fill:#f3cb6b; font:600 21px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; text-anchor:middle; paint-order:stroke; stroke:#151b25; stroke-width:5px; stroke-linejoin:round }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" rx="28" fill="url(#background)"/>
+  <text x="640" y="68" fill="#f7f9fc" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="34" font-weight="700" text-anchor="middle">One wrist, one health timeline</text>
+
+  <rect class="box fitbit" x="70" y="145" width="250" height="125" rx="20"/>
+  <text class="label" x="195" y="195">Fitbit Air</text>
+  <text class="sub" x="195" y="235">home + sleep</text>
+
+  <rect class="box google" x="390" y="145" width="250" height="125" rx="20"/>
+  <text class="label" x="515" y="195">Google Health</text>
+  <text class="sub" x="515" y="235">Fitbit's home</text>
+
+  <rect class="box syncbox" x="710" y="145" width="250" height="125" rx="20"/>
+  <text class="label" x="835" y="195">Health Sync</text>
+  <text class="sub" x="835" y="235">the bridge</text>
+
+  <rect class="box watch" x="70" y="450" width="250" height="125" rx="20"/>
+  <text class="label" x="195" y="500">Apple Watch</text>
+  <text class="sub" x="195" y="540">out + workouts</text>
+
+  <rect class="box health" x="1010" y="295" width="220" height="125" rx="20"/>
+  <text class="label" x="1120" y="345">Apple Health</text>
+  <text class="sub" x="1120" y="385">the archive</text>
+
+  <rect class="box bevel" x="710" y="500" width="250" height="125" rx="20"/>
+  <text class="label" x="835" y="550">Bevel</text>
+  <text class="sub" x="835" y="590">recovery + insights</text>
+
+  <path class="arrow" d="M320 208 H380"/>
+  <path class="arrow" d="M640 208 H700"/>
+  <path class="arrow" d="M960 208 C1000 208 1004 271 1033 290"/>
+  <path class="arrow" d="M320 513 C650 513 741 423 999 366"/>
+  <path class="arrow" d="M1010 405 C958 437 919 466 882 493"/>
+
+  <text class="arrow-label" x="355" y="187">sync</text>
+  <text class="arrow-label" x="675" y="187">API</text>
+  <text class="arrow-label" x="985" y="245">writes</text>
+  <text class="arrow-label" x="585" y="480">writes directly</text>
+  <text class="arrow-label" x="970" y="470">reads</text>
+
+  <text x="640" y="686" fill="#7f8b9b" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" text-anchor="middle">Only one wearable is worn at a time</text>
+</svg>
