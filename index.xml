@@ -33,10 +33,12 @@ And then it restarted the usual thing about how AI is going to bring about the d
 &lt;h2 id="did-someone-find-the-same-php-vuln-via-ai"&gt;Did someone find the same PHP vuln via AI?&lt;/h2&gt;
 &lt;p&gt;By just saying &amp;ldquo;find bad vulnerabilities in PHP&amp;rdquo;?&lt;/p&gt;
 &lt;p&gt;NO.&lt;/p&gt;
-&lt;p&gt;I dug in found who really said this (see the image below). But here are a few facts that are either different or hidden in the above message:&lt;/p&gt;
+&lt;p&gt;I dug in and found who really said this (see the image below). But here are a few facts that are either different or hidden in the above message:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Dan is the CEO of the company that broke the PHP CVE disclosure embargo, and brought upon a world of additional pain. So his claims need to be taken with a big grain of salt, this could be him just him trying to save his behind.
-BUT even if we assume if this is true, can anyone just find this vulnerability on its own by just saying &amp;ldquo;find bad vulns&amp;rdquo;? Maybe, but what he didn&amp;rsquo;t mention in the original post and clarified later in below post&lt;/li&gt;
+&lt;li&gt;Dan is the CEO of the company that broke the PHP CVE disclosure embargo, and brought upon a world of additional pain. So his claims need to be taken with a big grain of salt, this could be him just him trying to save his behind.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;BUT even if we assume if this is true, can anyone just find this vulnerability on its own by just saying &amp;ldquo;find bad vulns&amp;rdquo;? Maybe, but what he didn&amp;rsquo;t mention in the original post and clarified later in below post&lt;/p&gt;
+&lt;ol start="2"&gt;
 &lt;li&gt;He fed it to Mythos 5.1. A restricted model from Anthropic specifically for cyber security that not only has a lot of cyber security data training but it likely already has a lot of private CVE data going into it continuously. Who knows Mythos already had access to this CVE since the work on it was going on for months.&lt;/li&gt;
 &lt;li&gt;They used their own special harness meant specifically for security bug hunting, researched and built on top of past 0 days and CVEs, with orchestration for such bug hunting&lt;/li&gt;
 &lt;li&gt;They directed it specifically to a particular class of vulnerabilities not just &amp;ldquo;bad vulns&amp;rdquo;, which restricts and directs the scope quite a bit&lt;/li&gt;
