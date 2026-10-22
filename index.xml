@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu Vs The World</title><link>https://shantanugoel.com/</link><description>Recent content on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Wed, 12 Aug 2026 16:53:53 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/index.xml" rel="self" type="application/rss+xml"/><item><title>300 Million Steps And A Flagpole. Or How I Taught Machines Super Mario</title><link>https://shantanugoel.com/2026/08/12/teach-machines-super-mario/</link><pubDate>Wed, 12 Aug 2026 16:53:53 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2026/08/12/teach-machines-super-mario/</guid><description>&lt;h2 id="its-a-me"&gt;It&amp;rsquo;s-a me!!&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shantanu Vs The World</title><link>https://shantanugoel.com/</link><description>Recent content on Shantanu Vs The World</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><managingEditor>shantanu@shantanugoel.com (Shantanu Goel)</managingEditor><webMaster>shantanu@shantanugoel.com (Shantanu Goel)</webMaster><lastBuildDate>Thu, 22 Oct 2026 20:12:13 +0530</lastBuildDate><atom:link href="https://shantanugoel.com/index.xml" rel="self" type="application/rss+xml"/><item><title>AI cybersecurity doomsday, or a case of fud</title><link>https://shantanugoel.com/2026/10/22/ai-cybersecurity-doomsday-or-a-case-of-fud/</link><pubDate>Thu, 22 Oct 2026 20:12:13 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2026/10/22/ai-cybersecurity-doomsday-or-a-case-of-fud/</guid><description>&lt;h2 id="the-beginning"&gt;The beginning&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s October 2026, and a few things happened:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;eMudhra was found to be using trivial numbers, a single byte, as their private keys&lt;/li&gt;
+&lt;li&gt;PHP CVE-2026-109619 AND CVE-2026-109619 were made public&lt;/li&gt;
+&lt;li&gt;Railway got hacked and customers lost their keys/env vars stored in their systems&lt;/li&gt;
+&lt;li&gt;LiteLLM had another supply chain compromise for a few hours&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And then it began. People started looking at CVE trackers and found out tons of CVEs across all the software they use being disclosed there. And somehow everyone collectively decided that it&amp;rsquo;s all AI.
+And then it restarted the usual thing about how AI is going to bring about the downfall of everything because now anyone can hack anything.&lt;/p&gt;</description><content>&lt;h2 id="the-beginning"&gt;The beginning&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s October 2026, and a few things happened:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;eMudhra was found to be using trivial numbers, a single byte, as their private keys&lt;/li&gt;
+&lt;li&gt;PHP CVE-2026-109619 AND CVE-2026-109619 were made public&lt;/li&gt;
+&lt;li&gt;Railway got hacked and customers lost their keys/env vars stored in their systems&lt;/li&gt;
+&lt;li&gt;LiteLLM had another supply chain compromise for a few hours&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And then it began. People started looking at CVE trackers and found out tons of CVEs across all the software they use being disclosed there. And somehow everyone collectively decided that it&amp;rsquo;s all AI.
+And then it restarted the usual thing about how AI is going to bring about the downfall of everything because now anyone can hack anything.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://shantanugoel.com/img/2026/x_ai_php_2.png" alt="https://x.com/deedydas/status/2113198509122076693"&gt;&lt;/p&gt;
+&lt;p&gt;(I&amp;rsquo;m not picking on Deedy here, but I replied to his post so this was the last open tab on my browser and I picked it up. There are thousands of more such examples on the internet)&lt;/p&gt;
+&lt;p&gt;Some even posted that someone else was able to find the same PHP vulnerability by just telling their agent
+&lt;img src="https://shantanugoel.com/img/2026/x_ai_php_1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;I posted a bunch of things on X as replies and posts but thought of consolidating my thoughts here.&lt;/p&gt;
+&lt;h2 id="was-there-any-ai-involvement-in-any-of-these-hacks"&gt;Was there any AI involvement in any of these hacks?&lt;/h2&gt;
+&lt;p&gt;NO. There wasn&amp;rsquo;t any evidence of any AI related hack or attack in any of these.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;eMudhra implied that someone found these using AI assisted tools, but there wasn&amp;rsquo;t any evidence of it.&lt;/li&gt;
+&lt;li&gt;PHP CVE disclosures had no such claim at all&lt;/li&gt;
+&lt;li&gt;Railway said they were being attacked by a &amp;ldquo;swarm&amp;rdquo; but there was no evidence of AI involvement&lt;/li&gt;
+&lt;li&gt;LiteLLM supply chain compromise was again due to a stolen service account credentials, no AI evidence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="did-someone-find-the-same-php-vuln-via-ai"&gt;Did someone find the same PHP vuln via AI?&lt;/h2&gt;
+&lt;p&gt;By just saying &amp;ldquo;find bad vulnerabilities in PHP&amp;rdquo;?&lt;/p&gt;
+&lt;p&gt;NO.&lt;/p&gt;
+&lt;p&gt;I dug in found who really said this (see the image below). But here are a few facts that are either different or hidden in the above message:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Dan is the CEO of the company that broke the PHP CVE disclosure embargo, and brought upon a world of additional pain. So his claims need to be taken with a big grain of salt, this could be him just him trying to save his behind.
+BUT even if we assume if this is true, can anyone just find this vulnerability on its own by just saying &amp;ldquo;find bad vulns&amp;rdquo;? Maybe, but what he didn&amp;rsquo;t mention in the original post and clarified later in below post&lt;/li&gt;
+&lt;li&gt;He fed it to Mythos 5.1. A restricted model from Anthropic specifically for cyber security that not only has a lot of cyber security data training but it likely already has a lot of private CVE data going into it continuously. Who knows Mythos already had access to this CVE since the work on it was going on for months.&lt;/li&gt;
+&lt;li&gt;They used their own special harness meant specifically for security bug hunting, researched and built on top of past 0 days and CVEs, with orchestration for such bug hunting&lt;/li&gt;
+&lt;li&gt;They directed it specifically to a particular class of vulnerabilities not just &amp;ldquo;bad vulns&amp;rdquo;, which restricts and directs the scope quite a bit&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://shantanugoel.com/img/2026/x_ai_php_3.png" alt="https://x.com/lorenc_dan/status/2113260275449098275"&gt;&lt;/p&gt;
+&lt;h2 id="can-any-one-non-technical-now-exploit-anything-with-ai"&gt;Can any one non-technical now exploit anything with AI?&lt;/h2&gt;
+&lt;p&gt;That&amp;rsquo;s the wrong question to ask.&lt;/p&gt;
+&lt;p&gt;Even in the past, since decades, there have always been &lt;code&gt;Script Kiddies&lt;/code&gt;. A term meant for people who do not understand much about technicalities of an exploit. Technical people make scripts avilable on the internet, script kiddies download them, point to a target, and shoot.&lt;/p&gt;
+&lt;p&gt;The situation now? The same scripts can be built via AI and a completely non technical person can likely get them to run via AI. But there are a couple of nuances against the narrative, and one for. But the 2nd nuance against the narrative is the one, as an LLM would say, &lt;code&gt;load bearing&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Its slightly easier to do multi-stage attacks with an LLM where things may change. Essentially the scripting needs to be a bit less robust, or you could say the LLMs could bundle in many more error checks. I say &amp;ldquo;slightly&amp;rdquo; because the older script kiddie days as well had a ton of these, and also LLMs tend to fake out a lot giving you a false sense of exploiting a vuln (e.g. most of the github PoCs for the PHP vuln faked it out by assuming the php process had access to /etc/passwd)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Against:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;As a non-technical person, try asking claude or chatgpt to run these hacks:
+a. Well, they can&amp;rsquo;t. Because you need tooling for it. You can&amp;rsquo;t run any of these from your web/app chat interfaces.
+b. Even if you run the claude code/codex etc, they will simply refuse to do it for you (and block your account)
+c. You will somehow need to find a vendor that lets you run abliterated models without any kind of guardrails, or run a local model yourself, both not an easy task to do for a farily non technical person who isn&amp;rsquo;t determined at least to the extent of a script kiddie.&lt;/li&gt;
+&lt;li&gt;Even if you were able to overcome the above, you will find that a naive non-technical person running this point and shoot scheme will be found out easily by leaking their fingerprints all over the attack surface.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Also note that the same AI is now giving tools and means for much more technically adept defenders to be able to find this non technical person as well.&lt;/p&gt;
+&lt;h2 id="have-the-severity-of-exploits-increased-after-ai"&gt;Have the severity of exploits increased after AI?&lt;/h2&gt;
+&lt;p&gt;Not yet. The PHP CVE is bad, but it was exacerbated by the fact of human malice and incompetence and not AI. Some humans leaked the news of this CVE and then some other humans broke embargo to release fix early which caused a lot of panic and even politicians and PMs started tweeting about it.&lt;/p&gt;
+&lt;p&gt;But we&amp;rsquo;ve had worse ones in the past, before AI. Heartbleed and Log4Shell were large scale issues, even much more than php, that were trivially exploited by simple single attack scripts. Meltdown and Spectre impactd every processor out there. I should know because I was there fixing and protecting many of these systems against these attacks at Qualcomm.&lt;/p&gt;
+&lt;h2 id="cves-and-0-days"&gt;CVEs and 0 Days&lt;/h2&gt;
+&lt;p&gt;A lot of people don&amp;rsquo;t know the difference between a CVE and a zero day and are freaking out on finding cve trackers seeing thousands of vulnerabilities, attributing everything to AI.&lt;/p&gt;
+&lt;p&gt;Existence of a CVE is a good thing. You could see thousands of these even before on the trackers and it&amp;rsquo;s a good thing if they are increasing in numbers there post AI. It means a vulnerability was publicly disclosed and catalogued and most probably has a patch available before the disclosure was made public. And with the help of AI, MORE of these are being caught and fixed in time.&lt;/p&gt;
+&lt;p&gt;Zero days are when flaws aren&amp;rsquo;t known. It doesn&amp;rsquo;t mean they aren&amp;rsquo;t being exploited. In fact they are being exploited even more because most people don&amp;rsquo;t know about the flaw and thus don&amp;rsquo;t have a fix. While the bad guys know and will keep using them.&lt;/p&gt;
+&lt;h2 id="are-we-fucked"&gt;Are we fucked?&lt;/h2&gt;
+&lt;p&gt;No.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;AI will increase findings. And you will see a lot of people getting perplexed over increasing number of CVEs. But like I said, it&amp;rsquo;s a good thing. You want more and more CVEs to be found before a bad guy finds them and exploits them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AI is a great equalizer for the defenders. Earlier, to be able to get sufficient security audit and coverage, one would need to hire great security engineers and do expensive external audits. AI gives them all tools to do it without waiting for time or money.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AI will increase attacks on infra. CVEs can&amp;rsquo;t cover everything. Highly efficient attackers will become more efficient. YES.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;But this is where we NEED to have access to great cybersecurity capable models for everyone. OpenAI/Anthropic will remain limited for use. We need to make sure open models are available for everyone to do it for themselves&lt;/li&gt;
+&lt;li&gt;And we need for the companies to become more vigilant about this as well. In the past, most companies take security as an afterthought. Even when vulnerabilities are reported to them, they choose to ignore. Bad guys still exploit them and it&amp;rsquo;s just a matter of who wants to attack them when. AI makes that easier for attackers to take away that facade of security by obscurity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For a short while, we will see a lot of chaos, but ultimately it will turn out to be a much better world.&lt;/p&gt;</content></item><item><title>300 Million Steps And A Flagpole. Or How I Taught Machines Super Mario</title><link>https://shantanugoel.com/2026/08/12/teach-machines-super-mario/</link><pubDate>Wed, 12 Aug 2026 16:53:53 +0530</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2026/08/12/teach-machines-super-mario/</guid><description>&lt;h2 id="its-a-me"&gt;It&amp;rsquo;s-a me!!&lt;/h2&gt;
 &lt;p&gt;&lt;img src="https://shantanugoel.com/img/2026/smb.jpeg" alt="It&amp;rsquo;s a me"&gt;&lt;/p&gt;
 &lt;p&gt;Almmost anyone who grew up in the 80s can beat World 1-1 of Super Mario Bros in their sleep. This level was the rite of passage that taught a generation where jump buttons belong. So when I set out to teach a reinforcement learning agent to finish it, I expected a long afternoon and a short victory lap.&lt;/p&gt;
 &lt;p&gt;Instead I got days of training, a laptop that doubled as a space heater, and a genuine lesson about how badly I had misunderstood my own childhood.&lt;/p&gt;</description><content>&lt;h2 id="its-a-me"&gt;It&amp;rsquo;s-a me!!&lt;/h2&gt;
@@ -495,7 +580,275 @@ This took easily the most amount of time in all of my work, both in determining 
 &lt;h2 id="some-notes-about-electronics"&gt;Some notes about electronics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Pomodoro cube&lt;/p&gt;</description><content>&lt;h2 id="laser-engravers"&gt;Laser Engravers!&lt;/h2&gt;
+&lt;p&gt;Pomodoro cube&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built a pomodoro cube/ADHD timer from ESP32. Code: &lt;a href="https://github.com/shantanugoel/pomodoro_cube"&gt;https://github.com/shantanugoel/pomodoro_cube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote
+class="instagram-media"
+data-instgrm-captioned
+data-instgrm-permalink="https://www.instagram.com/p/DSj4VHdEdyN"
+data-instgrm-version="14"
+style="
+background: #fff;
+border: 0;
+border-radius: 3px;
+box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+margin: 1px;
+max-width: 540px;
+min-width: 326px;
+padding: 0;
+width: 99.375%;
+width: -webkit-calc(100% - 2px);
+width: calc(100% - 2px);
+"
+&gt;
+&lt;div style="padding: 16px"&gt;
+&lt;a
+href="https://www.instagram.com/p/DSj4VHdEdyN"
+style="
+background: #ffffff;
+line-height: 0;
+padding: 0 0;
+text-align: center;
+text-decoration: none;
+width: 100%;
+"
+target="_blank"
+&gt;
+&lt;div style="display: flex; flex-direction: row; align-items: center"&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 50%;
+flex-grow: 0;
+height: 40px;
+margin-right: 14px;
+width: 40px;
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+justify-content: center;
+"
+&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 4px;
+flex-grow: 0;
+height: 14px;
+margin-bottom: 6px;
+width: 100px;
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 4px;
+flex-grow: 0;
+height: 14px;
+width: 60px;
+"
+&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style="padding: 19% 0"&gt;&lt;/div&gt;
+&lt;div
+style="display: block; height: 50px; margin: 0 auto 12px; width: 50px"
+&gt;
+&lt;svg
+width="50px"
+height="50px"
+viewBox="0 0 60 60"
+version="1.1"
+xmlns="https://www.w3.org/2000/svg"
+xmlns:xlink="https://www.w3.org/1999/xlink"
+&gt;
+&lt;g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"&gt;
+&lt;g transform="translate(-511.000000, -20.000000)" fill="#000000"&gt;
+&lt;g&gt;
+&lt;path
+d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
+&gt;&lt;/path&gt;
+&lt;/g&gt;
+&lt;/g&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div style="padding-top: 8px"&gt;
+&lt;div
+style="
+color: #3897f0;
+font-family: Arial, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 550;
+line-height: 18px;
+"
+&gt;
+View this post on Instagram
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style="padding: 12.5% 0"&gt;&lt;/div&gt;
+&lt;div
+style="
+display: flex;
+flex-direction: row;
+margin-bottom: 14px;
+align-items: center;
+"
+&gt;
+&lt;div&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 50%;
+height: 12.5px;
+width: 12.5px;
+transform: translateX(0px) translateY(7px);
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+height: 12.5px;
+transform: rotate(-45deg) translateX(3px) translateY(1px);
+width: 12.5px;
+flex-grow: 0;
+margin-right: 14px;
+margin-left: 2px;
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 50%;
+height: 12.5px;
+width: 12.5px;
+transform: translateX(9px) translateY(-18px);
+"
+&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style="margin-left: 8px"&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 50%;
+flex-grow: 0;
+height: 20px;
+width: 20px;
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+width: 0;
+height: 0;
+border-top: 2px solid transparent;
+border-left: 6px solid #f4f4f4;
+border-bottom: 2px solid transparent;
+transform: translateX(16px) translateY(-4px) rotate(30deg);
+"
+&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style="margin-left: auto"&gt;
+&lt;div
+style="
+width: 0px;
+border-top: 8px solid #f4f4f4;
+border-right: 8px solid transparent;
+transform: translateY(16px);
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+flex-grow: 0;
+height: 12px;
+width: 16px;
+transform: translateY(-4px);
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+width: 0;
+height: 0;
+border-top: 8px solid #f4f4f4;
+border-left: 8px solid transparent;
+transform: translateY(-4px) translateX(8px);
+"
+&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div
+style="
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+justify-content: center;
+margin-bottom: 24px;
+"
+&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 4px;
+flex-grow: 0;
+height: 14px;
+margin-bottom: 6px;
+width: 224px;
+"
+&gt;&lt;/div&gt;
+&lt;div
+style="
+background-color: #f4f4f4;
+border-radius: 4px;
+flex-grow: 0;
+height: 14px;
+width: 144px;
+"
+&gt;&lt;/div&gt;&lt;/div
+&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;&lt;script async src="https://www.instagram.com/embed.js"&gt;&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;WLED&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WLED has a built in tool for images, pixel art, gifs, scrolling text etc which can be accessed by going to &amp;lt; wled-ip&amp;gt;/pixelforge.htm&lt;/li&gt;
+&lt;li&gt;Built a nice little display piece with a 64x64 LED matrix, an INMP441 mic and WLED for my stuff/office&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://x.com/shantanugoel/status/2003821491696378325"&gt;https://x.com/shantanugoel/status/2003821491696378325&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Installed at its resting place! Would be cool to see the people in my work zoom calls see this react to their voices 😁 &lt;a href="https://t.co/iSTw2dkDri"&gt;pic.twitter.com/iSTw2dkDri&lt;/a&gt;&lt;/p&gt;&amp;mdash; Shantanu Goel (@shantanugoel) &lt;a href="https://x.com/shantanugoel/status/2003821491696378325?ref_src=twsrc%5Etfw"&gt;December 24, 2025&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="https://platform.x.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bought some &amp;ldquo;mist maker&amp;rdquo; modules and tried running them off of a battery but of course that didnt work.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ultrasonic piezoelectric mist makers require a driving circuit and cannot run directly from a battery because they need AC signal at a precise high frequency to function.&lt;/li&gt;
+&lt;li&gt;Piezoelectric transducers change shape when an electric field is applied and to produce mist they need to vibrate rapidly.&lt;/li&gt;
+&lt;li&gt;A special circuit can take DC voltage and act as an oscillator using a timer/transistor/dedicated chip to convert into a high frequency AC signal that matches the transducer&amp;rsquo;s resonant frequency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Capacitive Touch&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Found that ESP32 can detect touch without a dedicated sensor by using its built-in capacitive touch pins, connecting just a wire or foil to a supported GPIO pin and reading changes in capacitance. Your body acts as the capacitor.&lt;/li&gt;
+&lt;li&gt;Also found that TTP223 Capacitive touch sensors work THROUGH plastic/glass etc. I thought I&amp;rsquo;ll have to expose them directly.
+&lt;ul&gt;
+&lt;li&gt;They have onboard pads to control their behavior (momentary v/s toggle and high/low triggering) so can use them directly as a switch without an MCU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ESP32 S3 Super mini boards (at least on hubtronics) seem to have built in BMS (LTH7R), which would simplify a lot of my circuits&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;h2 id="laser-engravers"&gt;Laser Engravers!&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Thought about buying a portable laser engraver, started with xTool F1 Lite and almost settled on xTool F2&lt;/li&gt;
 &lt;li&gt;Seemed small enough to be portable so I can use it in my balcony to avoid venting complications&lt;/li&gt;
@@ -2986,7 +3339,8 @@ A minimal plugin needs to do following things:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TLDR;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Indian ISP ACT Fibernet (aka Beam Telecom) hijacks its users&amp;rsquo; DNS requests (even when using public DNS servers like Google or OpenDNS) and blocks websites through this method. This has huge implications beyond website blocking and you can&amp;rsquo;t rely on anything that you are browsing anymore though there are ways available to make yourself safe.&lt;/p&gt;
-&lt;p&gt;Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p&gt;</description><content>&lt;h2 id="hahahugoshortcode253s0hbhb"&gt;
+&lt;p&gt;Aside: Indian ISPs are blocking benign/collateral damage sites now like bit.ly for ACT and behance.net for Airtel. Pretty soon most of web will be blocked in India at this rate.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content>&lt;h2 id="hahahugoshortcode253s0hbhb"&gt;
 &lt;figure class="left" &gt;
 &lt;img src="https://shantanugoel.com/img/2016/09/censored.jpg" alt="Censored!" /&gt;
 &lt;/figure&gt;
@@ -3916,7 +4270,12 @@ Initial version. Working for Nexus 4 Android 4.3&lt;/p&gt;</content></item><item
 &lt;p&gt;I have intentionally removed the complete link in the email to save anyone else from falling into the trap. Basically this email (and it&amp;rsquo;s many variations) take you to a site which looks like Sony US site but it is not. So, do not put your password into it. If you have already clicked on the link, then change your psn password and remove any credit card info linked to it, immediately.&lt;/p&gt;</content></item><item><title>Paypal India Goes Even More Downhill. Get Your Money Out</title><link>https://shantanugoel.com/2011/01/28/paypal-india-goes-even-more-downhill-get-your-money-out/</link><pubDate>Fri, 28 Jan 2011 19:30:03 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2011/01/28/paypal-india-goes-even-more-downhill-get-your-money-out/</guid><description>&lt;p&gt;Just received an email from Paypal India. The main parts are these:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;With effect from 1 March 2011&lt;/strong&gt;, you are required to comply with the requirements set out in the notification of the Reserve Bank of India governing the processing and settlement of export-related receipts facilitated by online payment gateways (&amp;ldquo;RBI Guidelines&amp;rdquo;).
-In order to comply with the RBI Guidelines, our user agreement in India will be amended for the following services as follows:&lt;/p&gt;</description><content>&lt;p&gt;Just received an email from Paypal India. The main parts are these:&lt;/p&gt;
+In order to comply with the RBI Guidelines, our user agreement in India will be amended for the following services as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Any balance in and all future payments into your PayPal account may not be used to buy goods or services and must be transferred to your bank account in India within 7 days from the receipt of confirmation from the buyer in respect of the goods or services; and&lt;/li&gt;
+&lt;li&gt;Export-related payments for goods and services into your PayPal account may not exceed US$500 per transaction.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</description><content>&lt;p&gt;Just received an email from Paypal India. The main parts are these:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;With effect from 1 March 2011&lt;/strong&gt;, you are required to comply with the requirements set out in the notification of the Reserve Bank of India governing the processing and settlement of export-related receipts facilitated by online payment gateways (&amp;ldquo;RBI Guidelines&amp;rdquo;).
 In order to comply with the RBI Guidelines, our user agreement in India will be amended for the following services as follows:&lt;/p&gt;
@@ -4026,7 +4385,12 @@ In order to comply with the RBI Guidelines, our user agreement in India will be 
 &lt;p&gt;Are these speakers going to replace my full blown speaker set at home? No. But that is not the point. As a portable speaker, the X-mini Happy Capsule speaker packs a lot of punch while taking only a couple of inches and also playing double duty as a mp3/wma player that I&amp;rsquo;d pick it without a doubt.&lt;/p&gt;</content></item><item><title>ZDNet Fail. Answer is Stop Tech Blogging</title><link>https://shantanugoel.com/2010/11/19/zdnet-fail-answer-is-stop-tech-blogging/</link><pubDate>Fri, 19 Nov 2010 15:45:04 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2010/11/19/zdnet-fail-answer-is-stop-tech-blogging/</guid><description>&lt;p&gt;Just read this &lt;a href="http://www.zdnet.com/blog/open-source/android-fail-the-answer-is-a-google-phone/7822"&gt;article&lt;/a&gt; over at zdnet. What it basically says is condensed in these two points:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Android is a failure for Google because it is open and carriers/OEMs are stripping off google search from it and putting replacements like baidu/Bing. (BTW, half the people say Android is fail because it is not open and the other half say it is fail because it is open. Which one is it, please decide ;) )&lt;/p&gt;</description><content>&lt;p&gt;Just read this &lt;a href="http://www.zdnet.com/blog/open-source/android-fail-the-answer-is-a-google-phone/7822"&gt;article&lt;/a&gt; over at zdnet. What it basically says is condensed in these two points:&lt;/p&gt;
+&lt;p&gt;Android is a failure for Google because it is open and carriers/OEMs are stripping off google search from it and putting replacements like baidu/Bing. (BTW, half the people say Android is fail because it is not open and the other half say it is fail because it is open. Which one is it, please decide ;) )&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The solution is a Google Phone with google branding, sold unlocked at full price.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;Just read this &lt;a href="http://www.zdnet.com/blog/open-source/android-fail-the-answer-is-a-google-phone/7822"&gt;article&lt;/a&gt; over at zdnet. What it basically says is condensed in these two points:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Android is a failure for Google because it is open and carriers/OEMs are stripping off google search from it and putting replacements like baidu/Bing. (BTW, half the people say Android is fail because it is not open and the other half say it is fail because it is open. Which one is it, please decide ;) )&lt;/p&gt;
@@ -4105,7 +4469,30 @@ Now compare that with any other mobile OS you know.&lt;/li&gt;
 &lt;p&gt;Hope that clears things up :)&lt;/p&gt;</content></item><item><title>Android Paid Apps Now Live In India</title><link>https://shantanugoel.com/2010/10/05/android-paid-apps-now-live-in-india/</link><pubDate>Tue, 05 Oct 2010 07:35:39 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2010/10/05/android-paid-apps-now-live-in-india/</guid><description>&lt;p&gt;Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies. Good stuff!)&lt;/p&gt;</description><content>&lt;p&gt;Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):&lt;/p&gt;
+&lt;p&gt;The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies. Good stuff!)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can see the paid apps on main list and in the &amp;ldquo;Just In&amp;rdquo; Tab but there is no &amp;ldquo;Top Paid&amp;rdquo; tab available. (**Update: **If you can&amp;rsquo;t see the &amp;ldquo;top paid&amp;rdquo; tab, then go to settings-&amp;gt;Applications-&amp;gt;All-&amp;gt;Market and clear data and cache &amp;amp; launch market app again. You will be able to see top paid tab as well :) )&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can, however, search for any paid app or follow a direct marketplace link fine.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Final payment is done in the original currency of the app developer (e.g. pounds or dollars)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The payment method is credit cards through Google Checkout.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Debit cards won&amp;rsquo;t work for payment. Even though google checkout accepts them, they show up as &amp;ldquo;invalid&amp;rdquo; while buying apps. I presume that this is because of the 24 hour refund feature of Android marketplace.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Carrier Billing is not available though&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Another new thing reported. &amp;ldquo;Update All&amp;rdquo; feature which was so far available only on Froyo ROMs has also been included for devices with older Android versions. I&amp;rsquo;m not sure which all versions have it but it is at least showing up on 2.1 (Eclair) ROMs now.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;Yes! As of today noon, paid apps are now visible on my Android Nexus One in India. Few salient points (Also, look at the end to see how to get paid apps if you are not able to see them yet):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The marketplace shows approximate prices of each app in Indian Rupees (INR) (Edit: I&amp;rsquo;ve just learned from few tweets that this is a new feature worldwide. People everywhere are now seeing approximate app costs in their local currencies. Good stuff!)&lt;/p&gt;
@@ -4260,7 +4647,8 @@ A5: Speakerphone [ Set:Off ]&lt;/p&gt;
 &lt;p&gt;I’m ashamed of the government. Ashamed that everyone abroad now points at my country and calls us liars. Mr. Sibal, why couldn’t you just say that you scored a really nice deal to bring a really good education device to the Indian masses at a cheap price point? Why harp about the innovation and stuff when clearly there wasn’t any and the only price cut you and your government had brought on was through a bulk order and subsidies? &lt;strong&gt;Oh right!! Because $35 tablet doesn’t have much margins to siphon away any money from and the only place left to fulfill that gap is from “Research &amp;amp; Development” Money Quota.&lt;/strong&gt;&lt;/p&gt;</content></item><item><title>Android App: Wi-Fi Keep Alive updates</title><link>https://shantanugoel.com/2010/09/09/android-app-wi-fi-keep-alive-updates/</link><pubDate>Thu, 09 Sep 2010 05:27:27 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2010/09/09/android-app-wi-fi-keep-alive-updates/</guid><description>&lt;p&gt;I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss. I’ve bought a new machine a couple of days ago but still have to recover my data from old machine and set it up on the new one along with linux and my standard development environment. Please do continue to report bugs and ask for requests though and I’ll make sure to keep track of them.&lt;/p&gt;</description><content>&lt;p&gt;I pushed out a couple of updates to my android app Wi-Fi Keep alive a few weeks ago (mainly related to fixing the resolution and colors of the widget icons) taking the latest version to 1.4.4. This is just to let you know that it will take a while (a few weeks) more to get the pending updates and requests in to the program. I have been pretty ill for the last few weeks and have only just got back up out of the bed and now my development machine has also gone for a toss. I’ve bought a new machine a couple of days ago but still have to recover my data from old machine and set it up on the new one along with linux and my standard development environment. Please do continue to report bugs and ask for requests though and I’ll make sure to keep track of them.&lt;/p&gt;
 &lt;p&gt;PS: A tiny thing for celebration is that the app crossed 10,000 downloads mark recently within 2 months of its first appearance on the market :) and right now stands arounds 12k mark. Let&amp;rsquo;s see when I get to 50k :)&lt;/p&gt;</content></item><item><title>Caution: Stay away from making your Android app free for a short time</title><link>https://shantanugoel.com/2010/09/08/caution-stay-away-from-making-your-android-app-free-for-a-short-time/</link><pubDate>Wed, 08 Sep 2010 06:18:36 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2010/09/08/caution-stay-away-from-making-your-android-app-free-for-a-short-time/</guid><description>&lt;p&gt;Just read this over at the Android Developers google forum:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;My app had a one-day sale on all platforms and app stores. The price went from 2.99 to free for just today, but now that the sale is over, I need to revert the price back to 2.99. The bad news is, the developer console will not let me change it! I have to pull the app until I can get this resolved. What can I do?&lt;/p&gt;</description><content>&lt;p&gt;Just read this over at the Android Developers google forum:&lt;/p&gt;
+&lt;p&gt;My app had a one-day sale on all platforms and app stores. The price went from 2.99 to free for just today, but now that the sale is over, I need to revert the price back to 2.99. The bad news is, the developer console will not let me change it! I have to pull the app until I can get this resolved. What can I do?&lt;/p&gt;
+&lt;/blockquote&gt;</description><content>&lt;p&gt;Just read this over at the Android Developers google forum:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;My app had a one-day sale on all platforms and app stores. The price went from 2.99 to free for just today, but now that the sale is over, I need to revert the price back to 2.99. The bad news is, the developer console will not let me change it! I have to pull the app until I can get this resolved. What can I do?&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4387,7 +4775,12 @@ A5: Speakerphone [ Set:Off ]&lt;/p&gt;
 &lt;p&gt;Added workarounds to take care of sleep policies not working on some phones&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Optimized the code a bit for faster operations&lt;/p&gt;</description><content>&lt;p&gt;Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.&lt;/p&gt;
+&lt;p&gt;Optimized the code a bit for faster operations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added Configuration screens to widgets (pops up whenever widget is added)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;Just finished uploading the new version 1.2.0 of my android app Wi-Fi Keep Alive to the Android market. This version has a lot of optimizations and also a few workarounds to overcome the issues few guys were facing with Android&amp;rsquo;s in-built handling of wi-fi sleep policies.&lt;/p&gt;
 &lt;p&gt;Changes done in this version:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -4893,7 +5286,15 @@ A5: Speakerphone [ Set:Off ]&lt;/p&gt;
 &lt;p&gt;Power off then hold trackball and press power again to boot into recovery&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Go to Bootloader -&amp;gt; Recovery&lt;/p&gt;</description><content>&lt;p&gt;Just a quick post to tell you how to update your Nexus One to Android 2.2 Froyo immediately without waiting for google to send it to you OTA.&lt;/p&gt;
+&lt;p&gt;Go to Bootloader -&amp;gt; Recovery&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Press power button + Vol. Increase&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the update&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;Just a quick post to tell you how to update your Nexus One to Android 2.2 Froyo immediately without waiting for google to send it to you OTA.&lt;/p&gt;
 &lt;p&gt;Download this file from google&amp;rsquo;s servers: &lt;a href="http://android.clients.google.com/packages/passion/signed-passion-FRF50-from-ERE27.1e519a24.zip"&gt;http://android.clients.google.com/packages/passion/signed-passion-FRF50-from-ERE27.1e519a24.zip&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;After that just follow the below mentioned steps:&lt;/p&gt;
 &lt;ol&gt;
@@ -5103,7 +5504,12 @@ With the 1.9.2.7-g version of his firmware, oleg added a new feature with which 
 &lt;p&gt;You should not upgrade to Ubuntu 9.04 (aka Jaunty Jackalope), released a few weeks ago, if:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;You have an older ATI graphics card (prior to R500, .e.g xpress 200m)&lt;/p&gt;</description><content>&lt;p&gt;&lt;strong&gt;Update: It has come to my notice that many people do not know about this (and other problems listed in comments of this post). Please &lt;strong&gt;&lt;a href="http://digg.com/linux_unix/Why_You_Should_Not_Upgrade_to_Ubuntu_Jaunty_Jackalope_9_04"&gt;&lt;strong&gt;digg&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href="http://www.reddit.com/r/linux/comments/8hzkt/why_you_should_not_upgrade_to_ubuntu_jaunty/"&gt;&lt;strong&gt;reddit&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt; this post so that more people can be made aware of it before they upgrade unknowingly.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You have an older ATI graphics card (prior to R500, .e.g xpress 200m)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You like to have 3D support (read compiz/games, etc)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;&lt;strong&gt;Update: It has come to my notice that many people do not know about this (and other problems listed in comments of this post). Please &lt;strong&gt;&lt;a href="http://digg.com/linux_unix/Why_You_Should_Not_Upgrade_to_Ubuntu_Jaunty_Jackalope_9_04"&gt;&lt;strong&gt;digg&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href="http://www.reddit.com/r/linux/comments/8hzkt/why_you_should_not_upgrade_to_ubuntu_jaunty/"&gt;&lt;strong&gt;reddit&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt; this post so that more people can be made aware of it before they upgrade unknowingly.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You should not upgrade to Ubuntu 9.04 (aka Jaunty Jackalope), released a few weeks ago, if:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -5570,7 +5976,12 @@ And much, much more!&lt;/p&gt;
 &lt;p&gt;The main changes are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Now you can use other 3rd party twitter bots with it to get updates through twitter since the official twitter bot is down since a long time and there are no chances of coming back soon.&lt;/p&gt;</description><content>&lt;p&gt;I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.&lt;/p&gt;
+&lt;p&gt;Now you can use other 3rd party twitter bots with it to get updates through twitter since the official twitter bot is down since a long time and there are no chances of coming back soon.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can also use it even when you are not &amp;ldquo;away&amp;rdquo; by specifying the status when you want it to work. (e.g. any, available, unavailable, invisible, etc. Use splert -h to see all available status types). As an example, you can use this to selectively talk to people when you are busy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;I updated my project splert to version 0.03 today.For those who don&amp;rsquo;t know splert is a tool that lets you convert the multi-client instant messenger pidgin (connects to gtalk, msn, yahoo, jabber, etc) into a full blown answering machine and much more.&lt;/p&gt;
 &lt;p&gt;The main changes are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -5677,7 +6088,12 @@ And much, much more!&lt;/p&gt;
 &lt;p&gt;I hope to continue on the good work that was done by the original author and provide an even better xwinwrap to you all. Pour in those ideas about what features you&amp;rsquo;d like to see in this.&lt;/p&gt;</content></item><item><title>Shantz XWinWrap</title><link>https://shantanugoel.com/2008/09/03/shantz-xwinwrap/</link><pubDate>Wed, 03 Sep 2008 14:41:44 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/09/03/shantz-xwinwrap/</guid><description>&lt;p&gt;XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background. What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was ever released, and it had a few problems, like:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Well, sticking didn&amp;rsquo;t work. So if you did a &amp;ldquo;minimize all&amp;rdquo; or &amp;ldquo;go to desktop&amp;rdquo; kind of thing, your &amp;ldquo;wallpaper&amp;rdquo; got minimized as well.&lt;/p&gt;</description><content>&lt;p&gt;XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background. What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was ever released, and it had a few problems, like:&lt;/p&gt;
+&lt;p&gt;Well, sticking didn&amp;rsquo;t work. So if you did a &amp;ldquo;minimize all&amp;rdquo; or &amp;ldquo;go to desktop&amp;rdquo; kind of thing, your &amp;ldquo;wallpaper&amp;rdquo; got minimized as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The geometry option didn&amp;rsquo;t work, so you could not create, e.g., a small matrix window surrounded by your original wallpaper.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;XWinWrap is a small utility written a loooong time ago that allowed you to stick most of the apps to your desktop background. What this meant was you could use an animated screensaver (like glmatrix, electric sheep, etc) or even a movie, and use it as your wallpaper. But only one version of this app was ever released, and it had a few problems, like:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Well, sticking didn&amp;rsquo;t work. So if you did a &amp;ldquo;minimize all&amp;rdquo; or &amp;ldquo;go to desktop&amp;rdquo; kind of thing, your &amp;ldquo;wallpaper&amp;rdquo; got minimized as well.&lt;/p&gt;
@@ -5771,7 +6187,10 @@ And much, much more!&lt;/p&gt;
 &lt;p&gt;This is a short rant about two of the &amp;ldquo;big&amp;rdquo; products launched recently in India in the last one week and how the people behind their sales/marketing teams either try to take the Indian customer for a ride, or shaft themselves.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;iPhone&lt;/strong&gt;: The big icon. Bharti Airtel/Vodafone claimed lakhs of pre-registrations, yet no one lined up to buy it. Anyways, to the point. The ads all over the print, digital and broadcast media in India list out 3 major points in one sentence:&lt;/p&gt;</description><content>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: &lt;a href="http://www.mobileburn.com/news.jsp?Id=5176"&gt;UK Ad Authorities have declared iPhone ad as &amp;ldquo;misleading&amp;rdquo;.&lt;/a&gt; I guess then they should declare it plain fraud in India.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone&lt;/strong&gt;: The big icon. Bharti Airtel/Vodafone claimed lakhs of pre-registrations, yet no one lined up to buy it. Anyways, to the point. The ads all over the print, digital and broadcast media in India list out 3 major points in one sentence:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: &lt;a href="http://www.mobileburn.com/news.jsp?Id=5176"&gt;UK Ad Authorities have declared iPhone ad as &amp;ldquo;misleading&amp;rdquo;.&lt;/a&gt; I guess then they should declare it plain fraud in India.&lt;/p&gt;
 &lt;p&gt;This is a short rant about two of the &amp;ldquo;big&amp;rdquo; products launched recently in India in the last one week and how the people behind their sales/marketing teams either try to take the Indian customer for a ride, or shaft themselves.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -5907,7 +6326,15 @@ And much, much more!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Go to your wordpress folder and then navigate to wp-content/plugins/drain-hole/models.&lt;/p&gt;</description><content>&lt;p&gt;If you use the awesome download manager plugin &amp;ldquo;Drain Hole&amp;rdquo; for your WordPress blog (A short review &lt;a href="https://shantanugoel.com/2008/02/29/wordpress-must-have-plugins-download-managers.html"&gt;here&lt;/a&gt;), and upgraded to the latest version 2.1.3, you must have noticed that it doesn&amp;rsquo;t scan and add new files to the download repositories now. Well, this is a quick and short post to tell you how to fix it in less than a minute.&lt;/p&gt;
+&lt;p&gt;Go to your wordpress folder and then navigate to wp-content/plugins/drain-hole/models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open file.php&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to line 106, and replace &amp;lsquo;NULL&amp;rsquo; by $file. The new line will read like&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;If you use the awesome download manager plugin &amp;ldquo;Drain Hole&amp;rdquo; for your WordPress blog (A short review &lt;a href="https://shantanugoel.com/2008/02/29/wordpress-must-have-plugins-download-managers.html"&gt;here&lt;/a&gt;), and upgraded to the latest version 2.1.3, you must have noticed that it doesn&amp;rsquo;t scan and add new files to the download repositories now. Well, this is a quick and short post to tell you how to fix it in less than a minute.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -6108,7 +6535,30 @@ Epsilon, the new low cost BTS (Base Transceiver Station) by Nokia, 2004&lt;/p&gt
 &lt;p&gt;I hope the series has been informative enough for you and maybe you were able to save a few bucks. Let me know if it was so, or if you have some tricks up your sleeve that you’d like to share with others.&lt;/p&gt;</content></item><item><title>Tip: Gadgets, Deals And Stuff You Need To Know - Part II</title><link>https://shantanugoel.com/2008/06/04/tip-gadgets-deals-and-stuff-you-need-to-know-part-ii/</link><pubDate>Wed, 04 Jun 2008 22:30:00 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/06/04/tip-gadgets-deals-and-stuff-you-need-to-know-part-ii/</guid><description>&lt;p&gt;Last time we discussed &lt;a href="https://shantanugoel.com/2008/06/02/tip-gadgets-deals-and-stuff-you-need-to-know-part-i.html"&gt;how to select the gadget&lt;/a&gt; that you want to buy. This time I&amp;rsquo;ll tell you some of the things that I do to find the best price for it.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Use Price Comparison Engines&lt;/strong&gt;: These engines will let you search for your desired products and provide a comparison of the costs at which they are available at different stores online as well as offline. Two of my favourites are &lt;a href="http://www.pricegrabber.com/"&gt;Price Grabber&lt;/a&gt; and &lt;a href="http://www.froogle.com/"&gt;Froogle&lt;/a&gt;. Price Grabber has the added benefits of providing user reviews about the product as well.&lt;/p&gt;</description><content>&lt;p&gt;Last time we discussed &lt;a href="https://shantanugoel.com/2008/06/02/tip-gadgets-deals-and-stuff-you-need-to-know-part-i.html"&gt;how to select the gadget&lt;/a&gt; that you want to buy. This time I&amp;rsquo;ll tell you some of the things that I do to find the best price for it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Use Price Comparison Engines&lt;/strong&gt;: These engines will let you search for your desired products and provide a comparison of the costs at which they are available at different stores online as well as offline. Two of my favourites are &lt;a href="http://www.pricegrabber.com/"&gt;Price Grabber&lt;/a&gt; and &lt;a href="http://www.froogle.com/"&gt;Froogle&lt;/a&gt;. Price Grabber has the added benefits of providing user reviews about the product as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deal Sites&lt;/strong&gt;: Many sites across the web aggregate the latest deals. Some are run by the site owners, e.g., &lt;a href="http://www.deals2buy.com/"&gt;Deals2Buy&lt;/a&gt;, &lt;a href="http://www.hotdealsclub.com/"&gt;HotDealsClub&lt;/a&gt; etc, which are mostly almost same to each other. Some are run by the community, e.g. &lt;a href="http://slickdeals.net/"&gt;slickdeals&lt;/a&gt;, &lt;a href="http://fatwallet.com/"&gt;fatwallet&lt;/a&gt;, etc. These have an added advantage that the discussion that takes place on the original discussion adds a lot of value and insight in terms of how to stack on even better deals on top of it, provides comparison to other deals, rumours about coming deals in advance, and even deals local to your state, city or a particular store as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bargain Sites&lt;/strong&gt;: These sites sell overstocked products at a cheap price. Some of the popular ones are &lt;a href="http://overstock.com/"&gt;Overstock&lt;/a&gt;, &lt;a href="http://www.smartbargains.com/"&gt;Smart Bargains&lt;/a&gt;, &lt;a href="http://woot.com/"&gt;W00t&lt;/a&gt;, &lt;a href="http://stootsi.com/"&gt;Stootsi&lt;/a&gt;, etc. W00t and Stootsi are a bit different in the sense that they have very limited number of products available at a time for sale (generally just 1).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Coupon Codes Sites&lt;/strong&gt;: Many sites aggregate coupon codes for various online and offline stores that you can use with your purchase to lower the price further. However, you need to go through the terms and conditions carefully as some coupons might be expired or might not work with your particular product.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Mail In Rebates&lt;/strong&gt;: Mail In Rebates are a great way to save a lot of money and even make money on buying things. Basically what you have to do is fill in a form and send it to a given address along with proof of purchase or UPC code. And anywhere between 2–10 weeks you’ll receive a check for the said amount. So, be on the lookout for mail in rebates on manufacturers’ or sellers’ sites. But beware that mail-in-rebates don’t have 100% reliability. They might take a lot of time and might not even come. So, you better depend on them only if you are in US for more than a few weeks and keep tracking them through your mail-in-rebates’ tracking site.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cash Back&lt;/strong&gt;: Many sites give cash backs if you go to the seller’s site through them. An example for this is Fat Wallet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pricematch&lt;/strong&gt;: This is a great weapon that most people don’t know about or don’t take into consideration. Many shops (generally brick n mortar ones) give a lowest price gaurantee and if you are getting a product at a cheaper rate some place else, they will give u a discount on the difference. e.g. Staples has a 110% price match policy, so if they sell smthing at 50$, and some other place sells it 40$, then they will give it to you for 50 – 1.1x(50–40) = 39$. But many shops will price match to offline shops online and some will consider online ones as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Use Your Mouth (and brains)&lt;/strong&gt;: Don’t think wrong, you perverts ;). By mouth I mean “talking/conversing/convincing”. You can even negotiate prices at many places (Search for the BestBuy motto), and many times you need to convince the floor managers to allow you to stack on coupons after coupons over a product that is already being given at a discount and then get a couple of freebies as well ;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;Last time we discussed &lt;a href="https://shantanugoel.com/2008/06/02/tip-gadgets-deals-and-stuff-you-need-to-know-part-i.html"&gt;how to select the gadget&lt;/a&gt; that you want to buy. This time I&amp;rsquo;ll tell you some of the things that I do to find the best price for it.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Use Price Comparison Engines&lt;/strong&gt;: These engines will let you search for your desired products and provide a comparison of the costs at which they are available at different stores online as well as offline. Two of my favourites are &lt;a href="http://www.pricegrabber.com/"&gt;Price Grabber&lt;/a&gt; and &lt;a href="http://www.froogle.com/"&gt;Froogle&lt;/a&gt;. Price Grabber has the added benefits of providing user reviews about the product as well.&lt;/p&gt;
@@ -6330,7 +6780,27 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;p&gt;It has almost unlimited features to manipulate your images through its tools like convert, montage, mogrify etc and their long list of options.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;It is available for Windows, Linux and Mac as well.&lt;/p&gt;</description><content>&lt;p&gt;I’ve known about ImageMagick tools for quite some time now but never dabbled with it. A couple of weeks ago I played with it for some time (notice the new cascaded polaroid pics header above) and was amazed even more. Few of its shining features:&lt;/p&gt;
+&lt;p&gt;It is available for Windows, Linux and Mac as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Runs on web servers also (most of those nifty image sites use it for run time image manipulation)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It is amazingly fast.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Runs on the command line, which means batching of operations can be done and is also good for butter fingered people like me who are clumsy with GUI based image manipulation programs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Has modules for interfacing with C, perl, php, C++, C#, java, etc. So, you can create your own applications around it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It’s FREE (as in speech and as in beer)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It has an amazing documentation over at imagemagick.org and also a very thriving community, so help is just a few clicks away.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;I’ve known about ImageMagick tools for quite some time now but never dabbled with it. A couple of weeks ago I played with it for some time (notice the new cascaded polaroid pics header above) and was amazed even more. Few of its shining features:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;It has almost unlimited features to manipulate your images through its tools like convert, montage, mogrify etc and their long list of options.&lt;/p&gt;
@@ -6368,7 +6838,21 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;p&gt;Let me know if you use any of these scripts (as it is or after modifying them) to create any cool effects.&lt;/p&gt;</content></item><item><title>5 Reasons I Like Linux (And 5 Why I Dislike It)</title><link>https://shantanugoel.com/2008/04/19/5-reasons-i-like-linux-and-5-why-i-dislike-it/</link><pubDate>Sat, 19 Apr 2008 20:20:40 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/04/19/5-reasons-i-like-linux-and-5-why-i-dislike-it/</guid><description>&lt;p&gt;&lt;strong&gt;Disclaimer Notes:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;I wrote this because these things just came into my mind today while I was reading about the impending &amp;ldquo;Hardy Heron&amp;rdquo; release related things and saw that there is a lot of FUD being spread still. So, thought of jotting down my likes/dislikes and not making it a linux v/s windows campaign. Though at a few places, it might be necessary to compare the two just to put things into perspective.&lt;/p&gt;</description><content>&lt;p&gt;&lt;strong&gt;Disclaimer Notes:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I wrote this because these things just came into my mind today while I was reading about the impending &amp;ldquo;Hardy Heron&amp;rdquo; release related things and saw that there is a lot of FUD being spread still. So, thought of jotting down my likes/dislikes and not making it a linux v/s windows campaign. Though at a few places, it might be necessary to compare the two just to put things into perspective.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;These are reasons why &amp;ldquo;&lt;strong&gt;I&lt;/strong&gt;&amp;rdquo; like/dislike Linux and not why others might like/dislike it although you might find common patterns.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Most of my recent experience is with Ubuntu these days, so most examples would be from it as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;These reasons are purely from an end-user&amp;rsquo;s perspective and not from a linux developer&amp;rsquo;s perspective. So, I&amp;rsquo;m not taking into factor that I can change the kernel (or most other things&amp;rsquo;) source code because &amp;ldquo;generally&amp;rdquo; I don&amp;rsquo;t.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This post is quite long. And if you have a flame to send out my way (which you are most welcome to do), please read it in its entirety before doing so, because many things I say at some point have some caveats covered at another point.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;&lt;strong&gt;Disclaimer Notes:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;I wrote this because these things just came into my mind today while I was reading about the impending &amp;ldquo;Hardy Heron&amp;rdquo; release related things and saw that there is a lot of FUD being spread still. So, thought of jotting down my likes/dislikes and not making it a linux v/s windows campaign. Though at a few places, it might be necessary to compare the two just to put things into perspective.&lt;/p&gt;
@@ -6533,7 +7017,12 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;p&gt;And if you want to be a little bit more involved, you can also join the &lt;a href="http://groups.yahoo.com/group/delhibloggers"&gt;Delhi Bloggers&amp;rsquo; Yahoo Group&lt;/a&gt;.&lt;/p&gt;</content></item><item><title>Hack: Fixing The WordPress i3theme Sidebar Issue (Part II)</title><link>https://shantanugoel.com/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</link><pubDate>Sun, 06 Apr 2008 14:20:25 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/04/06/hack-fixing-the-wordpress-i3theme-sidebar-issue-part-ii/</guid><description>&lt;p&gt;Some time back I had &lt;a href="https://shantanugoel.com/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html"&gt;posted a little hack&lt;/a&gt; to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/"&gt;i3theme&lt;/a&gt; have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Go to your &lt;code&gt;wp-content/themes/&amp;lt;i3theme&amp;gt;&lt;/code&gt; folder and open the style.css file in your favourite text editor.&lt;/p&gt;</description><content>&lt;p&gt;Some time back I had &lt;a href="https://shantanugoel.com/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html"&gt;posted a little hack&lt;/a&gt; to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/"&gt;i3theme&lt;/a&gt; have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p&gt;
+&lt;p&gt;Go to your &lt;code&gt;wp-content/themes/&amp;lt;i3theme&amp;gt;&lt;/code&gt; folder and open the style.css file in your favourite text editor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Search for &amp;ldquo;#sidebar&amp;rdquo; (without the quotes) until you reach the following code:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;Some time back I had &lt;a href="https://shantanugoel.com/2008/02/04/hack-wordpress-i3theme-ie6-sidebar-problem-solved.html"&gt;posted a little hack&lt;/a&gt; to fix an issue that users of &lt;a href="http://www.mangoorange.com/2008/02/10/i3theme-16-is-finally-here-and-more/"&gt;i3theme&lt;/a&gt; have, i.e., their right sidebar drops to below the main content area in IE6. But it wasn&amp;rsquo;t that good as it took care of only the situation when this phenomena was caused by the tag cloud widget. So, here is a little modification I did to fix the issue more properly.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Go to your &lt;code&gt;wp-content/themes/&amp;lt;i3theme&amp;gt;&lt;/code&gt; folder and open the style.css file in your favourite text editor.&lt;/p&gt;
@@ -6590,7 +7079,12 @@ Only thing you have to do is, just prefix the url to the online pdf with &amp;ld
 &lt;p&gt;Completely Waterproof&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&amp;hellip;and weight -&amp;gt; weightless&lt;/p&gt;</description><content>&lt;p&gt;Qualcomm wets it feet again in the ice-cold/boiling-hot mixture of a sea that our Mobile Phone Industry is. They decided that the all the phone makers around the globe are just churning out junk upon the unsuspecting people. Claiming to take the bull by its horns, and revolutionizing the world that whirls around it, the touted features are:&lt;/p&gt;
+&lt;p&gt;&amp;hellip;and weight -&amp;gt; weightless&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;size -&amp;gt; oops, I lost the phone somewhere inside my fingernail&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;Qualcomm wets it feet again in the ice-cold/boiling-hot mixture of a sea that our Mobile Phone Industry is. They decided that the all the phone makers around the globe are just churning out junk upon the unsuspecting people. Claiming to take the bull by its horns, and revolutionizing the world that whirls around it, the touted features are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;No Battery Required&lt;/p&gt;
@@ -6809,7 +7303,8 @@ Can be used only with paste option&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;But one term spoils it all for me, &amp;ldquo;vaporware&amp;rdquo;, anyone? Check out more details at &lt;a href="http://www.engadgetmobile.com/2008/03/13/chinese-lionking800-cellphone-claims-1-year-standby/"&gt;Engadget Mobile&lt;/a&gt;.&lt;/p&gt;</content></item><item><title>Indian Govt. vs Blackberry: Yet Another Example of Idiocy From Our "Leaders"</title><link>https://shantanugoel.com/2008/03/12/indian-govt-vs-blackberry-yet-another-example-of-idiocy-from-our-leaders/</link><pubDate>Wed, 12 Mar 2008 19:45:48 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/03/12/indian-govt-vs-blackberry-yet-another-example-of-idiocy-from-our-leaders/</guid><description>&lt;p&gt;Just read on &lt;a href="http://www.boygeniusreport.com/2008/03/12/impending-blackberry-shutdown-in-india/bleName"&gt;BGR&lt;/a&gt;, that &lt;a href="http://www.rim.com/"&gt;RIM&lt;/a&gt; will have to close down its &lt;a href="http://en.wikipedia.org/wiki/BlackBerry"&gt;BlackBerry&lt;/a&gt; service in India if they don&amp;rsquo;t allow our government to snoop on every little piece of data that goes through it. WTF? On an even more serious note, if they do comply, then will the same demand be made to all the ISPs? I just shudder at the mere thought of this…Quotin BGR below&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;It looks as if the Indian government is not content with its inability to decrypt their citizens BlackBerry e-mails, and is threatening a shutdown of Research In Motion&amp;rsquo;s devices in the country as punishment. &lt;em&gt;Business Standard&lt;/em&gt; reports that the Indian government desires access to RIM&amp;rsquo;s proprietary e-mail network, in order to monitor e-mails being sent and received through the country. It is reported that a meeting will take place on March 14th, involving RIM representatives, members of wireless companies within the country, and representatives of the Indian government.&lt;/p&gt;</description><content>&lt;p&gt;Just read on &lt;a href="http://www.boygeniusreport.com/2008/03/12/impending-blackberry-shutdown-in-india/bleName"&gt;BGR&lt;/a&gt;, that &lt;a href="http://www.rim.com/"&gt;RIM&lt;/a&gt; will have to close down its &lt;a href="http://en.wikipedia.org/wiki/BlackBerry"&gt;BlackBerry&lt;/a&gt; service in India if they don&amp;rsquo;t allow our government to snoop on every little piece of data that goes through it. WTF? On an even more serious note, if they do comply, then will the same demand be made to all the ISPs? I just shudder at the mere thought of this…Quotin BGR below&lt;/p&gt;
+&lt;p&gt;It looks as if the Indian government is not content with its inability to decrypt their citizens BlackBerry e-mails, and is threatening a shutdown of Research In Motion&amp;rsquo;s devices in the country as punishment. &lt;em&gt;Business Standard&lt;/em&gt; reports that the Indian government desires access to RIM&amp;rsquo;s proprietary e-mail network, in order to monitor e-mails being sent and received through the country. It is reported that a meeting will take place on March 14th, involving RIM representatives, members of wireless companies within the country, and representatives of the Indian government.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content>&lt;p&gt;Just read on &lt;a href="http://www.boygeniusreport.com/2008/03/12/impending-blackberry-shutdown-in-india/bleName"&gt;BGR&lt;/a&gt;, that &lt;a href="http://www.rim.com/"&gt;RIM&lt;/a&gt; will have to close down its &lt;a href="http://en.wikipedia.org/wiki/BlackBerry"&gt;BlackBerry&lt;/a&gt; service in India if they don&amp;rsquo;t allow our government to snoop on every little piece of data that goes through it. WTF? On an even more serious note, if they do comply, then will the same demand be made to all the ISPs? I just shudder at the mere thought of this…Quotin BGR below&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It looks as if the Indian government is not content with its inability to decrypt their citizens BlackBerry e-mails, and is threatening a shutdown of Research In Motion&amp;rsquo;s devices in the country as punishment. &lt;em&gt;Business Standard&lt;/em&gt; reports that the Indian government desires access to RIM&amp;rsquo;s proprietary e-mail network, in order to monitor e-mails being sent and received through the country. It is reported that a meeting will take place on March 14th, involving RIM representatives, members of wireless companies within the country, and representatives of the Indian government.&lt;/p&gt;
 &lt;/blockquote&gt;</content></item><item><title>I Heart Canon</title><link>https://shantanugoel.com/2008/03/10/i-heart-canon/</link><pubDate>Mon, 10 Mar 2008 15:23:59 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/03/10/i-heart-canon/</guid><description>&lt;p&gt;A gaping mouth was all I had when my 3 year ol&amp;rsquo; Canon Powershot S1 IS&amp;rsquo;s LCD/EVF went blank all of a sudden a few months ago. Nothing could be seen, clicking the picture button resulted in blank pics. Googling about it revealed an &lt;a href="http://www.usa.canon.com/consumer/controller?act=PgComSmModDisplayAct&amp;amp;fcategoryid=218&amp;amp;modelid=13390&amp;amp;keycode=2112&amp;amp;id=29819"&gt;advisory&lt;/a&gt; by Canon, stating that it is a known issue with the CCD image sensor. Canon impressed me by that notice when they said they will fix it for free, even for cameras out of warranty period, and will also pay to-and-fro shipping. Contacting canon support in India (support, in India? Is that a joke?) resulted in just their ignorance about any such advisory.&lt;/p&gt;</description><content>&lt;p&gt;A gaping mouth was all I had when my 3 year ol&amp;rsquo; Canon Powershot S1 IS&amp;rsquo;s LCD/EVF went blank all of a sudden a few months ago. Nothing could be seen, clicking the picture button resulted in blank pics. Googling about it revealed an &lt;a href="http://www.usa.canon.com/consumer/controller?act=PgComSmModDisplayAct&amp;amp;fcategoryid=218&amp;amp;modelid=13390&amp;amp;keycode=2112&amp;amp;id=29819"&gt;advisory&lt;/a&gt; by Canon, stating that it is a known issue with the CCD image sensor. Canon impressed me by that notice when they said they will fix it for free, even for cameras out of warranty period, and will also pay to-and-fro shipping. Contacting canon support in India (support, in India? Is that a joke?) resulted in just their ignorance about any such advisory.&lt;/p&gt;
@@ -7048,7 +7543,18 @@ nautilus-open-terminal = nautilus plugin for opening terminals in arbitrary loca
 &lt;p&gt;Over 30000 (Thirty Thousand) page views by &lt;strong&gt;&lt;em&gt;humans&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Over 500000 (Half Million) total hits for all website files included.&lt;/p&gt;</description><content>&lt;p&gt;&lt;img src="https://shantanugoel.com/img/uploads/trophy_small.jpg" alt="tech.shantanugoel.com completes one month"&gt;&lt;/p&gt;
+&lt;p&gt;Over 500000 (Half Million) total hits for all website files included.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Around 800 downloads of my projects&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Makes it to the first page on google for many keywords (like wm6.1 htc wizard, ubuntu two soundcards, and many others)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;a href="http://www.google.co.in/search?q=shantanu+goel"&gt;google&lt;/a&gt; or &lt;a href="http://search.yahoo.com/search?p=shantanu+goel"&gt;yahoo&lt;/a&gt; search for my name “shantanu goel” now gives around 6–7 links about me (4–5 from this blog) out of the first 10 results. (This changes quite dynamically though)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;&lt;img src="https://shantanugoel.com/img/uploads/trophy_small.jpg" alt="tech.shantanugoel.com completes one month"&gt;&lt;/p&gt;
 &lt;p&gt;Today, this blog completes one month of its existence in this world. The achievements, although minuscule in comparison to all the biggies out there, are significant for me. It achieved the following things in just 30 days from the first post:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -7102,7 +7608,9 @@ nautilus-open-terminal = nautilus plugin for opening terminals in arbitrary loca
 &lt;p&gt;You have seen WordPress importing your/others&amp;rsquo; blogs from other services automatically. Wasn&amp;rsquo;t that quick and easy.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Your databse has become overly full of so much trash over the years and you would like to trim out all the fat and take just the meat (the posts, pages, comments, tags, custom fields etc)&lt;/p&gt;</description><content>&lt;p&gt;If you are moving your blog, or just want to start afresh, you would definitely use some way to import your old content into the new place, instead of manually copying and pasting everything. Generally this means saving your database and importing into the new place. But:&lt;/p&gt;
+&lt;p&gt;Your databse has become overly full of so much trash over the years and you would like to trim out all the fat and take just the meat (the posts, pages, comments, tags, custom fields etc)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><content>&lt;p&gt;If you are moving your blog, or just want to start afresh, you would definitely use some way to import your old content into the new place, instead of manually copying and pasting everything. Generally this means saving your database and importing into the new place. But:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;You have seen WordPress importing your/others&amp;rsquo; blogs from other services automatically. Wasn&amp;rsquo;t that quick and easy.&lt;/p&gt;
@@ -7115,7 +7623,8 @@ nautilus-open-terminal = nautilus plugin for opening terminals in arbitrary loca
 &lt;p&gt;Well, WordPress gives you way to &amp;ldquo;export&amp;rdquo; your blog into an XML file that they call as &amp;ldquo;&lt;a href="http://codex.wordpress.org/Administration_Panels#Import"&gt;WordPress eXtended RSS&lt;/a&gt;&amp;rdquo; (or WXR in short). And then, you can just wipe out everything (or go to your new server), install WP afresh and just import this file into it. A no frills, easy way to make your blog lean again, without losing out on any content.&lt;/p&gt;
 &lt;p&gt;For more details, read Jeffro2pt0&amp;rsquo;s post on &lt;a href="http://weblogtoolscollection.com/archives/2008/02/25/reformatting-wordpress"&gt;weblogstoolcollection.com&lt;/a&gt;.&lt;/p&gt;</content></item><item><title>HTC Video Drivers: But This Is Not A Post About HTC</title><link>https://shantanugoel.com/2008/02/26/htc-video-drivers-but-this-is-not-a-post-about-htc/</link><pubDate>Tue, 26 Feb 2008 11:14:36 +0000</pubDate><author>shantanu@shantanugoel.com (Shantanu Goel)</author><guid>https://shantanugoel.com/2008/02/26/htc-video-drivers-but-this-is-not-a-post-about-htc/</guid><description>&lt;p&gt;This is a post about irresponsible/careless journalism/bloggism. For Gizmodo, getting that post about HTC’s latest press release out the door took precedence over actually **reading **the release properly and then commenting over it. The gizmodo poster’s comment is:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;……but HTC&amp;rsquo;s finally released a statement saying that a fix is coming. They say that the &lt;strong&gt;video acceleration &lt;em&gt;will&lt;/em&gt; be supported in the future, and will be included in software upgrades for current devices&lt;/strong&gt;…….&lt;/p&gt;</description><content>&lt;p&gt;This is a post about irresponsible/careless journalism/bloggism. For Gizmodo, getting that post about HTC’s latest press release out the door took precedence over actually **reading **the release properly and then commenting over it. The gizmodo poster’s comment is:&lt;/p&gt;
+&lt;p&gt;……but HTC&amp;rsquo;s finally released a statement saying that a fix is coming. They say that the &lt;strong&gt;video acceleration &lt;em&gt;will&lt;/em&gt; be supported in the future, and will be included in software upgrades for current devices&lt;/strong&gt;…….&lt;/p&gt;
+&lt;/blockquote&gt;</description><content>&lt;p&gt;This is a post about irresponsible/careless journalism/bloggism. For Gizmodo, getting that post about HTC’s latest press release out the door took precedence over actually **reading **the release properly and then commenting over it. The gizmodo poster’s comment is:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;……but HTC&amp;rsquo;s finally released a statement saying that a fix is coming. They say that the &lt;strong&gt;video acceleration &lt;em&gt;will&lt;/em&gt; be supported in the future, and will be included in software upgrades for current devices&lt;/strong&gt;…….&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7473,7 +7982,12 @@ Post a comment here, or contact me through the contact page.&lt;/p&gt;
 &lt;p&gt;I made a few additions / modifications to the code and the plugin has been updated to 1.1.0. The changes are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p&gt;</description><content>&lt;p&gt;For the uninitiated:&lt;/p&gt;
+&lt;p&gt;Added Custom tag support for adding quotes anywhere in your posts/pages&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added Custom quote separator support and multi-line quotes support&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content>&lt;p&gt;For the uninitiated:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Shantz WP QOTD is a plugin to add quotes to your wordpress blog in a few easy clicks. It adds quotes to your posts and your sidebars with a multitude of options for sources and customization.&lt;/p&gt;
 &lt;/blockquote&gt;
