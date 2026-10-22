@@ -59,7 +59,7 @@ c. You will somehow need to find a vendor that lets you run abliterated models w
 &lt;li&gt;Even if you were able to overcome the above, you will find that a naive non-technical person running this point and shoot scheme will be found out easily by leaking their fingerprints all over the attack surface.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Also note that the same AI is now giving tools and means for much more technically adept defenders to be able to find this non technical person as well.&lt;/p&gt;
-&lt;h2 id="have-the-severity-of-exploits-increased-after-ai"&gt;Have the severity of exploits increased after AI?&lt;/h2&gt;
+&lt;h2 id="are-we-seeing-more-severe-exploits-now-post-ai-compared-to-what-it-was-before"&gt;Are we seeing more severe exploits now post AI compared to what it was before?&lt;/h2&gt;
 &lt;p&gt;Not yet. The PHP CVE is bad, but it was exacerbated by the fact of human malice and incompetence and not AI. Some humans leaked the news of this CVE and then some other humans broke embargo to release fix early which caused a lot of panic and even politicians and PMs started tweeting about it.&lt;/p&gt;
 &lt;p&gt;But we&amp;rsquo;ve had worse ones in the past, before AI. Heartbleed and Log4Shell were large scale issues, even much more than php, that were trivially exploited by simple single attack scripts. Meltdown and Spectre impactd every processor out there. I should know because I was there fixing and protecting many of these systems against these attacks at Qualcomm.&lt;/p&gt;
 &lt;h2 id="cves-and-0-days"&gt;CVEs and 0 Days&lt;/h2&gt;
