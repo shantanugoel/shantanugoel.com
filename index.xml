@@ -56,7 +56,7 @@ And then it restarted the usual thing about how AI is going to bring about the d
 a. Well, they can&amp;rsquo;t. Because you need tooling for it. You can&amp;rsquo;t run any of these from your web/app chat interfaces.
 b. Even if you run the claude code/codex etc, they will simply refuse to do it for you (and block your account)
 c. You will somehow need to find a vendor that lets you run abliterated models without any kind of guardrails, or run a local model yourself, both not an easy task to do for a farily non technical person who isn&amp;rsquo;t determined at least to the extent of a script kiddie.&lt;/li&gt;
-&lt;li&gt;Even if you were able to overcome the above, you will find that a naive non-technical person running this point and shoot scheme will be found out easily by leaking their fingerprints all over the attack surface.&lt;/li&gt;
+&lt;li&gt;Even if you were able to overcome the above, you will find that a naive non-technical person running this point and shoot scheme will be found out easily by leaking their fingerprints all over the attack surface. It&amp;rsquo;s a bit like &amp;ldquo;anyone can dance&amp;rdquo;. Anyone &amp;ldquo;can&amp;rdquo; dance. But not &amp;ldquo;anyone&amp;rdquo; can, or will. Jail time is scary. If you don&amp;rsquo;t have a swarm of anonymous zombie computers at your beck and call, you&amp;rsquo;d find it interesting to try to hack something and find police knocking at your door soon enough.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Also note that the same AI is now giving tools and means for much more technically adept defenders to be able to find this non technical person as well.&lt;/p&gt;
 &lt;h2 id="has-the-severity-of-exploits-increased-after-ai"&gt;Has the severity of exploits increased after AI?&lt;/h2&gt;
