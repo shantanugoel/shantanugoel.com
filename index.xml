@@ -74,6 +74,9 @@ c. You will somehow need to find a vendor that lets you run abliterated models w
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;AI is a great equalizer for the defenders. Earlier, to be able to get sufficient security audit and coverage, one would need to hire great security engineers and do expensive external audits. AI gives them all tools to do it without waiting for time or money.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some say that now people can just hack you by saying &amp;ldquo;Find vulnerabilities in this?&amp;rdquo;. But isn&amp;rsquo;t it much simpler now for defender to do the same thing? And they&amp;rsquo;d even have more access so they find things faster and patch them.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;AI will increase attacks on infra. CVEs can&amp;rsquo;t cover everything. Highly efficient attackers will become more efficient. YES.&lt;/p&gt;
